@@ -57,7 +57,7 @@ LoginInfoDetailPage::LoginInfoDetailPage(QWidget *parent)
     , m_group(new SettingsGroup(nullptr, SettingsGroup::ItemBackground))
     , m_lastSyncTimeLbl(new QLabel(this))
     , m_autoSyncTipsBottom(new DTipLabel(tr("Store system settings securely in the cloud and keep them in sync across devices"), this))
-    , m_disabledTips(new DTipLabel(tr("Sorry, it is not supported in your region at present, and will be coming soon"), this))
+    , m_disabledTips(new DTipLabel(tr("UOS Cloud is currently unavailable in your region"), this))
     , m_syncState(false)
 {
     initUI();
@@ -478,7 +478,7 @@ void LoginInfoDetailPage::showItemDisabledStatus(LoginInfoDetailPage::InfoType s
         m_autoSyncTipsBottom->setVisible(true);
 
         m_disabledTips->setVisible(true);
-        m_disabledTips->setText(tr("Sorry, it is not supported in your region at present, and will be coming soon"));
+        m_disabledTips->setText(tr("UOS Cloud is currently unavailable in your region"));
     }
 
     if (status == InfoType::NoActive) {

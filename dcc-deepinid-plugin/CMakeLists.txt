@@ -66,3 +66,4 @@ set(CMAKE_INSTALL_PREFIX "/usr")
 install(TARGETS ${PLUGIN_NAME} LIBRARY DESTINATION lib/dde-control-center/modules)
 
 # 安装 .qm 文件
+install(FILES ${QM_FILES} DESTINATION share/${PLUGIN_NAME}/translations)

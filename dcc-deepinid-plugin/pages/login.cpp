@@ -66,8 +66,7 @@ LoginPage::LoginPage(QWidget *parent)
     //~ contents_path /cloudsync/Sign In
     DSuggestButton *loginBtn = new DSuggestButton(tr("Sign In"));
     loginBtn->setMinimumWidth(302);
-    DTipLabel *tip = new DTipLabel(tr("After signing in, you can use cloud sync, app store, email client, browser and other cloud services.")
-                                   .arg(systemName()));
+    DTipLabel *tip = new DTipLabel(tr("Manage your Union ID and sync system settings between devices"));
     tip->setWordWrap(true);
     tip->setAlignment(Qt::AlignCenter);
 
@@ -92,7 +91,7 @@ LoginPage::LoginPage(QWidget *parent)
     m_mainLayout->addSpacing(35);
     m_mainLayout->addWidget(loginBtn, 0, Qt::AlignHCenter);
     m_mainLayout->addSpacing(20);
-    DTipLabel *sps = new DTipLabel(tr("Only supported in Mainland China at present"));
+    DTipLabel *sps = new DTipLabel(tr("UOS Cloud is only available in Mainland China currently"));
     m_mainLayout->addWidget(sps, 0, Qt::AlignHCenter);
     m_mainLayout->addStretch(5);
 
