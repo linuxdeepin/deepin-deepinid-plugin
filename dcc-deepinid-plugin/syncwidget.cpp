@@ -64,7 +64,7 @@ void SyncWidget::initUI()
     m_groundGroup->setUseWidgetBackground(true);
 
     contentLay->addWidget(m_loginInfoPage, 1);
-    contentLay->addWidget(m_loginInfoDetailPage, 3);
+    contentLay->addWidget(m_loginInfoDetailPage, 2);
 
     m_mainLayout->addWidget(m_loginPage);
     m_mainLayout->addWidget(m_groundGroup);

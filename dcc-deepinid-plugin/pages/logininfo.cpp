@@ -199,7 +199,7 @@ void LoginInfoPage::onUserInfoChanged(const QVariantMap &infos)
         return;
 
     onAvatarChanged(profile_image);
-    m_username->setText(m_model->userDisplayName());
+    m_username->setText(handleNameTooLong(m_model->userDisplayName()).toHtmlEscaped());
 
     QString phone = infos["Phone"].toString();
     QString mail = infos["Email"].toString();
@@ -229,6 +229,7 @@ bool LoginInfoPage::eventFilter(QObject *obj, QEvent *event)
 // 处理编辑输入完成后的逻辑
 void LoginInfoPage::onEditingFinished(const QString &userFullName)
 {
+    QString fullName = userFullName;
     m_inputLineEdit->lineEdit()->clearFocus();
     m_inputLineEdit->setVisible(false);
     m_username->setVisible(true);
@@ -242,8 +243,8 @@ void LoginInfoPage::onEditingFinished(const QString &userFullName)
         return;
     }
 
-    m_username->setText(userFullName);
-    Q_EMIT requestSetFullname(m_inputLineEdit->text());
+    m_username->setText(handleNameTooLong(userFullName).toHtmlEscaped());
+    Q_EMIT requestSetFullname(fullName);
 }
 
 void LoginInfoPage::onAvatarChanged(const QString &avaPath)
@@ -289,4 +290,16 @@ void LoginInfoPage::setAvatarPath(const QString &avatarPath)
 {
     qDebug() << "downloaded filename = " << avatarPath;
     m_avatar->setAvatarPath(avatarPath);
+}
+
+QString LoginInfoPage::handleNameTooLong(const QString &fullName)
+{
+    QString name = fullName;
+    for (int i = 1; i < fullName; ++i) {
+        if (fullName.left(i).toLocal8Bit().size() > 22) {
+            name = fullName.left(i - 1) + QString("...");
+            break;
+        }
+    }
+    return name;
 }

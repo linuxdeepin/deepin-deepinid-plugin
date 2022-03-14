@@ -74,6 +74,9 @@ protected:
     void setAvatarPath(const QString &avatarPath);
 
 private:
+    QString handleNameTooLong(const QString &fullName);
+
+private:
     QVBoxLayout *m_mainLayout;
     dcc::cloudsync::SyncModel *m_model;
 
