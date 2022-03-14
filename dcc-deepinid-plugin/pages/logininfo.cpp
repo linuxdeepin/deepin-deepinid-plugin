@@ -158,7 +158,6 @@ void LoginInfoPage::initConnection()
             m_inputLineEdit->setText(fullName);
         }
         if (fullName.size() > 32) {
-            m_inputLineEdit->lineEdit()->backspace();
             m_inputLineEdit->setAlert(true);
             m_inputLineEdit->showAlertMessage(tr("The full name is too long"), this);
             DDesktopServices::playSystemSoundEffect(DDesktopServices::SSE_Error);
@@ -238,7 +237,7 @@ void LoginInfoPage::onEditingFinished(const QString &userFullName)
         m_inputLineEdit->setAlert(false);
         m_inputLineEdit->hideAlertMessage();
     }
-    if (userFullName.isEmpty()) {
+    if (userFullName.isEmpty() || userFullName.size() > 32) {
         m_inputLineEdit->showAlertMessage(tr("The nickname must be 1~32 characters long"), this);
         return;
     }
