@@ -202,7 +202,7 @@ void LoginInfoPage::onUserInfoChanged(const QVariantMap &infos)
     m_username->setText(m_model->userDisplayName());
 
     QString phone = infos["Phone"].toString();
-    QString mail = infos["Mail"].toString();
+    QString mail = infos["Email"].toString();
     QString wechat = infos["WechatNickname"].toString();
     QString regionDate = (region == "CN") ? tr("Mainland China") : tr("Other regions");
 
