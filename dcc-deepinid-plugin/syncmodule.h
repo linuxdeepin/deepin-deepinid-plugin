@@ -53,6 +53,8 @@ public:
     virtual void preInitialize(bool sync = false , FrameProxyInterface::PushType = FrameProxyInterface::PushType::Normal) Q_DECL_OVERRIDE;
     QStringList availPage() const Q_DECL_OVERRIDE;
     virtual void addChildPageTrans() const Q_DECL_OVERRIDE;
+    // 返回插件翻译文件路径
+    QString translationPath() const Q_DECL_OVERRIDE;
     // 告知控制中心插件级别（一级模块还是二级菜单）
     QString path() const Q_DECL_OVERRIDE;
     // 根据 follow 确认位置

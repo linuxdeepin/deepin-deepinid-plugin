@@ -17,7 +17,7 @@ file(GLOB_RECURSE SRCS
 )
 
 # 指定用到库
-find_package(Qt5 COMPONENTS Concurrent Core Network Widgets DBus REQUIRED)
+find_package(Qt5 COMPONENTS Concurrent Core Network Widgets DBus LinguistTools REQUIRED)
 find_package(DdeControlCenter REQUIRED)
 find_package(PkgConfig REQUIRED)
 find_package(DtkWidget REQUIRED)
@@ -27,6 +27,12 @@ pkg_check_modules(DFrameworkDBus REQUIRED dframeworkdbus)
 pkg_check_modules(QGSettings REQUIRED gsettings-qt)
 
 # 新增一个编译目标
+file(GLOB TS_FILES "../translations/*.ts")
+
+qt5_add_translation(QM_FILES ${TS_FILES})
+
+add_custom_target(translations ALL DEPENDS ${QM_FILES})
+
 # 这里使用命令 add_library 来表示本项目要生成一个库文件目标，
 add_library(${PLUGIN_NAME} SHARED ${SRCS})
 

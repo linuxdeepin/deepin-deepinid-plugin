@@ -19,6 +19,10 @@ SyncModule::SyncModule(FrameProxyInterface *frameProxy, QObject *parent)
     , m_model(nullptr)
     , m_worker(nullptr)
 {
+    // 插件加载翻译
+    QTranslator *translator = new QTranslator(this);
+    translator->load(QString("/usr/share/dcc-deepinid-plugin/translations/dcc-deepinid-plugin_%1.qm").arg(QLocale::system().name()));
+    QCoreApplication::installTranslator(translator);
 }
 
 SyncModule::~SyncModule()
@@ -112,6 +116,11 @@ void SyncModule::addChildPageTrans() const
     if (m_frameProxy != nullptr) {
         m_frameProxy->addChildPageTrans("Sign In", tr("Sign In"));
     }
+}
+
+QString SyncModule::translationPath() const
+{
+    return QString(":/translations/dcc-deepinid-plugin_%1.ts");
 }
 
 QString SyncModule::path() const
