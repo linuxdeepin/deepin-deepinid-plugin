@@ -59,6 +59,7 @@ void SyncModule::active()
 
     connect(widget, &SyncWidget::requestAsyncLogoutUser, m_worker, &dcc::cloudsync::SyncWorker::logoutUser, Qt::QueuedConnection);
     connect(widget, &SyncWidget::requestSetFullname, m_worker, &dcc::cloudsync::SyncWorker::onSetFullname);
+    connect(widget, &SyncWidget::requestPullMessage, m_worker, &dcc::cloudsync::SyncWorker::onPullMessage);
 
     connect(widget, &SyncWidget::requestBindAccount, m_worker, &dcc::cloudsync::SyncWorker::asyncBindAccount, Qt::UniqueConnection);
     connect(widget, &SyncWidget::requestUnBindAccount, m_worker, &dcc::cloudsync::SyncWorker::asyncUnbindAccount, Qt::UniqueConnection);

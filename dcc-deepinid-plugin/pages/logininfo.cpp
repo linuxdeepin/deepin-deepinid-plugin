@@ -30,6 +30,7 @@
 #include <DLineEdit>
 #include <DToolButton>
 #include <QEvent>
+#include <QTimer>
 
 #include <QDir>
 #include <QLabel>
@@ -48,6 +49,7 @@ LoginInfoPage::LoginInfoPage(QWidget *parent)
     , m_downloader(nullptr)
     , m_avatarPath(QString("%1/.cache/deepin/dde-control-center/sync").arg(getenv("HOME")))
     , m_avatar(new AvatarWidget(this))
+    , m_fristLogin(true)
     , m_username(new DLabel(this))
     , m_editNameBtn(new DToolButton(this))
     , m_inputLineEdit(new DLineEdit(this))
@@ -195,9 +197,18 @@ void LoginInfoPage::onUserInfoChanged(const QVariantMap &infos)
     const QString region = infos["Region"].toString();
     QString profile_image = infos.value("ProfileImage").toString();
 
-    if (!isLogind)
+    if (!isLogind) {
+        m_fristLogin = true;
         return;
+    }
 
+    if (m_fristLogin && isLogind) {
+        QTimer::singleShot(5000, this, [this]() {
+            Q_EMIT requestPullMessage();
+        });
+
+        m_fristLogin = false;
+    }
     onAvatarChanged(profile_image);
     m_username->setText(handleNameTooLong(m_model->userDisplayName()).toHtmlEscaped());
 

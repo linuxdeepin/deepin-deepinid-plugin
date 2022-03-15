@@ -63,6 +63,7 @@ Q_SIGNALS:
 
     void requestAsyncLogoutUser() const;
     void requestSetFullname(const QString &fullname);
+    void requestPullMessage() const;
 
     void requestBindAccount(const QString &uuid, const QString &hostName);
     void requestUnBindAccount(const QString &ubid);

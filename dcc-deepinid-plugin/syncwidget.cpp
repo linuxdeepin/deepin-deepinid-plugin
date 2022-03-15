@@ -76,6 +76,7 @@ void SyncWidget::initConnect()
     connect(m_loginPage, &LoginPage::requestLoginUser, this, &SyncWidget::requestLoginUser);
     connect(m_loginInfoPage, &LoginInfoPage::requestLogoutUser, this, &SyncWidget::requestAsyncLogoutUser);
     connect(m_loginInfoPage, &LoginInfoPage::requestSetFullname, this, &SyncWidget::requestSetFullname);
+    connect(m_loginInfoPage, &LoginInfoPage::requestPullMessage, this, &SyncWidget::requestPullMessage);
 
     connect(m_loginInfoDetailPage, &LoginInfoDetailPage::requestBindAccount, this, &SyncWidget::requestBindAccount);
     connect(m_loginInfoDetailPage, &LoginInfoDetailPage::requestUnBindAccount, this, &SyncWidget::requestUnBindAccount);

@@ -62,6 +62,7 @@ public:
 Q_SIGNALS:
     void requestLogoutUser() const;
     void requestSetFullname(const QString &fullname);
+    void requestPullMessage() const;
 
 protected:
     void initUI();
@@ -83,6 +84,7 @@ private:
     DownloadUrl *m_downloader;
     QString m_avatarPath;
     AvatarWidget *m_avatar;
+    bool m_fristLogin; // 首次登录
 
     DTK_WIDGET_NAMESPACE::DLabel *m_username;
     DTK_WIDGET_NAMESPACE::DToolButton *m_editNameBtn;

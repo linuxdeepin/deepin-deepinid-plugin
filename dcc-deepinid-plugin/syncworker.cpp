@@ -294,6 +294,24 @@ void SyncWorker::onSetFullname(const QString &fullname)
     utcloudInter.call("SetNickname",fullname);
 }
 
+void SyncWorker::onPullMessage()
+{
+    qDebug() << "TODO： onPullMessage ";
+    QDBusPendingReply<QString> retTime = DDBusSender()
+                                         .service("com.deepin.sync.Daemon")
+                                         .interface("com.deepin.utcloud.Daemon")
+                                         .path("/com/deepin/utcloud/Daemon")
+                                         .method("PullMessage")
+                                         .call();
+    retTime.waitForFinished();
+    if (retTime.error().message().isEmpty()) {
+        // TODO: 后期需要同步时间戳
+        qDebug() << " message value: " << retTime.value();
+    } else {
+        qDebug() << "message Empty" << retTime.value();
+    }
+}
+
 void SyncWorker::getUserDeepinidInfo()
 {
     getUOSID();
