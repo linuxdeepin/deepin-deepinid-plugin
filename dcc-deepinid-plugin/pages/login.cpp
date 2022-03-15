@@ -20,7 +20,7 @@
  */
 
 #include "login.h"
-#include "../utils.h"
+#include "utils.h"
 #include "widgets/utils.h"
 
 #include <DSuggestButton>
@@ -38,10 +38,6 @@
 
 //#include <widgets/switchwidget.h>
 
-using namespace DCC_NAMESPACE;
-using namespace DCC_NAMESPACE::sync;
-
-using namespace dcc;
 DWIDGET_USE_NAMESPACE
 DCORE_USE_NAMESPACE
 
@@ -51,10 +47,6 @@ QString systemName() {
 
     return "Deepin";
 }
-
-using namespace DCC_NAMESPACE;
-using namespace DCC_NAMESPACE::sync;
-
 
 LoginPage::LoginPage(QWidget *parent)
     : QWidget(parent)

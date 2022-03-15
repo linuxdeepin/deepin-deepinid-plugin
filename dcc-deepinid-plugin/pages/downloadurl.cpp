@@ -28,9 +28,6 @@
 #include <QPixmap>
 #include <QDebug>
 
-using namespace DCC_NAMESPACE;
-using namespace DCC_NAMESPACE::sync;
-
 DownloadUrl::DownloadUrl(QObject *parent)
     : QObject(parent)
     , m_manager(nullptr)

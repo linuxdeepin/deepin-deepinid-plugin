@@ -4,9 +4,6 @@
 #include <QVBoxLayout>
 #include <QPainter>
 
-using namespace dcc;
-using namespace dcc::cloudsync;
-
 SyncStateIcon::SyncStateIcon(QWidget* parent) : QLabel(parent)
 {
     m_rotateAni.setStartValue(0);
@@ -21,7 +18,9 @@ SyncStateIcon::SyncStateIcon(QWidget* parent) : QLabel(parent)
             });
 }
 
-SyncStateIcon::~SyncStateIcon() {}
+SyncStateIcon::~SyncStateIcon() {
+
+}
 
 void SyncStateIcon::setRotatePixmap(const QPixmap& pixmap)
 {

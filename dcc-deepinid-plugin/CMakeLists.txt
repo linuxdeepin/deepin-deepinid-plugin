@@ -8,6 +8,8 @@ project(${PLUGIN_NAME})
 set(CMAKE_AUTOMOC ON)
 # 启用 qrc 资源文件的支持
 set(CMAKE_AUTORCC ON)
+# 启用当前源目录和构建目录添加到包含路径
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 # 指定所有源码文件
 file(GLOB_RECURSE SRCS

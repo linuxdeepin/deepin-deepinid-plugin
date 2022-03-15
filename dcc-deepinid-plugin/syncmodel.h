@@ -7,8 +7,6 @@
 #include <QVariantMap>
 #include <utility>
 
-namespace dcc {
-namespace cloudsync {
 class SyncModel : public QObject {
     Q_OBJECT
 public:
@@ -89,7 +87,5 @@ private:
     QString m_ubID;
     QString m_bindLocalUBid; // 绑定后的UBID(如果没有绑定，返回空字符串)
 };
-}  // namespace cloudsync
-}  // namespace dcc
 
 #endif  // SYNCMODEL_H

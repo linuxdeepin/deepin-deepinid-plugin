@@ -22,7 +22,10 @@
 #pragma once
 
 #include "interface/namespace.h"
-#include "../utils.h"
+#include "utils.h"
+#include "syncmodel.h"
+#include "avatarwidget.h"
+#include "downloadurl.h"
 
 #include <DFloatingButton>
 #include <DLabel>
@@ -31,25 +34,12 @@
 #include <QObject>
 #include <QWidget>
 
-namespace dcc {
-namespace cloudsync {
-class SyncModel;
-}
-}
-
 DWIDGET_BEGIN_NAMESPACE
 class DLabel;
 class DLineEdit;
 class DToolButton;
 DWIDGET_END_NAMESPACE
 
-namespace DCC_NAMESPACE {
-namespace sync {
-class DownloadUrl;
-class AvatarWidget;
-/**
- * @brief The LoginInfo class  登录信息
- */
 class LoginInfoPage : public QWidget
 {
     Q_OBJECT
@@ -57,7 +47,7 @@ public:
     explicit LoginInfoPage(QWidget *parent = nullptr);
     ~LoginInfoPage();
 
-    void setModel(dcc::cloudsync::SyncModel *model);
+    void setModel(SyncModel *model);
 
 Q_SIGNALS:
     void requestLogoutUser() const;
@@ -79,7 +69,7 @@ private:
 
 private:
     QVBoxLayout *m_mainLayout;
-    dcc::cloudsync::SyncModel *m_model;
+    SyncModel *m_model;
 
     DownloadUrl *m_downloader;
     QString m_avatarPath;
@@ -97,6 +87,3 @@ private:
     DTK_WIDGET_NAMESPACE::DToolButton *m_logoutBtn;
     DTK_WIDGET_NAMESPACE::DToolButton *m_editInfoBtn;
 };
-} // namespace sync
-} // namespace DCC_NAMESPACE
-

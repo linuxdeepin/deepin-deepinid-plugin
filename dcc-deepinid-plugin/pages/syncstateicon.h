@@ -4,8 +4,6 @@
 #include <QLabel>
 #include <QVariantAnimation>
 
-namespace dcc {
-namespace cloudsync {
 class SyncStateIcon : public QLabel
 {
     Q_OBJECT
@@ -26,7 +24,4 @@ private:
     QVariantAnimation m_rotateAni;
     qreal m_rotateRatio;
 };
-}  // namespace cloudsync
-}  // namespace dcc
-
 #endif  // !SYNCSTATEICON_H

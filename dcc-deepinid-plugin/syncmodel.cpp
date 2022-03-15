@@ -2,9 +2,6 @@
 
 #include <QDebug>
 
-using namespace dcc;
-using namespace dcc::cloudsync;
-
 SyncModel::SyncModel(QObject *parent)
     : QObject(parent)
     , m_syncIsValid(false)

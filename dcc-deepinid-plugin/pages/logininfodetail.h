@@ -23,7 +23,8 @@
 
 #include "interface/namespace.h"
 
-#include "../utils.h"
+#include "syncmodel.h"
+#include "utils.h"
 #include "syncstateicon.h"
 
 #include <dtkwidget_global.h>
@@ -54,14 +55,6 @@ class SwitchWidget;
 }
 }
 
-namespace dcc {
-namespace cloudsync {
-class SyncModel;
-}
-}
-
-namespace DCC_NAMESPACE {
-namespace sync {
 /**
  * @brief The LoginInfoDetailPage class 展示登录信息三级页面
  */
@@ -80,7 +73,7 @@ public:
     explicit LoginInfoDetailPage(QWidget *parent = nullptr);
     ~LoginInfoDetailPage();
 
-    void setModel(dcc::cloudsync::SyncModel *model);
+    void setModel(SyncModel *model);
 
     void initUI();
     void initConnection();
@@ -100,7 +93,7 @@ Q_SIGNALS:
 public Q_SLOTS:
     void onUserInfoChanged(const QVariantMap &infos);
     void updateItemCheckStatus(const QString &name, bool visible);
-    void onModuleStateChanged(std::pair<dcc::cloudsync::SyncType, bool> state);
+    void onModuleStateChanged(std::pair<SyncType, bool> state);
     void onUserUnbindInfoChanged(const QString& ubid);
 
     void onStateChanged(const std::pair<qint32, QString> &state);
@@ -117,7 +110,7 @@ private:
     void showItemDisabledStatus(InfoType status);
 
 private:
-    dcc::cloudsync::SyncModel *m_model;
+    SyncModel *m_model;
 
     QVBoxLayout *m_mainLayout;
     dcc::widgets::SwitchWidget *m_bindSwitch;
@@ -127,8 +120,8 @@ private:
     // 同步配置项
     DTK_WIDGET_NAMESPACE::DListView *m_listView;
     QStandardItemModel *m_listModel;
-    QMap<dcc::cloudsync::SyncType, QStandardItem *> m_itemMap;
-    dcc::cloudsync::SyncStateIcon *m_stateIcon;
+    QMap<SyncType, QStandardItem *> m_itemMap;
+    SyncStateIcon *m_stateIcon;
     dcc::widgets::SettingsGroup *m_group;
 
     // 最后同步时间
@@ -141,6 +134,3 @@ private:
 
     bool m_syncState;
 };
-
-} // namespace sync
-} // namespace DCC_NAMESPACE

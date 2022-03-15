@@ -26,9 +26,6 @@
 #include <QPaintEvent>
 #include <QDebug>
 
-using namespace DCC_NAMESPACE;
-using namespace DCC_NAMESPACE::sync;
-
 AvatarWidget::AvatarWidget(QWidget *parent)
     : QLabel(parent)
 {

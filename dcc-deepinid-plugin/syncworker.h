@@ -10,9 +10,6 @@
 using SyncInter = com::deepin::sync::Daemon;
 using DeepinId = com::deepin::deepinid;
 
-namespace dcc {
-namespace cloudsync {
-
 struct BindCheckResult {
     QString ubid = "";
     QString error = "";
@@ -71,7 +68,5 @@ private:
     DeepinId *m_deepinId_inter;
     QDBusInterface *m_syncHelperInter;
 };
-}
-}
 
 #endif // SYNCWORKER_H

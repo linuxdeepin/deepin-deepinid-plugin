@@ -34,28 +34,21 @@ const bool IsProfessionalSystem = (DSysInfo::UosProfessional == UosEdition);//�
 const bool IsHomeSystem = (DSysInfo::UosHome == UosEdition);//是否是个人版
 const bool IsDeepinDesktop = (DSysInfo::DeepinDesktop == DSysInfo::deepinType());//是否是Deepin桌面
 
-namespace dcc {
-    namespace cloudsync {
-        enum SyncType : int {
-            Network,
-            Sound,
-            Mouse,
-            Update,
-            Dock,
-            Launcher,
-            Wallpaper,
-            Theme,
-            Power,
-            Corner
-        };
+enum SyncType : int {
+    Network,
+    Sound,
+    Mouse,
+    Update,
+    Dock,
+    Launcher,
+    Wallpaper,
+    Theme,
+    Power,
+    Corner
+};
 
-        enum SyncState : int {
-            Succeed,
-            Syncing,
-            Failed,
-        };
-    }
-}
-
-Q_DECLARE_METATYPE(dcc::cloudsync::SyncType);
-Q_DECLARE_METATYPE(dcc::cloudsync::SyncState);
+enum SyncState : int {
+    Succeed,
+    Syncing,
+    Failed,
+};

@@ -24,6 +24,9 @@
 #include "interface/moduleinterface.h"
 #include "interface/frameproxyinterface.h"
 
+#include "syncmodel.h"
+#include "syncworker.h"
+
 #include <QObject>
 
 namespace dcc {
@@ -64,6 +67,6 @@ private:
     void initSearchData() override;
 
 private:
-    dcc::cloudsync::SyncModel  *m_model;
-    dcc::cloudsync::SyncWorker *m_worker;
+    SyncModel  *m_model;
+    SyncWorker *m_worker;
 };

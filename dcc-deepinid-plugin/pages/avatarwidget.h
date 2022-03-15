@@ -24,8 +24,6 @@
 
 #include <QLabel>
 
-namespace DCC_NAMESPACE {
-namespace sync {
 class AvatarWidget : public QLabel
 {
     Q_OBJECT
@@ -43,5 +41,3 @@ private:
     QPixmap m_avatar;
     QString m_avatarPath;
 };
-}
-}

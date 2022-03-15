@@ -28,9 +28,6 @@
 
 class QVBoxLayout;
 
-namespace DCC_NAMESPACE {
-class MainWindow;
-namespace sync {
 class LoginPage : public QWidget
 {
     Q_OBJECT
@@ -53,5 +50,3 @@ Q_SIGNALS:
 private:
     QVBoxLayout *m_mainLayout;
 };
-} // namespace sync
-} // namespace DCC_NAMESPACE

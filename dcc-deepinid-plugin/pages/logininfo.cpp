@@ -19,7 +19,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "../syncmodel.h"
 #include "downloadurl.h"
 #include "avatarwidget.h"
 #include "logininfo.h"
@@ -39,8 +38,6 @@
 #include <QDesktopServices>
 
 DWIDGET_USE_NAMESPACE
-using namespace DCC_NAMESPACE;
-using namespace DCC_NAMESPACE::sync;
 
 LoginInfoPage::LoginInfoPage(QWidget *parent)
     : QWidget (parent)
@@ -68,11 +65,11 @@ LoginInfoPage::~LoginInfoPage()
         m_downloader->deleteLater();
 }
 
-void LoginInfoPage::setModel(dcc::cloudsync::SyncModel *model)
+void LoginInfoPage::setModel(SyncModel *model)
 {
     m_model = model;
     m_listView->setModel(m_listModel);
-    connect(m_model, &dcc::cloudsync::SyncModel::userInfoChanged, this, &LoginInfoPage::onUserInfoChanged);
+    connect(m_model, &SyncModel::userInfoChanged, this, &LoginInfoPage::onUserInfoChanged);
 
     onUserInfoChanged(m_model->userinfo());
 }

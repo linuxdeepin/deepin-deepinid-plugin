@@ -12,9 +12,6 @@
 
 DCORE_USE_NAMESPACE
 
-using namespace dcc;
-using namespace dcc::cloudsync;
-
 static QString SYNC_INTERFACE = "com.deepin.sync.Daemon";
 
 SyncWorker::SyncWorker(SyncModel *model, QObject *parent)

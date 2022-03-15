@@ -9,8 +9,6 @@
 #include <DFloatingButton>
 
 DWIDGET_USE_NAMESPACE
-using namespace DCC_NAMESPACE;
-using namespace DCC_NAMESPACE::sync;
 
 /**
  * @brief SyncWidget::SyncWidget  UnionID 二级页面
@@ -34,13 +32,13 @@ SyncWidget::~SyncWidget()
 
 }
 
-void SyncWidget::setModel(dcc::cloudsync::SyncModel *model)
+void SyncWidget::setModel(SyncModel *model)
 {
     m_model = model;
     m_loginInfoPage->setModel(model);
     m_loginInfoDetailPage->setModel(model);
 
-    connect(model, &dcc::cloudsync::SyncModel::userInfoChanged, this, &SyncWidget::onUserInfoChanged);
+    connect(model, &SyncModel::userInfoChanged, this, &SyncWidget::onUserInfoChanged);
 
     onUserInfoChanged(model->userinfo());
 }

@@ -22,8 +22,10 @@
 #pragma once
 
 #include "interface/namespace.h"
+#include "pages/login.h"
 #include "pages/logininfo.h"
 #include "pages/logininfodetail.h"
+#include "syncmodel.h"
 #include <DFloatingButton>
 #include <QWidget>
 
@@ -32,27 +34,17 @@ class QStackedLayout;
 class QLabel;
 QT_END_NAMESPACE
 
-namespace dcc {
-namespace cloudsync {
-class SyncModel;
-enum SyncType : int;
-enum SyncState : int;
-}
-}
-
-namespace DCC_NAMESPACE {
-class MainWindow;
-namespace sync {
-class LoginPage;
-class IndexPage;
-class LogoutPage;
 class SyncWidget : public QWidget
 {
     Q_OBJECT
 public:
+    enum SyncType : int;
+    enum SyncState : int;
+
+public:
     explicit SyncWidget(QWidget *parent = nullptr);
     ~SyncWidget();
-    void setModel(dcc::cloudsync::SyncModel *model);
+    void setModel(SyncModel *model);
 
 private:
     void initUI();
@@ -79,9 +71,8 @@ private:
     void onUserInfoChanged(const QVariantMap &userInfo);
 
 private:
-    MainWindow *m_pMainWindow;
     QStackedLayout *m_mainLayout;
-    dcc::cloudsync::SyncModel *m_model;
+    SyncModel *m_model;
 
     LoginPage *m_loginPage;
     LoginInfoPage *m_loginInfoPage;
@@ -90,6 +81,3 @@ private:
 
     bool m_isLogind;
 };
-
-} // namespace sync
-} // namespace DCC_NAMESPACE

@@ -20,8 +20,8 @@
  */
 
 #include "logininfodetail.h"
-#include "../utils.h"
-#include "../syncmodel.h"
+#include "utils.h"
+#include "syncmodel.h"
 #include <widgets/switchwidget.h>
 
 #include <polkit-qt5-1/PolkitQt1/Authority>
@@ -36,12 +36,7 @@
 #include <DApplicationHelper>
 #include <QPalette>
 
-
-using namespace DCC_NAMESPACE;
-using namespace DCC_NAMESPACE::sync;
-
 using namespace dcc::widgets;
-using namespace dcc::cloudsync;
 using namespace PolkitQt1;
 DWIDGET_USE_NAMESPACE
 
@@ -75,15 +70,15 @@ void LoginInfoDetailPage::setModel(SyncModel *model)
     if (!m_model->getActivation())
         showItemDisabledStatus(InfoType::NoActive);
 
-    connect(m_model, &dcc::cloudsync::SyncModel::userInfoChanged, this, &LoginInfoDetailPage::onUserInfoChanged);
-    connect(m_model, &dcc::cloudsync::SyncModel::enableSyncChanged, this, &LoginInfoDetailPage::onAutoSyncChanged);
-    connect(m_model, &dcc::cloudsync::SyncModel::syncStateChanged, this, &LoginInfoDetailPage::onStateChanged);
+    connect(m_model, &SyncModel::userInfoChanged, this, &LoginInfoDetailPage::onUserInfoChanged);
+    connect(m_model, &SyncModel::enableSyncChanged, this, &LoginInfoDetailPage::onAutoSyncChanged);
+    connect(m_model, &SyncModel::syncStateChanged, this, &LoginInfoDetailPage::onStateChanged);
 
-    connect(m_model, &dcc::cloudsync::SyncModel::lastSyncTimeChanged, this, &LoginInfoDetailPage::onLastSyncTimeChanged);
-    connect(m_model, &dcc::cloudsync::SyncModel::moduleSyncStateChanged, this, &LoginInfoDetailPage::onModuleStateChanged);
-    connect(m_model, &dcc::cloudsync::SyncModel::userUnbindInfoChanged, this, &LoginInfoDetailPage::onUserUnbindInfoChanged);
-    connect(m_model, &dcc::cloudsync::SyncModel::resetPasswdError, this, &LoginInfoDetailPage::onResetPasswdError, Qt::QueuedConnection);
-    connect(m_model, &dcc::cloudsync::SyncModel::licenseStateChanged, this, [ = ] (const bool &value) {
+    connect(m_model, &SyncModel::lastSyncTimeChanged, this, &LoginInfoDetailPage::onLastSyncTimeChanged);
+    connect(m_model, &SyncModel::moduleSyncStateChanged, this, &LoginInfoDetailPage::onModuleStateChanged);
+    connect(m_model, &SyncModel::userUnbindInfoChanged, this, &LoginInfoDetailPage::onUserUnbindInfoChanged);
+    connect(m_model, &SyncModel::resetPasswdError, this, &LoginInfoDetailPage::onResetPasswdError, Qt::QueuedConnection);
+    connect(m_model, &SyncModel::licenseStateChanged, this, [ = ] (const bool &value) {
         if (!value)
             showItemDisabledStatus(InfoType::NoActive);
     });
@@ -328,9 +323,6 @@ void LoginInfoDetailPage::onStateChanged(const std::pair<qint32, QString> &state
             syncState = SyncState::Failed;
             break;
         }
-
-        Q_UNREACHABLE();
-
     } while (false);
 
     if (!m_autoSyncSwitch->checked()) {

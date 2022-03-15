@@ -9,10 +9,6 @@
 
 #include <DSysInfo>
 
-using namespace DCC_NAMESPACE;
-using namespace DCC_NAMESPACE::sync;
-using namespace dcc::cloudsync;
-
 SyncModule::SyncModule(FrameProxyInterface *frameProxy, QObject *parent)
     : QObject(parent)
     , ModuleInterface(frameProxy)
@@ -55,21 +51,21 @@ void SyncModule::active()
     SyncWidget *widget = new SyncWidget;
     widget->setVisible(false);
 
-    connect(widget, &SyncWidget::requestLoginUser, m_worker, &dcc::cloudsync::SyncWorker::loginUser, Qt::UniqueConnection);
+    connect(widget, &SyncWidget::requestLoginUser, m_worker, &SyncWorker::loginUser, Qt::UniqueConnection);
 
-    connect(widget, &SyncWidget::requestAsyncLogoutUser, m_worker, &dcc::cloudsync::SyncWorker::logoutUser, Qt::QueuedConnection);
-    connect(widget, &SyncWidget::requestSetFullname, m_worker, &dcc::cloudsync::SyncWorker::onSetFullname);
-    connect(widget, &SyncWidget::requestPullMessage, m_worker, &dcc::cloudsync::SyncWorker::onPullMessage);
+    connect(widget, &SyncWidget::requestAsyncLogoutUser, m_worker, &SyncWorker::logoutUser, Qt::QueuedConnection);
+    connect(widget, &SyncWidget::requestSetFullname, m_worker, &SyncWorker::onSetFullname);
+    connect(widget, &SyncWidget::requestPullMessage, m_worker, &SyncWorker::onPullMessage);
 
-    connect(widget, &SyncWidget::requestBindAccount, m_worker, &dcc::cloudsync::SyncWorker::asyncBindAccount, Qt::UniqueConnection);
-    connect(widget, &SyncWidget::requestUnBindAccount, m_worker, &dcc::cloudsync::SyncWorker::asyncUnbindAccount, Qt::UniqueConnection);
-    connect(widget, &SyncWidget::requestSetAutoSync, m_worker, &dcc::cloudsync::SyncWorker::setAutoSync, Qt::UniqueConnection);
-    connect(widget, &SyncWidget::requestLocalBindCheck, m_worker, &dcc::cloudsync::SyncWorker::asyncLocalBindCheck, Qt::UniqueConnection);
-    connect(widget, &SyncWidget::requestSetModuleState, m_worker, &dcc::cloudsync::SyncWorker::setSyncState, Qt::QueuedConnection);
+    connect(widget, &SyncWidget::requestBindAccount, m_worker, &SyncWorker::asyncBindAccount, Qt::UniqueConnection);
+    connect(widget, &SyncWidget::requestUnBindAccount, m_worker, &SyncWorker::asyncUnbindAccount, Qt::UniqueConnection);
+    connect(widget, &SyncWidget::requestSetAutoSync, m_worker, &SyncWorker::setAutoSync, Qt::UniqueConnection);
+    connect(widget, &SyncWidget::requestLocalBindCheck, m_worker, &SyncWorker::asyncLocalBindCheck, Qt::UniqueConnection);
+    connect(widget, &SyncWidget::requestSetModuleState, m_worker, &SyncWorker::setSyncState, Qt::QueuedConnection);
 
-    connect(widget, &SyncWidget::requestUOSID, m_worker, &dcc::cloudsync::SyncWorker::getUOSID, Qt::UniqueConnection);
-    connect(widget, &SyncWidget::requestUUID, m_worker, &dcc::cloudsync::SyncWorker::getUUID, Qt::UniqueConnection);
-    connect(widget, &SyncWidget::requestHostName, m_worker, &dcc::cloudsync::SyncWorker::getHostName, Qt::UniqueConnection);
+    connect(widget, &SyncWidget::requestUOSID, m_worker, &SyncWorker::getUOSID, Qt::UniqueConnection);
+    connect(widget, &SyncWidget::requestUUID, m_worker, &SyncWorker::getUUID, Qt::UniqueConnection);
+    connect(widget, &SyncWidget::requestHostName, m_worker, &SyncWorker::getHostName, Qt::UniqueConnection);
 
     m_frameProxy->pushWidget(this, widget);
     widget->setModel(m_model);

@@ -31,8 +31,6 @@ class QNetworkReply;
 class QFile;
 QT_END_NAMESPACE
 
-namespace DCC_NAMESPACE {
-namespace sync {
 class DownloadUrl : public QObject
 {
     Q_OBJECT
@@ -54,5 +52,3 @@ private:
     bool m_isReady;
     QMap<QString, QString> m_retryMap;
 };
-}
-}
