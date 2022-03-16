@@ -26,10 +26,9 @@
 #include "pages/logininfo.h"
 #include "pages/logininfodetail.h"
 #include "syncmodel.h"
-#include <DFloatingButton>
-#include <QWidget>
 
 QT_BEGIN_NAMESPACE
+class QWidget;
 class QStackedLayout;
 class QLabel;
 QT_END_NAMESPACE

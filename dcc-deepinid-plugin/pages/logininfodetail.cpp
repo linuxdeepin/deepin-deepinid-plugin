@@ -26,14 +26,15 @@
 
 #include <polkit-qt5-1/PolkitQt1/Authority>
 
+#include <DTipLabel>
+#include <DMessageManager>
+#include <DApplicationHelper>
+
+#include <QObject>
 #include <QWidget>
 #include <DListView>
 #include <QScrollArea>
 #include <QScroller>
-#include <DTipLabel>
-#include <DMessageManager>
-
-#include <DApplicationHelper>
 #include <QPalette>
 
 using namespace dcc::widgets;

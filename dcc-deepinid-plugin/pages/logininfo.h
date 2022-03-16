@@ -26,19 +26,21 @@
 #include "syncmodel.h"
 #include "avatarwidget.h"
 #include "downloadurl.h"
-
-#include <DFloatingButton>
-#include <DLabel>
-#include <DListView>
-#include <QBoxLayout>
-#include <QObject>
-#include <QWidget>
+#include <dtkwidget_global.h>
 
 DWIDGET_BEGIN_NAMESPACE
+class DListView;
 class DLabel;
 class DLineEdit;
 class DToolButton;
 DWIDGET_END_NAMESPACE
+
+QT_BEGIN_NAMESPACE
+class QObject;
+class QWidget;
+class QStandardItemModel;
+class QVBoxLayout;
+QT_END_NAMESPACE
 
 class LoginInfoPage : public QWidget
 {

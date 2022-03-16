@@ -1,8 +1,8 @@
 #include "syncstateicon.h"
 
 #include <QMatrix>
-#include <QVBoxLayout>
 #include <QPainter>
+#include <QVBoxLayout>
 
 SyncStateIcon::SyncStateIcon(QWidget* parent) : QLabel(parent)
 {

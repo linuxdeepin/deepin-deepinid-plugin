@@ -36,8 +36,6 @@
 #include <QUrl>
 #include <DCommandLinkButton>
 
-//#include <widgets/switchwidget.h>
-
 DWIDGET_USE_NAMESPACE
 DCORE_USE_NAMESPACE
 

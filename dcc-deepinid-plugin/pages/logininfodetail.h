@@ -30,18 +30,14 @@
 #include <dtkwidget_global.h>
 #include <widgets/settingsgroup.h>
 
-#include <DPalette>
-#include <QObject>
-#include <QWidget>
-
-
 DWIDGET_BEGIN_NAMESPACE
 class DListView;
 class DTipLabel;
 DWIDGET_END_NAMESPACE
 
 QT_BEGIN_NAMESPACE
-class QListView;
+class QObject;
+class QWidget;
 class QVBoxLayout;
 class QStandardItemModel;
 class QStandardItem;

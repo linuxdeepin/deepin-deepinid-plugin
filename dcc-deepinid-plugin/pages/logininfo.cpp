@@ -23,14 +23,18 @@
 #include "avatarwidget.h"
 #include "logininfo.h"
 
+#include <DFloatingButton>
 #include <DFontSizeManager>
 #include <DListView>
 #include <DLabel>
 #include <DLineEdit>
 #include <DToolButton>
+
 #include <QEvent>
 #include <QTimer>
-
+#include <QBoxLayout>
+#include <QObject>
+#include <QWidget>
 #include <QDir>
 #include <QLabel>
 #include <QDebug>

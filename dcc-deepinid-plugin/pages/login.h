@@ -21,10 +21,7 @@
 #pragma once
 
 #include "interface/namespace.h"
-
 #include <QWidget>
-#include <QProcess>
-#include <DTipLabel>
 
 class QVBoxLayout;
 
