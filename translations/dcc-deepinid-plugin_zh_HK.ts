@@ -1,6 +1,6 @@
 <?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="zh_HK">
 <context>
-    <name>dccV20::sync::LoginInfoDetailPage</name>
+    <name>LoginInfoDetailPage</name>
     <message>
         <source>Link local account to Union ID</source>
         <translation>Union ID綁定本地帳戶</translation>
@@ -75,7 +75,7 @@
     </message>
     <message>
         <source>Network error</source>
-        <translation>網絡錯誤</translation>
+        <translation>網絡異常</translation>
     </message>
     <message>
         <source>Login expired, please sign in to the Union ID again</source>
@@ -87,7 +87,7 @@
     </message>
 </context>
 <context>
-    <name>dccV20::sync::LoginInfoPage</name>
+    <name>LoginInfoPage</name>
     <message>
         <source>Edit account</source>
         <translation>編輯帳號訊息</translation>
@@ -114,7 +114,7 @@
     </message>
 </context>
 <context>
-    <name>dccV20::sync::LoginPage</name>
+    <name>LoginPage</name>
     <message>
         <source>Sign In</source>
         <translation>登錄</translation>

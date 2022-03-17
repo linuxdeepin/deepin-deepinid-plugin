@@ -1,6 +1,6 @@
 <?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="en">
 <context>
-    <name>dccV20::sync::LoginInfoDetailPage</name>
+    <name>LoginInfoDetailPage</name>
     <message>
         <source>Link local account to Union ID</source>
         <translation>Link local account to Union ID</translation>
@@ -87,7 +87,7 @@
     </message>
 </context>
 <context>
-    <name>dccV20::sync::LoginInfoPage</name>
+    <name>LoginInfoPage</name>
     <message>
         <source>Edit account</source>
         <translation>Edit account</translation>
@@ -114,7 +114,7 @@
     </message>
 </context>
 <context>
-    <name>dccV20::sync::LoginPage</name>
+    <name>LoginPage</name>
     <message>
         <source>Sign In</source>
         <translation>Sign In</translation>

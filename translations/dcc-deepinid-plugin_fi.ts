@@ -1,167 +1,167 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="hu">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="fi">
 <context>
     <name>LoginInfoDetailPage</name>
     <message>
         <source>Link local account to Union ID</source>
-        <translation>Kapcsolja össze a helyi fiókot az Union® azonosítóval </translation>
+        <translation>Linkitä paikallinen tili Union ID:hen</translation>
     </message>
     <message>
         <source>UOS Cloud sync</source>
-        <translation>UOS® Felhő alapú szinkronizálás</translation>
+        <translation>UOS Cloud synkronointi</translation>
     </message>
     <message>
         <source>Store system settings securely in the cloud and keep them in sync across devices</source>
-        <translation>Tárolja a rendszerbeállításokat biztonságosan a felhőben, és tartsa szinkronban azokat az egyes eszközök között </translation>
+        <translation>Tallenna järjestelmän asetukset pilveen ja pidä ne synkronoituna eri laitteiden välillä</translation>
     </message>
     <message>
         <source>UOS Cloud is currently unavailable in your region</source>
-        <translation>Az UOS® Felhő alapú szolgáltatása jelenleg nem érhető el az Ön régiójában </translation>
+        <translation>UOS Cloud ei ole tällä hetkellä saatavilla alueellasi</translation>
     </message>
     <message>
         <source>Network Settings</source>
-        <translation>Hálózati beállítások</translation>
+        <translation>Verkon asetukset</translation>
     </message>
     <message>
         <source>Sound Settings</source>
-        <translation>Hangbeállítások</translation>
+        <translation>Ääni asetukset</translation>
     </message>
     <message>
         <source>Mouse Settings</source>
-        <translation>Egérbeállítások</translation>
+        <translation>Hiiri asetukset</translation>
     </message>
     <message>
         <source>Update Settings</source>
-        <translation>Frissítési beállítások</translation>
+        <translation>Päivityksen asetukset</translation>
     </message>
     <message>
         <source>Dock</source>
-        <translation>Dokkoló</translation>
+        <translation>Telakka</translation>
     </message>
     <message>
         <source>Launcher</source>
-        <translation>Indító</translation>
+        <translation>Käynnistin</translation>
     </message>
     <message>
         <source>Wallpaper</source>
-        <translation>Háttérkép</translation>
+        <translation>Taustakuva</translation>
     </message>
     <message>
         <source>Theme</source>
-        <translation>Téma</translation>
+        <translation>Teema</translation>
     </message>
     <message>
         <source>Power Settings</source>
-        <translation>Energiagazdálkodási beállítások</translation>
+        <translation>Virta-asetukset</translation>
     </message>
     <message>
         <source>If linked, you can reset passwords of local accounts by Union ID</source>
-        <translation>Ha a helyi fiók össze van kapcsolva az Union® azonosítójával, a helyi fiók jelszava alaphelyzetbe kerül az Union® azonosító alapján</translation>
+        <translation>Kun linkitetty, voit nollata paikallisten tilien salasanat Union ID:llä</translation>
     </message>
     <message>
         <source>Syncing...</source>
-        <translation>Szinkronizálás...</translation>
+        <translation>Synkronoidaan...</translation>
     </message>
     <message>
         <source>Last Sync: %1</source>
-        <translation>Utolsó szinkronizálás: %1</translation>
+        <translation>Viimeisin synkronointi: %1</translation>
     </message>
     <message>
         <source>yyyy-MM-dd hh:mm</source>
-        <translation>éééé-HH-nn óó:pp</translation>
+        <translation>dd-MM-yyyy hh:mm</translation>
     </message>
     <message>
         <source>System error</source>
-        <translation>Rendszer hiba</translation>
+        <translation>Järjestelmävirhe</translation>
     </message>
     <message>
         <source>Network error</source>
-        <translation>Hálózati hiba</translation>
+        <translation>Verkkovirhe</translation>
     </message>
     <message>
         <source>Login expired, please sign in to the Union ID again</source>
-        <translation>A bejelentkezés lejárt, kérjük jelentkezzen be újra az Union® azonosítójával</translation>
+        <translation>Kirjautuminen vanhentunut, kirjaudu Union ID -tunnuksella uudelleen</translation>
     </message>
     <message>
         <source>The feature is not available at present, please activate your system first</source>
-        <translation>A szolgáltatás jelenleg nem érhető el, kérjük, először aktiválja a rendszert</translation>
+        <translation>Ominaisuus ei ole tällä hetkellä käytettävissä, aktivoi järjestelmä ensin</translation>
     </message>
 </context>
 <context>
     <name>LoginInfoPage</name>
     <message>
         <source>Edit account</source>
-        <translation>Felhasználói fiók szerkesztése</translation>
+        <translation>Muokkaa käyttäjätiliä</translation>
     </message>
     <message>
         <source>Sign out</source>
-        <translation>Kijelentkezés</translation>
+        <translation>Kirjaudu ulos</translation>
     </message>
     <message>
         <source>The full name is too long</source>
-        <translation>A teljes név túl hosszú</translation>
+        <translation>Nimi on liian pitkä</translation>
     </message>
     <message>
         <source>Mainland China</source>
-        <translation>Kína</translation>
+        <translation>Kiinassa</translation>
     </message>
     <message>
         <source>Other regions</source>
-        <translation>Egyéb régiók</translation>
+        <translation>Muut alueet</translation>
     </message>
     <message>
         <source>The nickname must be 1~32 characters long</source>
-        <translation>A becenévnek 1~32 közötti karakter hosszúnak kell lennie </translation>
+        <translation>Lempinimen on oltava 1~32 merkkiä pitkä</translation>
     </message>
 </context>
 <context>
     <name>LoginPage</name>
     <message>
         <source>Sign In</source>
-        <translation>Bejelentkezés</translation>
+        <translation>Kirjaudu sisään</translation>
         <extra-contents_path>/cloudsync/Sign In</extra-contents_path>
     </message>
     <message>
         <source>Manage your Union ID and sync system settings between devices</source>
-        <translation>Kezelje Union® azonosítóját, és szinkronizálja a rendszerbeállításokat az egyes eszközök között </translation>
+        <translation>Hallinnoi Union ID:täsi ja synkronoi järjestelmän asetukset laitteiden välillä</translation>
     </message>
     <message>
         <source>Deepin ID Sign In</source>
-        <translation>Bejelentkezés a Deepin® Azonosítóval</translation>
+        <translation>Kirjautuminen, Deepin ID</translation>
     </message>
     <message>
         <source>Union ID Sign In</source>
-        <translation>Bejelentkezés az Union® azonosítóval</translation>
+        <translation>Kirjautuminen, Union ID</translation>
     </message>
     <message>
         <source>UOS Cloud is only available in Mainland China currently</source>
-        <translation>Az UOS® Felhő alapú szolgáltatása jelenleg csak Kínában érhető el </translation>
+        <translation>UOS Cloud on tällä hetkellä saatavilla vain Kiinassa</translation>
     </message>
     <message>
         <source>Learn about</source>
-        <translation>Tudjon meg többet erről</translation>
+        <translation>Lisätietoja</translation>
     </message>
     <message>
         <source>Union ID Service Agreement</source>
-        <translation>Union® azonosító Szolgáltatási Szerződés</translation>
+        <translation>Union ID palvelusopimus</translation>
     </message>
     <message>
         <source>Union ID Service Privacy Policy</source>
-        <translation>Union® azonosító Szolgáltatás Adatvédelmi Irányelve</translation>
+        <translation>Union ID -palvelun tietosuojakäytäntö</translation>
     </message>
 </context>
 <context>
     <name>SyncModule</name>
     <message>
         <source>Deepin ID</source>
-        <translation>Deepin® Azonosító</translation>
+        <translation>Deepin ID</translation>
     </message>
     <message>
         <source>Union ID</source>
-        <translation>Union® Azonosító</translation>
+        <translation>Union ID</translation>
     </message>
     <message>
         <source>Sign In</source>
-        <translation>Bejelentkezés</translation>
+        <translation>Kirjaudu sisään</translation>
     </message>
 </context>
 </TS>
