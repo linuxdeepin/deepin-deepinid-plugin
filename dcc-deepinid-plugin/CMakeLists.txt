@@ -16,7 +16,11 @@ file(GLOB_RECURSE SRCS
     "*.h"
     "*.cpp"
     "*.qrc"
+    "*.svg"
 )
+
+# 指定所有qrc文件
+set(QRCS icons/deepinid.qrc)
 
 # 指定用到库
 find_package(Qt5 COMPONENTS Concurrent Core Network Widgets DBus LinguistTools REQUIRED)
@@ -36,7 +40,7 @@ qt5_add_translation(QM_FILES ${TS_FILES})
 add_custom_target(translations ALL DEPENDS ${QM_FILES})
 
 # 这里使用命令 add_library 来表示本项目要生成一个库文件目标，
-add_library(${PLUGIN_NAME} SHARED ${SRCS})
+add_library(${PLUGIN_NAME} SHARED ${SRCS} ${QRCS})
 
 # 设置目标要使用的 include 目录，即头文件目录
 # 变量 ${DtkWidget_INCLUDE_DIRS} 是在前面执行 find_package 命令时引入的
