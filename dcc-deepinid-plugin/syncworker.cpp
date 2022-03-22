@@ -120,30 +120,7 @@ void SyncWorker::loginUser()
 
 void SyncWorker::logoutUser()
 {
-    asyncLogoutUser(m_model->getUbID());
-}
-
-void SyncWorker::asyncLogoutUser(const QString &ubid)
-{
-    if (ubid.isEmpty()) {
-        m_deepinId_inter->Logout();
-        return;
-    }
-
-    qDebug() << "  ======= Logout UnBind ";
-    QFutureWatcher<BindCheckResult> *watcher = new QFutureWatcher<BindCheckResult>(this);
-    connect(watcher, &QFutureWatcher<BindCheckResult>::finished, [this, watcher] {
-        BindCheckResult result = watcher->result();
-        if (result.error.isEmpty()) {
-            if (result.ret)
-                m_model->setBindLocalUBid(QString());
-        } else {
-            m_model->setResetPasswdError(result.error);
-        }
-        watcher->deleteLater();
-    });
-    QFuture<BindCheckResult> future = QtConcurrent::run(this, &SyncWorker::logout, ubid);
-    watcher->setFuture(future);
+    m_deepinId_inter->Logout();
 }
 
 void SyncWorker::setAutoSync(bool autoSync)
@@ -227,8 +204,9 @@ void SyncWorker::getHostName()
     m_model->setHostName(hostnameInter.staticHostname());
 }
 
-void SyncWorker::asyncLocalBindCheck(const QString &uosid, const QString &uuid)
+void SyncWorker::asyncLocalBindCheck(const QString &uuid)
 {
+    qDebug() << "user Bind uuid" << uuid;
     QFutureWatcher<BindCheckResult> *watcher = new QFutureWatcher<BindCheckResult>(this);
     connect(watcher, &QFutureWatcher<BindCheckResult>::finished, [this, watcher] {
         BindCheckResult result = watcher->result();
@@ -241,14 +219,14 @@ void SyncWorker::asyncLocalBindCheck(const QString &uosid, const QString &uuid)
         }
         watcher->deleteLater();
     });
-    QFuture<BindCheckResult> future = QtConcurrent::run(this, &SyncWorker::checkLocalBind, uosid, uuid);
+    QFuture<BindCheckResult> future = QtConcurrent::run(this, &SyncWorker::checkLocalBind, uuid);
     watcher->setFuture(future);
 }
 
 
 void SyncWorker::asyncBindAccount(const QString &uuid, const QString &hostName)
 {
-    qDebug() << "Start Bind!";
+    qDebug() << "Start Bind! uuid: " << uuid << " host name: " << hostName;
     QFutureWatcher<BindCheckResult> *watcher = new QFutureWatcher<BindCheckResult>(this);
     connect(watcher, &QFutureWatcher<BindCheckResult>::finished, [this, watcher] {
         BindCheckResult result = watcher->result();
@@ -283,7 +261,6 @@ void SyncWorker::asyncUnbindAccount(const QString &ubid)
 
 void SyncWorker::onSetFullname(const QString &fullname)
 {
-    qDebug() << "TODO： set Full name";
     QDBusInterface utcloudInter("com.deepin.sync.Daemon",
                                 "/com/deepin/utcloud/Daemon",
                                 "com.deepin.utcloud.Daemon",
@@ -293,7 +270,6 @@ void SyncWorker::onSetFullname(const QString &fullname)
 
 void SyncWorker::onPullMessage()
 {
-    qDebug() << "TODO： onPullMessage ";
     QDBusPendingReply<QString> retTime = DDBusSender()
                                          .service("com.deepin.sync.Daemon")
                                          .interface("com.deepin.utcloud.Daemon")
@@ -305,7 +281,7 @@ void SyncWorker::onPullMessage()
         // TODO: 后期需要同步时间戳
         qDebug() << " message value: " << retTime.value();
     } else {
-        qDebug() << "message Empty" << retTime.value();
+        qDebug() << " message Empty" << retTime.value();
     }
 }
 
@@ -345,10 +321,10 @@ BindCheckResult SyncWorker::logout(const QString &ubid)
     return result;
 }
 
-BindCheckResult SyncWorker::checkLocalBind(const QString &uosid, const QString &uuid)
+BindCheckResult SyncWorker::checkLocalBind(const QString &uuid)
 {
     BindCheckResult result;
-    QDBusReply<QString> retLocalBindCheck= m_syncHelperInter->call(QDBus::BlockWithGui, "LocalBindCheck", uosid, uuid);
+    QDBusReply<QString> retLocalBindCheck= m_deepinId_inter->call(QDBus::BlockWithGui, "LocalBindCheck", uuid);
     if (!m_syncHelperInter->isValid()) {
         qWarning() << "syncHelper interface invalid: (localBindCheck)" << m_syncHelperInter->lastError().message();
         return result;

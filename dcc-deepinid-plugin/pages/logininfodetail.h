@@ -80,7 +80,7 @@ Q_SIGNALS:
 
     void requestSetAutoSync(bool enable) const;
     void requestSetModuleState(const QString &syncType, bool state);
-    void requestLocalBindCheck(const QString &uosid, const QString &uuid);
+    void requestLocalBindCheck(const QString &uuid);
 
     // DELETE
     void requestUOSID(QString &uosid);
@@ -91,6 +91,7 @@ public Q_SLOTS:
     void updateItemCheckStatus(const QString &name, bool visible);
     void onModuleStateChanged(std::pair<SyncType, bool> state);
     void onUserUnbindInfoChanged(const QString& ubid);
+    void onBindStateChanged(const bool state);
 
     void onStateChanged(const std::pair<qint32, QString> &state);
     void onLastSyncTimeChanged(const qlonglong lastSyncTime);
@@ -112,6 +113,7 @@ private:
     dcc::widgets::SwitchWidget *m_bindSwitch;
     dcc::widgets::SwitchWidget *m_autoSyncSwitch;
     DTipLabel *m_autoSyncTips;
+    DTipLabel *m_bindedTips;
 
     // 同步配置项
     DTK_WIDGET_NAMESPACE::DListView *m_listView;

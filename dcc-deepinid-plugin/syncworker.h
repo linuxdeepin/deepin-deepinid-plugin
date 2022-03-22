@@ -39,7 +39,7 @@ public Q_SLOTS:
     void getUUID();
     void getHostName();
 
-    void asyncLocalBindCheck(const QString &uosid, const QString &uuid);
+    void asyncLocalBindCheck(const QString &uuid);
     void asyncBindAccount(const QString &uuid, const QString &hostName);
     void asyncUnbindAccount(const QString &ubid);
 
@@ -57,8 +57,8 @@ private:
     void onStateChanged(const IntString& state);
     void onLastSyncTimeChanged(qlonglong lastSyncTime);
     void getLicenseState();
+    BindCheckResult checkLocalBind(const QString &uuid);
     BindCheckResult logout(const QString &uuid);
-    BindCheckResult checkLocalBind(const QString &uosid, const QString &uuid);
     BindCheckResult bindAccount(const QString &uuid, const QString &hostName);
     BindCheckResult unBindAccount(const QString &ubid);
 

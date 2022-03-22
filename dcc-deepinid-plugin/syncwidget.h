@@ -60,7 +60,7 @@ Q_SIGNALS:
     void requestUnBindAccount(const QString &ubid);
     void requestSetAutoSync(bool enable) const;
     void requestSetModuleState(const QString &syncType, bool state);
-    void requestLocalBindCheck(const QString &uosid, const QString &uuid);
+    void requestLocalBindCheck(const QString &uuid);
 
     void requestUOSID(QString &uosid);
     void requestUUID(QString &uuid);

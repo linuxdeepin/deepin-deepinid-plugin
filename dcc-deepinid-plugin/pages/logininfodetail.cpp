@@ -47,6 +47,7 @@ LoginInfoDetailPage::LoginInfoDetailPage(QWidget *parent)
     , m_bindSwitch(new SwitchWidget(tr("Link local account to Union ID"), this))
     , m_autoSyncSwitch(new SwitchWidget(tr("UOS Cloud sync"), this))
     , m_autoSyncTips(new DTipLabel(tr("Store system settings securely in the cloud and keep them in sync across devices"), this))
+    , m_bindedTips(new DTipLabel(tr("Linked successfully! Switch it off to get them unlinked."), this))
     , m_listView(new DListView)
     , m_listModel(new QStandardItemModel(this))
     , m_stateIcon(new SyncStateIcon)
@@ -158,12 +159,22 @@ void LoginInfoDetailPage::initUI()
     QVBoxLayout *contentLayout = new QVBoxLayout;
 
     // 绑定
-    m_bindSwitch->addBackground();
+    SettingsItem *bind = new SettingsItem;
     m_bindSwitch->layout()->setContentsMargins(10, 0, 10, 0);
     DTipLabel *bindTips = new DTipLabel(tr("If linked, you can reset passwords of local accounts by Union ID"), this);
     bindTips->setWordWrap(true);
     bindTips->setAlignment(Qt::AlignLeft);
     bindTips->setContentsMargins(10, 0, 10, 0);
+    bindTips->setVisible(true);
+
+    QVBoxLayout *bindLay = new QVBoxLayout;
+    bindLay->setContentsMargins(10, 0, 10, 0);
+    bindLay->addWidget(m_bindSwitch);
+    bindLay->addWidget(bindTips);
+    bind->setLayout(bindLay);
+    bind->addBackground();
+
+    m_bindedTips->setVisible(false);
 
     // 同步
     m_autoSyncSwitch->layout()->setContentsMargins(0, 0, 0, 0);
@@ -198,8 +209,8 @@ void LoginInfoDetailPage::initUI()
     m_group->setSpacing(1);
     m_group->insertWidget(m_listView);
 
-    contentLayout->addWidget(m_bindSwitch);
-    contentLayout->addWidget(bindTips);
+    contentLayout->addWidget(bind);
+    contentLayout->addWidget(m_bindedTips);
     contentLayout->addSpacing(10);
     contentLayout->addWidget(m_group);
     contentLayout->addWidget(m_autoSyncTipsBottom);
@@ -294,7 +305,14 @@ void LoginInfoDetailPage::onUserUnbindInfoChanged(const QString &ubid)
 {
     qDebug() << " == bind UBID " << ubid;
     m_ubID = ubid;
-    m_bindSwitch->setChecked(!ubid.isEmpty());
+    onBindStateChanged(!ubid.isEmpty());
+}
+
+void LoginInfoDetailPage::onBindStateChanged(const bool state)
+{
+    qDebug() << " ======= " << state;
+    m_bindSwitch->setChecked(state);
+    m_bindedTips->setVisible(state);
 }
 
 void LoginInfoDetailPage::onStateChanged(const std::pair<qint32, QString> &state)
@@ -402,15 +420,14 @@ void LoginInfoDetailPage::onResetPasswdError(const QString &error)
 
 void LoginInfoDetailPage::updateUserBindStatus()
 {
-
-    QString uosid = m_model->getUOSID();
+    // 用于监测用户登录后的 绑定登录状态
     QString uuid = m_model->getUUID();
-    qDebug() << " updateUserBindInfo : " << uosid << uuid;
-    if (uosid.isEmpty() || uuid.isEmpty()) {
+    qDebug() << " updateUserBindInfo : " << uuid;
+    if (uuid.isEmpty()) {
         return;
     }
 
-    Q_EMIT requestLocalBindCheck(uosid, uuid);
+    Q_EMIT requestLocalBindCheck(uuid);
 }
 
 void LoginInfoDetailPage::onBindUserAccountChanged(bool checked)
