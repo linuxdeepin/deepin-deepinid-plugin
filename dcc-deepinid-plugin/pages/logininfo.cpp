@@ -40,6 +40,8 @@
 #include <QDebug>
 #include <DDesktopServices>
 #include <QDesktopServices>
+#include <ddbussender.h>
+#include <QDBusPendingReply>
 
 DWIDGET_USE_NAMESPACE
 
@@ -189,7 +191,9 @@ void LoginInfoPage::initConnection()
 
     connect(m_logoutBtn, &DFloatingButton::clicked, this, &LoginInfoPage::requestLogoutUser);
     connect(m_editInfoBtn, &DFloatingButton::clicked, [this](){
-        QDesktopServices::openUrl(QUrl("https://account.uniontech.com/"));
+        QString url = loadCodeURL();
+        QUrl::toPercentEncoding(url);
+        QDesktopServices::openUrl(QUrl(url));
     });
 }
 
@@ -324,4 +328,30 @@ void LoginInfoPage::onResetError(const QString &error)
         QString userFullName = m_model->userinfo()["Username"].toString();
         onEditingFinished(userFullName);
     }
+}
+
+QString LoginInfoPage::loadCodeURL()
+{
+    auto func_getToken = [this] {
+        QDBusPendingReply<QString> retToken = DDBusSender()
+                .service("com.deepin.sync.Daemon")
+                .interface("com.deepin.utcloud.Daemon")
+                .path("/com/deepin/utcloud/Daemon")
+                .method("UnionLoginToken")
+                .call();
+        retToken.waitForFinished();
+        QString token = retToken.value();
+        if (token.isEmpty())
+            qDebug() << retToken.error().message();
+        return token;
+    };
+
+    QString oauthURI = "https://login.uniontech.com";
+
+    if (!qEnvironmentVariableIsEmpty("DEEPINID_OAUTH_URI")) {
+        oauthURI = qgetenv("DEEPINID_OAUTH_URI");
+    }
+
+    QString url = oauthURI += QString("/oauth2/authorize/registerlogin?autoLoginKey=%1").arg(func_getToken());
+    return url;
 }

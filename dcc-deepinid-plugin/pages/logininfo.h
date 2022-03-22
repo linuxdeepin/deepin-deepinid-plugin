@@ -70,6 +70,7 @@ protected:
 private:
     QString handleNameTooLong(const QString &fullName);
     void onResetError(const QString &error);
+    QString loadCodeURL();
 
 private:
     QVBoxLayout *m_mainLayout;
