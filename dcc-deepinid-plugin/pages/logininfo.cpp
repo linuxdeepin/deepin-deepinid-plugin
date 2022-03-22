@@ -74,6 +74,7 @@ void LoginInfoPage::setModel(SyncModel *model)
     m_model = model;
     m_listView->setModel(m_listModel);
     connect(m_model, &SyncModel::userInfoChanged, this, &LoginInfoPage::onUserInfoChanged);
+    connect(m_model, &SyncModel::resetPasswdError, this, &LoginInfoPage::onResetError, Qt::QueuedConnection);
 
     onUserInfoChanged(m_model->userinfo());
 }
@@ -314,4 +315,13 @@ QString LoginInfoPage::handleNameTooLong(const QString &fullName)
         }
     }
     return name;
+}
+
+void LoginInfoPage::onResetError(const QString &error)
+{
+    qDebug() << "ResetPasswd error: " << error;
+    if (error.contains("7515")) {
+        QString userFullName = m_model->userinfo()["Username"].toString();
+        onEditingFinished(userFullName);
+    }
 }

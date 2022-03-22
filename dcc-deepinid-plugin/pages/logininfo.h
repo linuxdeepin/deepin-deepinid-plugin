@@ -65,9 +65,11 @@ protected:
     void onAvatarChanged(const QString &avaPath);
     void onUserInfoListChanged(const QList<QPair<QString, QString>> &moduleTs);
     void setAvatarPath(const QString &avatarPath);
+    void onUserUnbindInfoChanged(const QString& ubid);
 
 private:
     QString handleNameTooLong(const QString &fullName);
+    void onResetError(const QString &error);
 
 private:
     QVBoxLayout *m_mainLayout;
