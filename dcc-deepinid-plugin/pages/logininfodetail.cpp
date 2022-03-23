@@ -63,7 +63,6 @@ LoginInfoDetailPage::LoginInfoDetailPage(QWidget *parent)
 
 LoginInfoDetailPage::~LoginInfoDetailPage()
 {
-
 }
 
 void LoginInfoDetailPage::setModel(SyncModel *model)
@@ -142,8 +141,8 @@ void LoginInfoDetailPage::setModel(SyncModel *model)
     m_listView->setVisible(model->enableSync());
     m_lastSyncTimeLbl->setVisible(model->enableSync() && model->lastSyncTime());
     onStateChanged(model->syncState());
-    onLastSyncTimeChanged(model->lastSyncTime());
     updateUserBindStatus();
+    onLastSyncTimeChanged(model->lastSyncTime());
     onAutoSyncChanged(m_syncState);
 }
 
@@ -160,7 +159,7 @@ void LoginInfoDetailPage::initUI()
 
     // 绑定
     SettingsItem *bind = new SettingsItem;
-    m_bindSwitch->layout()->setContentsMargins(10, 0, 10, 0);
+    m_bindSwitch->layout()->setContentsMargins(0, 0, 10, 0);
     DTipLabel *bindTips = new DTipLabel(tr("If linked, you can reset passwords of local accounts by Union ID"), this);
     bindTips->setWordWrap(true);
     bindTips->setAlignment(Qt::AlignLeft);
@@ -174,7 +173,11 @@ void LoginInfoDetailPage::initUI()
     bind->setLayout(bindLay);
     bind->addBackground();
 
+    m_bindedTips->setContentsMargins(10, 0, 10, 0);
+    m_bindedTips->setWordWrap(true);
+    m_bindedTips->setAlignment(Qt::AlignLeft);
     m_bindedTips->setVisible(false);
+    DFontSizeManager::instance()->bind(m_bindedTips, DFontSizeManager::T6);
 
     // 同步
     m_autoSyncSwitch->layout()->setContentsMargins(0, 0, 0, 0);
@@ -271,6 +274,9 @@ void LoginInfoDetailPage::onUserInfoChanged(const QVariantMap &infos)
         state = InfoType::NoService;
     }
     showItemDisabledStatus(state);
+    // 登录后监测绑定
+    if (!infos["Username"].toString().isEmpty())
+        updateUserBindStatus();
 }
 
 void LoginInfoDetailPage::updateItemCheckStatus(const QString &name, bool visible)
@@ -303,14 +309,13 @@ void LoginInfoDetailPage::onModuleStateChanged(std::pair<SyncType, bool> state)
 
 void LoginInfoDetailPage::onUserUnbindInfoChanged(const QString &ubid)
 {
-    qDebug() << " == bind UBID " << ubid;
+    qDebug() << " bind UBID " << ubid;
     m_ubID = ubid;
     onBindStateChanged(!ubid.isEmpty());
 }
 
 void LoginInfoDetailPage::onBindStateChanged(const bool state)
 {
-    qDebug() << " ======= " << state;
     m_bindSwitch->setChecked(state);
     m_bindedTips->setVisible(state);
 }
