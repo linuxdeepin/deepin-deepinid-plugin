@@ -54,8 +54,8 @@ void SyncModule::active()
     connect(widget, &SyncWidget::requestLoginUser, m_worker, &SyncWorker::loginUser, Qt::UniqueConnection);
 
     connect(widget, &SyncWidget::requestAsyncLogoutUser, m_worker, &SyncWorker::logoutUser, Qt::QueuedConnection);
-    connect(widget, &SyncWidget::requestSetFullname, m_worker, &SyncWorker::onSetFullname);
     connect(widget, &SyncWidget::requestPullMessage, m_worker, &SyncWorker::onPullMessage);
+    connect(widget, &SyncWidget::requestSetFullname, m_worker, &SyncWorker::onSetFullname);
 
     connect(widget, &SyncWidget::requestBindAccount, m_worker, &SyncWorker::asyncBindAccount, Qt::UniqueConnection);
     connect(widget, &SyncWidget::requestUnBindAccount, m_worker, &SyncWorker::asyncUnbindAccount, Qt::UniqueConnection);

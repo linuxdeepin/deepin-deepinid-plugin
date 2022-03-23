@@ -259,13 +259,27 @@ void SyncWorker::asyncUnbindAccount(const QString &ubid)
     watcher->setFuture(future);
 }
 
+void SyncWorker::asyncSetFullname(const QString &fullname)
+{
+    QDBusInterface utInterface("com.deepin.sync.Daemon",
+                               "/com/deepin/utcloud/Daemon",
+                               "com.deepin.utcloud.Daemon"
+                               ,QDBusConnection::sessionBus());
+    QDBusReply<QString> retFullName = utInterface.call("SetNickname", fullname);
+    if (retFullName.error().message().isEmpty()) {
+        qDebug() << "SetNicknameSuccess";
+    } else {
+        qWarning() << "Bind failed:" << retFullName.error().message();
+        m_model->setResetUserNameError(retFullName.error().message());
+    }
+}
+
 void SyncWorker::onSetFullname(const QString &fullname)
 {
-    QDBusInterface utcloudInter("com.deepin.sync.Daemon",
-                                "/com/deepin/utcloud/Daemon",
-                                "com.deepin.utcloud.Daemon",
-                                QDBusConnection::sessionBus());
-    utcloudInter.call("SetNickname",fullname);
+    QFutureWatcher<void> *watcher = new QFutureWatcher<void>(this);
+    connect(watcher, &QFutureWatcher<void>::finished, watcher, &QFutureWatcher<void>::deleteLater);
+    QFuture<void> future = QtConcurrent::run(this, &SyncWorker::asyncSetFullname, fullname);
+    watcher->setFuture(future);
 }
 
 void SyncWorker::onPullMessage()

@@ -76,7 +76,7 @@ void LoginInfoPage::setModel(SyncModel *model)
     m_model = model;
     m_listView->setModel(m_listModel);
     connect(m_model, &SyncModel::userInfoChanged, this, &LoginInfoPage::onUserInfoChanged);
-    connect(m_model, &SyncModel::resetPasswdError, this, &LoginInfoPage::onResetError, Qt::QueuedConnection);
+    connect(m_model, &SyncModel::resetUserNameError, this, &LoginInfoPage::onResetError, Qt::QueuedConnection);
 
     onUserInfoChanged(m_model->userinfo());
 }
@@ -325,6 +325,7 @@ void LoginInfoPage::onResetError(const QString &error)
 {
     qDebug() << "ResetPasswd error: " << error;
     if (error.contains("7515")) {
+        m_inputLineEdit->showAlertMessage(tr("Invalid nickname, please enter a new one"), this);
         QString userFullName = m_model->userinfo()["Username"].toString();
         onEditingFinished(userFullName);
     }

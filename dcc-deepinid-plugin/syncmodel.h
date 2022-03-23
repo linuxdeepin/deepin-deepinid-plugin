@@ -58,6 +58,7 @@ public:
     void setBindLocalUBid(const QString &bindUBid);
 
     void setResetPasswdError(const QString &errorInfo);
+    void setResetUserNameError(const QString &errorInfo);
 
 Q_SIGNALS:
     void userInfoChanged(const QVariantMap &userInfo);
@@ -72,6 +73,7 @@ Q_SIGNALS:
     void userHostNameInfoChanged(const QString& uuid);
     void userUnbindInfoChanged(const QString& ubid);
     void resetPasswdError(const QString& errorInfo);
+    void resetUserNameError(const QString& errorInfo);
 
 private:
     bool m_syncIsValid;

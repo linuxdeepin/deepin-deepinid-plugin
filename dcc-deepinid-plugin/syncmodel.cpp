@@ -149,3 +149,8 @@ void SyncModel::setResetPasswdError(const QString &errorInfo)
 {
     Q_EMIT resetPasswdError(errorInfo);
 }
+
+void SyncModel::setResetUserNameError(const QString &errorInfo)
+{
+    Q_EMIT resetUserNameError(errorInfo);
+}

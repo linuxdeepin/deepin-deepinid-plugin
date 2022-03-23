@@ -44,6 +44,7 @@ public Q_SLOTS:
     void asyncUnbindAccount(const QString &ubid);
 
     void onSetFullname(const QString &fullname);
+    void asyncSetFullname(const QString &fullname);
     /**
      * @brief onPullMessage  插件打开 若是登录状态 用户停留5秒以上 进行同步操作
      */
