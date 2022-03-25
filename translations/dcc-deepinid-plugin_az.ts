@@ -14,6 +14,10 @@
         <translation>Sistem ayarlarını buludda təhlükəsiz saxlayın ki, onlar cihazlarınız arasında eyniləşdirilmiş vəziyyətdə qalsın</translation>
     </message>
     <message>
+        <source>Linked successfully! Switch it off to get them unlinked.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <source>UOS Cloud is currently unavailable in your region</source>
         <translation>UOS Bulud xidməti hal-hazırda sizin bölgə üçün əlçatan deyil</translation>
     </message>
@@ -111,6 +115,10 @@
     <message>
         <source>The nickname must be 1~32 characters long</source>
         <translation>Qoyma ad simvollarının sayı 1~32 uzunluğunda olmalıdır</translation>
+    </message>
+    <message>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

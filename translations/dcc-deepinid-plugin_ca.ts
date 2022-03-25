@@ -14,6 +14,10 @@
         <translation>Desa la configuració del sistema de manera segura al núvol i mantén-la sincronitzada entre els dispositius.</translation>
     </message>
     <message>
+        <source>Linked successfully! Switch it off to get them unlinked.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <source>UOS Cloud is currently unavailable in your region</source>
         <translation>Actualment, l&apos;UOS Cloud no està disponible a la vostra regió.</translation>
     </message>
@@ -111,6 +115,10 @@
     <message>
         <source>The nickname must be 1~32 characters long</source>
         <translation>El sobrenom ha de tenir entre 1 i 32 caràcters.</translation>
+    </message>
+    <message>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

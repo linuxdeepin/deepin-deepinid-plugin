@@ -14,6 +14,10 @@
         <translation>Bezpiecznie przechowuj ustawienia systemu w chmurze i synchronizuj je pomiędzy urządzeniami</translation>
     </message>
     <message>
+        <source>Linked successfully! Switch it off to get them unlinked.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <source>UOS Cloud is currently unavailable in your region</source>
         <translation>Usługa UOS Cloud jest obecnie niedostępna w twoim regionie</translation>
     </message>
@@ -39,7 +43,7 @@
     </message>
     <message>
         <source>Launcher</source>
-        <translation>Launcher</translation>
+        <translation>Program wywołujący</translation>
     </message>
     <message>
         <source>Wallpaper</source>
@@ -90,7 +94,7 @@
     <name>LoginInfoPage</name>
     <message>
         <source>Edit account</source>
-        <translation>Edytuj konto</translation>
+        <translation>Edycja konta</translation>
     </message>
     <message>
         <source>Sign out</source>
@@ -110,7 +114,11 @@
     </message>
     <message>
         <source>The nickname must be 1~32 characters long</source>
-        <translation>Nick musi zawierać od 1 do 32 znaków</translation>
+        <translation>Pseudonim musi zawierać od 1 do 32 znaków</translation>
+    </message>
+    <message>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -126,11 +134,11 @@
     </message>
     <message>
         <source>Deepin ID Sign In</source>
-        <translation>Deepin ID Logowanie</translation>
+        <translation>Logowanie Deepin ID</translation>
     </message>
     <message>
         <source>Union ID Sign In</source>
-        <translation>Logowanie za pomocą Union ID</translation>
+        <translation>Logowanie Union ID</translation>
     </message>
     <message>
         <source>UOS Cloud is only available in Mainland China currently</source>
@@ -142,11 +150,11 @@
     </message>
     <message>
         <source>Union ID Service Agreement</source>
-        <translation>Union ID Umowa świadczenia usług</translation>
+        <translation>Umowa świadczenia usług Union ID</translation>
     </message>
     <message>
         <source>Union ID Service Privacy Policy</source>
-        <translation>Union ID Polityka Prywatności</translation>
+        <translation>Polityka Prywatności Serwisu Union ID</translation>
     </message>
 </context>
 <context>

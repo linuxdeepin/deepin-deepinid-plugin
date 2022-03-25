@@ -14,6 +14,10 @@
         <translation>将系统设置信息安全地存储在云端，并在您不同的设备上保持同步</translation>
     </message>
     <message>
+        <source>Linked successfully! Switch it off to get them unlinked.</source>
+        <translation>已成功绑定！您可以通过关闭开关以解除绑定。</translation>
+    </message>
+    <message>
         <source>UOS Cloud is currently unavailable in your region</source>
         <translation>UOS Cloud暂未覆盖您所在地区，敬请期待</translation>
     </message>
@@ -111,6 +115,10 @@
     <message>
         <source>The nickname must be 1~32 characters long</source>
         <translation>昵称长度必须为1~32个字符</translation>
+    </message>
+    <message>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation>昵称不符合规范，请重新输入</translation>
     </message>
 </context>
 <context>

@@ -1,17 +1,17 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="sq">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="es">
 <context>
     <name>LoginInfoDetailPage</name>
     <message>
         <source>Link local account to Union ID</source>
-        <translation>Lidhni llogari vendore me Union ID</translation>
+        <translation>Vincular cuenta local a Union ID</translation>
     </message>
     <message>
         <source>UOS Cloud sync</source>
-        <translation>Njëkohësim Reje UOS</translation>
+        <translation>Sincronización en la nube UOS</translation>
     </message>
     <message>
         <source>Store system settings securely in the cloud and keep them in sync across devices</source>
-        <translation>Depozitojini në re në mënyrë të sigurt rregullimet e sistemit dhe mbajini të njëkohësuara nëpër pajisje</translation>
+        <translation>Almacene la configuración del sistema de forma segura en la nube y manténgala sincronizada en todos los dispositivos</translation>
     </message>
     <message>
         <source>Linked successfully! Switch it off to get them unlinked.</source>
@@ -19,102 +19,102 @@
     </message>
     <message>
         <source>UOS Cloud is currently unavailable in your region</source>
-        <translation>UOS Cloud hëpërhë s’është e përdorshme në rajonin tuaj</translation>
+        <translation>La nube UOS actualmente no está disponible en su región</translation>
     </message>
     <message>
         <source>Network Settings</source>
-        <translation>Rregullime Rrjeti</translation>
+        <translation>Ajustes de red</translation>
     </message>
     <message>
         <source>Sound Settings</source>
-        <translation>Rregullime Zëri</translation>
+        <translation>Ajustes de sonido</translation>
     </message>
     <message>
         <source>Mouse Settings</source>
-        <translation>Rregullime Miu</translation>
+        <translation>Ajustes del ratón</translation>
     </message>
     <message>
         <source>Update Settings</source>
-        <translation>Rregullime Përditësimi</translation>
+        <translation>Ajustes de actualización</translation>
     </message>
     <message>
         <source>Dock</source>
-        <translation>Panel</translation>
+        <translation>Anclar</translation>
     </message>
     <message>
         <source>Launcher</source>
-        <translation>Nisës</translation>
+        <translation>Lanzador</translation>
     </message>
     <message>
         <source>Wallpaper</source>
-        <translation>Sfond</translation>
+        <translation>Fondo de pantalla</translation>
     </message>
     <message>
         <source>Theme</source>
-        <translation>Temë</translation>
+        <translation>Tema</translation>
     </message>
     <message>
         <source>Power Settings</source>
-        <translation>Rregullime Energjie</translation>
+        <translation>Ajustes de energía</translation>
     </message>
     <message>
         <source>If linked, you can reset passwords of local accounts by Union ID</source>
-        <translation>Në u lidhtë, mund të ricaktoni fjalëkalimet e llogarive vendore përmes Union ID</translation>
+        <translation>Si está vinculado, puede restablecer las contraseñas de las cuentas locales por identificación de la Unión</translation>
     </message>
     <message>
         <source>Syncing...</source>
-        <translation>Po njëkohësohet…</translation>
+        <translation>Sincronizando…</translation>
     </message>
     <message>
         <source>Last Sync: %1</source>
-        <translation>Njëkohësimi i Fundit Më: %1</translation>
+        <translation>Última sincronización: %1</translation>
     </message>
     <message>
         <source>yyyy-MM-dd hh:mm</source>
-        <translation>dd-MM-yyyy hh:mm</translation>
+        <translation>aaaa-MM-dd hh:mm</translation>
     </message>
     <message>
         <source>System error</source>
-        <translation>Gabim sistemi</translation>
+        <translation>Error del sistema</translation>
     </message>
     <message>
         <source>Network error</source>
-        <translation>Gabim rrjeti</translation>
+        <translation>Error de red</translation>
     </message>
     <message>
         <source>Login expired, please sign in to the Union ID again</source>
-        <translation>Hyrja skadoi, ju lutemi, rihyni te Union ID</translation>
+        <translation>El inicio de sesión ha caducado, por favor, inicie la sesión con el ID de la Unión de nuevo</translation>
     </message>
     <message>
         <source>The feature is not available at present, please activate your system first</source>
-        <translation>Veçoria s’është e passhme tani, ju lutemi, së pari aktivizoni sistemin tuaj</translation>
+        <translation>La función no está disponible, primero active su sistema</translation>
     </message>
 </context>
 <context>
     <name>LoginInfoPage</name>
     <message>
         <source>Edit account</source>
-        <translation>Përpunoni llogarinë</translation>
+        <translation>Editar cuenta</translation>
     </message>
     <message>
         <source>Sign out</source>
-        <translation>Dilni</translation>
+        <translation>Cerrar sesión</translation>
     </message>
     <message>
         <source>The full name is too long</source>
-        <translation>Emri i plotë është shumë i gjatë</translation>
+        <translation>El nombre completo es muy largo</translation>
     </message>
     <message>
         <source>Mainland China</source>
-        <translation>Kina Kontinentale</translation>
+        <translation>China continental</translation>
     </message>
     <message>
         <source>Other regions</source>
-        <translation>Rajone të tjera</translation>
+        <translation>Otras regiones</translation>
     </message>
     <message>
         <source>The nickname must be 1~32 characters long</source>
-        <translation>Nofka duhet të jetë 1~32 shenja e gjatë</translation>
+        <translation>El apodo debe tener entre 1 y 32 caracteres</translation>
     </message>
     <message>
         <source>Invalid nickname, please enter a new one</source>
@@ -125,51 +125,51 @@
     <name>LoginPage</name>
     <message>
         <source>Sign In</source>
-        <translation>Hyni</translation>
+        <translation>Iniciar sesión</translation>
         <extra-contents_path>/cloudsync/Sign In</extra-contents_path>
     </message>
     <message>
         <source>Manage your Union ID and sync system settings between devices</source>
-        <translation>Administroni ID-në tuaj Union dhe njëkohësoni rregullime sistemi mes pajisjesh</translation>
+        <translation>Administre su ID de Unión y sincronice la configuración del sistema entre dispositivos</translation>
     </message>
     <message>
         <source>Deepin ID Sign In</source>
-        <translation>Hyrje me ID Deepin</translation>
+        <translation>Iniciar sesión con deepin ID</translation>
     </message>
     <message>
         <source>Union ID Sign In</source>
-        <translation>Hyrje me ID Union</translation>
+        <translation>Iniciar con Union ID</translation>
     </message>
     <message>
         <source>UOS Cloud is only available in Mainland China currently</source>
-        <translation>UOS Cloud aktualisht mund të kihet vetëm në Kinën Kontinentale</translation>
+        <translation>La nube UOS actualmente solo está disponible en China continental </translation>
     </message>
     <message>
         <source>Learn about</source>
-        <translation>Mësoni më tepër</translation>
+        <translation>Acerca de</translation>
     </message>
     <message>
         <source>Union ID Service Agreement</source>
-        <translation>Marrëveshje Shërbimi ID Union</translation>
+        <translation>Contrato de servicio Union ID</translation>
     </message>
     <message>
         <source>Union ID Service Privacy Policy</source>
-        <translation>Rregulla Privatësie Shërbimi ID Union</translation>
+        <translation>Política de privacidad del servicio Union ID</translation>
     </message>
 </context>
 <context>
     <name>SyncModule</name>
     <message>
         <source>Deepin ID</source>
-        <translation>ID Deepin</translation>
+        <translation>Deepin ID</translation>
     </message>
     <message>
         <source>Union ID</source>
-        <translation>ID Union</translation>
+        <translation>Union ID</translation>
     </message>
     <message>
         <source>Sign In</source>
-        <translation>Hyni</translation>
+        <translation>Iniciar sesión</translation>
     </message>
 </context>
 </TS>

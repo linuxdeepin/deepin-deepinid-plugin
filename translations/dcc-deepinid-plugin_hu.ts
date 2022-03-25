@@ -14,6 +14,10 @@
         <translation>Tárolja a rendszerbeállításokat biztonságosan a felhőben, és tartsa szinkronban azokat az egyes eszközök között </translation>
     </message>
     <message>
+        <source>Linked successfully! Switch it off to get them unlinked.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <source>UOS Cloud is currently unavailable in your region</source>
         <translation>Az UOS® Felhő alapú szolgáltatása jelenleg nem érhető el az Ön régiójában </translation>
     </message>
@@ -111,6 +115,10 @@
     <message>
         <source>The nickname must be 1~32 characters long</source>
         <translation>A becenévnek 1~32 közötti karakter hosszúnak kell lennie </translation>
+    </message>
+    <message>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

@@ -14,6 +14,10 @@
         <translation>Tallenna järjestelmän asetukset pilveen ja pidä ne synkronoituna eri laitteiden välillä</translation>
     </message>
     <message>
+        <source>Linked successfully! Switch it off to get them unlinked.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <source>UOS Cloud is currently unavailable in your region</source>
         <translation>UOS Cloud ei ole tällä hetkellä saatavilla alueellasi</translation>
     </message>
@@ -111,6 +115,10 @@
     <message>
         <source>The nickname must be 1~32 characters long</source>
         <translation>Lempinimen on oltava 1~32 merkkiä pitkä</translation>
+    </message>
+    <message>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

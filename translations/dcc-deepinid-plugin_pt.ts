@@ -14,6 +14,10 @@
         <translation>Guarda as configurações de sistema em nuvem de forma segura e sincroniza-as em todos os seus dispositivos</translation>
     </message>
     <message>
+        <source>Linked successfully! Switch it off to get them unlinked.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <source>UOS Cloud is currently unavailable in your region</source>
         <translation>A nuvem UOS não está disponível na sua área de residência</translation>
     </message>
@@ -111,6 +115,10 @@
     <message>
         <source>The nickname must be 1~32 characters long</source>
         <translation>A alcunha deve ter entre 1 e 32 caracteres</translation>
+    </message>
+    <message>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

@@ -14,6 +14,10 @@
         <translation>Безпечно збережіть параметри системи у «хмарі» і підтримуйте синхронізацію цих параметрів між пристроями</translation>
     </message>
     <message>
+        <source>Linked successfully! Switch it off to get them unlinked.</source>
+        <translation>Успішно пов&apos;язано! Вимкніть, якщо треба буде розірвати зв&apos;язок.</translation>
+    </message>
+    <message>
         <source>UOS Cloud is currently unavailable in your region</source>
         <translation>У поточній версії UOS Cloud є недоступною у вашому регіоні</translation>
     </message>
@@ -111,6 +115,10 @@
     <message>
         <source>The nickname must be 1~32 characters long</source>
         <translation>У псевдонімі має бути від 1 до 32 символів</translation>
+    </message>
+    <message>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation>Некоректний псевдонім. Будь ласка, введіть інший</translation>
     </message>
 </context>
 <context>

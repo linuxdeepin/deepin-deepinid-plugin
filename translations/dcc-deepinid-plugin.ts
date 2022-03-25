@@ -14,6 +14,10 @@
         <translation>Store system settings securely in the cloud and keep them in sync across devices</translation>
     </message>
     <message>
+        <source>Linked successfully! Switch it off to get them unlinked.</source>
+        <translation>Linked successfully! Switch it off to get them unlinked.</translation>
+    </message>
+    <message>
         <source>UOS Cloud is currently unavailable in your region</source>
         <translation>UOS Cloud is currently unavailable in your region</translation>
     </message>
@@ -111,6 +115,10 @@
     <message>
         <source>The nickname must be 1~32 characters long</source>
         <translation>The nickname must be 1~32 characters long</translation>
+    </message>
+    <message>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation>Invalid nickname, please enter a new one</translation>
     </message>
 </context>
 <context>

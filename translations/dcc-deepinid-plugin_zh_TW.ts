@@ -14,6 +14,10 @@
         <translation>將系統設定訊息安全地儲存在雲端，並在您不同的裝置上保持同步</translation>
     </message>
     <message>
+        <source>Linked successfully! Switch it off to get them unlinked.</source>
+        <translation>已成功綁定！您可以通過關閉開關以解除綁定。</translation>
+    </message>
+    <message>
         <source>UOS Cloud is currently unavailable in your region</source>
         <translation>UOS Cloud暫未覆蓋您所在地區，敬請期待</translation>
     </message>
@@ -111,6 +115,10 @@
     <message>
         <source>The nickname must be 1~32 characters long</source>
         <translation>暱稱長度必須為1~32個字元</translation>
+    </message>
+    <message>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation>暱稱不符合規範，請重新輸入</translation>
     </message>
 </context>
 <context>

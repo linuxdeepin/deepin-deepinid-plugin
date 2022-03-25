@@ -14,6 +14,10 @@
         <translation>Bewaar je systeeminstellingen veilig in de cloud en synchroniseer ze tussen apparaten</translation>
     </message>
     <message>
+        <source>Linked successfully! Switch it off to get them unlinked.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <source>UOS Cloud is currently unavailable in your region</source>
         <translation>UOS-cloud is nog niet beschikbaar in jouw land</translation>
     </message>
@@ -111,6 +115,10 @@
     <message>
         <source>The nickname must be 1~32 characters long</source>
         <translation>Je gebruikersnaam mag maximaal 32 tekens bevatten</translation>
+    </message>
+    <message>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
