@@ -141,7 +141,6 @@ void LoginInfoDetailPage::setModel(SyncModel *model)
     m_listView->setVisible(model->enableSync());
     m_lastSyncTimeLbl->setVisible(model->enableSync() && model->lastSyncTime());
     onStateChanged(model->syncState());
-    updateUserBindStatus();
     onLastSyncTimeChanged(model->lastSyncTime());
     onAutoSyncChanged(m_syncState);
 }
