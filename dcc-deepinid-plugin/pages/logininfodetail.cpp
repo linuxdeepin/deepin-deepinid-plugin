@@ -476,6 +476,8 @@ void LoginInfoDetailPage::unbindUserAccount()
 void LoginInfoDetailPage::showItemDisabledStatus(LoginInfoDetailPage::InfoType status)
 {
     if (status == InfoType::Available) {
+        m_bindSwitch->switchButton()->setEnabled(true);
+        m_autoSyncSwitch->switchButton()->setEnabled(true);
         onAutoSyncChanged(m_syncState);
     }
 
