@@ -167,7 +167,7 @@ void LoginInfoDetailPage::initUI()
     bindTips->setVisible(true);
 
     QVBoxLayout *bindLay = new QVBoxLayout;
-    bindLay->setContentsMargins(10, 0, 10, 0);
+    bindLay->setContentsMargins(10, 0, 0, 0);
     bindLay->addWidget(m_bindSwitch);
     bindLay->addWidget(bindTips);
     bind->setLayout(bindLay);
