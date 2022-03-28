@@ -326,8 +326,8 @@ void LoginInfoPage::onResetError(const QString &error)
     qDebug() << "ResetPasswd error: " << error;
     if (error.contains("7515")) {
         m_inputLineEdit->showAlertMessage(tr("Invalid nickname, please enter a new one"), this);
-        QString userFullName = m_model->userinfo()["Username"].toString();
-        onEditingFinished(userFullName);
+        QString userFullName = m_model->userinfo()["Nickname"].toString();
+        m_username->setText(handleNameTooLong(userFullName).toHtmlEscaped());
     }
 }
 
