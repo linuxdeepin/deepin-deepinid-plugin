@@ -139,7 +139,7 @@ void LoginInfoDetailPage::setModel(SyncModel *model)
     m_autoSyncSwitch->setEnabled(model->getActivation());
 
     m_listView->setVisible(model->enableSync());
-    m_lastSyncTimeLbl->setVisible(model->enableSync() && model->lastSyncTime());
+    SyncTimeLblVisible(model->enableSync() && model->lastSyncTime());
     onStateChanged(model->syncState());
     onLastSyncTimeChanged(model->lastSyncTime());
     onAutoSyncChanged(m_syncState);
@@ -356,7 +356,7 @@ void LoginInfoDetailPage::onStateChanged(const std::pair<qint32, QString> &state
     }
     switch (syncState) {
     case SyncState::Succeed:
-        m_lastSyncTimeLbl->setVisible(m_model->lastSyncTime() > 0);
+        SyncTimeLblVisible(m_model->lastSyncTime() > 0);
         if (m_model->lastSyncTime() > 0) {
             m_stateIcon->setRotatePixmap(QIcon::fromTheme("dcc_sync_ok").pixmap(QSize(16, 16)));
         } else {
@@ -371,7 +371,7 @@ void LoginInfoDetailPage::onStateChanged(const std::pair<qint32, QString> &state
         m_stateIcon->play();
         break;
     case SyncState::Failed:
-        m_lastSyncTimeLbl->setVisible(m_model->lastSyncTime() > 0);
+        SyncTimeLblVisible(m_model->lastSyncTime() > 0);
         m_stateIcon->setRotatePixmap(QPixmap());
         m_stateIcon->stop();
         break;
@@ -388,7 +388,7 @@ void LoginInfoDetailPage::onLastSyncTimeChanged(const qlonglong lastSyncTime)
         tr("Last Sync: %1")
         .arg(QDateTime::fromMSecsSinceEpoch(lastSyncTime * 1000)
              .toString(tr("yyyy-MM-dd hh:mm"))));
-    m_lastSyncTimeLbl->setVisible(true);
+    SyncTimeLblVisible(true);
 }
 
 void LoginInfoDetailPage::onAutoSyncChanged(const bool state)
@@ -397,7 +397,7 @@ void LoginInfoDetailPage::onAutoSyncChanged(const bool state)
     m_autoSyncSwitch->setChecked(state);
     m_autoSyncTips->setVisible(state);
     m_listView->setVisible(state);
-    m_lastSyncTimeLbl->setVisible(state && m_model->lastSyncTime());
+    SyncTimeLblVisible(state && m_model->lastSyncTime());
     m_autoSyncTipsBottom->setVisible(!state);
 }
 
@@ -479,6 +479,8 @@ void LoginInfoDetailPage::showItemDisabledStatus(LoginInfoDetailPage::InfoType s
         m_bindSwitch->switchButton()->setEnabled(true);
         m_autoSyncSwitch->switchButton()->setEnabled(true);
         onAutoSyncChanged(m_syncState);
+
+        m_disabledTips->setVisible(false);
     }
 
     if (status == InfoType::NoService) {
@@ -488,7 +490,7 @@ void LoginInfoDetailPage::showItemDisabledStatus(LoginInfoDetailPage::InfoType s
         m_autoSyncSwitch->switchButton()->setEnabled(false);
 
         m_listView->setVisible(false);
-        m_lastSyncTimeLbl->setVisible(false);
+        SyncTimeLblVisible(false);
 
         m_autoSyncTips->setVisible(false);
         m_autoSyncTipsBottom->setVisible(true);
@@ -509,4 +511,13 @@ void LoginInfoDetailPage::showItemDisabledStatus(LoginInfoDetailPage::InfoType s
         m_autoSyncTipsBottom->setVisible(true);
         m_disabledTips->setText(tr("The feature is not available at present, please activate your system first"));
     }
+}
+
+void LoginInfoDetailPage::SyncTimeLblVisible(bool isVisible)
+{
+    if (!m_autoSyncSwitch->checked() || !m_autoSyncSwitch->switchButton()->isEnabled()) {
+        m_lastSyncTimeLbl->setVisible(false);
+        return;
+    }
+    m_lastSyncTimeLbl->setVisible(isVisible);
 }

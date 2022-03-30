@@ -105,6 +105,7 @@ private:
     void bindUserAccount();
     void unbindUserAccount();
     void showItemDisabledStatus(InfoType status);
+    void SyncTimeLblVisible(bool isVisible);
 
 private:
     SyncModel *m_model;
