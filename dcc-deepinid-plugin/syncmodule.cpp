@@ -127,7 +127,7 @@ QString SyncModule::path() const
 
 QString SyncModule::follow() const
 {
-    return QStringLiteral("display");
+    return QStringLiteral("accounts");
 }
 
 void SyncModule::initSearchData()
