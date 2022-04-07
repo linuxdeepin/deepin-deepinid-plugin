@@ -151,6 +151,8 @@ void LoginInfoDetailPage::initUI()
     m_mainLayout->setSpacing(0);
     setFocusPolicy(Qt::FocusPolicy::ClickFocus);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+    DFontSizeManager::instance()->bind(m_bindSwitch, DFontSizeManager::T6, QFont::DemiBold);
+    DFontSizeManager::instance()->bind(m_autoSyncSwitch, DFontSizeManager::T6, QFont::DemiBold);
 
     // 滑动区： 绑定+同步
     QVBoxLayout *contentLayout = new QVBoxLayout;
@@ -161,7 +163,6 @@ void LoginInfoDetailPage::initUI()
     DTipLabel *bindTips = new DTipLabel(tr("If linked, you can reset passwords of local accounts by Union ID"), this);
     bindTips->setWordWrap(true);
     bindTips->setAlignment(Qt::AlignLeft);
-    bindTips->setContentsMargins(10, 0, 10, 0);
     bindTips->setVisible(true);
 
     QVBoxLayout *bindLay = new QVBoxLayout;
@@ -169,6 +170,7 @@ void LoginInfoDetailPage::initUI()
     bindLay->addWidget(m_bindSwitch);
     bindLay->addWidget(bindTips);
     bind->setLayout(bindLay);
+    bindLay->setSpacing(0);
     bind->addBackground();
 
     m_bindedTips->setContentsMargins(10, 0, 10, 0);
@@ -182,7 +184,7 @@ void LoginInfoDetailPage::initUI()
     m_autoSyncSwitch->setChecked(false);
     m_autoSyncTips->setWordWrap(true);
     m_autoSyncTips->setAlignment(Qt::AlignLeft);
-    m_autoSyncTips->setContentsMargins(10, 8, 10, 8);
+    m_autoSyncTips->setContentsMargins(0, 0, 10, 0);
 
     // 同步项
     SettingsItem *head = new SettingsItem;
@@ -190,6 +192,7 @@ void LoginInfoDetailPage::initUI()
     syncHeadLay->setContentsMargins(10, 0, 10, 0);
     syncHeadLay->addWidget(m_autoSyncSwitch);
     syncHeadLay->addWidget(m_autoSyncTips);
+    syncHeadLay->setSpacing(0);
     head->setLayout(syncHeadLay);
 
     m_listView->setBackgroundType(DStyledItemDelegate::BackgroundType::ClipCornerBackground);
