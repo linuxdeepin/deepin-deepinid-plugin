@@ -29,6 +29,7 @@
 #include <DLabel>
 #include <DLineEdit>
 #include <DToolButton>
+#include <QPushButton>
 
 #include <QEvent>
 #include <QTimer>
@@ -58,8 +59,8 @@ LoginInfoPage::LoginInfoPage(QWidget *parent)
     , m_inputLineEdit(new DLineEdit(this))
     , m_listView(new DListView)
     , m_listModel(new QStandardItemModel(this))
-    , m_logoutBtn(new DToolButton(this))
-    , m_editInfoBtn(new DToolButton(this))
+    , m_logoutBtn(new QPushButton (this))
+    , m_editInfoBtn(new QPushButton(this))
 {
     initUI();
     initConnection();
@@ -137,17 +138,18 @@ void LoginInfoPage::initUI()
     // 底部按钮布局
     m_editInfoBtn->setToolTip(tr("Edit account"));
     m_editInfoBtn->setIcon(QIcon::fromTheme("dcc_sync_Setting"));
-    m_editInfoBtn->setIconSize(QSize(32, 32));
+    m_editInfoBtn->setIconSize(QSize(16, 16));
+    m_editInfoBtn->setFixedSize(36,36);
     m_logoutBtn->setToolTip(tr("Sign out"));
     m_logoutBtn->setIcon(QIcon::fromTheme("dcc_sync_out"));
-    m_logoutBtn->setIconSize(QSize(32, 32));
+    m_logoutBtn->setIconSize(QSize(16, 16));
+    m_logoutBtn->setFixedSize(36,36);
     QHBoxLayout *buttLayout = new QHBoxLayout;
     buttLayout->setAlignment(Qt::AlignHCenter);
     buttLayout->setContentsMargins(10, 10, 10, 10);
     buttLayout->addWidget(m_editInfoBtn, 0, Qt::AlignHCenter);
     buttLayout->addSpacing(10);
     buttLayout->addWidget(m_logoutBtn, 0, Qt::AlignHCenter);
-
     m_mainLayout->addSpacing(60);
     m_mainLayout->addLayout(avatarLayout);
     m_mainLayout->addSpacing(10);

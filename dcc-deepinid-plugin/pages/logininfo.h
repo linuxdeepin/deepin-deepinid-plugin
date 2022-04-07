@@ -40,6 +40,7 @@ class QObject;
 class QWidget;
 class QStandardItemModel;
 class QVBoxLayout;
+class QPushButton;
 QT_END_NAMESPACE
 
 class LoginInfoPage : public QWidget
@@ -90,6 +91,6 @@ private:
     DTK_WIDGET_NAMESPACE::DListView *m_listView;
     QStandardItemModel *m_listModel;
 
-    DTK_WIDGET_NAMESPACE::DToolButton *m_logoutBtn;
-    DTK_WIDGET_NAMESPACE::DToolButton *m_editInfoBtn;
+    QPushButton *m_logoutBtn;
+    QPushButton *m_editInfoBtn;
 };
