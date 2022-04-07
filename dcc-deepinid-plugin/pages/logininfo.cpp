@@ -288,17 +288,13 @@ void LoginInfoPage::onAvatarChanged(const QString &avaPath)
 void LoginInfoPage::onUserInfoListChanged(const QList<QPair<QString, QString>> &moduleTs)
 {
     m_listModel->clear();
-    QSize size(16, 16);
     for (auto it = moduleTs.cbegin(); it != moduleTs.cend(); ++it) {
         QString itemIcon = it->first;
         QString itemText = it->second;
 
         DStandardItem *item = new DStandardItem;
         item->setFontSize(DFontSizeManager::T9);
-
-        auto leftAction = new DViewItemAction(Qt::Alignment(), size, size, true);
-        leftAction->setIcon(QIcon::fromTheme(itemIcon));
-        item->setActionList(Qt::Edge::LeftEdge, {leftAction});
+        item->setIcon(QIcon::fromTheme(itemIcon).pixmap(16, QIcon::Disabled, QIcon::Off));
         item->setText(itemText);
 
         if (!itemText.isEmpty())
