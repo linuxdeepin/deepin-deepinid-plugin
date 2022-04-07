@@ -98,7 +98,6 @@ void LoginInfoPage::initUI()
     m_inputLineEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     m_inputLineEdit->setVisible(false);
     m_inputLineEdit->lineEdit()->setFrame(false);
-    m_inputLineEdit->lineEdit()->setAlignment(Qt::AlignCenter);
     m_inputLineEdit->lineEdit()->installEventFilter(this);
 
     DFontSizeManager::instance()->bind(m_username, DFontSizeManager::T5);
@@ -111,7 +110,8 @@ void LoginInfoPage::initUI()
     avatarLayout->addWidget(m_avatar, 0, Qt::AlignHCenter);
     avatarLayout->setSpacing(20);
     avatarLayout->addWidget(m_username, 0, Qt::AlignHCenter);
-    avatarLayout->addWidget(m_inputLineEdit, 0, Qt::AlignHCenter);
+    avatarLayout->setSpacing(10);
+    avatarLayout->addWidget(m_inputLineEdit);
     m_inputLineEdit->setVisible(false);
     avatarLayout->setSpacing(10);
     avatarLayout->addWidget(m_editNameBtn, 0, Qt::AlignHCenter);
@@ -152,6 +152,7 @@ void LoginInfoPage::initUI()
     m_mainLayout->addLayout(avatarLayout);
     m_mainLayout->addSpacing(10);
     m_mainLayout->addLayout(listLayout);
+    m_mainLayout->addStretch();
     m_mainLayout->addLayout(buttLayout);
     setLayout(m_mainLayout);
 }
