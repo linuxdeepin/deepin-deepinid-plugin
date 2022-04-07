@@ -74,6 +74,7 @@ LoginInfoPage::~LoginInfoPage()
 void LoginInfoPage::setModel(SyncModel *model)
 {
     m_model = model;
+    m_userFullName = m_model->userinfo()["Nickname"].toString();
     m_listView->setModel(m_listModel);
     connect(m_model, &SyncModel::userInfoChanged, this, &LoginInfoPage::onUserInfoChanged);
     connect(m_model, &SyncModel::resetUserNameError, this, &LoginInfoPage::onResetError, Qt::QueuedConnection);
@@ -184,7 +185,7 @@ void LoginInfoPage::initConnection()
         m_editNameBtn->setVisible(false);
         m_inputLineEdit->setVisible(true);
         m_inputLineEdit->setAlert(false);
-        m_inputLineEdit->setText(m_username->text());
+        m_inputLineEdit->setText(m_userFullName);
         m_inputLineEdit->hideAlertMessage();
         m_inputLineEdit->lineEdit()->setFocus();
     });
@@ -326,8 +327,7 @@ void LoginInfoPage::onResetError(const QString &error)
     qDebug() << "ResetPasswd error: " << error;
     if (error.contains("7515")) {
         m_inputLineEdit->showAlertMessage(tr("Invalid nickname, please enter a new one"), this);
-        QString userFullName = m_model->userinfo()["Nickname"].toString();
-        m_username->setText(handleNameTooLong(userFullName).toHtmlEscaped());
+        m_username->setText(handleNameTooLong(m_userFullName).toHtmlEscaped());
     }
 }
 

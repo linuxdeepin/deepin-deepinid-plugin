@@ -80,6 +80,7 @@ private:
     QString m_avatarPath;
     AvatarWidget *m_avatar;
     bool m_fristLogin; // 首次登录
+    QString m_userFullName;
 
     DTK_WIDGET_NAMESPACE::DLabel *m_username;
     DTK_WIDGET_NAMESPACE::DToolButton *m_editNameBtn;
