@@ -125,7 +125,6 @@ private:
 
     // 最后同步时间
     QLabel *m_lastSyncTimeLbl;
-    DTipLabel *m_autoSyncTipsBottom;
     DTipLabel *m_disabledTips;
 
     // 解绑ID

@@ -53,7 +53,6 @@ LoginInfoDetailPage::LoginInfoDetailPage(QWidget *parent)
     , m_stateIcon(new SyncStateIcon)
     , m_group(new SettingsGroup(nullptr, SettingsGroup::ItemBackground))
     , m_lastSyncTimeLbl(new QLabel(this))
-    , m_autoSyncTipsBottom(new DTipLabel(tr("Store system settings securely in the cloud and keep them in sync across devices"), this))
     , m_disabledTips(new DTipLabel(tr("UOS Cloud is currently unavailable in your region"), this))
     , m_syncState(false)
 {
@@ -215,13 +214,6 @@ void LoginInfoDetailPage::initUI()
     contentLayout->addWidget(m_bindedTips);
     contentLayout->addSpacing(10);
     contentLayout->addWidget(m_group);
-    contentLayout->addWidget(m_autoSyncTipsBottom);
-    m_autoSyncTipsBottom->setVisible(!m_autoSyncSwitch->checked());
-
-    // 底部 最新更新时间 提示语
-    m_autoSyncTipsBottom->setWordWrap(true);
-    m_autoSyncTipsBottom->setAlignment(Qt::AlignLeft);
-    m_autoSyncTipsBottom->setContentsMargins(10, 0, 10, 0);
 
     m_disabledTips->setWordWrap(true);
     m_disabledTips->setAlignment(Qt::AlignLeft);
@@ -241,7 +233,6 @@ void LoginInfoDetailPage::initUI()
 
     bottomLayout->addLayout(syncingLay);
     bottomLayout->addWidget(m_disabledTips, 0, Qt::AlignLeft);
-    m_autoSyncTipsBottom->setVisible(false);
     m_disabledTips->setVisible(false);
 
     // 保持内容正常铺满
@@ -395,10 +386,8 @@ void LoginInfoDetailPage::onAutoSyncChanged(const bool state)
 {
     m_syncState = state;
     m_autoSyncSwitch->setChecked(state);
-    m_autoSyncTips->setVisible(state);
     m_listView->setVisible(state);
     SyncTimeLblVisible(state && m_model->lastSyncTime());
-    m_autoSyncTipsBottom->setVisible(!state);
 }
 
 void LoginInfoDetailPage::onResetPasswdError(const QString &error)
@@ -492,9 +481,6 @@ void LoginInfoDetailPage::showItemDisabledStatus(LoginInfoDetailPage::InfoType s
         m_listView->setVisible(false);
         SyncTimeLblVisible(false);
 
-        m_autoSyncTips->setVisible(false);
-        m_autoSyncTipsBottom->setVisible(true);
-
         m_disabledTips->setVisible(true);
         m_disabledTips->setText(tr("UOS Cloud is currently unavailable in your region"));
     }
@@ -507,8 +493,6 @@ void LoginInfoDetailPage::showItemDisabledStatus(LoginInfoDetailPage::InfoType s
 
         m_bindSwitch->setEnabled(false);
         m_autoSyncSwitch->setEnabled(false);
-        m_autoSyncTips->setVisible(false);
-        m_autoSyncTipsBottom->setVisible(true);
         m_disabledTips->setText(tr("The feature is not available at present, please activate your system first"));
     }
 }
