@@ -44,6 +44,7 @@ public:
     explicit SyncWidget(QWidget *parent = nullptr);
     ~SyncWidget();
     void setModel(SyncModel *model);
+    void resizeEvent(QResizeEvent *event);
 
 private:
     void initUI();

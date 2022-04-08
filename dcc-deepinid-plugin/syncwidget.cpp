@@ -43,6 +43,12 @@ void SyncWidget::setModel(SyncModel *model)
     onUserInfoChanged(model->userinfo());
 }
 
+void SyncWidget::resizeEvent(QResizeEvent *event)
+{
+    Q_UNUSED(event);
+    m_loginInfoPage->setMinimumWidth(this->width() / 3);
+}
+
 void SyncWidget::initUI()
 {
     m_mainLayout->setMargin(0);
@@ -55,7 +61,6 @@ void SyncWidget::initUI()
     m_groundGroup->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_loginInfoDetailPage->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    m_loginInfoPage->setMinimumWidth(180);
     m_groundGroup->setContentsMargins(0, 0, 0, 0);
     m_groundGroup->setItemSpacing(2);
     m_groundGroup->setBackgroundRole(QPalette::Base);
