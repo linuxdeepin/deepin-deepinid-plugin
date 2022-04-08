@@ -111,11 +111,17 @@ void LoginInfoPage::initUI()
     avatarLayout->addWidget(m_avatar, 0, Qt::AlignHCenter);
     avatarLayout->setSpacing(20);
     avatarLayout->addWidget(m_username, 0, Qt::AlignHCenter);
-    avatarLayout->setSpacing(10);
+
+    QHBoxLayout *editLayout = new QHBoxLayout;
+    QWidget *edit = new QWidget;
+    edit->setFixedHeight(40);
+    edit->setLayout(editLayout);
+    editLayout->addWidget(m_editNameBtn, 0, Qt::AlignHCenter);
+
     avatarLayout->addWidget(m_inputLineEdit);
     m_inputLineEdit->setVisible(false);
     avatarLayout->setSpacing(10);
-    avatarLayout->addWidget(m_editNameBtn, 0, Qt::AlignHCenter);
+    avatarLayout->addWidget(edit, 0, Qt::AlignHCenter);
 
     // 用户信息
     QHBoxLayout *listLayout = new QHBoxLayout;
