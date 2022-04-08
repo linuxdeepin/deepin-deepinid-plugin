@@ -67,9 +67,10 @@ protected:
     void onUserInfoListChanged(const QList<QPair<QString, QString>> &moduleTs);
     void setAvatarPath(const QString &avatarPath);
     void onUserUnbindInfoChanged(const QString& ubid);
+    void resizeEvent(QResizeEvent *event);
 
 private:
-    QString handleNameTooLong(const QString &fullName);
+    QString handleNameTooLong(const QString &fullName, int base = 0);
     void onResetError(const QString &error);
     QString loadCodeURL();
 

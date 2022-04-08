@@ -309,11 +309,20 @@ void LoginInfoPage::setAvatarPath(const QString &avatarPath)
     m_avatar->setAvatarPath(avatarPath);
 }
 
-QString LoginInfoPage::handleNameTooLong(const QString &fullName)
+void LoginInfoPage::resizeEvent(QResizeEvent *event)
 {
+    Q_UNUSED(event);
+    m_username->setText(handleNameTooLong(m_userFullName, this->width()).toHtmlEscaped());
+}
+
+QString LoginInfoPage::handleNameTooLong(const QString &fullName, int base)
+{
+    int widthBase = 24;
+    if (base)
+        widthBase = base / 10;
     QString name = fullName;
     for (int i = 1; i < fullName; ++i) {
-        if (fullName.left(i).toLocal8Bit().size() > 22) {
+        if (fullName.left(i).toLocal8Bit().size() > widthBase) {
             name = fullName.left(i - 1) + QString("...");
             break;
         }
