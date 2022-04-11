@@ -166,7 +166,7 @@ void LoginInfoDetailPage::initUI()
     bindTips->setVisible(true);
 
     QVBoxLayout *bindLay = new QVBoxLayout;
-    bindLay->setContentsMargins(10, 0, 0, 0);
+    bindLay->setContentsMargins(10, 0, 0, 8);
     bindLay->addWidget(m_bindSwitch);
     bindLay->addWidget(bindTips);
     bind->setLayout(bindLay);
@@ -189,7 +189,7 @@ void LoginInfoDetailPage::initUI()
     // 同步项
     SettingsItem *head = new SettingsItem;
     QVBoxLayout *syncHeadLay = new QVBoxLayout;
-    syncHeadLay->setContentsMargins(10, 0, 10, 0);
+    syncHeadLay->setContentsMargins(10, 0, 10, 8);
     syncHeadLay->addWidget(m_autoSyncSwitch);
     syncHeadLay->addWidget(m_autoSyncTips);
     syncHeadLay->setSpacing(0);
@@ -215,7 +215,7 @@ void LoginInfoDetailPage::initUI()
 
     contentLayout->addWidget(bind);
     contentLayout->addWidget(m_bindedTips);
-    contentLayout->addSpacing(10);
+    contentLayout->addSpacing(18);
     contentLayout->addWidget(m_group);
 
     m_disabledTips->setWordWrap(true);
