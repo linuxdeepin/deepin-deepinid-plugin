@@ -110,18 +110,20 @@ void LoginInfoPage::initUI()
     avatarLayout->setSpacing(10);
     avatarLayout->addWidget(m_avatar, 0, Qt::AlignHCenter);
     avatarLayout->setSpacing(20);
-    avatarLayout->addWidget(m_username, 0, Qt::AlignHCenter);
 
-    QHBoxLayout *editLayout = new QHBoxLayout;
-    QWidget *edit = new QWidget;
-    edit->setFixedHeight(40);
-    edit->setLayout(editLayout);
-    editLayout->addWidget(m_editNameBtn, 0, Qt::AlignHCenter);
+    // 名称编辑区域设置固定
+    QVBoxLayout *inputLineLayout = new QVBoxLayout;
+    QWidget *inputLine = new QWidget;
+    inputLine->setFixedHeight(70);
+    inputLine->setLayout(inputLineLayout);
 
-    avatarLayout->addWidget(m_inputLineEdit);
+    inputLineLayout->addWidget(m_username, 0, Qt::AlignHCenter);
+    inputLineLayout->addWidget(m_inputLineEdit);
     m_inputLineEdit->setVisible(false);
-    avatarLayout->setSpacing(10);
-    avatarLayout->addWidget(edit, 0, Qt::AlignHCenter);
+    inputLineLayout->setSpacing(10);
+    inputLineLayout->addWidget(m_editNameBtn, 0, Qt::AlignHCenter);
+    inputLineLayout->addStretch();
+    avatarLayout->addWidget(inputLine);
 
     // 用户信息
     QHBoxLayout *listLayout = new QHBoxLayout;
