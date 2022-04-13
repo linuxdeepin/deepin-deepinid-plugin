@@ -22,6 +22,7 @@
 #include "downloadurl.h"
 #include "avatarwidget.h"
 #include "logininfo.h"
+#include <ddbussender.h>
 
 #include <DFloatingButton>
 #include <DFontSizeManager>
@@ -29,7 +30,8 @@
 #include <DLabel>
 #include <DLineEdit>
 #include <DToolButton>
-#include <QPushButton>
+#include <DApplicationHelper>
+#include <DDesktopServices>
 
 #include <QEvent>
 #include <QTimer>
@@ -39,9 +41,8 @@
 #include <QDir>
 #include <QLabel>
 #include <QDebug>
-#include <DDesktopServices>
+#include <QPushButton>
 #include <QDesktopServices>
-#include <ddbussender.h>
 #include <QDBusPendingReply>
 
 DWIDGET_USE_NAMESPACE
@@ -212,6 +213,15 @@ void LoginInfoPage::initConnection()
         QUrl::toPercentEncoding(url);
         QDesktopServices::openUrl(QUrl(url));
     });
+
+    connect(Dtk::Gui::DGuiApplicationHelper::instance(), &Dtk::Gui::DGuiApplicationHelper::themeTypeChanged,
+        this, [this](Dtk::Gui::DGuiApplicationHelper::ColorType themeType) {
+        QString theme = (themeType == DGuiApplicationHelper::DarkType) ? "_dark" : QString();
+        for (int i=0;i<m_listModel->rowCount();i++){
+            QStandardItem *item =m_listModel->item(i);
+            item->setIcon(QIcon::fromTheme(item->data().toString()+theme).pixmap(16, QIcon::Disabled, QIcon::Off));
+        }
+    });
 }
 
 void LoginInfoPage::onUserInfoChanged(const QVariantMap &infos)
@@ -297,14 +307,16 @@ void LoginInfoPage::onAvatarChanged(const QString &avaPath)
 void LoginInfoPage::onUserInfoListChanged(const QList<QPair<QString, QString>> &moduleTs)
 {
     m_listModel->clear();
+    QString theme = (DGuiApplicationHelper::instance()->themeType() == DGuiApplicationHelper::DarkType) ? "_dark" : QString();
     for (auto it = moduleTs.cbegin(); it != moduleTs.cend(); ++it) {
         QString itemIcon = it->first;
         QString itemText = it->second;
-
         DStandardItem *item = new DStandardItem;
+
         item->setFontSize(DFontSizeManager::T9);
-        item->setIcon(QIcon::fromTheme(itemIcon).pixmap(16, QIcon::Disabled, QIcon::Off));
         item->setText(itemText);
+        item->setData(itemIcon);
+        item->setIcon(QIcon::fromTheme(item->data().toString()+theme).pixmap(16, QIcon::Disabled, QIcon::Off));
 
         if (!itemText.isEmpty())
             m_listModel->appendRow(item);
