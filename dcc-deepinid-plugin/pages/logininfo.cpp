@@ -169,6 +169,14 @@ void LoginInfoPage::initUI()
 
 void LoginInfoPage::initConnection()
 {
+    connect(m_inputLineEdit, &DLineEdit::textChanged, this, [ = ](const QString &userFullName) {
+        m_inputLineEdit->setAlert(false);
+        if (userFullName.isEmpty() || userFullName.size() > 32) {
+            m_inputLineEdit->setAlert(true);
+            m_inputLineEdit->showAlertMessage(tr("The nickname must be 1~32 characters long"), m_inputLineEdit, 2000);
+        }
+    });
+
     connect(m_inputLineEdit, &DLineEdit::textEdited, this, [ = ](const QString &userFullName) {
         QString fullName = userFullName;
         fullName.remove(":");
@@ -179,9 +187,6 @@ void LoginInfoPage::initConnection()
             m_inputLineEdit->setAlert(true);
             m_inputLineEdit->showAlertMessage(tr("The full name is too long"), this);
             DDesktopServices::playSystemSoundEffect(DDesktopServices::SSE_Error);
-        } else if (m_inputLineEdit->isAlert()) {
-            m_inputLineEdit->setAlert(false);
-            m_inputLineEdit->hideAlertMessage();
         }
     });
 
@@ -248,7 +253,6 @@ void LoginInfoPage::onUserInfoChanged(const QVariantMap &infos)
 bool LoginInfoPage::eventFilter(QObject *obj, QEvent *event)
 {
     if (obj == m_inputLineEdit->lineEdit() && event->type() == QEvent::MouseButtonPress) {
-        m_inputLineEdit->setAlert(false);
         m_inputLineEdit->hideAlertMessage();
         m_inputLineEdit->lineEdit()->setFocus();
     }
@@ -263,12 +267,9 @@ void LoginInfoPage::onEditingFinished(const QString &userFullName)
     m_inputLineEdit->setVisible(false);
     m_username->setVisible(true);
     m_editNameBtn->setVisible(true);
-    if (m_inputLineEdit->isAlert()) {
+    if (userFullName.isEmpty() || userFullName.size() > 32) {
         m_inputLineEdit->setAlert(false);
         m_inputLineEdit->hideAlertMessage();
-    }
-    if (userFullName.isEmpty() || userFullName.size() > 32) {
-        m_inputLineEdit->showAlertMessage(tr("The nickname must be 1~32 characters long"), this);
         return;
     }
 
