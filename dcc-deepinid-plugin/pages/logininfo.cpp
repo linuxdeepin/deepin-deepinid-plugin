@@ -313,9 +313,10 @@ void LoginInfoPage::onUserInfoListChanged(const QList<QPair<QString, QString>> &
         QString itemText = it->second;
         DStandardItem *item = new DStandardItem;
 
-        item->setFontSize(DFontSizeManager::T9);
         item->setText(itemText);
         item->setData(itemIcon);
+        item->setFontSize(DFontSizeManager::T9);
+        item->setTextColorRole(DPalette::TextTips);
         item->setIcon(QIcon::fromTheme(item->data().toString()+theme).pixmap(16, QIcon::Disabled, QIcon::Off));
 
         if (!itemText.isEmpty())

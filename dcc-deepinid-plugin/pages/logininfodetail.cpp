@@ -177,7 +177,7 @@ void LoginInfoDetailPage::initUI()
     m_bindedTips->setWordWrap(true);
     m_bindedTips->setAlignment(Qt::AlignLeft);
     m_bindedTips->setVisible(false);
-    DFontSizeManager::instance()->bind(m_bindedTips, DFontSizeManager::T6);
+    m_bindedTips->setForegroundRole(DPalette::TextTitle);
 
     // 同步
     m_autoSyncSwitch->layout()->setContentsMargins(0, 0, 0, 0);
@@ -221,6 +221,7 @@ void LoginInfoDetailPage::initUI()
     m_disabledTips->setWordWrap(true);
     m_disabledTips->setAlignment(Qt::AlignLeft);
     m_disabledTips->setContentsMargins(10, 8, 10, 8);
+    m_disabledTips->setForegroundRole(DPalette::TextTitle);
 
     QVBoxLayout *bottomLayout = new QVBoxLayout;
     bottomLayout->setSpacing(0);
