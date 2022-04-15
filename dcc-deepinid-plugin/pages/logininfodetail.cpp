@@ -141,6 +141,8 @@ void LoginInfoDetailPage::setModel(SyncModel *model)
     SyncTimeLblVisible(model->enableSync() && model->lastSyncTime());
     onStateChanged(model->syncState());
     onLastSyncTimeChanged(model->lastSyncTime());
+    QString bindState = m_model->getUbID();
+    onUserUnbindInfoChanged(bindState);
     onAutoSyncChanged(m_syncState);
 }
 
