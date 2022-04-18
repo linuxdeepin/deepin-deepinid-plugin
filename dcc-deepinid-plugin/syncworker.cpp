@@ -12,13 +12,14 @@
 
 DCORE_USE_NAMESPACE
 
-static QString SYNC_INTERFACE = "com.deepin.sync.Daemon";
+const static QString SYNC_INTERFACE = QStringLiteral("com.deepin.sync.Daemon");
+const static QString DEEPINID_INTERFACE = QStringLiteral("com.deepin.deepinid");
 
 SyncWorker::SyncWorker(SyncModel *model, QObject *parent)
     : QObject(parent)
     , m_model(model)
     , m_syncInter(new SyncInter(SYNC_INTERFACE, "/com/deepin/sync/Daemon", QDBusConnection::sessionBus(), this))
-    , m_deepinId_inter(new DeepinId(SYNC_INTERFACE, "/com/deepin/deepinid", QDBusConnection::sessionBus(), this))
+    , m_deepinId_inter(new DeepinId(DEEPINID_INTERFACE, "/com/deepin/deepinid", QDBusConnection::sessionBus(), this))
     , m_syncHelperInter(new QDBusInterface("com.deepin.sync.Helper", "/com/deepin/sync/Helper", "com.deepin.sync.Helper", QDBusConnection::systemBus(), this))
 {
     m_syncInter->setSync(false, false);

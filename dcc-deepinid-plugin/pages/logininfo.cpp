@@ -226,6 +226,7 @@ void LoginInfoPage::initConnection()
 
 void LoginInfoPage::onUserInfoChanged(const QVariantMap &infos)
 {
+    m_userFullName = m_model->userinfo()["Nickname"].toString();
     const bool isLogind = !infos["Username"].toString().isEmpty();
     const QString region = infos["Region"].toString();
     QString profile_image = infos.value("ProfileImage").toString();
