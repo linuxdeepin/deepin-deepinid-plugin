@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Linked successfully! Switch it off to get them unlinked.</source>
-        <translation type="unfinished"/>
+        <translation>U lidhën me sukses! Fikeni, që të shkëputen.</translation>
     </message>
     <message>
         <source>UOS Cloud is currently unavailable in your region</source>
@@ -101,6 +101,10 @@
         <translation>Dilni</translation>
     </message>
     <message>
+        <source>The nickname must be 1~32 characters long</source>
+        <translation>Nofka duhet të jetë 1~32 shenja e gjatë</translation>
+    </message>
+    <message>
         <source>The full name is too long</source>
         <translation>Emri i plotë është shumë i gjatë</translation>
     </message>
@@ -113,11 +117,11 @@
         <translation>Rajone të tjera</translation>
     </message>
     <message>
-        <source>The nickname must be 1~32 characters long</source>
-        <translation>Nofka duhet të jetë 1~32 shenja e gjatë</translation>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation>Nofkë e pavlefshme, ju lutemi, jepni një të re</translation>
     </message>
     <message>
-        <source>Invalid nickname, please enter a new one</source>
+        <source>The nickname cannot contain special characters (&apos;&lt;&gt;&amp;&quot;) and whitespaces</source>
         <translation type="unfinished"/>
     </message>
 </context>

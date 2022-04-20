@@ -101,6 +101,10 @@
         <translation>Вийти</translation>
     </message>
     <message>
+        <source>The nickname must be 1~32 characters long</source>
+        <translation>У псевдонімі має бути від 1 до 32 символів</translation>
+    </message>
+    <message>
         <source>The full name is too long</source>
         <translation>Ім&apos;я повністю є надто довгим</translation>
     </message>
@@ -113,12 +117,12 @@
         <translation>Інші регіони</translation>
     </message>
     <message>
-        <source>The nickname must be 1~32 characters long</source>
-        <translation>У псевдонімі має бути від 1 до 32 символів</translation>
-    </message>
-    <message>
         <source>Invalid nickname, please enter a new one</source>
         <translation>Некоректний псевдонім. Будь ласка, введіть інший</translation>
+    </message>
+    <message>
+        <source>The nickname cannot contain special characters (&apos;&lt;&gt;&amp;&quot;) and whitespaces</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

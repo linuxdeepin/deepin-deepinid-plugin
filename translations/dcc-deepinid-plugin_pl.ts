@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Linked successfully! Switch it off to get them unlinked.</source>
-        <translation type="unfinished"/>
+        <translation>Połączono pomyślnie! Wyłącz tę opcję, jeśli zechcesz rozłączyć je ponownie.</translation>
     </message>
     <message>
         <source>UOS Cloud is currently unavailable in your region</source>
@@ -94,11 +94,15 @@
     <name>LoginInfoPage</name>
     <message>
         <source>Edit account</source>
-        <translation>Edycja konta</translation>
+        <translation>Edytuj konto</translation>
     </message>
     <message>
         <source>Sign out</source>
         <translation>Wyloguj</translation>
+    </message>
+    <message>
+        <source>The nickname must be 1~32 characters long</source>
+        <translation>Pseudonim musi zawierać od 1 do 32 znaków</translation>
     </message>
     <message>
         <source>The full name is too long</source>
@@ -113,11 +117,11 @@
         <translation>Inne regiony</translation>
     </message>
     <message>
-        <source>The nickname must be 1~32 characters long</source>
-        <translation>Pseudonim musi zawierać od 1 do 32 znaków</translation>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation>Nieprawidłowy pseudonim, spróbuj wprowadzić inny</translation>
     </message>
     <message>
-        <source>Invalid nickname, please enter a new one</source>
+        <source>The nickname cannot contain special characters (&apos;&lt;&gt;&amp;&quot;) and whitespaces</source>
         <translation type="unfinished"/>
     </message>
 </context>

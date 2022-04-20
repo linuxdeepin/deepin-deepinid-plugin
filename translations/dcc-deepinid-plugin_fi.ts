@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Linked successfully! Switch it off to get them unlinked.</source>
-        <translation type="unfinished"/>
+        <translation>Linkitys onnistui! Kytke pois päältä, yhteys katkeaa.</translation>
     </message>
     <message>
         <source>UOS Cloud is currently unavailable in your region</source>
@@ -101,6 +101,10 @@
         <translation>Kirjaudu ulos</translation>
     </message>
     <message>
+        <source>The nickname must be 1~32 characters long</source>
+        <translation>Lempinimen on oltava 1~32 merkkiä pitkä</translation>
+    </message>
+    <message>
         <source>The full name is too long</source>
         <translation>Nimi on liian pitkä</translation>
     </message>
@@ -113,11 +117,11 @@
         <translation>Muut alueet</translation>
     </message>
     <message>
-        <source>The nickname must be 1~32 characters long</source>
-        <translation>Lempinimen on oltava 1~32 merkkiä pitkä</translation>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation>Virheellinen lempinimi, anna uusi</translation>
     </message>
     <message>
-        <source>Invalid nickname, please enter a new one</source>
+        <source>The nickname cannot contain special characters (&apos;&lt;&gt;&amp;&quot;) and whitespaces</source>
         <translation type="unfinished"/>
     </message>
 </context>

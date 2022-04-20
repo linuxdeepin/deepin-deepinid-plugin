@@ -101,6 +101,10 @@
         <translation>Sign out</translation>
     </message>
     <message>
+        <source>The nickname must be 1~32 characters long</source>
+        <translation>The nickname must be 1~32 characters long</translation>
+    </message>
+    <message>
         <source>The full name is too long</source>
         <translation>The full name is too long</translation>
     </message>
@@ -113,12 +117,12 @@
         <translation>Other regions</translation>
     </message>
     <message>
-        <source>The nickname must be 1~32 characters long</source>
-        <translation>The nickname must be 1~32 characters long</translation>
-    </message>
-    <message>
         <source>Invalid nickname, please enter a new one</source>
         <translation>Invalid nickname, please enter a new one</translation>
+    </message>
+    <message>
+        <source>The nickname cannot contain special characters (&apos;&lt;&gt;&amp;&quot;) and whitespaces</source>
+        <translation>The nickname cannot contain special characters (&apos;&lt;&gt;&amp;&quot;) and whitespaces</translation>
     </message>
 </context>
 <context>

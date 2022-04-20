@@ -101,6 +101,10 @@
         <translation>Terminar Sessão</translation>
     </message>
     <message>
+        <source>The nickname must be 1~32 characters long</source>
+        <translation>A alcunha deve ter entre 1 e 32 caracteres</translation>
+    </message>
+    <message>
         <source>The full name is too long</source>
         <translation>O nome completo é muito comprido</translation>
     </message>
@@ -113,11 +117,11 @@
         <translation>Outras regiões</translation>
     </message>
     <message>
-        <source>The nickname must be 1~32 characters long</source>
-        <translation>A alcunha deve ter entre 1 e 32 caracteres</translation>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Invalid nickname, please enter a new one</source>
+        <source>The nickname cannot contain special characters (&apos;&lt;&gt;&amp;&quot;) and whitespaces</source>
         <translation type="unfinished"/>
     </message>
 </context>

@@ -101,6 +101,10 @@
         <translation>退出登錄</translation>
     </message>
     <message>
+        <source>The nickname must be 1~32 characters long</source>
+        <translation>暱稱長度必須為1~32個字符</translation>
+    </message>
+    <message>
         <source>The full name is too long</source>
         <translation>名稱過長</translation>
     </message>
@@ -113,12 +117,12 @@
         <translation>其他地區</translation>
     </message>
     <message>
-        <source>The nickname must be 1~32 characters long</source>
-        <translation>暱稱長度必須為1~32個字符</translation>
-    </message>
-    <message>
         <source>Invalid nickname, please enter a new one</source>
         <translation>暱稱不符合規範，請重新輸入</translation>
+    </message>
+    <message>
+        <source>The nickname cannot contain special characters (&apos;&lt;&gt;&amp;&quot;) and whitespaces</source>
+        <translation>暱稱不能包含&lt;、&gt;、&amp;、&apos;、&quot;和空格</translation>
     </message>
 </context>
 <context>

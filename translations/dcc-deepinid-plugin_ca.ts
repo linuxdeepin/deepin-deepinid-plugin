@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Linked successfully! Switch it off to get them unlinked.</source>
-        <translation type="unfinished"/>
+        <translation>Enllaçat correctament! Desactiveu-ho per desenllaçar-los.</translation>
     </message>
     <message>
         <source>UOS Cloud is currently unavailable in your region</source>
@@ -101,6 +101,10 @@
         <translation>Surt de la sessió</translation>
     </message>
     <message>
+        <source>The nickname must be 1~32 characters long</source>
+        <translation>El sobrenom ha de tenir entre 1 i 32 caràcters.</translation>
+    </message>
+    <message>
         <source>The full name is too long</source>
         <translation>El nom complet és massa llarg.</translation>
     </message>
@@ -113,11 +117,11 @@
         <translation>Altres regions</translation>
     </message>
     <message>
-        <source>The nickname must be 1~32 characters long</source>
-        <translation>El sobrenom ha de tenir entre 1 i 32 caràcters.</translation>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation>Sobrenom no vàlid, introduïu-ne un de nou.</translation>
     </message>
     <message>
-        <source>Invalid nickname, please enter a new one</source>
+        <source>The nickname cannot contain special characters (&apos;&lt;&gt;&amp;&quot;) and whitespaces</source>
         <translation type="unfinished"/>
     </message>
 </context>

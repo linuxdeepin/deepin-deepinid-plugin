@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Linked successfully! Switch it off to get them unlinked.</source>
-        <translation type="unfinished"/>
+        <translation>A hivatkozás sikeres! Kapcsolja ki a hivatkozás megszüntetéséhez. </translation>
     </message>
     <message>
         <source>UOS Cloud is currently unavailable in your region</source>
@@ -101,6 +101,10 @@
         <translation>Kijelentkezés</translation>
     </message>
     <message>
+        <source>The nickname must be 1~32 characters long</source>
+        <translation>A becenévnek 1~32 közötti karakter hosszúnak kell lennie </translation>
+    </message>
+    <message>
         <source>The full name is too long</source>
         <translation>A teljes név túl hosszú</translation>
     </message>
@@ -113,11 +117,11 @@
         <translation>Egyéb régiók</translation>
     </message>
     <message>
-        <source>The nickname must be 1~32 characters long</source>
-        <translation>A becenévnek 1~32 közötti karakter hosszúnak kell lennie </translation>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation>Érvénytelen becenév, kérjük adjon meg egy másikat</translation>
     </message>
     <message>
-        <source>Invalid nickname, please enter a new one</source>
+        <source>The nickname cannot contain special characters (&apos;&lt;&gt;&amp;&quot;) and whitespaces</source>
         <translation type="unfinished"/>
     </message>
 </context>
