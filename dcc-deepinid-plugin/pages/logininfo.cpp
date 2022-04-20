@@ -47,6 +47,10 @@
 
 DWIDGET_USE_NAMESPACE
 
+const static QString NicknameInvalid = QStringLiteral("7515");
+const static QString NicknameNULL = QStringLiteral("7501");
+const static QString OtherInvalid = QStringLiteral("7500");
+
 LoginInfoPage::LoginInfoPage(QWidget *parent)
     : QWidget (parent)
     , m_mainLayout(new QVBoxLayout)
@@ -356,8 +360,11 @@ QString LoginInfoPage::handleNameTooLong(const QString &fullName, int base)
 void LoginInfoPage::onResetError(const QString &error)
 {
     qDebug() << "ResetPasswd error: " << error;
-    if (error.contains("7515")) {
+    if (error.contains(NicknameInvalid)) {
         m_inputLineEdit->showAlertMessage(tr("Invalid nickname, please enter a new one"), this);
+        m_username->setText(handleNameTooLong(m_userFullName).toHtmlEscaped());
+    } else if (error.contains(NicknameNULL)) {
+        m_inputLineEdit->showAlertMessage(tr("The nickname cannot contain special characters ('<>&\") and whitespaces"), this);
         m_username->setText(handleNameTooLong(m_userFullName).toHtmlEscaped());
     }
 }
