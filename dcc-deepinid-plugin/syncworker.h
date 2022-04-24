@@ -49,6 +49,7 @@ public Q_SLOTS:
      * @brief onPullMessage  插件打开 若是登录状态 用户停留5秒以上 进行同步操作
      */
     void onPullMessage();
+    void futurePullMessage();
 
 private:
     void getUserDeepinidInfo();

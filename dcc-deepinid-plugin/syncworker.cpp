@@ -285,19 +285,22 @@ void SyncWorker::onSetFullname(const QString &fullname)
 
 void SyncWorker::onPullMessage()
 {
+    QFutureWatcher<void> *watcher = new QFutureWatcher<void>(this);
+    connect(watcher, &QFutureWatcher<void>::finished, watcher, &QFutureWatcher<void>::deleteLater);
+
+    watcher->setFuture(QtConcurrent::run(this, &SyncWorker::futurePullMessage));
+}
+
+void SyncWorker::futurePullMessage()
+{
     QDBusPendingReply<QString> retTime = DDBusSender()
                                          .service("com.deepin.sync.Daemon")
                                          .interface("com.deepin.utcloud.Daemon")
                                          .path("/com/deepin/utcloud/Daemon")
                                          .method("PullMessage")
                                          .call();
-    retTime.waitForFinished();
-    if (retTime.error().message().isEmpty()) {
-        // TODO: 后期需要同步时间戳
+    if (!retTime.error().message().isEmpty())
         qDebug() << " message value: " << retTime.value();
-    } else {
-        qDebug() << " message Empty" << retTime.value();
-    }
 }
 
 void SyncWorker::getUserDeepinidInfo()
