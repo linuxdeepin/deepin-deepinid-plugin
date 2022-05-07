@@ -175,26 +175,46 @@ void SyncWorker::getUOSID()
         qWarning() << "syncHelper interface invalid: (getUOSID)" << m_syncHelperInter->lastError().message();
         return;
     }
-    QDBusReply<QString> retUOSID = m_syncHelperInter->call("UOSID");
-    if (retUOSID.error().message().isEmpty()) {
-        m_model->setUOSID(retUOSID.value());
-    } else {
-        qWarning() << "UOSID failed:" << retUOSID.error().message();
-    }
+    QFutureWatcher<QString> *watcher = new QFutureWatcher<QString>(this);
+    connect(watcher, &QFutureWatcher<QString>::finished, this, [=] {
+        qDebug() << " getUOSID: " << watcher->result();
+        m_model->setUOSID(watcher->result());
+        watcher->deleteLater();
+    });
+    QFuture<QString> future = QtConcurrent::run( [=]() -> QString{
+        QDBusReply<QString> retUOSID = m_syncHelperInter->call("UOSID");
+        if (retUOSID.value().isEmpty()) {
+            qWarning() << "UOSID failed:" << retUOSID.error().message();
+        }
+        return retUOSID.value();
+    });
+    watcher->setFuture(future);
 }
 
 void SyncWorker::getUUID()
 {
     QDBusInterface accountsInter("com.deepin.daemon.Accounts",
                                  QString("/com/deepin/daemon/Accounts/User%1").arg(getuid()),
-                                 "com.deepin.daemon.Accounts.User",
+                                 "org.freedesktop.DBus.Properties",
                                  QDBusConnection::systemBus());
     if (!accountsInter.isValid()) {
         qWarning() << "accounts interface invalid: (getUUID)" << accountsInter.lastError().message();
         return;
     }
-    QVariant retUUID = accountsInter.property("UUID");
-    m_model->setUUID(retUUID.toString());
+
+    QDBusPendingCall call = accountsInter.asyncCall("Get", "com.deepin.daemon.Accounts.User" ,"UUID");
+    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(call, this);
+    connect(watcher, &QDBusPendingCallWatcher::finished, [this, call, watcher] {
+        if (!call.isError()) {
+            QDBusReply<QDBusVariant> reply = call.reply();
+            qDebug() << " getUUID: " << reply.value().variant().toString();
+            m_model->setUUID(reply.value().variant().toString());
+
+        } else {
+            qWarning() << "Failed to get driver info: " << call.error().message();
+        }
+        watcher->deleteLater();
+    });
 }
 
 void SyncWorker::getHostName()
