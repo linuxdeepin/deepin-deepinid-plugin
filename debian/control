@@ -4,8 +4,6 @@ Priority: optional
 Maintainer: duanhongyu <duanhongyu@uniontech.com>
 Build-Depends: debhelper-compat (= 12),
                cmake,
-               libdframeworkdbus-dev (>= 1.0.2),
-               libgsettings-qt-dev,
                pkg-config,
                qtbase5-dev,
                qttools5-dev-tools,

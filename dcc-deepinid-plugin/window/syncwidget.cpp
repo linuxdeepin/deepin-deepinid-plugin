@@ -1,18 +1,23 @@
 #include "syncwidget.h"
-#include "syncmodel.h"
-#include "pages/login.h"
-#include "pages/avatarwidget.h"
+#include "operation/syncmodel.h"
+#include "widgets/login.h"
+#include "widgets/logininfo.h"
+#include "widgets/logininfodetail.h"
+#include "widgets/avatarwidget.h"
 
 #include <QVBoxLayout>
 #include <QStackedLayout>
 #include <QLabel>
 #include <DFloatingButton>
+#include <DBackgroundGroup>
 
+DCC_USE_NAMESPACE
 DWIDGET_USE_NAMESPACE
 
 /**
  * @brief SyncWidget::SyncWidget  UnionID 二级页面
  */
+
 SyncWidget::SyncWidget(QWidget *parent)
     : QWidget(parent)
     , m_mainLayout(new QStackedLayout)
@@ -46,7 +51,6 @@ void SyncWidget::setModel(SyncModel *model)
 void SyncWidget::resizeEvent(QResizeEvent *event)
 {
     Q_UNUSED(event);
-    m_loginInfoPage->setMinimumWidth(this->width() / 3);
 }
 
 void SyncWidget::initUI()
@@ -66,6 +70,8 @@ void SyncWidget::initUI()
     m_groundGroup->setBackgroundRole(QPalette::Base);
     m_groundGroup->setUseWidgetBackground(true);
 
+    // TODO: 暂时设置固定值
+    m_loginInfoPage->setFixedWidth(220);
     contentLay->addWidget(m_loginInfoPage, 1);
     contentLay->addWidget(m_loginInfoDetailPage, 2);
 
@@ -101,4 +107,5 @@ void SyncWidget::onUserInfoChanged(const QVariantMap &userInfo)
         setAutoFillBackground(true);
     }
 }
+
 

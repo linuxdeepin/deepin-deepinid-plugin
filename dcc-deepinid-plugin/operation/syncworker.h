@@ -1,21 +1,40 @@
+/*
+ * Copyright (C) 2016 ~ 2021 Deepin Technology Co., Ltd.
+ *
+ * Author:     duanhongyu <duanhongyu@uniontech.com>
+
+ * Maintainer: duanhongyu <duanhongyu@uniontech.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 #ifndef SYNCWORKER_H
 #define SYNCWORKER_H
 
+#include "syncdbusproxy.h"
 #include "syncmodel.h"
 
 #include <QObject>
-#include <com_deepin_sync_daemon.h>
-#include <com_deepin_deepinid.h>
-
-using SyncInter = com::deepin::sync::Daemon;
-using DeepinId = com::deepin::deepinid;
 
 struct BindCheckResult {
     QString ubid = "";
     QString error = "";
     bool ret = false;
 };
-
+class IntString;
+class SyncModel;
+class SyncDBusProxy;
 class SyncWorker : public QObject
 {
     Q_OBJECT
@@ -23,7 +42,6 @@ public:
     explicit SyncWorker(SyncModel * model, QObject *parent = nullptr);
 
     void activate();
-    void deactivate();
     void refreshSyncState();
 
 public Q_SLOTS:
@@ -66,9 +84,7 @@ private:
 
 private:
     SyncModel *m_model;
-    SyncInter *m_syncInter;
-    DeepinId *m_deepinId_inter;
-    QDBusInterface *m_syncHelperInter;
+    SyncDBusProxy *m_syncInter;
 };
 
 #endif // SYNCWORKER_H

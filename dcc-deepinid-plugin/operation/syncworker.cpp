@@ -7,66 +7,41 @@
 #include <QtConcurrent>
 #include <DSysInfo>
 #include <unistd.h>
-#include <org_freedesktop_hostname1.h>
 #include <ddbussender.h>
 
 DCORE_USE_NAMESPACE
 
-const static QString SYNC_INTERFACE = QStringLiteral("com.deepin.sync.Daemon");
-const static QString DEEPINID_INTERFACE = QStringLiteral("com.deepin.deepinid");
-
 SyncWorker::SyncWorker(SyncModel *model, QObject *parent)
     : QObject(parent)
     , m_model(model)
-    , m_syncInter(new SyncInter(SYNC_INTERFACE, "/com/deepin/sync/Daemon", QDBusConnection::sessionBus(), this))
-    , m_deepinId_inter(new DeepinId(DEEPINID_INTERFACE, "/com/deepin/deepinid", QDBusConnection::sessionBus(), this))
-    , m_syncHelperInter(new QDBusInterface("com.deepin.sync.Helper", "/com/deepin/sync/Helper", "com.deepin.sync.Helper", QDBusConnection::systemBus(), this))
-{
-    m_syncInter->setSync(false, false);
-    m_deepinId_inter->setSync(false, false);
-
+    , m_syncInter(new SyncDBusProxy(this))
+ {
     QDBusConnection::systemBus().connect("com.deepin.license", "/com/deepin/license/Info",
                                          "com.deepin.license.Info", "LicenseStateChange",
                                          this, SLOT(licenseStateChangeSlot()));
 
-    connect(m_syncInter, &SyncInter::StateChanged, this, &SyncWorker::onStateChanged, Qt::QueuedConnection);
-    connect(m_syncInter, &SyncInter::LastSyncTimeChanged, this, &SyncWorker::onLastSyncTimeChanged, Qt::QueuedConnection);
-    connect(m_syncInter, &SyncInter::SwitcherChange, this, &SyncWorker::onSyncModuleStateChanged, Qt::QueuedConnection);
-    connect(m_deepinId_inter, &DeepinId::UserInfoChanged, m_model, &SyncModel::setUserinfo, Qt::QueuedConnection);
+    connect(m_syncInter, &SyncDBusProxy::StateChanged, this, &SyncWorker::onStateChanged, Qt::QueuedConnection);
+    connect(m_syncInter, &SyncDBusProxy::LastSyncTimeChanged, this, &SyncWorker::onLastSyncTimeChanged, Qt::QueuedConnection);
+    connect(m_syncInter, &SyncDBusProxy::SwitcherChange, this, &SyncWorker::onSyncModuleStateChanged, Qt::QueuedConnection);
+    connect(m_syncInter, &SyncDBusProxy::UserInfoDeepinidChanged, m_model, &SyncModel::setUserinfo, Qt::QueuedConnection);
 
-    auto req = m_syncInter->isValid();
-
-    m_model->setSyncIsValid(req && valueByQSettings<bool>(DCC_CONFIG_FILES, "CloudSync", "AllowCloudSync", false));
-    connect(m_syncInter, &DeepinId::serviceValidChanged, this, [=](bool valid) {
-        m_model->setSyncIsValid(valid && valueByQSettings<bool>(DCC_CONFIG_FILES, "CloudSync", "AllowCloudSync", false));
-    });
     getUserDeepinidInfo();
     licenseStateChangeSlot();
-    m_model->setUserinfo(m_deepinId_inter->userInfo());
+    m_model->setUserinfo(m_syncInter->userInfo());
 }
 
 void SyncWorker::activate()
 {
-    m_syncInter->blockSignals(false);
-    m_deepinId_inter->blockSignals(false);
-
     onStateChanged(m_syncInter->state());
     onLastSyncTimeChanged(m_syncInter->lastSyncTime());
 
     refreshSyncState();
 }
 
-void SyncWorker::deactivate()
-{
-    m_syncInter->blockSignals(true);
-    m_deepinId_inter->blockSignals(true);
-}
-
 void SyncWorker::refreshSyncState()
 {
     QFutureWatcher<QJsonObject> *watcher = new QFutureWatcher<QJsonObject>(this);
     connect(watcher, &QFutureWatcher<QJsonObject>::finished, this, [=] {
-        watcher->deleteLater();
         QJsonObject obj = watcher->result();
 
         if (obj.isEmpty()) {
@@ -83,12 +58,12 @@ void SyncWorker::refreshSyncState()
         for (auto it = moduleMap.cbegin(); it != moduleMap.cend(); ++it) {
             m_model->setModuleSyncState(it->first, obj[it->second.first()].toBool());
         }
+        watcher->deleteLater();
     });
 
     QFuture<QJsonObject> future = QtConcurrent::run([=]() -> QJsonObject {
-        QDBusPendingReply<QString> reply = m_syncInter->SwitcherDump();
-        reply.waitForFinished();
-        return QJsonDocument::fromJson(reply.value().toUtf8()).object();
+        QString switcherDump = m_syncInter->SwitcherDump();
+        return QJsonDocument::fromJson(switcherDump.toUtf8()).object();
     });
 
     watcher->setFuture(future);
@@ -116,12 +91,12 @@ void SyncWorker::setSyncState(const QString &syncType, bool state)
 
 void SyncWorker::loginUser()
 {
-    m_deepinId_inter->Login();
+    m_syncInter->Login();
 }
 
 void SyncWorker::logoutUser()
 {
-    m_deepinId_inter->Logout();
+    m_syncInter->Logout();
 }
 
 void SyncWorker::setAutoSync(bool autoSync)
@@ -171,10 +146,6 @@ void SyncWorker::licenseStateChangeSlot()
 
 void SyncWorker::getUOSID()
 {
-    if (!m_syncHelperInter->isValid()) {
-        qWarning() << "syncHelper interface invalid: (getUOSID)" << m_syncHelperInter->lastError().message();
-        return;
-    }
     QFutureWatcher<QString> *watcher = new QFutureWatcher<QString>(this);
     connect(watcher, &QFutureWatcher<QString>::finished, this, [=] {
         qDebug() << " getUOSID: " << watcher->result();
@@ -182,11 +153,11 @@ void SyncWorker::getUOSID()
         watcher->deleteLater();
     });
     QFuture<QString> future = QtConcurrent::run( [=]() -> QString{
-        QDBusReply<QString> retUOSID = m_syncHelperInter->call("UOSID");
-        if (retUOSID.value().isEmpty()) {
-            qWarning() << "UOSID failed:" << retUOSID.error().message();
+        QString retUOSID = m_syncInter->UOSID();
+        if (retUOSID.isEmpty()) {
+            qWarning() << "UOSID failed:";
         }
-        return retUOSID.value();
+        return retUOSID;
     });
     watcher->setFuture(future);
 }
@@ -219,10 +190,7 @@ void SyncWorker::getUUID()
 
 void SyncWorker::getHostName()
 {
-    org::freedesktop::hostname1 hostnameInter("org.freedesktop.hostname1",
-                                              "/org/freedesktop/hostname1",
-                                              QDBusConnection::systemBus());
-    m_model->setHostName(hostnameInter.staticHostname());
+    m_model->setHostName(m_syncInter->StaticHostname());
 }
 
 void SyncWorker::asyncLocalBindCheck(const QString &uuid)
@@ -234,8 +202,7 @@ void SyncWorker::asyncLocalBindCheck(const QString &uuid)
         if (result.error.isEmpty()) {
             qDebug() << "user Bind " << result.ubid;
             m_model->setBindLocalUBid(result.ubid);
-        }
-        else {
+        } else {
             m_model->setResetPasswdError(result.error);
         }
         watcher->deleteLater();
@@ -355,18 +322,15 @@ void SyncWorker::getLicenseState()
 BindCheckResult SyncWorker::logout(const QString &ubid)
 {
     BindCheckResult result = unBindAccount(ubid);
-    m_deepinId_inter->Logout();
+    m_syncInter->Logout();
     return result;
 }
 
 BindCheckResult SyncWorker::checkLocalBind(const QString &uuid)
 {
     BindCheckResult result;
-    QDBusReply<QString> retLocalBindCheck= m_deepinId_inter->call(QDBus::BlockWithGui, "LocalBindCheck", uuid);
-    if (!m_syncHelperInter->isValid()) {
-        qWarning() << "syncHelper interface invalid: (localBindCheck)" << m_syncHelperInter->lastError().message();
-        return result;
-    }
+    QDBusPendingReply<QString> retLocalBindCheck = m_syncInter->LocalBindCheck(uuid);
+    retLocalBindCheck.waitForFinished();
     if (retLocalBindCheck.error().message().isEmpty()) {
         result.ubid = retLocalBindCheck.value();
     } else {

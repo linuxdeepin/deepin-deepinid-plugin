@@ -22,10 +22,7 @@
 #pragma once
 
 #include "interface/namespace.h"
-#include "utils.h"
-#include "syncmodel.h"
-#include "avatarwidget.h"
-#include "downloadurl.h"
+#include "operation/utils.h"
 #include <dtkwidget_global.h>
 
 DWIDGET_BEGIN_NAMESPACE
@@ -43,6 +40,9 @@ class QVBoxLayout;
 class QPushButton;
 QT_END_NAMESPACE
 
+class SyncModel;
+class DownloadUrl;
+class AvatarWidget;
 class LoginInfoPage : public QWidget
 {
     Q_OBJECT

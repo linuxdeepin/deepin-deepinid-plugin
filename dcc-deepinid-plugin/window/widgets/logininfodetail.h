@@ -22,13 +22,14 @@
 #pragma once
 
 #include "interface/namespace.h"
-
-#include "syncmodel.h"
-#include "utils.h"
-#include "syncstateicon.h"
-
+#include "operation/utils.h"
+#include <QWidget>
 #include <dtkwidget_global.h>
-#include <widgets/settingsgroup.h>
+
+DCC_BEGIN_NAMESPACE
+class SettingsGroup;
+class SwitchWidget;
+DCC_END_NAMESPACE
 
 DWIDGET_BEGIN_NAMESPACE
 class DListView;
@@ -37,23 +38,17 @@ DWIDGET_END_NAMESPACE
 
 QT_BEGIN_NAMESPACE
 class QObject;
-class QWidget;
 class QVBoxLayout;
 class QStandardItemModel;
 class QStandardItem;
 class QLabel;
 QT_END_NAMESPACE
 
-
-namespace dcc {
-namespace widgets {
-class SwitchWidget;
-}
-}
-
 /**
  * @brief The LoginInfoDetailPage class 展示登录信息三级页面
  */
+class SyncModel;
+class SyncStateIcon;
 class LoginInfoDetailPage : public QWidget
 {
     Q_OBJECT
@@ -111,21 +106,21 @@ private:
     SyncModel *m_model;
 
     QVBoxLayout *m_mainLayout;
-    dcc::widgets::SwitchWidget *m_bindSwitch;
-    dcc::widgets::SwitchWidget *m_autoSyncSwitch;
-    DTipLabel *m_autoSyncTips;
-    DTipLabel *m_bindedTips;
+    DCC_NAMESPACE::SwitchWidget *m_bindSwitch;
+    DCC_NAMESPACE::SwitchWidget *m_autoSyncSwitch;
+    DTK_WIDGET_NAMESPACE::DTipLabel *m_autoSyncTips;
+    DTK_WIDGET_NAMESPACE::DTipLabel *m_bindedTips;
 
     // 同步配置项
     DTK_WIDGET_NAMESPACE::DListView *m_listView;
     QStandardItemModel *m_listModel;
     QMap<SyncType, QStandardItem *> m_itemMap;
     SyncStateIcon *m_stateIcon;
-    dcc::widgets::SettingsGroup *m_group;
+    DCC_NAMESPACE::SettingsGroup *m_group;
 
     // 最后同步时间
     QLabel *m_lastSyncTimeLbl;
-    DTipLabel *m_disabledTips;
+    DTK_WIDGET_NAMESPACE::DTipLabel *m_disabledTips;
 
     // 解绑ID
     QString m_ubID;

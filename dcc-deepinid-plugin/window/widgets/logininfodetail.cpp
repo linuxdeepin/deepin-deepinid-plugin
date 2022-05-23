@@ -20,15 +20,18 @@
  */
 
 #include "logininfodetail.h"
-#include "utils.h"
-#include "syncmodel.h"
-#include <widgets/switchwidget.h>
+#include "operation/utils.h"
+#include "operation/syncmodel.h"
+#include "syncstateicon.h"
+#include "widgets/switchwidget.h"
+#include "widgets/settingsgroup.h"
 
 #include <polkit-qt5-1/PolkitQt1/Authority>
 
 #include <DTipLabel>
 #include <DMessageManager>
 #include <DApplicationHelper>
+#include <QVBoxLayout>
 
 #include <QObject>
 #include <QWidget>
@@ -36,9 +39,11 @@
 #include <QScrollArea>
 #include <QScroller>
 #include <QPalette>
+#include <DSwitchButton>
 
-using namespace dcc::widgets;
+
 using namespace PolkitQt1;
+DCC_USE_NAMESPACE
 DWIDGET_USE_NAMESPACE
 
 LoginInfoDetailPage::LoginInfoDetailPage(QWidget *parent)
@@ -323,7 +328,7 @@ void LoginInfoDetailPage::onStateChanged(const std::pair<qint32, QString> &state
         return;
     }
 
-    SyncState syncState;
+    SyncState syncState = SyncState::Succeed;
 
     do {
         // check is sync succeed

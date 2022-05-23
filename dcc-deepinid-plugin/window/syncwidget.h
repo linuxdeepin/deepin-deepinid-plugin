@@ -22,17 +22,25 @@
 #pragma once
 
 #include "interface/namespace.h"
-#include "pages/login.h"
-#include "pages/logininfo.h"
-#include "pages/logininfodetail.h"
-#include "syncmodel.h"
+#include <dtkwidget_global.h>
+
+#include "QWidget"
+
+DWIDGET_BEGIN_NAMESPACE
+class DBackgroundGroup;
+DWIDGET_END_NAMESPACE
 
 QT_BEGIN_NAMESPACE
 class QWidget;
 class QStackedLayout;
 class QLabel;
+class QResizeEvent;
 QT_END_NAMESPACE
 
+class SyncModel;
+class LoginPage;
+class LoginInfoPage;
+class LoginInfoDetailPage;
 class SyncWidget : public QWidget
 {
     Q_OBJECT
@@ -77,7 +85,7 @@ private:
     LoginPage *m_loginPage;
     LoginInfoPage *m_loginInfoPage;
     LoginInfoDetailPage *m_loginInfoDetailPage;
-    DBackgroundGroup *m_groundGroup;
+    DTK_WIDGET_NAMESPACE::DBackgroundGroup *m_groundGroup;
 
     bool m_isLogind;
 };

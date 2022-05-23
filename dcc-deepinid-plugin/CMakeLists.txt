@@ -20,7 +20,7 @@ file(GLOB_RECURSE SRCS
 )
 
 # 指定所有qrc文件
-set(QRCS icons/deepinid.qrc)
+set(QRCS operation/qrc/uosid.qrc)
 
 # 指定用到库
 find_package(Qt5 COMPONENTS Concurrent Core Network Widgets DBus LinguistTools REQUIRED)
@@ -28,9 +28,6 @@ find_package(DdeControlCenter REQUIRED)
 find_package(PkgConfig REQUIRED)
 find_package(DtkWidget REQUIRED)
 find_package(PolkitQt5-1)
-
-pkg_check_modules(DFrameworkDBus REQUIRED dframeworkdbus)
-pkg_check_modules(QGSettings REQUIRED gsettings-qt)
 
 # 新增一个编译目标
 file(GLOB TS_FILES "../translations/*.ts")
@@ -49,7 +46,6 @@ target_include_directories(${PLUGIN_NAME} PUBLIC
     ${Qt5Widgets_INCLUDE_DIRS}
     ${DtkWidget_INCLUDE_DIRS}
     ${DdeControlCenter_INCLUDE_DIR}
-    ${DFrameworkDBus_INCLUDE_DIRS}
     ${QGSettings_INCLUDE_DIRS}
     ${Qt5DBus_INCLUDE_DIRS}
     ${Qt5Network_INCLUDE_DIRS}
@@ -62,8 +58,8 @@ target_include_directories(${PLUGIN_NAME} PUBLIC
 target_link_libraries(${PLUGIN_NAME} PRIVATE
     ${Qt5Widgets_LIBRARIES}
     ${DtkWidget_LIBRARIES}
-    ${DdeControlCenter_LIBRARIES}
-    ${DFrameworkDBus_LIBRARIES}
+    ${DCC_WIDGETS_LIBRARIES}
+    ${DCC_INTERFACE_LIBRARIES}
     ${QGSettings_LIBRARIES}
     ${Qt5DBus_LIBRARIES}
     ${Qt5Network_LIBRARIES}

@@ -19,6 +19,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "operation/syncmodel.h"
 #include "downloadurl.h"
 #include "avatarwidget.h"
 #include "logininfo.h"

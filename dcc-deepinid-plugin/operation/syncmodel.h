@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2016 ~ 2021 Deepin Technology Co., Ltd.
+ *
+ * Author:     duanhongyu <duanhongyu@uniontech.com>
+
+ * Maintainer: duanhongyu <duanhongyu@uniontech.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 #ifndef SYNCMODEL_H
 #define SYNCMODEL_H
 
@@ -38,8 +59,6 @@ public:
 
     void setModuleSyncState(SyncType type, bool state);
 
-    inline bool syncIsValid() const { return m_syncIsValid; }
-    void setSyncIsValid(bool syncIsValid);
     QString userDisplayName() const;
 
     inline bool getActivation() const { return m_activation; }
@@ -76,7 +95,6 @@ Q_SIGNALS:
     void resetUserNameError(const QString& errorInfo);
 
 private:
-    bool m_syncIsValid;
     bool m_enableSync;
     bool m_activation;
     QMap<SyncType, bool> m_moduleSyncState;

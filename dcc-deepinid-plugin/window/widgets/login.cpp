@@ -20,7 +20,7 @@
  */
 
 #include "login.h"
-#include "utils.h"
+#include "operation/utils.h"
 #include "widgets/utils.h"
 
 #include <DSuggestButton>
@@ -53,7 +53,6 @@ LoginPage::LoginPage(QWidget *parent)
     m_mainLayout->setMargin(0);
     m_mainLayout->setSpacing(0);
 
-    //~ contents_path /cloudsync/Sign In
     DSuggestButton *loginBtn = new DSuggestButton(tr("Sign In"));
     loginBtn->setMinimumWidth(302);
     DTipLabel *tip = new DTipLabel(tr("Manage your Union ID and sync system settings between devices"));
@@ -86,14 +85,11 @@ LoginPage::LoginPage(QWidget *parent)
     m_mainLayout->addStretch(5);
 
     // 底部按钮
-
     if (IsProfessionalSystem) {
         QStringList agreementHttp = getAgreementHttp();
         QHBoxLayout *agreementLayout = new QHBoxLayout;
 
         QString text = tr("Learn about");
-//        QString text = tr("Learn about <a href=\"%1\">Union ID Service Agreement</a> and <a href=\"%2\">Union ID Service Privacy Policy</a>")
-//                .arg(agreementHttp.at(0)).arg(agreementHttp.at(1));
         DTipLabel *label = new DTipLabel(text, this);
         label->setWordWrap(true);
         DCommandLinkButton *useAgreementBtn = new DCommandLinkButton(tr("Union ID Service Agreement"));
