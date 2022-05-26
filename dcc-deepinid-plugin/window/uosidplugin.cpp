@@ -14,7 +14,7 @@ ModuleObject *UosIDPlugin::module()
 {
     // 一级界面
     UosIDModule *uosidInterface = new UosIDModule;
-    uosidInterface->setChildType(ModuleObject::ChildType::Page);
+    uosidInterface->setChildType(ModuleObject::Page);
 
     // UOSID 展示页面
     UosIDDetailsModule *uosIdWidget = new  UosIDDetailsModule(uosidInterface->model(), uosidInterface->work(), uosidInterface);

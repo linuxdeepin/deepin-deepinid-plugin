@@ -32,7 +32,7 @@ class SyncWorker;
 class UosIDPlugin : public PluginInterface
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID PluginInterface_iid FILE "uosid.json")
+    Q_PLUGIN_METADATA(IID "com.deepin.dde.ControlCenter.UosID" FILE "uosid.json")
     Q_INTERFACES(DCC_NAMESPACE::PluginInterface)
 
 public:
