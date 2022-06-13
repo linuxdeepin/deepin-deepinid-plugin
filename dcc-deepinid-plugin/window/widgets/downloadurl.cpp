@@ -74,7 +74,7 @@ void DownloadUrl::downloadFileFromURL(const QString &url, const QString &filePat
 
     QNetworkRequest request;
     request.setUrl(QUrl(url));
-    request.setAttribute(QNetworkRequest::FollowRedirectsAttribute, true);
+    request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, true);
 
     QSslConfiguration config = QSslConfiguration::defaultConfiguration();
     config.setPeerVerifyMode(QSslSocket::VerifyNone);

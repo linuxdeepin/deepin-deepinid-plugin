@@ -38,12 +38,12 @@ void SyncDBusProxy::initConnent()
 
 qlonglong SyncDBusProxy::lastSyncTime()
 {
-    return qvariant_cast<qlonglong>(m_syncInter->internalPropGet("LastSyncTime"));
+    return qvariant_cast<qlonglong>(m_syncInter->property("LastSyncTime"));
 }
 
 IntString SyncDBusProxy::state()
 {
-    return qvariant_cast<IntString>(m_syncInter->internalPropGet("State"));
+    return qvariant_cast<IntString>(m_syncInter->property("State"));
 }
 
 QString SyncDBusProxy::SwitcherDump()
@@ -67,7 +67,7 @@ void SyncDBusProxy::SwitcherSet(const QString &in0, bool in1)
 
 QVariantMap SyncDBusProxy::userInfo()
 {
-    return qvariant_cast<QVariantMap>(m_deepinId_inter->internalPropGet("UserInfoDeepinid"));
+    return qvariant_cast<QVariantMap>(m_deepinId_inter->property("UserInfoDeepinid"));
 }
 
 QDBusPendingReply<QString> SyncDBusProxy::LocalBindCheck(const QString &uuid)
@@ -103,5 +103,5 @@ QString SyncDBusProxy::UOSID()
 
 QString SyncDBusProxy::StaticHostname()
 {
-    return qvariant_cast<QString>(m_hostnameInter->internalPropGet("StaticHostname"));
+    return qvariant_cast<QString>(m_hostnameInter->property("StaticHostname"));
 }
