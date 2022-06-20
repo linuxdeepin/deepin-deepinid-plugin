@@ -38,6 +38,7 @@ class UosIDPlugin : public PluginInterface
 public:
     explicit UosIDPlugin() {}
 
+    virtual int location() const override;
     virtual QString name() const override;
     virtual ModuleObject *module() override;
 };

@@ -5,6 +5,11 @@
 #include "operation/syncmodel.h"
 #include "operation/syncworker.h"
 
+int UosIDPlugin::location() const
+{
+    return 0;
+}
+
 QString UosIDPlugin::name() const
 {
     return QStringLiteral("UOSID");
