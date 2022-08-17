@@ -22,7 +22,7 @@
 #ifndef UOSIDPLUGIN_H
 #define UOSIDPLUGIN_H
 
-#include "interface/moduleobject.h"
+#include "interface/pagemodule.h"
 #include "interface/plugininterface.h"
 
 DCC_USE_NAMESPACE
@@ -38,13 +38,13 @@ class UosIDPlugin : public PluginInterface
 public:
     explicit UosIDPlugin() {}
 
-    virtual int location() const override;
+    virtual QString location() const override;
     virtual QString name() const override;
     virtual ModuleObject *module() override;
 };
 
 // 模块
-class UosIDModule : public ModuleObject
+class UosIDModule : public PageModule
 {
     Q_OBJECT
 public:

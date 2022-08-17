@@ -5,9 +5,9 @@
 #include "operation/syncmodel.h"
 #include "operation/syncworker.h"
 
-int UosIDPlugin::location() const
+QString UosIDPlugin::location() const
 {
-    return 0;
+    return "0";
 }
 
 QString UosIDPlugin::name() const
@@ -19,7 +19,6 @@ ModuleObject *UosIDPlugin::module()
 {
     // 一级界面
     UosIDModule *uosidInterface = new UosIDModule;
-    uosidInterface->setChildType(ModuleObject::Page);
 
     // UOSID 展示页面
     UosIDDetailsModule *uosIdWidget = new  UosIDDetailsModule(uosidInterface->model(), uosidInterface->work(), uosidInterface);
@@ -28,7 +27,7 @@ ModuleObject *UosIDPlugin::module()
 }
 
 UosIDModule::UosIDModule(QObject *parent)
-    : ModuleObject("UOSID", tr("UOSID"), tr("UOSID"), QIcon::fromTheme("dcc_nav_cloudsync"), parent)
+    : PageModule("UOSID", tr("UOSID"), tr("UOSID"), QIcon::fromTheme("dcc_nav_cloudsync"), parent)
     , m_model(new SyncModel(this))
     , m_work(new SyncWorker(m_model, this))
 {
