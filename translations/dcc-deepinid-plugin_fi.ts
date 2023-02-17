@@ -2,8 +2,8 @@
 <context>
     <name>LoginInfoDetailPage</name>
     <message>
-        <source>Link local account to Union ID</source>
-        <translation>Linkitä paikallinen tili Union ID:hen</translation>
+        <source>Link local account to UOS ID</source>
+        <translation>Linkitä paikallinen tili UOS ID:hen</translation>
     </message>
     <message>
         <source>UOS Cloud sync</source>
@@ -58,8 +58,8 @@
         <translation>Virta-asetukset</translation>
     </message>
     <message>
-        <source>If linked, you can reset passwords of local accounts by Union ID</source>
-        <translation>Kun linkitetty, voit nollata paikallisten tilien salasanat Union ID:llä</translation>
+        <source>If linked, you can reset passwords of local accounts by UOS ID</source>
+        <translation>Kun linkitetty, voit nollata paikallisten tilien salasanat UOS ID:llä</translation>
     </message>
     <message>
         <source>Syncing...</source>
@@ -82,7 +82,7 @@
         <translation>Verkkovirhe</translation>
     </message>
     <message>
-        <source>Login expired, please sign in to the Union ID again</source>
+        <source>Login expired, please sign in to the UOS ID again</source>
         <translation>Kirjautuminen vanhentunut, kirjaudu Union ID -tunnuksella uudelleen</translation>
     </message>
     <message>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <source>The nickname cannot contain special characters (&apos;&lt;&gt;&amp;&quot;) and whitespaces</source>
-        <translation type="unfinished"/>
+        <translation>Lempinimi ilman erikoismerkkejä (&apos;&lt;&gt;&amp;&quot;) ja välilyöntejä</translation>
     </message>
 </context>
 <context>
@@ -133,15 +133,15 @@
         <extra-contents_path>/cloudsync/Sign In</extra-contents_path>
     </message>
     <message>
-        <source>Manage your Union ID and sync system settings between devices</source>
-        <translation>Hallinnoi Union ID:täsi ja synkronoi järjestelmän asetukset laitteiden välillä</translation>
+        <source>Manage your UOS ID and sync system settings between devices</source>
+        <translation>Hallinnoi UOS ID:tä ja synkronoi järjestelmän asetukset laitteiden välillä</translation>
     </message>
     <message>
         <source>Deepin ID Sign In</source>
         <translation>Kirjautuminen, Deepin ID</translation>
     </message>
     <message>
-        <source>Union ID Sign In</source>
+        <source>UOS ID Sign In</source>
         <translation>Kirjautuminen, Union ID</translation>
     </message>
     <message>
@@ -153,12 +153,12 @@
         <translation>Lisätietoja</translation>
     </message>
     <message>
-        <source>Union ID Service Agreement</source>
-        <translation>Union ID palvelusopimus</translation>
+        <source>UOS ID Service Agreement</source>
+        <translation>UOS ID palvelusopimus</translation>
     </message>
     <message>
-        <source>Union ID Service Privacy Policy</source>
-        <translation>Union ID -palvelun tietosuojakäytäntö</translation>
+        <source>UOS ID Service Privacy Policy</source>
+        <translation>UOS ID tietosuojakäytäntö</translation>
     </message>
 </context>
 <context>
@@ -168,12 +168,23 @@
         <translation>Deepin ID</translation>
     </message>
     <message>
-        <source>Union ID</source>
-        <translation>Union ID</translation>
+        <source>UOS ID</source>
+        <translation>UOS ID</translation>
     </message>
     <message>
         <source>Sign In</source>
         <translation>Kirjaudu sisään</translation>
+    </message>
+</context>
+<context>
+    <name>SyncWorker</name>
+    <message>
+        <source>Calendar</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

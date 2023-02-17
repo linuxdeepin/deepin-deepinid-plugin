@@ -1,15 +1,3 @@
-deepin-deepinid-plugin (1.0.0.8) UNRELEASED; urgency=medium
-
-  * update changelog
-
- -- duanhongyu <duanhongyu@uniontech.com>  Aug, 17 Jun 2022 9:17:17 +0800
-
-deepin-deepinid-plugin (1.0.0.7) UNRELEASED; urgency=medium
-
-  * update changelog
-
- -- duanhongyu <duanhongyu@uniontech.com>  Mon, 13 Jun 2022 9:17:17 +0800
-
 deepin-deepinid-plugin (1.0.0) unstable; urgency=medium
 
   * Initial release

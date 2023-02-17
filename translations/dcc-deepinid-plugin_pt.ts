@@ -176,4 +176,15 @@
         <translation>Iniciar Sessão</translation>
     </message>
 </context>
+<context>
+    <name>SyncWorker</name>
+    <message>
+        <source>Calendar</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
 </TS>

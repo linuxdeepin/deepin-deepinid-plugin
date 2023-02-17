@@ -1,41 +1,83 @@
 <?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="pl">
 <context>
-    <name>LoginInfoDetailPage</name>
+    <name>LoginInfoPage</name>
     <message>
-        <source>Link local account to Union ID</source>
-        <translation>Połącz konto lokalne z Union ID</translation>
+        <source>Edit account</source>
+        <translation>Edytuj konto</translation>
     </message>
     <message>
-        <source>UOS Cloud sync</source>
+        <source>Sign out</source>
+        <translation>Wyloguj</translation>
+    </message>
+    <message>
+        <source>The nickname must be 1~32 characters long</source>
+        <translation>Pseudonim musi zawierać od 1 do 32 znaków</translation>
+    </message>
+    <message>
+        <source>The full name is too long</source>
+        <translation>Imię i nazwisko jest za długie</translation>
+    </message>
+    <message>
+        <source>Mainland China</source>
+        <translation>Chiny kontynentalne</translation>
+    </message>
+    <message>
+        <source>Other regions</source>
+        <translation>Inne regiony</translation>
+    </message>
+</context>
+<context>
+    <name>SyncModule</name>
+    <message>
+        <source>Deepin ID</source>
+        <translation>Deepin ID</translation>
+    </message>
+    <message>
+        <source>UOS ID</source>
+        <translation>UOS ID</translation>
+    </message>
+    <message>
+        <source>Sign In</source>
+        <translation>Zaloguj się</translation>
+    </message>
+</context>
+<context>
+    <name>TransString</name>
+    <message>
+        <source>UOS Cloud Sync</source>
         <translation>Synchronizacja UOS Cloud</translation>
     </message>
     <message>
-        <source>Store system settings securely in the cloud and keep them in sync across devices</source>
-        <translation>Bezpiecznie przechowuj ustawienia systemu w chmurze i synchronizuj je pomiędzy urządzeniami</translation>
+        <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
+        <translation>Ze względu na lokalne prawa i regulacje, usługa nie jest obecnie dostępna w Twoim regionie.</translation>
     </message>
     <message>
-        <source>Linked successfully! Switch it off to get them unlinked.</source>
-        <translation>Połączono pomyślnie! Wyłącz tę opcję, jeśli zechcesz rozłączyć je ponownie.</translation>
+        <source>Cancel</source>
+        <translation>Anuluj</translation>
     </message>
     <message>
-        <source>UOS Cloud is currently unavailable in your region</source>
-        <translation>Usługa UOS Cloud jest obecnie niedostępna w twoim regionie</translation>
+        <source>Securely store system settings and personal data in the cloud, and keep them in sync across devices.</source>
+        <translation>Przechowuj bezpiecznie w chmurze ustawienia systemowe i dane osobowe, synchronizując je między urządzeniami.</translation>
     </message>
     <message>
-        <source>Network Settings</source>
-        <translation>Ustawienia sieci</translation>
+        <source>System Settings</source>
+        <translation>Ustawienia systemowe</translation>
     </message>
     <message>
-        <source>Sound Settings</source>
-        <translation>Ustawienia dźwięku</translation>
+        <source>Network</source>
+        <translation>Sieć</translation>
     </message>
     <message>
-        <source>Mouse Settings</source>
-        <translation>Ustawienia myszki</translation>
+        <source>Sound</source>
+        <translation>Dźwięk</translation>
     </message>
     <message>
-        <source>Update Settings</source>
-        <translation>Ustawienia aktualizacji</translation>
+        <source>Mouse</source>
+        <translation>Myszka</translation>
+    </message>
+    <message>
+        <source>Updates</source>
+        <translation>Aktualizacje</translation>
     </message>
     <message>
         <source>Dock</source>
@@ -54,67 +96,294 @@
         <translation>Motyw</translation>
     </message>
     <message>
-        <source>Power Settings</source>
-        <translation>Ustawienia zasilania</translation>
+        <source>Power</source>
+        <translation>Zasilanie</translation>
     </message>
     <message>
-        <source>If linked, you can reset passwords of local accounts by Union ID</source>
-        <translation>Połączenie konta pozwoli ci na zmianę haseł kont lokalnych poprzez Union ID</translation>
+        <source>Select All</source>
+        <translation>Zaznacz wszystko</translation>
+    </message>
+    <message>
+        <source>Unselect All</source>
+        <translation>Odznacz wszystko</translation>
+    </message>
+    <message>
+        <source>Clear cloud data</source>
+        <translation>Wyczyść dane w chmurze</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?
+Once the data is cleared, it cannot be recovered!</source>
+        <translation>Czy na pewno chcesz wyczyścić ustawienia systemowe i dane osobowe zapisane w chmurze?
+Usuniętych danych nie będzie można odzyskać!</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Wyczyść</translation>
     </message>
     <message>
         <source>Syncing...</source>
         <translation>Synchronizuję...</translation>
     </message>
     <message>
-        <source>Last Sync: %1</source>
+        <source>Last sync: %1</source>
         <translation>Ostatnia synchronizacja: %1</translation>
     </message>
     <message>
-        <source>yyyy-MM-dd hh:mm</source>
-        <translation>yyyy-MM-dd hh:mm</translation>
+        <source>Confirm</source>
+        <translation>Potwierdź</translation>
     </message>
     <message>
-        <source>System error</source>
-        <translation>Błąd systemu</translation>
+        <source>Link local accounts to UOS ID</source>
+        <translation>Połącz konta lokalne z UOS ID</translation>
     </message>
     <message>
-        <source>Network error</source>
-        <translation>Błąd sieci</translation>
+        <source>If linked, you can use UOS ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
+        <translation>Po połączeniu, będziesz mógł użyć UOS ID do logowania i resetowania hasła kont lokalnych. Wyłącz tę opcję, aby je rozłączyć.</translation>
     </message>
     <message>
-        <source>Login expired, please sign in to the Union ID again</source>
-        <translation>Sesja wygasła, zaloguj się ponownie do Union ID</translation>
+        <source>Trusted devices</source>
+        <translation>Zaufane urządzenia</translation>
+    </message>
+    <message>
+        <source>Manage trusted devices to keep your UOS ID secure.</source>
+        <translation>Zarządzaj zaufanymi urządzeniami, aby zachować bezpieczeństwo UOS ID</translation>
+    </message>
+    <message>
+        <source>OS version: %1</source>
+        <translation>Wersja systemu: %1</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>W użyciu</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Usuń</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to
+remove this device from trusted devices?</source>
+        <translation>Czy na pewno chcesz usunąć
+urządzenie z zaufanych?</translation>
+    </message>
+    <message>
+        <source>Cloud Service of UOS ID</source>
+        <translation>Usługi w chmurze UOS ID</translation>
+    </message>
+    <message>
+        <source>Manage your UOS ID and sync your personal data across devices.
+Sign in to UOS ID to get personalized features and services of Browser, App Store, Support, and more.</source>
+        <translation>Zarządzaj swoim UOS ID i synchronizuj dane użytkownika pomiędzy urządzeniami.
+Zaloguj się do UOS ID, aby uzyskać spersonalizowane funkcje i usługi dodatkowe Przeglądarki WWW, App Store, Wsparcia technicznego itd.</translation>
+    </message>
+    <message>
+        <source>Sign In to UOS ID</source>
+        <translation>Zaloguj się do UOS ID</translation>
+    </message>
+    <message>
+        <source>UOS Cloud</source>
+        <translation>Chmura UOS</translation>
+    </message>
+    <message>
+        <source>Devices and Local Accounts</source>
+        <translation>Urządzenia i konta lokalne</translation>
+    </message>
+    <message>
+        <source>Password and Security</source>
+        <translation>Hasło i bezpieczeństwo</translation>
     </message>
     <message>
         <source>The feature is not available at present, please activate your system first</source>
         <translation>Ta funkcja nie jest obecnie dostępna, prosimy najpierw o aktywację systemu</translation>
     </message>
-</context>
-<context>
-    <name>LoginInfoPage</name>
     <message>
-        <source>Edit account</source>
-        <translation>Edytuj konto</translation>
+        <source>Trusted phone numbers and email addresses</source>
+        <translation>Zaufane numery telefonu i adresy e-mail</translation>
     </message>
     <message>
-        <source>Sign out</source>
-        <translation>Wyloguj</translation>
+        <source>Use the trusted mobile number or email address to sign in to UOS ID, and verify sensitive operations if they are performed on UOS ID.</source>
+        <translation>Korzystaj wyłącznie z zaufanego numeru telefonu lub adresu e-mail do logowania się do UOS ID, aby móc przeprowadzać wrażliwe operacje w przyszłości.</translation>
     </message>
     <message>
-        <source>The nickname must be 1~32 characters long</source>
-        <translation>Pseudonim musi zawierać od 1 do 32 znaków</translation>
+        <source>Link phone number to UOS ID</source>
+        <translation>Połącz numer telefonu z UOS ID</translation>
     </message>
     <message>
-        <source>The full name is too long</source>
-        <translation>Wprowadzone imię i nazwisko jest za długie</translation>
+        <source>Link email address to UOS ID</source>
+        <translation>Połącz adres e-mail z UOS ID</translation>
     </message>
     <message>
-        <source>Mainland China</source>
-        <translation>Chiny kontynentalne</translation>
+        <source>Link third-party accounts</source>
+        <translation>Połącz konta zewnętrzne</translation>
     </message>
     <message>
-        <source>Other regions</source>
-        <translation>Inne regiony</translation>
+        <source>Securely and quickly log in to your UOS ID and local account by scanning the QR code with the linked WeChat.</source>
+        <translation>Bezpiecznie i szybko zaloguj się do swojego UOS ID i konta lokalnego, skanując kod QR z połączoną aplikacją WeChat.</translation>
+    </message>
+    <message>
+        <source>If unlinked, you will not be able to 
+use WeChat to sign in to UOS ID.
+Are you sure you want to unlink it?</source>
+        <translation>Po rozłączeniu, nie będziesz w stanie
+korzystać z WeChat do logowania się do UOS ID
+Czy na pewno chcesz je rozłączyć?</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Hasło</translation>
+    </message>
+    <message>
+        <source>Change your UOS ID password regularly to ensure its security.</source>
+        <translation>Regularnie zmieniaj swoje hasło UOS ID, aby utrzymać wysoki poziom bezpieczeństwa.</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Zmień hasło</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Hasło zmienione</translation>
+    </message>
+    <message>
+        <source>Operation failed, please try later</source>
+        <translation>Operacja zakończona niepowodzeniem, spróbuj ponownie później</translation>
+    </message>
+    <message>
+        <source>Reset password successfully</source>
+        <translation>Hasło zostało zresetowane pomyślnie</translation>
+    </message>
+    <message>
+        <source>Phone number</source>
+        <translation>Numer telefonu</translation>
+    </message>
+    <message>
+        <source>Email address</source>
+        <translation>Adres e-mail</translation>
+    </message>
+    <message>
+        <source>Enter a correct phone number</source>
+        <translation>Wprowadź prawidłowy numer telefonu</translation>
+    </message>
+    <message>
+        <source>Enter a correct email address</source>
+        <translation>Wprowadź prawidłowy adres e-mail</translation>
+    </message>
+    <message>
+        <source>Use another phone number</source>
+        <translation>Użyj innego numeru telefonu</translation>
+    </message>
+    <message>
+        <source>Use another email address</source>
+        <translation>Użyj innego adresu e-mail</translation>
+    </message>
+    <message>
+        <source>Link</source>
+        <translation>Połącz</translation>
+    </message>
+    <message>
+        <source>Unlink</source>
+        <translation>Rozłącz</translation>
+    </message>
+    <message>
+        <source>Unlinked</source>
+        <translation>Rozłączone</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Zmień</translation>
+    </message>
+    <message>
+        <source>Wrong password, %1 chances left</source>
+        <translation>Błędne hasło, pozostały %1 próby</translation>
+    </message>
+    <message>
+        <source>The login error has reached the limit today. You can reset the password and try again.</source>
+        <translation>Osiągnięto maksymalny limit dzienny zalogowań. Zresetuj hasło i spróbuj ponownie później.</translation>
+    </message>
+    <message>
+        <source>The phone number has been linked to UOS ID: %1.
+Please check and choose one action below.</source>
+        <translation>Numer telefonu został powiązany z UOS ID: %1.
+Wybierz działanie poniżej.</translation>
+    </message>
+    <message>
+        <source>The email address has been linked to UOS ID: %1.
+Please check and choose one action below.</source>
+        <translation>Adres e-mail został powiązany z UOS ID: %1.
+Wybierz działanie poniżej.</translation>
+    </message>
+    <message>
+        <source>Security Verification</source>
+        <translation>Weryfikacja bezpieczeństwa</translation>
+    </message>
+    <message>
+        <source>The action is sensitive, please enter the login password first</source>
+        <translation>Wybrane działanie wymaga potwierdzenia loginu i hasła</translation>
+    </message>
+    <message>
+        <source>Change UOS ID password</source>
+        <translation>Zmień hasło UOS ID</translation>
+    </message>
+    <message>
+        <source>Forgot password?</source>
+        <translation>Zapomniałeś hasła?</translation>
+    </message>
+    <message>
+        <source>Link to current UOS ID</source>
+        <translation>Powiąż z aktualnym UOS ID</translation>
+    </message>
+    <message>
+        <source>Set a Password</source>
+        <translation>Ustaw hasło</translation>
+    </message>
+    <message>
+        <source>Get Code</source>
+        <translation>Zdobądź kod</translation>
+    </message>
+    <message>
+        <source>Verification code</source>
+        <translation>Kod weryfikacyjny</translation>
+    </message>
+    <message>
+        <source>Resend (%1s)</source>
+        <translation>Wyślij ponownie (%1s)</translation>
+    </message>
+    <message>
+        <source>Enter a correct verification code</source>
+        <translation>Wprowadź prawidłowy kod weryfikacyjny</translation>
+    </message>
+    <message>
+        <source>Link WeChat to UOS ID</source>
+        <translation>Powiąż WeChat z UOS ID</translation>
+    </message>
+    <message>
+        <source>Scan QR code with WeChat</source>
+        <translation>Skanuj kod QR z aplikacją WeChat</translation>
+    </message>
+    <message>
+        <source>Password must contain numbers and letters</source>
+        <translation>Hasło musi się składać z cyfr i liter</translation>
+    </message>
+    <message>
+        <source>Password must be between 8 and 64 characters</source>
+        <translation>Hasło musi zawierać od 8 do 64 znaków</translation>
+    </message>
+    <message>
+        <source>8-64 characters</source>
+        <translation>8-64 znaków</translation>
+    </message>
+    <message>
+        <source>Passwords don&apos;t match</source>
+        <translation>Hasła nie pasują do siebie</translation>
+    </message>
+    <message>
+        <source>Repeat the password</source>
+        <translation>Powtórz hasło</translation>
+    </message>
+    <message>
+        <source>8-64 characters, including uppercase or lowercase English letters and numbers</source>
+        <translation>8-64 znaków, włączając angielskie małe lub duże litery i cyfry</translation>
     </message>
     <message>
         <source>Invalid nickname, please enter a new one</source>
@@ -122,58 +391,11 @@
     </message>
     <message>
         <source>The nickname cannot contain special characters (&apos;&lt;&gt;&amp;&quot;) and whitespaces</source>
-        <translation type="unfinished"/>
-    </message>
-</context>
-<context>
-    <name>LoginPage</name>
-    <message>
-        <source>Sign In</source>
-        <translation>Zaloguj się</translation>
-        <extra-contents_path>/cloudsync/Sign In</extra-contents_path>
+        <translation>Pseudonim nie może zawierać znaków specjalnych (&apos;&lt;&gt;&amp;&quot;) i spacji</translation>
     </message>
     <message>
-        <source>Manage your Union ID and sync system settings between devices</source>
-        <translation>Zarządzaj swoim Union ID i synchronizuj ustawienia pomiędzy urządzeniami</translation>
-    </message>
-    <message>
-        <source>Deepin ID Sign In</source>
-        <translation>Logowanie Deepin ID</translation>
-    </message>
-    <message>
-        <source>Union ID Sign In</source>
-        <translation>Logowanie Union ID</translation>
-    </message>
-    <message>
-        <source>UOS Cloud is only available in Mainland China currently</source>
-        <translation>Usługa UOS Cloud jest obecnie dostępna wyłącznie w Chinach kontynentalnych</translation>
-    </message>
-    <message>
-        <source>Learn about</source>
-        <translation>Dowiedz się o</translation>
-    </message>
-    <message>
-        <source>Union ID Service Agreement</source>
-        <translation>Umowa świadczenia usług Union ID</translation>
-    </message>
-    <message>
-        <source>Union ID Service Privacy Policy</source>
-        <translation>Polityka Prywatności Serwisu Union ID</translation>
-    </message>
-</context>
-<context>
-    <name>SyncModule</name>
-    <message>
-        <source>Deepin ID</source>
-        <translation>Deepin ID</translation>
-    </message>
-    <message>
-        <source>Union ID</source>
-        <translation>Union ID</translation>
-    </message>
-    <message>
-        <source>Sign In</source>
-        <translation>Zaloguj się</translation>
+        <source>The nickname can be modified only once a day</source>
+        <translation>Pseudonim może zostać zmieniony tylko raz dziennie</translation>
     </message>
 </context>
 </TS>

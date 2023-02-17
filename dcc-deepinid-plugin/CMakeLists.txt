@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.7)
+cmake_minimum_required(VERSION 3.14)
 
 set(PLUGIN_NAME "dcc-deepinid-plugin")
 
@@ -10,6 +10,9 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 # 启用当前源目录和构建目录添加到包含路径
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # 指定所有源码文件
 file(GLOB_RECURSE SRCS
@@ -17,22 +20,33 @@ file(GLOB_RECURSE SRCS
     "*.cpp"
     "*.qrc"
     "*.svg"
+    "*.html"
 )
 
 # 指定所有qrc文件
-set(QRCS operation/qrc/uosid.qrc)
+set(QRCS icons/deepinid.qrc)
 
 # 指定用到库
-find_package(Qt5 COMPONENTS Concurrent Core Network Widgets DBus LinguistTools REQUIRED)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Concurrent Network Widgets DBus LinguistTools)
 find_package(DdeControlCenter REQUIRED)
 find_package(PkgConfig REQUIRED)
 find_package(DtkWidget REQUIRED)
 find_package(PolkitQt5-1)
+find_package(OpenSSL REQUIRED)
+find_package(Qt5WebChannel REQUIRED)
+find_package(Qt5WebEngine REQUIRED)
+find_package(Qt5WebEngineCore REQUIRED)
+find_package(Qt5WebEngineWidgets REQUIRED)
+
+pkg_check_modules(DFrameworkDBus REQUIRED dframeworkdbus)
+pkg_check_modules(QGSettings REQUIRED gsettings-qt)
 
 # 新增一个编译目标
 file(GLOB TS_FILES "../translations/*.ts")
 
-qt5_add_translation(QM_FILES ${TS_FILES})
+message(STATUS "status:${QT_NO_CREATE_VERSIONLESS_FUNCTIONS}")
+QT5_ADD_TRANSLATION(QM_FILES ${TS_FILES})
 
 add_custom_target(translations ALL DEPENDS ${QM_FILES})
 
@@ -46,10 +60,13 @@ target_include_directories(${PLUGIN_NAME} PUBLIC
     ${Qt5Widgets_INCLUDE_DIRS}
     ${DtkWidget_INCLUDE_DIRS}
     ${DdeControlCenter_INCLUDE_DIR}
+    ${DFrameworkDBus_INCLUDE_DIRS}
     ${QGSettings_INCLUDE_DIRS}
     ${Qt5DBus_INCLUDE_DIRS}
     ${Qt5Network_INCLUDE_DIRS}
     ${Qt5Concurrent_INCLUDE_DIRS}
+    ${Qt5WebChannel_INCLUDE_DIRS}
+    ${Qt5WebEngineWidgets_INCLUDE_DIRS}
 )
 
 # 设置目标要使用的链接库
@@ -58,20 +75,25 @@ target_include_directories(${PLUGIN_NAME} PUBLIC
 target_link_libraries(${PLUGIN_NAME} PRIVATE
     ${Qt5Widgets_LIBRARIES}
     ${DtkWidget_LIBRARIES}
-    ${DCC_WIDGETS_LIBRARIES}
-    ${DCC_INTERFACE_LIBRARIES}
+    ${DdeControlCenter_LIBRARIES}
+    ${DFrameworkDBus_LIBRARIES}
     ${QGSettings_LIBRARIES}
     ${Qt5DBus_LIBRARIES}
     ${Qt5Network_LIBRARIES}
     ${Qt5Concurrent_LIBRARIES}
+    ${Qt5WebChannel_LIBRARIES}
+    ${Qt5WebEngineWidgets_LIBRARIES}
     PolkitQt5-1::Agent
+    libcrypto.so
 )
 
 # 设置安装路径的前缀(默认为"/usr/local")
 set(CMAKE_INSTALL_PREFIX "/usr")
 
+set(UOSID_LOGO ${PROJECT_SOURCE_DIR}/icons/icons/uos_id.svg)
 # 指定安装位置
 install(TARGETS ${PLUGIN_NAME} LIBRARY DESTINATION lib/dde-control-center/modules)
-
+# 安装图标文件
+install(FILES ${UOSID_LOGO} DESTINATION share/icons/hicolor/48x48/apps)
 # 安装 .qm 文件
 install(FILES ${QM_FILES} DESTINATION share/${PLUGIN_NAME}/translations)
