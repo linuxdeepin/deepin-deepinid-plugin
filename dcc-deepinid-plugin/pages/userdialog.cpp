@@ -60,6 +60,7 @@ VerifyDlg::VerifyDlg(QWidget *parent):DDialog (parent)
     addButton(TransString::getTransString(STRING_CANCEL));
     addButton(TransString::getTransString(STRING_CONFIRM), false, DDialog::ButtonRecommend);
     setOnButtonClickedClose(false);
+    setDisplayPosition(Dtk::Widget::DAbstractDialog::Center);
     //
     connect(m_pwdEdit, &DLineEdit::editingFinished, [=]{
         m_pwdEdit->setAlert(false);
@@ -86,6 +87,7 @@ VerifyDlg::VerifyDlg(QWidget *parent):DDialog (parent)
 
         Q_EMIT verifyPasswd(strpwd);
     });
+    m_pwdEdit->setFocus();
 }
 
 void VerifyDlg::showAlert(const QString &alertMsg)
@@ -108,11 +110,12 @@ PhoneMailDlg::PhoneMailDlg(QWidget *parent):DDialog (parent)
     m_codeEdit->setFixedSize(237, 36);
     m_btnCode = new DSuggestButton(TransString::getTransString(STRING_VERIFYCODE));
     m_btnCode->setFixedHeight(36);
-    m_btnCode->setFixedWidth(120);
+    m_btnCode->setFixedWidth(132);
     m_codeEdit->lineEdit()->setMaxLength(6);
     m_codeEdit->lineEdit()->setValidator(new QRegExpValidator(QRegExp("^[0-9]{6}$"), this));
 
     m_codeEdit->setPlaceholderText(TransString::getTransString(STRING_VERIFYHOLDER));
+    phLayout2->setContentsMargins(0, 0, 0, 0);
     phLayout2->addWidget(m_codeEdit, 0, Qt::AlignLeft);
     phLayout2->addWidget(m_btnCode, 0, Qt::AlignRight);
     phLayout1->setSpacing(10);
@@ -141,7 +144,7 @@ PhoneMailDlg::PhoneMailDlg(QWidget *parent):DDialog (parent)
     connect(getButton(0), &QAbstractButton::clicked, this, &QDialog::reject);
     connect(m_btnCode, &QPushButton::clicked, [=]{
         QString strNum = m_numEdit->text();
-        if(strNum.isEmpty())
+        if(strNum.isEmpty() || !m_numEdit->lineEdit()->hasAcceptableInput())
         {
             m_numEdit->setAlert(true);
             m_numEdit->showAlertMessage(m_invalidTip);
@@ -170,6 +173,7 @@ PhoneMailDlg::PhoneMailDlg(QWidget *parent):DDialog (parent)
 
         Q_EMIT updatePhoneMail(strNum, verifyCode);
     });
+    m_numEdit->setFocus();
 }
 
 void PhoneMailDlg::setNumHolderText(const QString &holderText)
@@ -241,19 +245,19 @@ WeChatDlg::WeChatDlg(QWidget *parent):DDialog (parent)
     setSpacing(0);
 
     DFrame *weFrame = new DFrame;
-    weFrame->setFixedSize(140, 140);
+    weFrame->setFixedSize(148, 148);
     QHBoxLayout *frameLayout = new QHBoxLayout;
-    frameLayout->setMargin(0);
-    //frameLayout->setContentsMargins(10, 10, 10, 10);
+    frameLayout->setSpacing(0);
+    frameLayout->setContentsMargins(3, 3, 3, 3);
 
     m_wechatView = new QWebEngineView(this);
-    m_wechatView->setFixedSize(120, 120);
+    m_wechatView->setFixedSize(140, 140);
     m_wechatView->setContextMenuPolicy(Qt::NoContextMenu);
     QWebChannel *channel = new QWebChannel(this);
     channel->registerObject("client", m_wechatObj);
 
     m_wechatView->page()->setWebChannel(channel);
-    frameLayout->addWidget(m_wechatView, 0, Qt::AlignHCenter);
+    frameLayout->addWidget(m_wechatView, 0, Qt::AlignCenter);
     m_wechatView->page()->setBackgroundColor(DGuiApplicationHelper::instance()->applicationPalette().background().color());
     weFrame->setLayout(frameLayout);
     QWebEngineScript script;
@@ -266,7 +270,7 @@ WeChatDlg::WeChatDlg(QWidget *parent):DDialog (parent)
 
     addSpacing(10);
     addContent(weFrame, Qt::AlignHCenter);
-    addSpacing(10);
+    addSpacing(20);
     connect(m_wechatObj, &WeChatObject::finish, this, [this]{
         this->accept();
         Q_EMIT this->bindSuccess();
@@ -275,7 +279,7 @@ WeChatDlg::WeChatDlg(QWidget *parent):DDialog (parent)
         if(!bOk)
         {
             qWarning() << "load page failed";
-            this->m_wechatView->load(QUrl("qrc:/web/network_error.html"));
+            this->m_wechatView->load(QUrl("qrc:/web/error.html"));
         }
     });
 }
@@ -355,6 +359,7 @@ ResetPwdDlg::ResetPwdDlg(QWidget *parent):DDialog (parent)
             Q_EMIT this->resetPasswd(strpwd);
         }
     });
+    m_pwdEdit->setFocus();
 }
 
 void ResetPwdDlg::showFailTip()
@@ -433,6 +438,7 @@ RegisterDlg::RegisterDlg(QWidget *parent):DDialog (parent)
             Q_EMIT this->registerPasswd(strpwd);
         }
     });
+    m_pwdEdit->setFocus();
 }
 
 ReBindDlg::ReBindDlg(QWidget *parent):DDialog (parent)

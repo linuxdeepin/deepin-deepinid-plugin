@@ -88,6 +88,8 @@ private slots:
     void onLastSyncTimeChanged(const qlonglong lastSyncTime);
 
     void checkPassword();
+
+    void enableSyncConfig(bool state);
 private:
     void initSysConfig();
 
@@ -108,7 +110,7 @@ private:
     QVBoxLayout *m_mainlayout;
     QVBoxLayout *m_centerLayout;
     DTipLabel *m_autoSyncTips;
-    DTipLabel *m_bindedTips;
+    DLabel *m_bindedTips;
     DTipLabel *m_syncTimeTips;
     DCC_NAMESPACE::SwitchWidget *m_autoSyncSwitch;
     DListView *m_syncConfigView;

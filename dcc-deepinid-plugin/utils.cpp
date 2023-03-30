@@ -240,7 +240,7 @@ void sendSysNotify(const QString &strReason)
 {
     QDBusPendingReply<unsigned int> reply = Dtk::Core::DUtil::DNotifySender("UOS ID")
                                             .appName("dde-control-center")
-                                            .appIcon("uos_id")
+                                            .appIcon("uos-id")
                                             .appBody(strReason)
                                             .replaceId(0)
                                             .timeOut(3000)

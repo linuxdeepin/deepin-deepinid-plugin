@@ -24,9 +24,7 @@
         <file>icons/dcc_laptop_32px.svg</file>
         <file>icons/dcc_pad_32px.svg</file>
         <file>icons/dcc_pc_32px.svg</file>
-        <file>light/actions/dcc_account_32px.svg</file>
         <file>light/actions/dcc_cloud_ net_12px.svg</file>
-        <file>light/actions/dcc_cloud_32px.svg</file>
         <file>light/actions/dcc_cloud_luncher_12px.svg</file>
         <file>light/actions/dcc_cloud_mouse_12px.svg</file>
         <file>light/actions/dcc_cloud_power_12px.svg</file>
@@ -35,10 +33,7 @@
         <file>light/actions/dcc_cloud_update_12px.svg</file>
         <file>light/actions/dcc_cloud_voice_12px.svg</file>
         <file>light/actions/dcc_cloud_wallpaper_12px.svg</file>
-        <file>light/actions/dcc_password_32px.svg</file>
-        <file>dark/actions/dcc_account_32px.svg</file>
         <file>dark/actions/dcc_cloud_ net_12px.svg</file>
-        <file>dark/actions/dcc_cloud_32px.svg</file>
         <file>dark/actions/dcc_cloud_luncher_12px.svg</file>
         <file>dark/actions/dcc_cloud_mouse_12px.svg</file>
         <file>dark/actions/dcc_cloud_power_12px.svg</file>
@@ -47,7 +42,6 @@
         <file>dark/actions/dcc_cloud_update_12px.svg</file>
         <file>dark/actions/dcc_cloud_voice_12px.svg</file>
         <file>dark/actions/dcc_cloud_wallpaper_12px.svg</file>
-        <file>dark/actions/dcc_password_32px.svg</file>
         <file>dark/actions/dcc_seckey_16px.svg</file>
         <file>dark/actions/dcc_secwechat_16px.svg</file>
         <file>light/actions/dcc_seckey_16px.svg</file>
@@ -61,6 +55,12 @@
         <file>actions/dcc_not_use_28px.svg</file>
         <file>icons/dcc_login_bg.svg</file>
         <file>icons/dcc_cloud_logo.svg</file>
+        <file>icons/dcc_account_32px.svg</file>
+        <file>icons/dcc_account_select_32px.svg</file>
+        <file>icons/dcc_utcloud_32px.svg</file>
+        <file>icons/dcc_utcloud_select_32px.svg</file>
+        <file>icons/dcc_password_32px.svg</file>
+        <file>icons/dcc_password_select_32px.svg</file>
     </qresource>
     <qresource prefix="/">
         <file>web/error.html</file>

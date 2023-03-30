@@ -94,6 +94,7 @@ private:
     // Info ListView
     DTK_WIDGET_NAMESPACE::DListView *m_listView;
     QStandardItemModel *m_listModel;
+    QMap<int, QString> m_listIcon;
 
     QPushButton *m_logoutBtn;
     QPushButton *m_editInfoBtn;

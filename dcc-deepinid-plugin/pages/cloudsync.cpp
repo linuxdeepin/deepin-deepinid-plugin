@@ -28,7 +28,7 @@ Q_DECLARE_METATYPE(QMargins)
 
 CloudSyncPage::CloudSyncPage(QWidget *parent):QWidget (parent)
   , m_autoSyncTips(new DTipLabel(TransString::getTransString(STRING_CLOUDMSG), this))
-  , m_bindedTips(new DTipLabel(TransString::getTransString(STRING_CLOUDTITLE), this))
+  , m_bindedTips(new DLabel(TransString::getTransString(STRING_CLOUDTITLE), this))
   , m_syncTimeTips(new DTipLabel("", this))
   , m_autoSyncSwitch(new SwitchWidget(this))
   , m_syncConfigView(new DListView(this))
@@ -36,7 +36,7 @@ CloudSyncPage::CloudSyncPage(QWidget *parent):QWidget (parent)
   , m_labelClear(new DLabel(this))
   , m_configModel(new SyncConfigModel(this))
   , m_itemModel(new QStandardItemModel(this))
-  , m_clearDlg(new DDialog("", TransString::getTransString(STRING_EMPTYMSG), this))
+  , m_clearDlg(new DDialog(TransString::getTransString(STRING_EMPTYTITLE), TransString::getTransString(STRING_EMPTYMSG), this))
   , m_syncState(false)
 {
     m_sysConfig =
@@ -249,9 +249,13 @@ void CloudSyncPage::addSwitcherDumpDate(QList<Apps*> &appDate)
         DStandardItem *item = new DStandardItem;
         QString itemText = app->name();
         bool visible = app->enable();
+        QFont itemFont = item->font();
+        itemFont.setWeight(QFont::Medium);
+        item->setFont(itemFont);
         item->setIcon(QIcon(app->icon()));
         item->setText(itemText);
-        auto &&rightAction = new DViewItemAction(Qt::AlignVCenter, size, size, true);
+        item->setSizeHint(QSize(0, 46));
+        auto &&rightAction = new DViewItemAction(Qt::AlignVCenter, size, size, false);
         auto &&checkoutState = visible ? DStyle::SP_IndicatorChecked : DStyle::SP_IndicatorUnchecked;
         auto &&checkIcon = qobject_cast<DStyle *>(style())->standardIcon(checkoutState);
         rightAction->setIcon(checkIcon);
@@ -259,13 +263,13 @@ void CloudSyncPage::addSwitcherDumpDate(QList<Apps*> &appDate)
         m_itemModel->appendRow(item);
         m_utcloudItemMap[app->datekey()] = item;
         qDebug() << "add sync app:" << itemText;
-        connect(rightAction, &DViewItemAction::triggered, this, [=]{
-            bool state = m_syncModel->getUtcloudStateByType(app->datekey());
-            qDebug() << "app state:" << state;
-            Q_EMIT requestSetUtcloudModuleState(app->datekey(), !state);
-            auto actionIcon = !state ? DStyle::SP_IndicatorChecked : DStyle::SP_IndicatorUnchecked;
-            rightAction->setIcon(qobject_cast<DStyle*>(style())->standardIcon(actionIcon));
-        });
+//        connect(rightAction, &DViewItemAction::triggered, this, [=]{
+//            bool state = m_syncModel->getUtcloudStateByType(app->datekey());
+//            qDebug() << "app state:" << state;
+//            Q_EMIT requestSetUtcloudModuleState(app->datekey(), !state);
+//            auto actionIcon = !state ? DStyle::SP_IndicatorChecked : DStyle::SP_IndicatorUnchecked;
+//            rightAction->setIcon(qobject_cast<DStyle*>(style())->standardIcon(actionIcon));
+//        });
     }
 }
 
@@ -296,52 +300,55 @@ void CloudSyncPage::initSysConfig()
     QMargins itemMargin(20, 0, 10, 0);
     DStandardItem *item = new DStandardItem;
     item->setSizeHint(QSize(-1, 37));
+    QFont itemFont = item->font();
+    itemFont.setWeight(QFont::Medium);
+    item->setFont(itemFont);
     item->setData(QVariant::fromValue(itemMargin), Dtk::MarginsRole);
     item->setIcon(QIcon::fromTheme("dcc_cfg_set"));
     item->setText(TransString::getTransString(STRING_SYSCONFIG));
+
     item->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     item->setData(QVariant::fromValue(false), Qt::UserRole + 100);
 
-    auto&& leftAction = new DViewItemAction(Qt::AlignVCenter, size, size, true);
+    auto&& leftAction = new DViewItemAction(Qt::AlignVCenter, size, size, false);
     leftAction->setIcon(QIcon::fromTheme("go-next"));
     item->setActionList(Qt::Edge::LeftEdge, {leftAction});
 
-    auto &&rightAction = new DViewItemAction(Qt::AlignVCenter, QSize(), QSize(), true);
-    rightAction->setText(TransString::getTransString(STRING_SELECTALL));
-    rightAction->setTextColorRole(DPalette::Link);
-    rightAction->setData(true);
-    item->setActionList(Qt::Edge::RightEdge, {rightAction});
+//    auto &&rightAction = new DViewItemAction(Qt::AlignVCenter, QSize(), QSize(), true);
+//    rightAction->setText("");
+//    rightAction->setTextColorRole(DPalette::Link);
+//    //rightAction->setData(true);
+//    item->setActionList(Qt::Edge::RightEdge, {rightAction});
     m_configModel->appendRow(item);
-    m_syncConfigView->setMinimumHeight(46);
 
-    connect(leftAction, &DViewItemAction::triggered, this, &CloudSyncPage::expandSysConfig);
-    connect(rightAction, &DViewItemAction::triggered, [=]{
-        bool selected = rightAction->data().toBool();
-        rightAction->setData(!selected);
-        rightAction->setText(!selected ? TransString::getTransString(STRING_SELECTALL) : TransString::getTransString(STRING_UNSELECTALL));
-        this->m_syncConfigView->update(this->m_configModel->index(0, 0));
-        bool checkStatus = this->m_configModel->item(0)->data(Qt::UserRole + 100).toBool();
-        if(!checkStatus)
-        {
-            Q_EMIT leftAction->triggered();
-        }
+    //connect(leftAction, &DViewItemAction::triggered, this, &CloudSyncPage::expandSysConfig);
+//    connect(rightAction, &DViewItemAction::triggered, [=]{
+//        bool selected = !(this->syncCount() == this->m_sysConfig.size());
+//        //rightAction->setData(!selected);
+//        //rightAction->setText(!selected ? TransString::getTransString(STRING_SELECTALL) : TransString::getTransString(STRING_UNSELECTALL));
+//        //this->m_syncConfigView->update(this->m_configModel->index(0, 0));
+//        bool checkStatus = this->m_configModel->item(0)->data(Qt::UserRole + 100).toBool();
+//        if(!checkStatus)
+//        {
+//            Q_EMIT leftAction->triggered();
+//        }
 
-        for (int i = 1; i < m_configModel->rowCount(); ++i)
-        {
-            DStandardItem *configItem = dynamic_cast<DStandardItem*>(m_configModel->item(i));
-            if(configItem)
-            {
-                bool isChecked = configItem->data(Qt::UserRole + 100).toBool();
-                qDebug() << "selected:" << selected << ", checked:" << isChecked;
-                if(selected != isChecked)
-                {
-                    Q_EMIT m_syncConfigView->clicked(configItem->index());
-                }
-            }
-        }
+//        for (int i = 1; i < m_configModel->rowCount(); ++i)
+//        {
+//            DStandardItem *configItem = dynamic_cast<DStandardItem*>(m_configModel->item(i));
+//            if(configItem)
+//            {
+//                bool isChecked = configItem->data(Qt::UserRole + 100).toBool();
+//                qDebug() << "selected:" << selected << ", checked:" << isChecked;
+//                if(selected != isChecked)
+//                {
+//                    Q_EMIT m_syncConfigView->clicked(configItem->index());
+//                }
+//            }
+//        }
 
-        this->m_syncConfigView->update();
-    });
+//        this->m_syncConfigView->update();
+//    });
 }
 
 void CloudSyncPage::initUI()
@@ -355,7 +362,7 @@ void CloudSyncPage::initUI()
 
     m_autoSyncTips->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     m_autoSyncTips->setWordWrap(true);
-    DFontSizeManager::instance()->bind(m_autoSyncTips, DFontSizeManager::T9, QFont::Thin);
+    DFontSizeManager::instance()->bind(m_autoSyncTips, DFontSizeManager::T8, QFont::Thin);
     DFontSizeManager::instance()->bind(m_bindedTips, DFontSizeManager::T5, QFont::DemiBold);
     DFontSizeManager::instance()->bind(m_syncTimeTips, DFontSizeManager::T9, QFont::Thin);
     DFontSizeManager::instance()->bind(m_labelClear, DFontSizeManager::T9);
@@ -379,6 +386,7 @@ void CloudSyncPage::initUI()
     synclayout->addWidget(m_labelWarn);
     synclayout->addWidget(m_autoSyncSwitch, 0, Qt::AlignRight);
     headlayout->addLayout(synclayout);
+    headlayout->addSpacing(-5);
     headlayout->addLayout(tiplayout);
 
     m_mainlayout->setContentsMargins(20, 20, 20, 10);
@@ -437,8 +445,8 @@ void CloudSyncPage::initUI()
     m_mainlayout->addLayout(bottomLayout);
     setLayout(m_mainlayout);
     //init dialog
-    m_clearDlg->setFixedWidth(400);
-    m_clearDlg->setIcon(QIcon::fromTheme("deepin-browser"));
+    m_clearDlg->setFixedWidth(420);
+    m_clearDlg->setIcon(QIcon::fromTheme("dcc_union_id"));
     m_clearDlg->addButton(TransString::getTransString(STRING_CANCEL));
     m_clearDlg->addButton(TransString::getTransString(STRING_CLEARBTN), true, DDialog::ButtonWarning);
     m_clearDlg->setOnButtonClickedClose(true);
@@ -452,11 +460,13 @@ void CloudSyncPage::initConnection()
 
     connect(m_autoSyncSwitch, &SwitchWidget::checkedChanged, this, &CloudSyncPage::onAutoSyncChanged);
     connect(m_autoSyncSwitch, &SwitchWidget::checkedChanged, this, &CloudSyncPage::requestSetAutoSync);
+    connect(m_autoSyncSwitch, &SwitchWidget::checkedChanged, this, &CloudSyncPage::enableSyncConfig);
     connect(m_clearDlg, &QDialog::accepted, this, &CloudSyncPage::checkPassword);
     connect(this, &CloudSyncPage::onUserLogout, m_clearDlg, &QDialog::reject);
     connect(m_syncConfigView, &QListView::clicked, [=](const QModelIndex &index) {
         int rowNum = index.row();
         if(rowNum == 0) {
+            this->expandSysConfig(true);
             return;
         }
 
@@ -468,7 +478,7 @@ void CloudSyncPage::initConnection()
             bool state = confItem->data(Qt::UserRole + 100).toBool();
             confItem->setData(!state, Qt::UserRole + 100);
             qDebug() << confItem->data(Qt::DisplayRole).toString() << " , is checked:" << !state;
-            this->m_sysConfig[rowNum - 1][3].setValue(QVariant::fromValue(!state));
+            //this->m_sysConfig[rowNum - 1][3].setValue(QVariant::fromValue(!state));
             auto syncModuleMap = this->m_syncModel->moduleMap();
             SyncType itemType = SyncType(this->m_sysConfig[rowNum - 1].at(0).toInt());
             auto iter = syncModuleMap.begin();
@@ -493,6 +503,50 @@ void CloudSyncPage::initConnection()
             this->m_syncConfigView->update(confItem->index());
         }
     });
+
+    connect(m_syncItemView, &QListView::clicked, [=](const QModelIndex &index){
+        QStandardItem *item = m_itemModel->itemFromIndex(index);
+        auto iter = m_utcloudItemMap.begin();
+        for (; iter != m_utcloudItemMap.end(); ++iter) {
+            if(iter.value() == item){
+                break;
+            }
+        }
+
+        if(iter != m_utcloudItemMap.end()) {
+            QString appkey = iter.key();
+            bool state = m_syncModel->getUtcloudStateByType(appkey);
+            qDebug() << "app state:" << state;
+            Q_EMIT requestSetUtcloudModuleState(appkey, !state);
+            auto actionIcon = !state ? DStyle::SP_IndicatorChecked : DStyle::SP_IndicatorUnchecked;
+            DStandardItem *appItem = dynamic_cast<DStandardItem*>(item);
+            appItem->actionList(Qt::RightEdge).at(0)->setIcon(qobject_cast<DStyle*>(style())->standardIcon(actionIcon));
+        }
+    });
+}
+
+void CloudSyncPage::enableSyncConfig(bool state)
+{
+    qDebug() << "state change:" << state;
+    for (int index = 0; index < m_sysConfig.size(); ++index) {
+        if(m_sysConfig[index][3].toBool() != state) {
+            auto syncModuleMap = m_syncModel->moduleMap();
+            SyncType itemType = SyncType(m_sysConfig[index].at(0).toInt());
+            qDebug() << "change state:" << itemType;
+            auto iter = syncModuleMap.begin();
+            for (; iter != syncModuleMap.end(); ++iter) {
+                if(iter->first == itemType)
+                    break;
+            }
+
+            if(iter != syncModuleMap.end()) {
+                //qDebug() << "emit set state:" << confItem->data(Qt::DisplayRole).toString() << ", " << !state;
+                for(const QString &value: iter->second) {
+                    Q_EMIT requestSetModuleState(value, state);
+                }
+            }
+        }
+    }
 }
 
 void CloudSyncPage::SyncTimeLblVisible(bool isVisible)
@@ -561,7 +615,7 @@ void CloudSyncPage::initVerifyDialog(VerifyDlg *dlg)
         }
     });
     connect(dlg, &VerifyDlg::forgetPasswd, [this]{
-        m_syncWorker->openForgetPasswd(utils::forgetPwdURL());
+        m_syncWorker->openForgetPasswd(QString("%1&time=%2").arg(utils::forgetPwdURL()).arg(QDateTime::currentMSecsSinceEpoch()));
     });
     connect(this, &CloudSyncPage::onUserLogout, dlg, &QDialog::reject);
 }
@@ -596,6 +650,7 @@ void CloudSyncPage::checkPassword()
     {
         qInfo() << "on accept clear cloud data";
         Q_EMIT clearCloudData();
+        utils::sendSysNotify(TransString::getTransString(STRING_SUCCESSTIP));
     }
 }
 

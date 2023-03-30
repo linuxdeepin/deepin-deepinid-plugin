@@ -24,7 +24,8 @@ QString TransString::getTransString(TransStrType type)
         {STRING_SELECTALL , QT_TR_NOOP("Select All")},
         {STRING_UNSELECTALL , QT_TR_NOOP("Unselect All")},
         {STRING_EMPTY , QT_TR_NOOP("Clear cloud data")},
-        {STRING_EMPTYMSG , QT_TR_NOOP("Are you sure you want to clear your system settings and personal data saved in the cloud?\nOnce the data is cleared, it cannot be recovered!")},
+        {STRING_EMPTYTITLE, QT_TR_NOOP("Are you sure you want to clear your system settings and personal data saved in the cloud?")},
+        {STRING_EMPTYMSG , QT_TR_NOOP("Once the data is cleared, it cannot be recovered!")},
         {STRING_CLEARBTN , QT_TR_NOOP("Clear")},
         {STRING_SYNCING , QT_TR_NOOP("Syncing...")},
         {STRING_LASTSYNC , QT_TR_NOOP("Last sync: %1")},
@@ -61,6 +62,7 @@ QString TransString::getTransString(TransStrType type)
         {STRING_PWDACTION , QT_TR_NOOP("Change password")},
         {STRING_PWDMODSUCCESS , QT_TR_NOOP("Password changed")},
         {STRING_FAILTIP , QT_TR_NOOP("Operation failed, please try later")},
+        {STRING_SUCCESSTIP, QT_TR_NOOP("Operation Successful")},
         {STRING_RESETPWDTIP , QT_TR_NOOP("Reset password successfully")},
 
         {STRING_PHONEHOLDER , QT_TR_NOOP("Phone number")},

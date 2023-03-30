@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ICON/uos/cloud-dark</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#D5D5D5" offset="0%"></stop>
+            <stop stop-color="#595959" offset="100%"></stop>
+        </linearGradient>
+        <path d="M16.5,6 C20.0966604,6 23.1020091,8.53170675 23.8311804,11.9102547 C23.8707848,12.0448071 23.9057919,12.1807791 23.9356475,12.3178942 C26.2988329,13.1233156 28,15.3629934 28,18 C28,18.0578285 27.9991819,18.115466 27.9975566,18.1729014 C27.9992205,18.2255242 28,18.2793406 28,18.3333333 C28,21.3918193 25.4986168,23.8843733 22.229315,23.9960914 L22,24 L11,24 C10.9438935,24 10.8823271,23.9814928 10.8160396,23.9459741 C10.5490611,23.9812673 10.2767182,24 10,24 C6.6862915,24 4,21.3137085 4,18 C4,14.9875377 6.22007562,12.4936019 9.11336397,12.0650554 L9.13757151,12.0627395 C9.80803145,8.60816931 12.8494304,6 16.5,6 Z" id="path-2"></path>
+        <filter x="-14.6%" y="-13.9%" width="129.2%" height="138.9%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <filter x="-18.8%" y="-19.4%" width="137.5%" height="150.0%" filterUnits="objectBoundingBox" id="filter-4">
+            <feGaussianBlur stdDeviation="2" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="-1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="ICON/uos/cloud-dark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="形状结合" fill-rule="nonzero">
+            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+            <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-2"></use>
+        </g>
+    </g>
+</svg>

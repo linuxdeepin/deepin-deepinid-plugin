@@ -10,6 +10,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 # 启用当前源目录和构建目录添加到包含路径
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -z noexecstack")
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -90,10 +91,17 @@ target_link_libraries(${PLUGIN_NAME} PRIVATE
 # 设置安装路径的前缀(默认为"/usr/local")
 set(CMAKE_INSTALL_PREFIX "/usr")
 
-set(UOSID_LOGO ${PROJECT_SOURCE_DIR}/icons/icons/uos_id.svg)
+set(UOSID_LOGO ${PROJECT_SOURCE_DIR}/icons/icons/uos-id.svg)
 # 指定安装位置
 install(TARGETS ${PLUGIN_NAME} LIBRARY DESTINATION lib/dde-control-center/modules)
 # 安装图标文件
-install(FILES ${UOSID_LOGO} DESTINATION share/icons/hicolor/48x48/apps)
+#if(EXISTS "/usr/share/icons/hicolor/scalable/apps/uos-id.svg")
+#    message(STATUS "app logo exists")
+#else()
+#    message(STATUS "app logo not exists")
+#    # 安装图标文件
+#    install(FILES ${UOSID_LOGO} DESTINATION share/icons/hicolor/scalable/apps)
+#endif()
+
 # 安装 .qm 文件
 install(FILES ${QM_FILES} DESTINATION share/${PLUGIN_NAME}/translations)

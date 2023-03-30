@@ -75,6 +75,11 @@ LoginInfoPage::LoginInfoPage(QWidget *parent)
     , m_logoutBtn(new QPushButton (this))
     , m_editInfoBtn(new QPushButton(this))
 {
+    m_listIcon = {
+        {0, "dcc_utcloud"},
+        {1, "dcc_account"},
+        {2, "dcc_password"},
+    };
     initUI();
     initConnection();
     initGroupInfo();
@@ -98,14 +103,16 @@ void LoginInfoPage::setModel(SyncModel *model)
 
 void LoginInfoPage::onLogin()
 {
-    m_listView->setCurrentIndex(m_listModel->index(0, 0));
+    QModelIndex currIndex = m_listView->currentIndex();
+    if(!currIndex.isValid()) {
+        m_listView->setCurrentIndex(m_listModel->index(0, 0));
+    }
 }
 
 void LoginInfoPage::initUI()
 {
     m_mainLayout->setMargin(0);
     m_mainLayout->setSpacing(0);
-    setBackgroundRole(QPalette::Base);
     setFocusPolicy(Qt::FocusPolicy::ClickFocus);
 
     m_avatar->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
@@ -247,7 +254,17 @@ void LoginInfoPage::initConnection()
         QDesktopServices::openUrl(QUrl(url));
     });
 
-    connect(m_listView, QOverload<const QModelIndex&>::of(&DListView::currentChanged), [this](const QModelIndex &) {
+    connect(m_listView, QOverload<const QModelIndex&>::of(&DListView::currentChanged), [this](const QModelIndex &preindex) {
+        QModelIndex index = this->m_listView->currentIndex();
+        QString iconName = m_listIcon[index.row()];
+        QString preIcon = m_listIcon[preindex.row()];
+
+        QString selectIcon = iconName + "_select";
+        this->m_listModel->itemFromIndex(index)->setIcon(QIcon::fromTheme(selectIcon));
+        if(preindex.isValid()) {
+            this->m_listModel->itemFromIndex(preindex)->setIcon(QIcon::fromTheme(preIcon));
+        }
+
         Q_EMIT this->selectIndex(m_listView->currentIndex().row());
     });
 }
@@ -308,18 +325,18 @@ bool LoginInfoPage::eventFilter(QObject *obj, QEvent *event)
 // 处理编辑输入完成后的逻辑
 void LoginInfoPage::onEditingFinished(const QString &userFullName)
 {
-    QString fullName = userFullName;
+    QString fullName = userFullName.trimmed();
     m_inputLineEdit->lineEdit()->clearFocus();
     m_inputLineEdit->setVisible(false);
     m_username->setVisible(true);
     m_editNameBtn->setVisible(true);
-    if (userFullName.isEmpty() || userFullName.size() > 32) {
+    if (fullName.isEmpty() || fullName.size() > 32) {
         m_inputLineEdit->setAlert(false);
         m_inputLineEdit->hideAlertMessage();
         return;
     }
 
-    m_username->setText(handleNameTooLong(userFullName).toHtmlEscaped());
+    m_username->setText(handleNameTooLong(fullName).toHtmlEscaped());
     Q_EMIT requestSetFullname(fullName);
 }
 
@@ -391,25 +408,28 @@ void LoginInfoPage::initGroupInfo()
     DStandardItem *itemCloud = new DStandardItem();
     itemCloud->setBackgroundRole(DPalette::Base);
     itemCloud->setText(TransString::getTransString(STRING_CLOUDITEM));
-    itemCloud->setIcon(QIcon::fromTheme("dcc_cloud").pixmap(QSize(32, 32)));
+    itemCloud->setIcon(QIcon::fromTheme(m_listIcon[0]).pixmap(QSize(32, 32)));
     itemCloud->setData(QVariant::fromValue(itemMargin), Dtk::MarginsRole);
     itemCloud->setSizeHint(QSize(178, 48));
+    itemCloud->setToolTip(TransString::getTransString(STRING_CLOUDITEM));
     m_listModel->appendRow(itemCloud);
 
     DStandardItem *itemDevice = new DStandardItem();
     itemDevice->setBackgroundRole(DPalette::Base);
     itemDevice->setText(TransString::getTransString(STRING_DEVITEM));
-    itemDevice->setIcon(QIcon::fromTheme("dcc_account").pixmap(QSize(32, 32)));
+    itemDevice->setIcon(QIcon::fromTheme(m_listIcon[1]).pixmap(QSize(32, 32)));
     itemDevice->setSizeHint(QSize(178, 48));
     itemDevice->setData(QVariant::fromValue(itemMargin), Dtk::MarginsRole);
+    itemDevice->setToolTip(TransString::getTransString(STRING_DEVITEM));
     m_listModel->appendRow(itemDevice);
 
     DStandardItem *itemSecurity = new DStandardItem();
     itemSecurity->setBackgroundRole(DPalette::Base);
     itemSecurity->setText(TransString::getTransString(STRING_SECURITYITEM));
-    itemSecurity->setIcon(QIcon::fromTheme("dcc_password").pixmap(QSize(32, 32)));
+    itemSecurity->setIcon(QIcon::fromTheme(m_listIcon[2]).pixmap(QSize(32, 32)));
     itemSecurity->setSizeHint(QSize(178, 48));
     itemSecurity->setData(QVariant::fromValue(itemMargin), Dtk::MarginsRole);
+    itemSecurity->setToolTip(TransString::getTransString(STRING_SECURITYITEM));
     m_listModel->appendRow(itemSecurity);
 }
 

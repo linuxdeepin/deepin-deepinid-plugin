@@ -249,25 +249,36 @@ void SyncWorker::getUUID()
 
 void SyncWorker::getHostName()
 {
-    org::freedesktop::hostname1 hostnameInter("org.freedesktop.hostname1",
-                                              "/org/freedesktop/hostname1",
-                                              QDBusConnection::systemBus());
-    m_model->setHostName(hostnameInter.staticHostname());
+    QFutureWatcher<void> *watcher = new QFutureWatcher<void>(this);
+    connect(watcher, &QFutureWatcher<void>::finished, [=]{
+        watcher->deleteLater();
+    });
+
+    QFuture<void> future = QtConcurrent::run([=]{
+        org::freedesktop::hostname1 hostnameInter("org.freedesktop.hostname1",
+                                                  "/org/freedesktop/hostname1",
+                                                  QDBusConnection::systemBus());
+        m_model->setHostName(hostnameInter.staticHostname());
+    });
+    watcher->setFuture(future);
 }
 
 void SyncWorker::getRSAPubKey()
 {
     QDBusInterface deepinIf(SyncInterface, DeepinIDPath, DeepinIDInterface, QDBusConnection::sessionBus());
-    QDBusReply<QString> reply = deepinIf.call("GetRSAKey");
-    if(reply.isValid())
-    {
-        m_RSApubkey = reply.value().toStdString();
-        qDebug() << "Get RSA Key:" << QString::fromStdString(m_RSApubkey);
-    }
-    else
-    {
-        qDebug() << "get rsa key error:" << reply.error();
-    }
+    QDBusPendingCall call = deepinIf.asyncCall("GetRSAKey");
+    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(call, this);
+    connect(watcher, &QDBusPendingCallWatcher::finished, [=](QDBusPendingCallWatcher *self){
+        QDBusPendingReply<QString> reply = *self;
+        if(reply.isError()) {
+            qDebug() << "get rsa key error:" << reply.error();
+        }
+        else {
+            m_RSApubkey = reply.value().toStdString();
+            qDebug() << "Get RSA Key:" << QString::fromStdString(m_RSApubkey);
+        }
+        self->deleteLater();
+    });
 }
 
 void SyncWorker::getDeviceList()
@@ -431,7 +442,7 @@ bool SyncWorker::checkPassword(const QString &passwd, QString &encryptPwd, int &
     if(reply.isValid())
     {
         m_pwdToken = reply.value();
-        qDebug() << "password token:" << m_pwdToken;
+        //qDebug() << "password token:" << m_pwdToken;
         return true;
     }
     else
@@ -670,7 +681,7 @@ void SyncWorker::refreshSyncState()
     connect(watcher, &QFutureWatcher<QJsonObject>::finished, this, [=] {
         QJsonObject obj = watcher->result();
         qDebug() << "OBJ: " << obj;
-        if (obj.isEmpty()) {
+        if (obj.isEmpty() || !obj["enabled"].toBool()) {
             qDebug() << "Sync Info is Wrong!";
             return;
         }

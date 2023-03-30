@@ -94,7 +94,7 @@ void DeviceSyncPage::onAddDeviceList(const QList<DeviceInfo> &devlist)
     for (auto &devInfo: devlist)
     {
         DStandardItem *devItem = new DStandardItem();
-        devItem->setSizeHint(QSize(-1, 58));
+        devItem->setSizeHint(QSize(0, 62));
         devItem->setText(devInfo.devName);
         devItem->setData(QVariant::fromValue(itemMargin), Dtk::MarginsRole);
         devItem->setIcon(QIcon::fromTheme(getDeviceIcon(devInfo.devType)).pixmap(32, 32));
@@ -135,33 +135,36 @@ void DeviceSyncPage::onAddDeviceList(const QList<DeviceInfo> &devlist)
             rightAction->setVisible(false);
 
             connect(rightAction, &QAction::triggered, this, [=]{
-                int rowNum = rightAction->data().toInt();
-                auto item = this->m_devModel->item(rowNum);
-                QString strid = item->data(Qt::UserRole + 102).toString();
-                bool isCurrent = item->data(Qt::UserRole + 101).toBool();
-                if(!isCurrent)
-                {
-                    if(m_delDialog->exec() == QDialog::Accepted)
-                    {
-                        Q_EMIT this->removeDevice(strid);
-                        m_devModel->removeRow(rowNum);
+                int rowNum = 0;
+                QString itemDevId = rightAction->data().toString();
+                for (; rowNum < m_devModel->rowCount(); ++rowNum) {
+                    auto rowItem = m_devModel->item(rowNum);
+                    if(rowItem->data(Qt::UserRole + 102).toString() == itemDevId) {
+                        break;
+                    }
+                }
+
+                if(rowNum != m_devModel->rowCount()) {
+                    auto item = this->m_devModel->item(rowNum);
+                    QString strid = item->data(Qt::UserRole + 102).toString();
+                    bool isCurrent = item->data(Qt::UserRole + 101).toBool();
+                    if(!isCurrent) {
+                        if(m_delDialog->exec() == QDialog::Accepted) {
+                            Q_EMIT this->removeDevice(strid);
+                            m_devModel->removeRow(rowNum);
+                        }
                     }
                 }
             });
         }
 
-        rightAction->setData(m_devModel->rowCount());
+        rightAction->setData(devInfo.devId);
         devItem->setActionList(Qt::RightEdge, {rightAction});
-
-        m_devModel->appendRow(devItem);
-//        if(devInfo.devCode == m_currDevice)
-//        {
-//            m_devModel->insertRow(0, devItem);
-//        }
-//        else
-//        {
-//            m_devModel->appendRow(devItem);
-//        }
+        if(devInfo.devCode == m_currDevice) {
+            m_devModel->insertRow(0, devItem);
+        } else {
+            m_devModel->appendRow(devItem);
+        }
     }
 }
 
@@ -170,7 +173,6 @@ void DeviceSyncPage::initUI()
     QVBoxLayout *mainlayout = new QVBoxLayout;
     //head part
     QWidget *headWidget = new QWidget;
-    //headWidget->setStyleSheet("background-color:green;");
     QVBoxLayout *headLayout = new QVBoxLayout;
     headLayout->setContentsMargins(0, 0, 0, 0);
     headLayout->setSpacing(5);
@@ -189,7 +191,7 @@ void DeviceSyncPage::initUI()
     m_labelWarn->setMouseTracking(true);
     m_labelWarn->setVisible(false);
     m_bindSwitch->layout()->setContentsMargins(0, 0, 0, 0);
-    DTipLabel *labelBind = new DTipLabel(TransString::getTransString(STRING_LOCALTITLE), this);
+    DLabel *labelBind = new DLabel(TransString::getTransString(STRING_LOCALTITLE), this);
     firstlayout->addWidget(labelBind, 0, Qt::AlignLeft);
     firstlayout->addStretch();
     firstlayout->addWidget(m_labelWarn);
@@ -200,18 +202,18 @@ void DeviceSyncPage::initUI()
     headLayout->addLayout(tiplayout);
     headWidget->setLayout(headLayout);
 
-    DFontSizeManager::instance()->bind(labelBind, DFontSizeManager::T5, QFont::Bold);
-    DFontSizeManager::instance()->bind(bindtip, DFontSizeManager::T9, QFont::Thin);
+    DFontSizeManager::instance()->bind(labelBind, DFontSizeManager::T5, QFont::DemiBold);
+    DFontSizeManager::instance()->bind(bindtip, DFontSizeManager::T8, QFont::Thin);
     //device part
     QVBoxLayout *deviceLayout = new QVBoxLayout;
     deviceLayout->setSpacing(5);
-    DTipLabel *trustDevice = new DTipLabel(TransString::getTransString(STRING_DEVTITLE), this);
+    DLabel *trustDevice = new DLabel(TransString::getTransString(STRING_DEVTITLE), this);
     DTipLabel *deviceTip = new DTipLabel(TransString::getTransString(STRING_DEVMSG), this);
 
     deviceLayout->addWidget(trustDevice, 0, Qt::AlignLeft);
     deviceLayout->addWidget(deviceTip, 0, Qt::AlignLeft);
-    DFontSizeManager::instance()->bind(trustDevice, DFontSizeManager::T5, QFont::Bold);
-    DFontSizeManager::instance()->bind(deviceTip, DFontSizeManager::T9, QFont::Thin);
+    DFontSizeManager::instance()->bind(trustDevice, DFontSizeManager::T5, QFont::DemiBold);
+    DFontSizeManager::instance()->bind(deviceTip, DFontSizeManager::T8, QFont::Thin);
     //device list
     m_devList->setBackgroundType(DStyledItemDelegate::BackgroundType::RoundedBackground);
     m_devList->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -241,7 +243,6 @@ void DeviceSyncPage::initUI()
     //
     if (!IsProfessionalSystem) {
         m_bindSwitch->setChecked(false);
-        //m_bindSwitch->hide();
         headWidget->hide();
     }
 }

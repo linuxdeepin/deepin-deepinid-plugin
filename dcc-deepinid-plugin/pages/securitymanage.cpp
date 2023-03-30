@@ -60,8 +60,9 @@ void SecurityPage::initUI()
     QVBoxLayout *mainlayout = new QVBoxLayout;
     //head
     QVBoxLayout *headlayout = new QVBoxLayout;
+    headlayout->setContentsMargins(0, 5, 0, 0);
     headlayout->setSpacing(10);
-    DTipLabel *phone = new DTipLabel(TransString::getTransString(STRING_TITLEPHONE), this);
+    DLabel *phone = new DLabel(TransString::getTransString(STRING_TITLEPHONE), this);
     DTipLabel *phoneTip = new DTipLabel(TransString::getTransString(STRING_MSGPHONE), this);
     m_phoneList->setBackgroundType(DStyledItemDelegate::BackgroundType::ClipCornerBackground);
     m_phoneList->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
@@ -87,13 +88,14 @@ void SecurityPage::initUI()
     phoneLayout->setContentsMargins(0, 0, 0, 0);
     phoneLayout->addWidget(phone);
     headlayout->addLayout(phoneLayout);
+    headlayout->addSpacing(-5);
     headlayout->addLayout(tiplayout);
     headlayout->addWidget(m_phoneList);
 
     //bind
     QVBoxLayout *bindlayout = new QVBoxLayout;
     bindlayout->setSpacing(10);
-    DTipLabel *bindThird = new DTipLabel(TransString::getTransString(STRING_WECHATTITLE), this);
+    DLabel *bindThird = new DLabel(TransString::getTransString(STRING_WECHATTITLE), this);
     DTipLabel *bindThirdTip = new DTipLabel(TransString::getTransString(STRING_WECHATMSG), this);
     bindThirdTip->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     bindThirdTip->setWordWrap(true);
@@ -105,7 +107,7 @@ void SecurityPage::initUI()
     m_accountList->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     m_accountList->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
     m_accountList->setFrameShape(DListView::NoFrame);
-    m_accountList->setItemSpacing(10);
+    m_accountList->setItemSpacing(0);
     m_accountList->setViewportMargins(0, 0, 1, 0);
     m_accountList->setModel(m_accountModel);
     m_accountList->setIconSize(QSize(16, 16));
@@ -113,13 +115,14 @@ void SecurityPage::initUI()
     acctipLayout->setContentsMargins(0, 0, 0, 0);
     acctipLayout->addWidget(bindThirdTip);
     bindlayout->addWidget(bindThird, 0, Qt::AlignLeft);
+    bindlayout->addSpacing(-5);
     bindlayout->addLayout(acctipLayout);
     bindlayout->addWidget(m_accountList);
 
     //password
     QVBoxLayout *passwdlayout = new QVBoxLayout;
     passwdlayout->setSpacing(10);
-    DTipLabel *passwd = new DTipLabel(TransString::getTransString(STRING_PASSWORDTITLE), this);
+    DLabel *passwd = new DLabel(TransString::getTransString(STRING_PASSWORDTITLE), this);
     DTipLabel *passwdTip = new DTipLabel(TransString::getTransString(STRING_PASSWORDMSG), this);
     m_passwdList->setBackgroundType(DStyledItemDelegate::BackgroundType::ClipCornerBackground);
     m_passwdList->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
@@ -134,15 +137,16 @@ void SecurityPage::initUI()
     m_passwdList->setModel(m_passwdModel);
     m_passwdList->setIconSize(QSize(16, 16));
     passwdlayout->addWidget(passwd, 0, Qt::AlignLeft);
+    passwdlayout->addSpacing(-5);
     passwdlayout->addWidget(passwdTip, 0, Qt::AlignLeft);
     passwdlayout->addWidget(m_passwdList);
     //
-    DFontSizeManager::instance()->bind(phone, DFontSizeManager::T5, QFont::Bold);
-    DFontSizeManager::instance()->bind(phoneTip, DFontSizeManager::T9, QFont::Thin);
-    DFontSizeManager::instance()->bind(bindThird, DFontSizeManager::T5, QFont::Bold);
-    DFontSizeManager::instance()->bind(bindThirdTip, DFontSizeManager::T9, QFont::Thin);
-    DFontSizeManager::instance()->bind(passwd, DFontSizeManager::T5, QFont::Bold);
-    DFontSizeManager::instance()->bind(passwdTip, DFontSizeManager::T9, QFont::Thin);
+    DFontSizeManager::instance()->bind(phone, DFontSizeManager::T5, QFont::DemiBold);
+    DFontSizeManager::instance()->bind(phoneTip, DFontSizeManager::T8, QFont::Thin);
+    DFontSizeManager::instance()->bind(bindThird, DFontSizeManager::T5, QFont::DemiBold);
+    DFontSizeManager::instance()->bind(bindThirdTip, DFontSizeManager::T8, QFont::Thin);
+    DFontSizeManager::instance()->bind(passwd, DFontSizeManager::T5, QFont::DemiBold);
+    DFontSizeManager::instance()->bind(passwdTip, DFontSizeManager::T8, QFont::Thin);
 
     mainlayout->setMargin(20);
     mainlayout->setSpacing(20);
@@ -164,7 +168,7 @@ void SecurityPage::initConnection()
 void SecurityPage::initModelData()
 {
     QMargins itemMargin(10, 6, 10, 6);
-    DFontSizeManager::SizeType actionFontSize = DFontSizeManager::T9;
+    DFontSizeManager::SizeType actionFontSize = DFontSizeManager::T7;
     DStandardItem *itemPhone = new DStandardItem;
     itemPhone->setIcon(QIcon::fromTheme("dcc_trust_phone"));
     itemPhone->setData(QVariant::fromValue(itemMargin), Dtk::MarginsRole);
@@ -196,7 +200,7 @@ void SecurityPage::initModelData()
     DStandardItem *itemAccount = new DStandardItem;
     itemAccount->setIcon(QIcon::fromTheme("dcc_secwechat"));
     itemAccount->setData(QVariant::fromValue(itemMargin), Dtk::MarginsRole);
-    itemAccount->setSizeHint(QSize(-1, 46));
+    itemAccount->setSizeHint(QSize(-1, 36));
     DViewItemAction *accountAction = new DViewItemAction(Qt::AlignVCenter, QSize(), QSize(), true);
     accountAction->setText("");
     accountAction->setFontSize(actionFontSize);
@@ -262,13 +266,13 @@ void SecurityPage::initVerifyDialog(VerifyDlg *dlg)
         }
         else
         {
-            qInfo() << __LINE__ << "check password failed:" << encryptPwd;
+            qInfo() << __LINE__ << "check password failed:";
             //tip passwd is wrong
             dlg->showAlert(utils::getRemainPasswdMsg(remainNum));
         }
     });
     connect(dlg, &VerifyDlg::forgetPasswd, [this]{
-        m_syncWorker->openForgetPasswd(m_forgetUrl);
+        m_syncWorker->openForgetPasswd(QString("%1&time=%2").arg(m_forgetUrl).arg(QDateTime::currentMSecsSinceEpoch()));
     });
     connect(this, &SecurityPage::onUserLogout, dlg, &QDialog::reject);
 }
@@ -320,6 +324,10 @@ void SecurityPage::initPhoneMailConnection(PhoneMailDlg *dlg)
                 dlg->setRebindInfo(rebindAccount, rebindKey);
             }
         }
+        else
+        {
+            utils::sendSysNotify(TransString::getTransString(STRING_SUCCESSTIP));
+        }
 
         dlg->accept();
     });
@@ -332,6 +340,10 @@ void SecurityPage::initPhoneMailConnection(PhoneMailDlg *dlg)
         {
             utils::sendSysNotify(TransString::getTransString(STRING_FAILTIP));
         }
+        else
+        {
+            utils::sendSysNotify(TransString::getTransString(STRING_SUCCESSTIP));
+        }
     });
     connect(this, &SecurityPage::onUserLogout, dlg, &QDialog::reject);
 }
@@ -339,6 +351,7 @@ void SecurityPage::initPhoneMailConnection(PhoneMailDlg *dlg)
 void SecurityPage::initWeChatDialog(WeChatDlg *dlg)
 {
     connect(dlg, &WeChatDlg::bindSuccess, [this]{
+        utils::sendSysNotify(TransString::getTransString(STRING_SUCCESSTIP));
         this->m_syncWorker->refreshUserInfo();
     });
     connect(this, &SecurityPage::onUserLogout, dlg, &QDialog::reject);
@@ -352,6 +365,7 @@ void SecurityPage::initWeChatDialog(WeChatDlg *dlg)
         bindurl = m_wechatUrl;
         bindurl += "&sessionid=";
         bindurl += strsession;
+        bindurl += QString("&time=%1").arg(QDateTime::currentMSecsSinceEpoch());
     }
 
     qDebug() << "set bind url:" << bindurl;
@@ -507,6 +521,7 @@ void SecurityPage::openUserDialog(SecurityPage::VerifyType type)
     case UnbindAccountType:
     {
         m_syncWorker->unBindPlatform();
+        utils::sendSysNotify(TransString::getTransString(STRING_SUCCESSTIP));
     }
         break;
     case PasswdType:

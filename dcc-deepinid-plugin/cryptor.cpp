@@ -11,7 +11,7 @@ bool Cryptor::RSAPublicEncryptData(const std::string &rsakey, const QString &str
 {
     //qDebug() << Q_FUNC_INFO << rsakey.toLocal8Bit().data();
     RSA *rsa = nullptr;
-    BIO *bio = BIO_new_mem_buf(rsakey.c_str(), rsakey.length()); //
+    BIO *bio = BIO_new_mem_buf(rsakey.c_str(), rsakey.length());
     rsa = PEM_read_bio_RSA_PUBKEY(bio, &rsa, nullptr, nullptr);// PEM_read_bio_RSAPublicKey(bio, &rsa, nullptr, nullptr);
     if(rsa == nullptr)
     {
@@ -19,7 +19,6 @@ bool Cryptor::RSAPublicEncryptData(const std::string &rsakey, const QString &str
         qWarning() << "read rsa public key failed, error:" << strerror;
         qWarning() << "RSA pubkey:" << QString::fromStdString(rsakey);
         qWarning() << "length:" << rsakey.length();
-        qWarning() << "pwd:" << strin;
         return false;
     }
 
