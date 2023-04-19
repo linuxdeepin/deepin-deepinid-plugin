@@ -24,10 +24,10 @@ QString forgetPwdURL()
     static QString forgetUrl;
     if(forgetUrl.isEmpty()) {
         if(qEnvironmentVariableIsEmpty("DEEPIN_PRE")) {
-            forgetUrl = QStringLiteral("https://login.uniontech.com/view/client/forgot-password");
+            forgetUrl = QStringLiteral("https://login.deepin.org/view/client/forgot-password");
         }
         else {
-            forgetUrl = QStringLiteral("https://login-pre.uniontech.com/view/client/forgot-password");
+            forgetUrl = QStringLiteral("https://login-pre.deepin.org/view/client/forgot-password");
         }
     }
 
@@ -70,10 +70,10 @@ QString wechatURL()
     static QString wechatUrl;
     if(wechatUrl.isEmpty()) {
         if(qEnvironmentVariableIsEmpty("DEEPIN_PRE")) {
-            wechatUrl = QStringLiteral("https://login.uniontech.com/view/client/bind-third/wechat");
+            wechatUrl = QStringLiteral("https://login.deepin.org/view/client/bind-third/wechat");
         }
         else {
-            wechatUrl = QStringLiteral("https://login-pre.uniontech.com/view/client/bind-third/wechat");
+            wechatUrl = QStringLiteral("https://login-pre.deepin.org/view/client/bind-third/wechat");
         }
     }
 
