@@ -20,6 +20,7 @@ DWIDGET_END_NAMESPACE
 
 DWIDGET_USE_NAMESPACE
 
+class SingleItem;
 
 class SecurityPage : public QWidget
 {
@@ -74,16 +75,17 @@ private:
 private:
     QString m_forgetUrl;
     QString m_wechatUrl;
-    DListView *m_phoneList;
-    DListView *m_accountList;
-    DListView *m_passwdList;
-    QStandardItemModel *m_phoneModel;
-    QStandardItemModel *m_accountModel;
-    QStandardItemModel *m_passwdModel;
     DDialog *m_unbindWeChatDlg;
     SyncModel *m_syncModel;
     SyncWorker *m_syncWorker;
     QString m_lastEnPwd;
+    QWidget *m_phoneWidget;
+    QWidget *m_accountWidget;
+    QWidget *m_passwdWidget;
+    SingleItem *m_itemPhone;
+    SingleItem *m_itemMail;
+    SingleItem *m_itemAccount;
+    SingleItem *m_itemPasswd;
 };
 
 #endif // SECURITYMANAGE_H

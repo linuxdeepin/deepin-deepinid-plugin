@@ -22,8 +22,23 @@
 
 #include "interface/namespace.h"
 #include <QWidget>
+#include <QLabel>
+#include <QSvgRenderer>
 
 class QVBoxLayout;
+
+class PicLabel:public QLabel
+{
+    Q_OBJECT
+public:
+    explicit PicLabel(QWidget *parent = nullptr);
+
+    void SetImage(const QString &imgurl);
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+private:
+    QSvgRenderer *m_svgrender;
+};
 
 class LoginPage : public QWidget
 {

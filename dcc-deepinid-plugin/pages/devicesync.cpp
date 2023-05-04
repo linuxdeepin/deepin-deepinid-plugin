@@ -6,6 +6,9 @@
 #include <DListView>
 #include <DDialog>
 #include <QMouseEvent>
+#include <DGuiApplicationHelper>
+#include <DToolButton>
+#include <QEnterEvent>
 #include "utils.h"
 #include "trans_string.h"
 
@@ -94,7 +97,6 @@ void DeviceSyncPage::onAddDeviceList(const QList<DeviceInfo> &devlist)
     for (auto &devInfo: devlist)
     {
         DStandardItem *devItem = new DStandardItem();
-        devItem->setSizeHint(QSize(0, 62));
         devItem->setText(devInfo.devName);
         devItem->setData(QVariant::fromValue(itemMargin), Dtk::MarginsRole);
         devItem->setIcon(QIcon::fromTheme(getDeviceIcon(devInfo.devType)).pixmap(32, 32));
@@ -133,6 +135,11 @@ void DeviceSyncPage::onAddDeviceList(const QList<DeviceInfo> &devlist)
 
             rightAction->setWidget(delWidget);
             rightAction->setVisible(false);
+
+            connect(Dtk::Gui::DGuiApplicationHelper::instance(), &Dtk::Gui::DGuiApplicationHelper::themeTypeChanged,
+                this, [=]() {
+                removeLabel->setPixmap(QIcon::fromTheme("dcc_del_account").pixmap(12, 14));
+            });
 
             connect(rightAction, &QAction::triggered, this, [=]{
                 int rowNum = 0;
@@ -227,6 +234,7 @@ void DeviceSyncPage::initUI()
     m_devList->setViewportMargins(0, 0, 0, 0);
     m_devList->setModel(m_devModel);
     m_devList->setMouseTracking(true);
+    m_devList->setAttribute(Qt::WA_Hover);
     m_devList->setIconSize(QSize(32, 32));
 
     QHBoxLayout *exheadLayout = new QHBoxLayout;
@@ -333,57 +341,53 @@ DevListView::DevListView(QWidget *parent):DListView(parent)
     ;
 }
 
-void DevListView::mouseMoveEvent(QMouseEvent *event)
+bool DevListView::event(QEvent *e)
 {
-    QModelIndex itemIndex = indexAt(event->pos());
-    QStandardItemModel *devModel = qobject_cast<QStandardItemModel*>(model());
-    for (int i = 0; i < model()->rowCount(); ++i)
+    switch (e->type()) {
+    case QEvent::HoverEnter:
+    case QEvent::HoverMove:
     {
+        QHoverEvent *hoverEv = dynamic_cast<QHoverEvent*>(e);
+        if(hoverEv) {
+            hoverEnterEvent(hoverEv->pos());
+        }
+    }
+        break;
+    case QEvent::HoverLeave:
+        hoverLeaveEvent();
+        break;
+    default:
+        break;
+    }
+
+    return QListView::event(e);
+}
+
+void DevListView::hoverEnterEvent(const QPoint &p)
+{
+    QModelIndex itemIndex = indexAt(p);
+    QStandardItemModel *devModel = qobject_cast<QStandardItemModel*>(model());
+    for (int i = 1; i < model()->rowCount(); ++i) {
         DStandardItem *item = dynamic_cast<DStandardItem*>(devModel->itemFromIndex(devModel->index(i, 0)));
-        if(item)
-        {
-            bool isCurrent = item->data(Qt::UserRole + 101).toBool();
+        if(item) {
             DViewItemAction *rightAction = item->actionList(Qt::RightEdge).at(0);
-            if(isCurrent)
-            {
+            if(itemIndex.isValid() && itemIndex.row() == i) {
                 rightAction->setVisible(true);
-            }
-            else
-            {
-                if(itemIndex.isValid() && itemIndex.row() == i)
-                {
-                    rightAction->setVisible(true);
-                }
-                else
-                {
-                    rightAction->setVisible(false);
-                }
+            } else {
+                rightAction->setVisible(false);
             }
         }
     }
 }
 
-void DevListView::leaveEvent(QEvent *event)
+void DevListView::hoverLeaveEvent()
 {
-    if(event->type() == QEvent::Leave)
-    {
-        QStandardItemModel *devModel = qobject_cast<QStandardItemModel*>(model());
-        for (int i = 0; i < model()->rowCount(); ++i)
-        {
-            DStandardItem *item = dynamic_cast<DStandardItem*>(devModel->itemFromIndex(devModel->index(i, 0)));
-            if(item)
-            {
-                bool isCurrent = item->data(Qt::UserRole + 101).toBool();
-                DViewItemAction *rightAction = item->actionList(Qt::RightEdge).at(0);
-                if(isCurrent)
-                {
-                    rightAction->setVisible(true);
-                }
-                else
-                {
-                    rightAction->setVisible(false);
-                }
-            }
+    QStandardItemModel *devModel = qobject_cast<QStandardItemModel*>(model());
+    for (int i = 1; i < model()->rowCount(); ++i) {
+        DStandardItem *item = dynamic_cast<DStandardItem*>(devModel->itemFromIndex(devModel->index(i, 0)));
+        if(item) {
+            DViewItemAction *rightAction = item->actionList(Qt::RightEdge).at(0);
+            rightAction->setVisible(false);
         }
     }
 }

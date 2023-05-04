@@ -36,6 +36,7 @@
 #include <QDesktopServices>
 #include <QUrl>
 #include <DCommandLinkButton>
+#include <QApplication>
 #include "trans_string.h"
 
 DWIDGET_USE_NAMESPACE
@@ -56,11 +57,8 @@ LoginPage::LoginPage(QWidget *parent)
     m_mainLayout->setMargin(0);
     m_mainLayout->setSpacing(0);
 
-    DLabel *bgLabel = new DLabel(this);
-    QImage bgimg(":/icons/deepin/builtin/icons/dcc_login_bg.svg");
-
-    bgLabel->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
-    bgLabel->setPixmap(QPixmap::fromImage(bgimg));
+    PicLabel *bgLabel = new PicLabel(this);
+    bgLabel->SetImage(":/icons/deepin/builtin/icons/dcc_login_bg.svg");
     QVBoxLayout *logoLayout = new QVBoxLayout;
     bgLabel->setLayout(logoLayout);
     //logoLayout->setMargin(0);
@@ -152,3 +150,24 @@ void LoginPage::onLinkActivated(const QString link)
 }
 
 
+
+PicLabel::PicLabel(QWidget *parent): QLabel (parent), m_svgrender(new QSvgRenderer(this))
+{
+    setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
+}
+
+void PicLabel::SetImage(const QString &imgurl)
+{
+    m_svgrender->load(imgurl);
+}
+
+void PicLabel::resizeEvent(QResizeEvent *event)
+{
+    Q_UNUSED(event);
+    QPixmap pixmap(size() * qApp->devicePixelRatio());
+    pixmap.fill(Qt::transparent);
+    QPainter painter(&pixmap);
+    m_svgrender->render(&painter);
+    pixmap.setDevicePixelRatio(qApp->devicePixelRatio());
+    setPixmap(pixmap);
+}

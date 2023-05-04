@@ -15,6 +15,7 @@
 #include <QWebEngineScript>
 #include <QWebEngineScriptCollection>
 #include <QRegularExpression>
+#include <DCommandLinkButton>
 #include "utils.h"
 #include "trans_string.h"
 
@@ -45,18 +46,15 @@ VerifyDlg::VerifyDlg(QWidget *parent):DDialog (parent)
     m_pwdEdit->lineEdit()->setMaxLength(64);
     m_pwdEdit->lineEdit()->setValidator(new QRegExpValidator(QRegExp(STRING_PWDREG), this));
 
-    DLabel *labelPasswd = new DLabel(this);
-    labelPasswd->setText(QString("<a style='text-decoration:none;'; href=' '>%1</a>").arg(TransString::getTransString(STRING_FORGETPWD)));
-    labelPasswd->setForegroundRole(QPalette::Link);
-    labelPasswd->setOpenExternalLinks(false);
-    DFontSizeManager::instance()->bind(labelPasswd, DFontSizeManager::T7);
+    DCommandLinkButton *passwdBtn = new DCommandLinkButton(TransString::getTransString(STRING_FORGETPWD), this);
+    DFontSizeManager::instance()->bind(passwdBtn, DFontSizeManager::T7);
     setFixedWidth(400);
     setIcon(QIcon::fromTheme(STRING_ICONUOSID));
     setSpacing(0);
     addSpacing(20);
     addContent(m_pwdEdit);
     addSpacing(8);
-    addContent(labelPasswd, Qt::AlignRight);
+    addContent(passwdBtn, Qt::AlignRight);
     addButton(TransString::getTransString(STRING_CANCEL));
     addButton(TransString::getTransString(STRING_CONFIRM), false, DDialog::ButtonRecommend);
     setOnButtonClickedClose(false);
@@ -66,7 +64,7 @@ VerifyDlg::VerifyDlg(QWidget *parent):DDialog (parent)
         m_pwdEdit->setAlert(false);
         m_pwdEdit->hideAlertMessage();
     });
-    connect(labelPasswd, &QLabel::linkActivated, [this]{
+    connect(passwdBtn, &QAbstractButton::clicked, [this]{
         Q_EMIT this->forgetPasswd();
     });
     connect(getButton(0), &QAbstractButton::clicked, this, &QDialog::reject);
@@ -111,6 +109,7 @@ PhoneMailDlg::PhoneMailDlg(QWidget *parent):DDialog (parent)
     m_btnCode = new DSuggestButton(TransString::getTransString(STRING_VERIFYCODE));
     m_btnCode->setFixedHeight(36);
     m_btnCode->setFixedWidth(132);
+    m_btnCode->setEnabled(false);
     m_codeEdit->lineEdit()->setMaxLength(6);
     m_codeEdit->lineEdit()->setValidator(new QRegExpValidator(QRegExp("^[0-9]{6}$"), this));
 
@@ -136,6 +135,13 @@ PhoneMailDlg::PhoneMailDlg(QWidget *parent):DDialog (parent)
     connect(m_numEdit, &DLineEdit::editingFinished, [=]{
         m_numEdit->setAlert(false);
         m_numEdit->hideAlertMessage();
+    });
+    connect(m_numEdit, &DLineEdit::textChanged, [=]{
+        if(!m_numEdit->text().isEmpty() && m_numEdit->lineEdit()->hasAcceptableInput()) {
+            m_btnCode->setEnabled(true);
+        } else {
+            m_btnCode->setEnabled(false);
+        }
     });
     connect(m_codeEdit, &DLineEdit::editingFinished, [=]{
         m_codeEdit->setAlert(false);

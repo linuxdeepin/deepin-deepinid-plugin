@@ -30,8 +30,11 @@ class DevListView:public DListView
 public:
     explicit DevListView(QWidget *parent = nullptr);
 protected:
-    void mouseMoveEvent(QMouseEvent *e) override;
-    void leaveEvent(QEvent *event) override;
+    bool event(QEvent *e) override;
+private:
+    void hoverEnterEvent(const QPoint &p);
+
+    void hoverLeaveEvent();
 };
 
 

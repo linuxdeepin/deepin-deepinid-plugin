@@ -176,7 +176,7 @@ void LoginInfoPage::initUI()
     m_listView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
 
     m_listView->setViewportMargins(0, 0, 0, 0);
-    m_listView->setItemSpacing(1);
+    m_listView->setItemSpacing(0);
     m_listView->setIconSize(QSize(32, 32));
     m_listView->setModel(m_listModel);
     listLayout->addWidget(m_listView);//Qt::AlignHCenter

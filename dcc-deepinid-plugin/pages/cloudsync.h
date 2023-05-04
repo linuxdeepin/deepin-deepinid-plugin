@@ -11,7 +11,6 @@
 #include "syncmodel.h"
 #include "syncworker.h"
 #include "userdialog.h"
-#include "widgets/switchwidget.h"
 
 DWIDGET_BEGIN_NAMESPACE
 class DListView;
@@ -24,7 +23,14 @@ class DTipLabel;
 class DDialog;
 class DToolTip;
 class DHorizontalLine;
+class DCommandLinkButton;
 DWIDGET_END_NAMESPACE
+
+namespace dcc {
+namespace widgets {
+class SwitchWidget;
+}
+}
 
 DWIDGET_USE_NAMESPACE
 
@@ -33,14 +39,13 @@ class WarnLabel:public DLabel
 public:
     explicit WarnLabel(const QString &text, QWidget *parent = nullptr);
 
-    void SetTipText(const QString &tip)
-    {
-        m_tipText = tip;
-    }
+    void SetTipText(const QString &tip);
 protected:
-    void enterEvent(QEvent *event);
+    void enterEvent(QEvent *event) override;
+
+    void leaveEvent(QEvent *event) override;
 private:
-    QString m_tipText;
+    DToolTip *m_tipText;
 };
 
 class SyncConfigModel:public QStandardItemModel
@@ -112,10 +117,10 @@ private:
     DTipLabel *m_autoSyncTips;
     DLabel *m_bindedTips;
     DTipLabel *m_syncTimeTips;
-    DCC_NAMESPACE::SwitchWidget *m_autoSyncSwitch;
+    dcc::widgets::SwitchWidget *m_autoSyncSwitch;
     DListView *m_syncConfigView;
     DListView *m_syncItemView;
-    DLabel *m_labelClear;
+    DCommandLinkButton *m_clearBtn;
     WarnLabel *m_labelWarn;
     SyncConfigModel *m_configModel;
     QStandardItemModel *m_itemModel;

@@ -10,8 +10,10 @@
 #include <DFrame>
 #include <QTimer>
 #include <DGuiApplicationHelper>
+#include <DBackgroundGroup>
 #include "utils.h"
 #include "trans_string.h"
+#include "singleitem.h"
 
 DWIDGET_USE_NAMESPACE
 Q_DECLARE_METATYPE(QMargins)
@@ -19,13 +21,14 @@ Q_DECLARE_METATYPE(QMargins)
 static const QString STRING_ICONUOSID = QStringLiteral("dcc_union_id");
 
 SecurityPage::SecurityPage(QWidget *parent) : QWidget(parent)
-  , m_phoneList(new DListView(this))
-  , m_accountList(new DListView(this))
-  , m_passwdList(new DListView(this))
-  , m_phoneModel(new QStandardItemModel(this))
-  , m_accountModel(new QStandardItemModel(this))
-  , m_passwdModel(new QStandardItemModel(this))
   , m_unbindWeChatDlg(new DDialog("", "", this))
+  , m_phoneWidget(new QWidget(this))
+  , m_accountWidget(new QWidget(this))
+  , m_passwdWidget(new QWidget(this))
+  , m_itemPhone(new SingleItem)
+  , m_itemMail(new SingleItem)
+  , m_itemAccount(new SingleItem)
+  , m_itemPasswd(new SingleItem)
 {
     m_forgetUrl = utils::forgetPwdURL();
     //qDebug() << "forget url:" << m_forgetUrl;
@@ -62,21 +65,24 @@ void SecurityPage::initUI()
     QVBoxLayout *headlayout = new QVBoxLayout;
     headlayout->setContentsMargins(0, 5, 0, 0);
     headlayout->setSpacing(10);
+    //phone group
+    QVBoxLayout *bgphone = new QVBoxLayout;
+    bgphone->setContentsMargins(0, 0, 0, 0);
+    DBackgroundGroup *phoneGroup = new DBackgroundGroup(bgphone, m_phoneWidget);
+    phoneGroup->setItemSpacing(1);
+    phoneGroup->setItemMargins(QMargins(0, 0, 0, 0));
+    bgphone->addWidget(m_itemPhone);
+    bgphone->addWidget(m_itemMail);
+    phoneGroup->setBackgroundRole(QPalette::Window);
+    phoneGroup->setUseWidgetBackground(false);
+    QHBoxLayout *phonebgLayout = new QHBoxLayout;
+    phonebgLayout->setContentsMargins(0, 0, 0, 0);
+    m_phoneWidget->setLayout(phonebgLayout);
+    phonebgLayout->addWidget(phoneGroup);
+    m_phoneWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+
     DLabel *phone = new DLabel(TransString::getTransString(STRING_TITLEPHONE), this);
     DTipLabel *phoneTip = new DTipLabel(TransString::getTransString(STRING_MSGPHONE), this);
-    m_phoneList->setBackgroundType(DStyledItemDelegate::BackgroundType::ClipCornerBackground);
-    m_phoneList->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-    m_phoneList->setSelectionMode(QListView::SelectionMode::NoSelection);
-    m_phoneList->setEditTriggers(DListView::NoEditTriggers);
-    m_phoneList->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_phoneList->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_phoneList->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
-    m_phoneList->setFrameShape(DListView::NoFrame);
-    m_phoneList->setItemSpacing(1);
-    m_phoneList->setViewportMargins(0, 0, 1, 0);
-    m_phoneList->setModel(m_phoneModel);
-    m_phoneList->setIconSize(QSize(16, 16));
-
     phoneTip->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     phoneTip->setWordWrap(true);
     QHBoxLayout *tiplayout = new QHBoxLayout();
@@ -90,7 +96,7 @@ void SecurityPage::initUI()
     headlayout->addLayout(phoneLayout);
     headlayout->addSpacing(-5);
     headlayout->addLayout(tiplayout);
-    headlayout->addWidget(m_phoneList);
+    headlayout->addWidget(m_phoneWidget);
 
     //bind
     QVBoxLayout *bindlayout = new QVBoxLayout;
@@ -99,47 +105,53 @@ void SecurityPage::initUI()
     DTipLabel *bindThirdTip = new DTipLabel(TransString::getTransString(STRING_WECHATMSG), this);
     bindThirdTip->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     bindThirdTip->setWordWrap(true);
-    m_accountList->setBackgroundType(DStyledItemDelegate::BackgroundType::ClipCornerBackground);
-    m_accountList->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-    m_accountList->setSelectionMode(QListView::SelectionMode::NoSelection);
-    m_accountList->setEditTriggers(DListView::NoEditTriggers);
-    m_accountList->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_accountList->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_accountList->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
-    m_accountList->setFrameShape(DListView::NoFrame);
-    m_accountList->setItemSpacing(0);
-    m_accountList->setViewportMargins(0, 0, 1, 0);
-    m_accountList->setModel(m_accountModel);
-    m_accountList->setIconSize(QSize(16, 16));
+    //bind group
+    QVBoxLayout *bgaccount = new QVBoxLayout;
+    bgaccount->setContentsMargins(0, 0, 0, 0);
+    DBackgroundGroup *accountGroup = new DBackgroundGroup(bgaccount, m_accountWidget);
+    accountGroup->setItemSpacing(1);
+    accountGroup->setItemMargins(QMargins(0, 0, 0, 0));
+    bgaccount->addWidget(m_itemAccount);
+    accountGroup->setBackgroundRole(QPalette::Window);
+    accountGroup->setUseWidgetBackground(false);
+    QHBoxLayout *accountbgLayout = new QHBoxLayout;
+    accountbgLayout->setContentsMargins(0, 0, 0, 0);
+    m_accountWidget->setLayout(accountbgLayout);
+    accountbgLayout->addWidget(accountGroup);
+    m_accountWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+
     QHBoxLayout *acctipLayout = new QHBoxLayout;
     acctipLayout->setContentsMargins(0, 0, 0, 0);
     acctipLayout->addWidget(bindThirdTip);
     bindlayout->addWidget(bindThird, 0, Qt::AlignLeft);
     bindlayout->addSpacing(-5);
     bindlayout->addLayout(acctipLayout);
-    bindlayout->addWidget(m_accountList);
+    bindlayout->addWidget(m_accountWidget);
 
     //password
     QVBoxLayout *passwdlayout = new QVBoxLayout;
     passwdlayout->setSpacing(10);
     DLabel *passwd = new DLabel(TransString::getTransString(STRING_PASSWORDTITLE), this);
     DTipLabel *passwdTip = new DTipLabel(TransString::getTransString(STRING_PASSWORDMSG), this);
-    m_passwdList->setBackgroundType(DStyledItemDelegate::BackgroundType::ClipCornerBackground);
-    m_passwdList->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-    m_passwdList->setSelectionMode(QListView::SelectionMode::NoSelection);
-    m_passwdList->setEditTriggers(DListView::NoEditTriggers);
-    m_passwdList->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_passwdList->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_passwdList->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
-    m_passwdList->setFrameShape(DListView::NoFrame);
-    m_passwdList->setItemSpacing(10);
-    m_passwdList->setViewportMargins(0, 0, 1, 0);
-    m_passwdList->setModel(m_passwdModel);
-    m_passwdList->setIconSize(QSize(16, 16));
+    //password group
+    QVBoxLayout *bgpasswd = new QVBoxLayout;
+    bgpasswd->setContentsMargins(0, 0, 0, 0);
+    DBackgroundGroup *passwdGroup = new DBackgroundGroup(bgpasswd, m_passwdWidget);
+    passwdGroup->setItemSpacing(1);
+    passwdGroup->setItemMargins(QMargins(0, 0, 0, 0));
+    bgpasswd->addWidget(m_itemPasswd);
+    passwdGroup->setBackgroundRole(QPalette::Window);
+    passwdGroup->setUseWidgetBackground(false);
+    QHBoxLayout *passwdbgLayout = new QHBoxLayout;
+    passwdbgLayout->setContentsMargins(0, 0, 0, 0);
+    m_passwdWidget->setLayout(passwdbgLayout);
+    passwdbgLayout->addWidget(passwdGroup);
+    m_passwdWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+
     passwdlayout->addWidget(passwd, 0, Qt::AlignLeft);
     passwdlayout->addSpacing(-5);
     passwdlayout->addWidget(passwdTip, 0, Qt::AlignLeft);
-    passwdlayout->addWidget(m_passwdList);
+    passwdlayout->addWidget(m_passwdWidget);
     //
     DFontSizeManager::instance()->bind(phone, DFontSizeManager::T5, QFont::DemiBold);
     DFontSizeManager::instance()->bind(phoneTip, DFontSizeManager::T8, QFont::Thin);
@@ -163,75 +175,34 @@ void SecurityPage::initConnection()
         this->verifyPasswd(UnbindAccountType);
     });
     connect(this, &SecurityPage::onUserLogout, m_unbindWeChatDlg, &QDialog::reject);
-}
-
-void SecurityPage::initModelData()
-{
-    QMargins itemMargin(10, 6, 10, 6);
-    DFontSizeManager::SizeType actionFontSize = DFontSizeManager::T7;
-    DStandardItem *itemPhone = new DStandardItem;
-    itemPhone->setIcon(QIcon::fromTheme("dcc_trust_phone"));
-    itemPhone->setData(QVariant::fromValue(itemMargin), Dtk::MarginsRole);
-    itemPhone->setSizeHint(QSize(-1, 37));
-    DViewItemAction *phoneAction = new DViewItemAction(Qt::AlignVCenter, QSize(), QSize(), true);
-    phoneAction->setText("");
-    phoneAction->setFontSize(actionFontSize);
-    phoneAction->setTextColorRole(DPalette::Link);
-    itemPhone->setActionList(Qt::RightEdge, {phoneAction});
-    connect(phoneAction, &QAction::triggered, [=]{
+    connect(m_itemPhone, &SingleItem::clicked, [=]{
         this->verifyPasswd(PhoneType);
     });
-    m_phoneModel->appendRow(itemPhone);
-
-    DStandardItem *itemMail = new DStandardItem;
-    itemMail->setIcon(QIcon::fromTheme("dcc_trust_email"));
-    itemMail->setData(QVariant::fromValue(itemMargin), Dtk::MarginsRole);
-    itemMail->setSizeHint(QSize(-1, 37));
-    DViewItemAction *mailAction = new DViewItemAction(Qt::AlignVCenter, QSize(), QSize(), true);
-    mailAction->setText("");
-    mailAction->setFontSize(actionFontSize);
-    mailAction->setTextColorRole(DPalette::Link);
-    itemMail->setActionList(Qt::RightEdge, {mailAction});
-    connect(mailAction, &QAction::triggered, [=]{
+    connect(m_itemMail, &SingleItem::clicked, [=]{
         this->verifyPasswd(MailType);
     });
-    m_phoneModel->appendRow(itemMail);
-
-    DStandardItem *itemAccount = new DStandardItem;
-    itemAccount->setIcon(QIcon::fromTheme("dcc_secwechat"));
-    itemAccount->setData(QVariant::fromValue(itemMargin), Dtk::MarginsRole);
-    itemAccount->setSizeHint(QSize(-1, 36));
-    DViewItemAction *accountAction = new DViewItemAction(Qt::AlignVCenter, QSize(), QSize(), true);
-    accountAction->setText("");
-    accountAction->setFontSize(actionFontSize);
-    accountAction->setTextColorRole(DPalette::Link);
-    itemAccount->setActionList(Qt::RightEdge, {accountAction});
-    m_accountModel->appendRow(itemAccount);
-    connect(accountAction, &QAction::triggered, [=]{
+    connect(m_itemAccount, &SingleItem::clicked, [=]{
         auto &infos = m_syncModel->userinfo();
         QString wechatNick = infos["WechatNickname"].toString();
         if(wechatNick.isEmpty()) {
             this->verifyPasswd(BindAccountType);
-        }
-        else {
+        } else {
             m_unbindWeChatDlg->exec();
         }
     });
-
-    DStandardItem *itemPasswd = new DStandardItem;
-    itemPasswd->setIcon(QIcon::fromTheme("dcc_seckey"));
-    itemPasswd->setData(QVariant::fromValue(itemMargin), Dtk::MarginsRole);
-    itemPasswd->setText(TransString::getTransString(STRING_PASSWORDTITLE));
-    itemPasswd->setSizeHint(QSize(-1, 46));
-    DViewItemAction *passwdAction = new DViewItemAction(Qt::AlignVCenter, QSize(), QSize(), true);
-    passwdAction->setText(TransString::getTransString(STRING_PWDACTION));
-    passwdAction->setFontSize(actionFontSize);
-    passwdAction->setTextColorRole(DPalette::Link);
-    itemPasswd->setActionList(Qt::RightEdge, {passwdAction});
-    m_passwdModel->appendRow(itemPasswd);
-    connect(passwdAction, &QAction::triggered, [=]{
+    connect(m_itemPasswd, &SingleItem::clicked, [=]{
         this->verifyPasswd(PasswdType);
     });
+}
+
+void SecurityPage::initModelData()
+{
+    m_itemPhone->SetIcon("dcc_trust_phone");
+    m_itemMail->SetIcon("dcc_trust_email");
+    m_itemAccount->SetIcon("dcc_secwechat");
+    m_itemPasswd->SetIcon("dcc_seckey");
+    m_itemPasswd->SetText(TransString::getTransString(STRING_PASSWORDTITLE));
+    m_itemPasswd->SetLinkText(TransString::getTransString(STRING_PWDACTION));
 }
 
 void SecurityPage::initDialog()
@@ -391,17 +362,14 @@ void SecurityPage::onUserInfoChanged(const QVariantMap &infos)
     QString phone = infos["Phone"].toString();
     QString mail = infos["Email"].toString();
     QString wechat = infos["WechatNickname"].toString();
-    DStandardItem *phoneItem = dynamic_cast<DStandardItem*>(m_phoneModel->item(0));
-    DStandardItem *mainItem = dynamic_cast<DStandardItem*>(m_phoneModel->item(1));
-    phoneItem->setText(phone.trimmed().isEmpty() ? TransString::getTransString(STRING_UNLINKED) : phone.trimmed());
-    phoneItem->actionList(Qt::RightEdge).at(0)->setText(phone.isEmpty() ? TransString::getTransString(STRING_BINDTIP) : TransString::getTransString(STRING_MODIFY));
-    mainItem->setText(mail.trimmed().isEmpty() ? TransString::getTransString(STRING_UNLINKED) : mail.trimmed());
-    mainItem->actionList(Qt::RightEdge).at(0)->setText(mail.isEmpty() ? TransString::getTransString(STRING_BINDTIP): TransString::getTransString(STRING_MODIFY));
+    m_itemPhone->SetText(phone.trimmed().isEmpty() ? TransString::getTransString(STRING_UNLINKED) : phone.trimmed());
+    m_itemPhone->SetLinkText(phone.isEmpty() ? TransString::getTransString(STRING_BINDTIP) : TransString::getTransString(STRING_MODIFY));
 
-    DStandardItem *wechatItem = dynamic_cast<DStandardItem*>(m_accountModel->item(0));
-    wechatItem->setText(wechat.trimmed().isEmpty() ? TransString::getTransString(STRING_UNLINKED) : wechat.trimmed());
-    DViewItemAction *wechatAction = wechatItem->actionList(Qt::RightEdge).at(0);
-    wechatAction->setText(wechat.isEmpty() ? TransString::getTransString(STRING_BINDTIP) : TransString::getTransString(STRING_UNBINDTIP));
+    m_itemMail->SetText(mail.trimmed().isEmpty() ? TransString::getTransString(STRING_UNLINKED) : mail.trimmed());
+    m_itemMail->SetLinkText(mail.isEmpty() ? TransString::getTransString(STRING_BINDTIP): TransString::getTransString(STRING_MODIFY));
+
+    m_itemAccount->SetText(wechat.trimmed().isEmpty() ? TransString::getTransString(STRING_UNLINKED) : wechat.trimmed());
+    m_itemAccount->SetLinkText(wechat.isEmpty() ? TransString::getTransString(STRING_BINDTIP) : TransString::getTransString(STRING_UNBINDTIP));
 }
 
 bool SecurityPage::verifyPasswd(VerifyType type)

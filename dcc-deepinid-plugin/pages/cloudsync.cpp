@@ -16,13 +16,14 @@
 #include <QToolTip>
 #include <DGuiApplicationHelper>
 #include <QPushButton>
-#include <DSwitchButton>
+#include <QStandardItem>
+#include <DCommandLinkButton>
 #include "utils.h"
 #include "trans_string.h"
 #include "userdialog.h"
 
 DWIDGET_USE_NAMESPACE
-using namespace DCC_NAMESPACE;
+using namespace dcc::widgets;
 
 Q_DECLARE_METATYPE(QMargins)
 
@@ -33,7 +34,7 @@ CloudSyncPage::CloudSyncPage(QWidget *parent):QWidget (parent)
   , m_autoSyncSwitch(new SwitchWidget(this))
   , m_syncConfigView(new DListView(this))
   , m_syncItemView(new DListView(this))
-  , m_labelClear(new DLabel(this))
+  , m_clearBtn(new DCommandLinkButton(TransString::getTransString(STRING_EMPTY), this))
   , m_configModel(new SyncConfigModel(this))
   , m_itemModel(new QStandardItemModel(this))
   , m_clearDlg(new DDialog(TransString::getTransString(STRING_EMPTYTITLE), TransString::getTransString(STRING_EMPTYMSG), this))
@@ -353,9 +354,6 @@ void CloudSyncPage::initSysConfig()
 
 void CloudSyncPage::initUI()
 {
-    m_labelClear->setText(QString("<a style='text-decoration:none;'; href=' '>%1</a>").arg(TransString::getTransString(STRING_EMPTY)));
-    m_labelClear->setOpenExternalLinks(false);
-
     setBackgroundRole(QPalette::Base);
     setFocusPolicy(Qt::FocusPolicy::ClickFocus);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
@@ -365,7 +363,7 @@ void CloudSyncPage::initUI()
     DFontSizeManager::instance()->bind(m_autoSyncTips, DFontSizeManager::T8, QFont::Thin);
     DFontSizeManager::instance()->bind(m_bindedTips, DFontSizeManager::T5, QFont::DemiBold);
     DFontSizeManager::instance()->bind(m_syncTimeTips, DFontSizeManager::T9, QFont::Thin);
-    DFontSizeManager::instance()->bind(m_labelClear, DFontSizeManager::T9);
+    DFontSizeManager::instance()->bind(m_clearBtn, DFontSizeManager::T9);
 
     m_labelWarn = new WarnLabel("");
     m_labelWarn->setPixmap(QIcon::fromTheme("dcc_not_use").pixmap(24, 24));
@@ -423,14 +421,13 @@ void CloudSyncPage::initUI()
     m_syncItemView->setIconSize(QSize(24, 24));
 
     //底部
-    m_labelClear->setForegroundRole(QPalette::Link);
     QVBoxLayout *bottomLayout = new QVBoxLayout;
     bottomLayout->setSpacing(3);
     QHBoxLayout *bottomTimeLayout = new QHBoxLayout();
     m_btnLine = new DHorizontalLine();
     bottomTimeLayout->addWidget(m_syncTimeTips, 0, Qt::AlignLeft);
     bottomTimeLayout->addStretch();
-    bottomTimeLayout->addWidget(m_labelClear, 0, Qt::AlignRight);
+    bottomTimeLayout->addWidget(m_clearBtn, 0, Qt::AlignRight);
     bottomLayout->addWidget(m_btnLine);
     bottomLayout->addLayout(bottomTimeLayout);
 
@@ -454,7 +451,7 @@ void CloudSyncPage::initUI()
 
 void CloudSyncPage::initConnection()
 {
-    connect(m_labelClear, &QLabel::linkActivated, this, [this]{
+    connect(m_clearBtn, &QAbstractButton::clicked, this, [this]{
         this->m_clearDlg->exec();
     });
 
@@ -568,7 +565,7 @@ void CloudSyncPage::makeContentDisable(bool enable)
         m_syncItemView->setEnabled(true);
         m_btnLine->setVisible(true);
         m_syncTimeTips->setVisible(true);
-        m_labelClear->setVisible(true);
+        m_clearBtn->setVisible(true);
         m_autoSyncSwitch->setEnabled(true);
     }
     else
@@ -577,7 +574,7 @@ void CloudSyncPage::makeContentDisable(bool enable)
         m_syncItemView->setEnabled(false);
         m_btnLine->setVisible(false);
         m_syncTimeTips->setVisible(false);
-        m_labelClear->setVisible(false);
+        m_clearBtn->setVisible(false);
     }
 }
 
@@ -654,23 +651,31 @@ void CloudSyncPage::checkPassword()
     }
 }
 
-WarnLabel::WarnLabel(const QString &text, QWidget *parent):DLabel(text, parent)
+WarnLabel::WarnLabel(const QString &text, QWidget *parent):DLabel(text, parent), m_tipText(new DToolTip("", false))
 {
     ;
 }
 
+void WarnLabel::SetTipText(const QString &tip)
+{
+    m_tipText->setText(tip);
+}
+
 void WarnLabel::enterEvent(QEvent *event)
 {
-    if(event->type() == QEvent::Enter)
-    {
-        auto tooltip = new DToolTip(m_tipText);
-        QPoint globalPos = parentWidget()->mapToGlobal(geometry().topLeft());
+    Q_UNUSED(event);
+    QPoint globalPos = parentWidget()->mapToGlobal(geometry().topLeft());
 
-        globalPos.setX(globalPos.x() - (tooltip->sizeHint().width() / 2));
-        globalPos.setY(globalPos.y() + height());
+    globalPos.setX(globalPos.x() - (m_tipText->sizeHint().width() / 2));
+    globalPos.setY(globalPos.y() + height());
 
-        tooltip->show(globalPos, 1000);
-    }
+    m_tipText->show(globalPos, -1);
+}
+
+void WarnLabel::leaveEvent(QEvent *event)
+{
+    Q_UNUSED(event);
+    m_tipText->hide();
 }
 
 SyncConfigModel::SyncConfigModel(QObject *parent): QStandardItemModel(parent)

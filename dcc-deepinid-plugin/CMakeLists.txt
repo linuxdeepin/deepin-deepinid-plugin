@@ -29,7 +29,7 @@ set(QRCS icons/deepinid.qrc)
 
 # 指定用到库
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Concurrent Network Widgets DBus LinguistTools)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Concurrent Network Widgets DBus Svg LinguistTools)
 find_package(DdeControlCenter REQUIRED)
 find_package(PkgConfig REQUIRED)
 find_package(DtkWidget REQUIRED)
@@ -64,6 +64,7 @@ target_include_directories(${PLUGIN_NAME} PUBLIC
     ${DFrameworkDBus_INCLUDE_DIRS}
     ${QGSettings_INCLUDE_DIRS}
     ${Qt5DBus_INCLUDE_DIRS}
+    ${Qt5Svg_INCLUDE_DIRS}
     ${Qt5Network_INCLUDE_DIRS}
     ${Qt5Concurrent_INCLUDE_DIRS}
     ${Qt5WebChannel_INCLUDE_DIRS}
@@ -80,6 +81,7 @@ target_link_libraries(${PLUGIN_NAME} PRIVATE
     ${DFrameworkDBus_LIBRARIES}
     ${QGSettings_LIBRARIES}
     ${Qt5DBus_LIBRARIES}
+    ${Qt5Svg_LIBRARIES}
     ${Qt5Network_LIBRARIES}
     ${Qt5Concurrent_LIBRARIES}
     ${Qt5WebChannel_LIBRARIES}

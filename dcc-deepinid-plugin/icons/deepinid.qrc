@@ -20,7 +20,6 @@
         <file>actions/dcc_sync_phone_dark_32px.svg</file>
         <file>actions/dcc_sync_place_dark_32px.svg</file>
         <file>actions/dcc_sync_wechat_dark_32px.svg</file>
-        <file>actions/dcc_del_account_12px.svg</file>
         <file>icons/dcc_laptop_32px.svg</file>
         <file>icons/dcc_pad_32px.svg</file>
         <file>icons/dcc_pc_32px.svg</file>
@@ -61,6 +60,8 @@
         <file>icons/dcc_utcloud_select_32px.svg</file>
         <file>icons/dcc_password_32px.svg</file>
         <file>icons/dcc_password_select_32px.svg</file>
+        <file>dark/actions/dcc_del_account_12px.svg</file>
+        <file>light/actions/dcc_del_account_12px.svg</file>
     </qresource>
     <qresource prefix="/">
         <file>web/error.html</file>
