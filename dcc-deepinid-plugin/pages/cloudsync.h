@@ -8,6 +8,7 @@
 #include <QStandardItemModel>
 #include <QVBoxLayout>
 #include <DLabel>
+#include <widgets/switchwidget.h>
 #include "syncmodel.h"
 #include "syncworker.h"
 #include "userdialog.h"
@@ -25,12 +26,6 @@ class DToolTip;
 class DHorizontalLine;
 class DCommandLinkButton;
 DWIDGET_END_NAMESPACE
-
-namespace dcc {
-namespace widgets {
-class SwitchWidget;
-}
-}
 
 DWIDGET_USE_NAMESPACE
 
@@ -117,7 +112,7 @@ private:
     DTipLabel *m_autoSyncTips;
     DLabel *m_bindedTips;
     DTipLabel *m_syncTimeTips;
-    dcc::widgets::SwitchWidget *m_autoSyncSwitch;
+    DCC_NAMESPACE::SwitchWidget *m_autoSyncSwitch;
     DListView *m_syncConfigView;
     DListView *m_syncItemView;
     DCommandLinkButton *m_clearBtn;

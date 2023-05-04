@@ -18,12 +18,13 @@
 #include <QPushButton>
 #include <QStandardItem>
 #include <DCommandLinkButton>
+#include <DSwitchButton>
 #include "utils.h"
 #include "trans_string.h"
 #include "userdialog.h"
 
 DWIDGET_USE_NAMESPACE
-using namespace dcc::widgets;
+using namespace DCC_NAMESPACE;
 
 Q_DECLARE_METATYPE(QMargins)
 
