@@ -112,10 +112,12 @@
         <translation>Borrar datos de la nube</translation>
     </message>
     <message>
-        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?
-Once the data is cleared, it cannot be recovered!</source>
-        <translation>¿Está seguro de que desea borrar la configuración del sistema y los datos personales guardados en la nube?
-Una vez que se borran los datos, ¡no se pueden recuperar!</translation>
+        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Once the data is cleared, it cannot be recovered!</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Clear</source>
@@ -222,12 +224,12 @@ Inicie sesión en UOS ID para obtener funciones y servicios personalizados del n
         <translation>Inicie sesión de forma segura y rápida en su UOS ID y cuenta local escaneando el código QR desde su WeChat vinculado.</translation>
     </message>
     <message>
-        <source>If unlinked, you will not be able to 
-use WeChat to sign in to UOS ID.
-Are you sure you want to unlink it?</source>
-        <translation>Si está desvinculado, no podrá
-use WeChat para iniciar sesión en UOS ID.
-¿Seguro que quieres desvincularlo?</translation>
+        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Are you sure you want to unlink it?</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Password</source>
@@ -248,6 +250,10 @@ use WeChat para iniciar sesión en UOS ID.
     <message>
         <source>Operation failed, please try later</source>
         <translation>La operación falló, intente más tarde</translation>
+    </message>
+    <message>
+        <source>Operation Successful</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Reset password successfully</source>

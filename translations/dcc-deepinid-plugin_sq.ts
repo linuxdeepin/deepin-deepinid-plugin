@@ -112,10 +112,12 @@
         <translation>Spastro të dhënë në re</translation>
     </message>
     <message>
-        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?
-Once the data is cleared, it cannot be recovered!</source>
-        <translation>Jeni i sigurt se doni të spastrohen rregullimet tuaja të sistemit dhe të dhënat tuaja personale të ruajtura në re?
-Pasi të dhënat të jenë spastruar, s’mund të rikthehen!</translation>
+        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?</source>
+        <translation>Jeni i sigurt se doni të spastrohen rregullimet e sistemit dhe të dhënat tuaja të ruajtura në re?</translation>
+    </message>
+    <message>
+        <source>Once the data is cleared, it cannot be recovered!</source>
+        <translation>Pasi të spastrohen, të dhënat s’mund të rikthehen!</translation>
     </message>
     <message>
         <source>Clear</source>
@@ -222,12 +224,12 @@ Bëni hyrjen në ID UOS që të merrni veçori dhe shërbime të personalizuar S
         <translation>Hyni në llogarinë tuaj ID UOS dhe llogarinë tuaj vendore në mënyrë të siguruar dhe shpejt, duke skanuar kodin QR me WeChat-in e lidhur.</translation>
     </message>
     <message>
-        <source>If unlinked, you will not be able to 
-use WeChat to sign in to UOS ID.
-Are you sure you want to unlink it?</source>
-        <translation>Në u heqtë lidhja, s’do të jeni në gjendje 
-të përdorni WeChat-in për të hyrë në ID UOS.
-Jeni i sigurt se doni të hiqet lidhja?</translation>
+        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
+        <translation>Po u hoq lidhja, s’do të jeni në gjendje të përdorni WeChat për të bërë hyrjen në ID UOS.</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to unlink it?</source>
+        <translation>Jeni i sigurt se doni të hiqet lidhja?</translation>
     </message>
     <message>
         <source>Password</source>
@@ -248,6 +250,10 @@ Jeni i sigurt se doni të hiqet lidhja?</translation>
     <message>
         <source>Operation failed, please try later</source>
         <translation>Veprimi dështoi, ju lutemi, provoni më vonë</translation>
+    </message>
+    <message>
+        <source>Operation Successful</source>
+        <translation>Veprim i Suksesshëm</translation>
     </message>
     <message>
         <source>Reset password successfully</source>

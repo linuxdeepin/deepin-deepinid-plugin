@@ -112,10 +112,12 @@
         <translation>Вилучити дані «хмари»</translation>
     </message>
     <message>
-        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?
-Once the data is cleared, it cannot be recovered!</source>
-        <translation>Ви справді хочете вилучити ваші системні параметри і особисті дані, які збережено у «хмарі»?
-Щойно дані буде вилучено, їх вже не можна буде відновити!</translation>
+        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?</source>
+        <translation>Ви справді хочете вилучити ваші системні параметри і особисті дані, які збережено у «хмарі»?</translation>
+    </message>
+    <message>
+        <source>Once the data is cleared, it cannot be recovered!</source>
+        <translation>Щойно дані буде вилучено, їх вже не можна буде відновити!</translation>
     </message>
     <message>
         <source>Clear</source>
@@ -221,12 +223,12 @@ Sign in to UOS ID to get personalized features and services of Browser, App Stor
         <translation>Безпечно і швидко входьте до вашого облікового запису UOS і локального облікового запису скануванням QR-коду за допомогою пов&apos;язаного WeChat.</translation>
     </message>
     <message>
-        <source>If unlinked, you will not be able to 
-use WeChat to sign in to UOS ID.
-Are you sure you want to unlink it?</source>
-        <translation>Якщо запис не з&apos;єднано, ви не зможете 
-скористатися WeChat для входу до ідентифікатора UOS.
-Ви впевнені, що ви хочете від&apos;єднатися?</translation>
+        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Are you sure you want to unlink it?</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Password</source>
@@ -247,6 +249,10 @@ Are you sure you want to unlink it?</source>
     <message>
         <source>Operation failed, please try later</source>
         <translation>Не вдалося виконати дію. Будь ласка, повторіть спробу пізніше.</translation>
+    </message>
+    <message>
+        <source>Operation Successful</source>
+        <translation>Дію успішно виконано</translation>
     </message>
     <message>
         <source>Reset password successfully</source>

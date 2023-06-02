@@ -12,6 +12,7 @@
 #include "syncmodel.h"
 #include "syncworker.h"
 #include "userdialog.h"
+#include "syncitemwidget.h"
 
 DWIDGET_BEGIN_NAMESPACE
 class DListView;
@@ -40,7 +41,7 @@ protected:
 
     void leaveEvent(QEvent *event) override;
 private:
-    DToolTip *m_tipText;
+    QString m_tipText;
 };
 
 class SyncConfigModel:public QStandardItemModel
@@ -108,13 +109,11 @@ private:
     void initVerifyDialog(VerifyDlg *dlg);
 private:
     QVBoxLayout *m_mainlayout;
-    QVBoxLayout *m_centerLayout;
     DTipLabel *m_autoSyncTips;
     DLabel *m_bindedTips;
     DTipLabel *m_syncTimeTips;
     DCC_NAMESPACE::SwitchWidget *m_autoSyncSwitch;
-    DListView *m_syncConfigView;
-    DListView *m_syncItemView;
+    SyncItemWidget *m_syncItem;
     DCommandLinkButton *m_clearBtn;
     WarnLabel *m_labelWarn;
     SyncConfigModel *m_configModel;

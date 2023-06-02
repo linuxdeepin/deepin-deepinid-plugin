@@ -112,10 +112,12 @@
         <translation>清除云端数据</translation>
     </message>
     <message>
-        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?
-Once the data is cleared, it cannot be recovered!</source>
-        <translation>确定要清除您保存在云端的系统设置和个人数据吗？
-数据清除后将无法恢复！</translation>
+        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?</source>
+        <translation>确定要清除您保存在云端的系统设置和个人数据吗？</translation>
+    </message>
+    <message>
+        <source>Once the data is cleared, it cannot be recovered!</source>
+        <translation>数据清除后将无法恢复！</translation>
     </message>
     <message>
         <source>Clear</source>
@@ -221,10 +223,12 @@ Sign in to UOS ID to get personalized features and services of Browser, App Stor
         <translation>通过关联微信扫码，安全且快速的登录您的UOS ID和本地帐户。</translation>
     </message>
     <message>
-        <source>If unlinked, you will not be able to 
-use WeChat to sign in to UOS ID.
-Are you sure you want to unlink it?</source>
-        <translation>解除与该微信的绑定关系，将不能使用微信扫码登录，确定解绑？</translation>
+        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
+        <translation>解除与该微信的绑定关系，将不能使用微信扫码登录。</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to unlink it?</source>
+        <translation>确定解绑？</translation>
     </message>
     <message>
         <source>Password</source>
@@ -245,6 +249,10 @@ Are you sure you want to unlink it?</source>
     <message>
         <source>Operation failed, please try later</source>
         <translation>操作失败，请稍后再试</translation>
+    </message>
+    <message>
+        <source>Operation Successful</source>
+        <translation>操作成功</translation>
     </message>
     <message>
         <source>Reset password successfully</source>

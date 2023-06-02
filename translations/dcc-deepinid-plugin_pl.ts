@@ -112,10 +112,12 @@
         <translation>Wyczyść dane w chmurze</translation>
     </message>
     <message>
-        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?
-Once the data is cleared, it cannot be recovered!</source>
-        <translation>Czy na pewno chcesz wyczyścić ustawienia systemowe i dane osobowe zapisane w chmurze?
-Usuniętych danych nie będzie można odzyskać!</translation>
+        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?</source>
+        <translation>Czy na pewno chcesz wyczyścić ustawienia systemowe i dane użytkownika zapisane w chmurze?</translation>
+    </message>
+    <message>
+        <source>Once the data is cleared, it cannot be recovered!</source>
+        <translation>Po usunięciu danych nie będzie można ich odzyskać!</translation>
     </message>
     <message>
         <source>Clear</source>
@@ -222,12 +224,12 @@ Zaloguj się do UOS ID, aby uzyskać spersonalizowane funkcje i usługi dodatkow
         <translation>Bezpiecznie i szybko zaloguj się do swojego UOS ID i konta lokalnego, skanując kod QR z połączoną aplikacją WeChat.</translation>
     </message>
     <message>
-        <source>If unlinked, you will not be able to 
-use WeChat to sign in to UOS ID.
-Are you sure you want to unlink it?</source>
-        <translation>Po rozłączeniu, nie będziesz w stanie
-korzystać z WeChat do logowania się do UOS ID
-Czy na pewno chcesz je rozłączyć?</translation>
+        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
+        <translation>Po rozłączeniu nie będziesz mógł logować się do UOS ID za pomocą WeChat.</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to unlink it?</source>
+        <translation>Czy na pewno chcesz rozłączyć?</translation>
     </message>
     <message>
         <source>Password</source>
@@ -248,6 +250,10 @@ Czy na pewno chcesz je rozłączyć?</translation>
     <message>
         <source>Operation failed, please try later</source>
         <translation>Operacja zakończona niepowodzeniem, spróbuj ponownie później</translation>
+    </message>
+    <message>
+        <source>Operation Successful</source>
+        <translation>Operacja zakończona pomyślnie</translation>
     </message>
     <message>
         <source>Reset password successfully</source>

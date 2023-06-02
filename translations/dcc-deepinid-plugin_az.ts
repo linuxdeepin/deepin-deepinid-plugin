@@ -112,10 +112,12 @@
         <translation>Buluddakı verilənləri təmizləyin</translation>
     </message>
     <message>
-        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?
-Once the data is cleared, it cannot be recovered!</source>
-        <translation>Buludda saxlanılmış ayarları və şəxsi məlumatları silmək istədiyinizə əminsiniz?
-Silindikdən sonra onları geri qaytarmaq mümkün olmayacaq!</translation>
+        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?</source>
+        <translation>Bukudda saxlanılmış sistem ayarlarını və şəxsi verilənləri silmək istədiyinizə əminisniz?</translation>
+    </message>
+    <message>
+        <source>Once the data is cleared, it cannot be recovered!</source>
+        <translation>Verilənlər silinərsə onları bərpa etmək mümkün olmayacaq!</translation>
     </message>
     <message>
         <source>Clear</source>
@@ -127,7 +129,7 @@ Silindikdən sonra onları geri qaytarmaq mümkün olmayacaq!</translation>
     </message>
     <message>
         <source>Last sync: %1</source>
-        <translation type="unfinished"/>
+        <translation>Sonuncu eyniləşmə: %1</translation>
     </message>
     <message>
         <source>Confirm</source>
@@ -222,13 +224,12 @@ Veb-bələdçi, Tətbiq Mağazası və s. funksiya və xidmətlərini fərdilə�
         <translation>UOS ID-yə və yerli hesabınıza təhlükəsiz və tez daxil olmaq üçün WeChat ilə əlaqələndirilmiş QR kodu skan edin.</translation>
     </message>
     <message>
-        <source>If unlinked, you will not be able to 
-use WeChat to sign in to UOS ID.
-Are you sure you want to unlink it?</source>
-        <translation>Əgər əlaqə kəsilərsə siz UOS ID-yə 
-daxil olmaq üçün WeChat-ı istifadə 
-edə bilməyəcəksiniz.
-Əlaqəni kəsmək istədiyinizı əminsiniz?</translation>
+        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
+        <translation>Əgər əlaqələndirmə kəsilərsə siz UOS İD-yə daxil olmaq üçün WeChat istifadə edə bilməyəcəksiniz.</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to unlink it?</source>
+        <translation>Əlaqələndirməni ləğv etmək istədiyinizə əminsiniz?</translation>
     </message>
     <message>
         <source>Password</source>
@@ -251,8 +252,12 @@ edə bilməyəcəksiniz.
         <translation>Əməliyyat baş tutmadı, sonra yenidən cəhd edin</translation>
     </message>
     <message>
+        <source>Operation Successful</source>
+        <translation>Əməliyyat uğurlu oldu</translation>
+    </message>
+    <message>
         <source>Reset password successfully</source>
-        <translation type="unfinished"/>
+        <translation>Şifrənin sıfırlanması uğurlu oldu</translation>
     </message>
     <message>
         <source>Phone number</source>
@@ -336,7 +341,7 @@ Lütfən yoxlayın və aşağıda bir əməliyyat seçin.</translation>
     </message>
     <message>
         <source>Set a Password</source>
-        <translation type="unfinished"/>
+        <translation>Şifrə təyin edin</translation>
     </message>
     <message>
         <source>Get Code</source>

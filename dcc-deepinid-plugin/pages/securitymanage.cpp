@@ -207,12 +207,13 @@ void SecurityPage::initModelData()
 
 void SecurityPage::initDialog()
 {
-    m_unbindWeChatDlg->setFixedWidth(400);
+    //m_unbindWeChatDlg->setFixedWidth(500);
     //m_unbindWeChatDlg->setMinimumHeight(226);
     m_unbindWeChatDlg->setIcon(QIcon::fromTheme(STRING_ICONUOSID));
-    m_unbindWeChatDlg->setMessage(TransString::getTransString(STRING_WECHATUNBIND));
+    m_unbindWeChatDlg->setTitle(TransString::getTransString(STRING_WECHATUNBINDMESSAGE));
+    m_unbindWeChatDlg->setMessage(TransString::getTransString(STRING_WECHATUNBINDTITLE));
     m_unbindWeChatDlg->addButton(TransString::getTransString(STRING_CANCEL));
-    m_unbindWeChatDlg->addButton(TransString::getTransString(STRING_CONFIRM), true, DDialog::ButtonWarning);
+    m_unbindWeChatDlg->addButton(TransString::getTransString(STRING_UNBINDTIP), true, DDialog::ButtonWarning);
 }
 
 void SecurityPage::initRegisterDialog(RegisterDlg *dlg)

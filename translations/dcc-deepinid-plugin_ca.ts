@@ -112,10 +112,12 @@
         <translation>Neteja les dades del núvol</translation>
     </message>
     <message>
-        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?
-Once the data is cleared, it cannot be recovered!</source>
-        <translation>Segur que voleu esborrar la configuració del sistema i les dades personals desades al núvol?
-Un cop esborrades les dades, no es poden recuperar!</translation>
+        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?</source>
+        <translation>Segur que voleu esborrar la configuració del sistema i les dades personals desades al núvol?</translation>
+    </message>
+    <message>
+        <source>Once the data is cleared, it cannot be recovered!</source>
+        <translation>Un cop esborrades les dades, no es poden recuperar!</translation>
     </message>
     <message>
         <source>Clear</source>
@@ -222,12 +224,12 @@ Inicieu la sessió a UOS ID per obtenir funcions i serveis personalitzats del na
         <translation>Inicieu sessió de manera segura i ràpida a l&apos;ID UOS i al compte local escanejant el codi QR amb el WeChat enllaçat.</translation>
     </message>
     <message>
-        <source>If unlinked, you will not be able to 
-use WeChat to sign in to UOS ID.
-Are you sure you want to unlink it?</source>
-        <translation>Si es desenllaça, no podreu
-usar WeChat per iniciar la sessió a l&apos;UOS ID.
-Segur que voleu desenllaçar-lo?</translation>
+        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Are you sure you want to unlink it?</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Password</source>
@@ -248,6 +250,10 @@ Segur que voleu desenllaçar-lo?</translation>
     <message>
         <source>Operation failed, please try later</source>
         <translation>L&apos;operació ha fallat. Proveu-ho més tard.</translation>
+    </message>
+    <message>
+        <source>Operation Successful</source>
+        <translation>Operació reeixida</translation>
     </message>
     <message>
         <source>Reset password successfully</source>

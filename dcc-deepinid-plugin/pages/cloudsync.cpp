@@ -19,6 +19,7 @@
 #include <QStandardItem>
 #include <DCommandLinkButton>
 #include <DSwitchButton>
+#include <QScrollArea>
 #include "utils.h"
 #include "trans_string.h"
 #include "userdialog.h"
@@ -33,8 +34,7 @@ CloudSyncPage::CloudSyncPage(QWidget *parent):QWidget (parent)
   , m_bindedTips(new DLabel(TransString::getTransString(STRING_CLOUDTITLE), this))
   , m_syncTimeTips(new DTipLabel("", this))
   , m_autoSyncSwitch(new SwitchWidget(this))
-  , m_syncConfigView(new DListView(this))
-  , m_syncItemView(new DListView(this))
+  , m_syncItem(new SyncItemWidget(this))
   , m_clearBtn(new DCommandLinkButton(TransString::getTransString(STRING_EMPTY), this))
   , m_configModel(new SyncConfigModel(this))
   , m_itemModel(new QStandardItemModel(this))
@@ -146,7 +146,7 @@ void CloudSyncPage::onModuleStateChanged(std::pair<SyncType, bool> state)
             DViewItemAction *rightAction = syncItem->actionList(Qt::RightEdge).at(0);
             auto actionIcon = state.second ? DStyle::SP_IndicatorChecked : DStyle::SP_IndicatorUnchecked;
             rightAction->setIcon(qobject_cast<DStyle*>(style())->standardIcon(actionIcon));
-            m_syncConfigView->update(syncItem->index());
+            m_syncItem->UpdateConfigIndex(syncItem->index());
         }
     }
 }
@@ -164,7 +164,7 @@ void CloudSyncPage::onUtcloudModuleStateChanged(const QString &itemKey, bool sta
     auto checkstatus = state ? DStyle::SP_IndicatorChecked : DStyle::SP_IndicatorUnchecked;
     auto icon = qobject_cast<DStyle *>(style())->standardIcon(checkstatus);
     action->setIcon(icon);
-    m_syncItemView->update(item->index());
+    m_syncItem->UpdateItemIndex(item->index());
 }
 
 void CloudSyncPage::onUserInfoChanged(const QVariantMap &infos)
@@ -221,18 +221,12 @@ void CloudSyncPage::expandSysConfig(bool checked)
             item->setActionList(Qt::Edge::RightEdge, {rightAction});
             m_configModel->appendRow(item);
         }
-
-        m_syncConfigView->setMinimumHeight((m_sysConfig.size() + 1) * 37);
-        m_syncItemView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
-        m_syncItemView->setMinimumHeight(1);
     }
     else
     {
         //auto &&checkIcon = qobject_cast<DStyle*>(style())->standardIcon(DStyle::SP_ExpandElement);
         baseItem->actionList(Qt::LeftEdge).at(0)->setIcon(QIcon::fromTheme("go-next"));
         m_configModel->removeRows(1, m_configModel->rowCount() - 1);
-        m_syncConfigView->setMinimumHeight(37);
-        m_syncItemView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
     }
 
     baseItem->setData(QVariant::fromValue(!checkStatus), Qt::UserRole + 100);
@@ -392,34 +386,13 @@ void CloudSyncPage::initUI()
     m_mainlayout->setSpacing(20);
 
     m_mainlayout->addLayout(headlayout);
-    m_centerLayout = new QVBoxLayout;
-    //同步系统配置
-    m_syncConfigView->setBackgroundType(DStyledItemDelegate::BackgroundType::ClipCornerBackground);
-    m_syncConfigView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-    m_syncConfigView->setSelectionMode(QListView::SelectionMode::NoSelection);
-    m_syncConfigView->setEditTriggers(DListView::NoEditTriggers);
-    m_syncConfigView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_syncConfigView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_syncConfigView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
-    m_syncConfigView->setFrameShape(DListView::NoFrame);
-    m_syncConfigView->setItemSpacing(1);
-    m_syncConfigView->setViewportMargins(0, 0, 1, 0);
-    m_syncConfigView->setModel(m_configModel);
-    m_syncConfigView->setIconSize(QSize(16, 16));
-
-    //同步项
-    m_syncItemView->setBackgroundType(DStyledItemDelegate::BackgroundType::RoundedBackground);
-    m_syncItemView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-    m_syncItemView->setSelectionMode(QListView::SelectionMode::NoSelection);
-    m_syncItemView->setEditTriggers(DListView::NoEditTriggers);
-    m_syncItemView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_syncItemView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_syncItemView->setFrameShape(DListView::NoFrame);
-    m_syncItemView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
-    m_syncItemView->setItemSpacing(10);
-    m_syncItemView->setViewportMargins(0, 0, 1, 0);
-    m_syncItemView->setModel(m_itemModel);
-    m_syncItemView->setIconSize(QSize(24, 24));
+    QScrollArea *scrollArea = new QScrollArea;
+    scrollArea->setFrameShape(QFrame::NoFrame);
+    scrollArea->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    scrollArea->setWidget(m_syncItem);
+    scrollArea->setWidgetResizable(true);
+    scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     //底部
     QVBoxLayout *bottomLayout = new QVBoxLayout;
@@ -432,13 +405,7 @@ void CloudSyncPage::initUI()
     bottomLayout->addWidget(m_btnLine);
     bottomLayout->addLayout(bottomTimeLayout);
 
-    m_centerLayout->setSpacing(10);
-    m_centerLayout->setContentsMargins(0, 0, 0, 0);
-    m_centerLayout->addWidget(m_syncConfigView);
-    m_centerLayout->addWidget(m_syncItemView);
-    m_centerLayout->addStretch();
-
-    m_mainlayout->addLayout(m_centerLayout);
+    m_mainlayout->addWidget(scrollArea);
     m_mainlayout->addSpacing(-17);
     m_mainlayout->addLayout(bottomLayout);
     setLayout(m_mainlayout);
@@ -452,6 +419,7 @@ void CloudSyncPage::initUI()
 
 void CloudSyncPage::initConnection()
 {
+    m_syncItem->SetViewModel(m_configModel, m_itemModel);
     connect(m_clearBtn, &QAbstractButton::clicked, this, [this]{
         this->m_clearDlg->exec();
     });
@@ -461,7 +429,7 @@ void CloudSyncPage::initConnection()
     connect(m_autoSyncSwitch, &SwitchWidget::checkedChanged, this, &CloudSyncPage::enableSyncConfig);
     connect(m_clearDlg, &QDialog::accepted, this, &CloudSyncPage::checkPassword);
     connect(this, &CloudSyncPage::onUserLogout, m_clearDlg, &QDialog::reject);
-    connect(m_syncConfigView, &QListView::clicked, [=](const QModelIndex &index) {
+    connect(m_syncItem, &SyncItemWidget::configClicked, [=](const QModelIndex &index) {
         int rowNum = index.row();
         if(rowNum == 0) {
             this->expandSysConfig(true);
@@ -498,11 +466,11 @@ void CloudSyncPage::initConnection()
             auto actionIcon = !state ? DStyle::SP_IndicatorChecked : DStyle::SP_IndicatorUnchecked;
             rightAction->setIcon(qobject_cast<DStyle*>(style())->standardIcon(actionIcon));
             //qDebug() << "update icon:" << actionIcon << ", index:" << confItem->index().row();
-            this->m_syncConfigView->update(confItem->index());
+            this->m_syncItem->UpdateConfigIndex(confItem->index());
         }
     });
 
-    connect(m_syncItemView, &QListView::clicked, [=](const QModelIndex &index){
+    connect(m_syncItem, &SyncItemWidget::itemClicked, [=](const QModelIndex &index){
         QStandardItem *item = m_itemModel->itemFromIndex(index);
         auto iter = m_utcloudItemMap.begin();
         for (; iter != m_utcloudItemMap.end(); ++iter) {
@@ -562,8 +530,8 @@ void CloudSyncPage::makeContentDisable(bool enable)
     if(enable)
     {
         m_labelWarn->setVisible(false);
-        m_syncConfigView->setEnabled(true);
-        m_syncItemView->setEnabled(true);
+        m_syncItem->setVisible(true);
+        m_syncItem->SetEnable(true);
         m_btnLine->setVisible(true);
         m_syncTimeTips->setVisible(true);
         m_clearBtn->setVisible(true);
@@ -571,8 +539,8 @@ void CloudSyncPage::makeContentDisable(bool enable)
     }
     else
     {
-        m_syncConfigView->setEnabled(false);
-        m_syncItemView->setEnabled(false);
+        m_syncItem->setVisible(false);
+        m_syncItem->SetEnable(false);
         m_btnLine->setVisible(false);
         m_syncTimeTips->setVisible(false);
         m_clearBtn->setVisible(false);
@@ -652,31 +620,33 @@ void CloudSyncPage::checkPassword()
     }
 }
 
-WarnLabel::WarnLabel(const QString &text, QWidget *parent):DLabel(text, parent), m_tipText(new DToolTip("", false))
+WarnLabel::WarnLabel(const QString &text, QWidget *parent):DLabel(text, parent)
 {
     ;
 }
 
 void WarnLabel::SetTipText(const QString &tip)
 {
-    m_tipText->setText(tip);
+    m_tipText = tip;
 }
 
 void WarnLabel::enterEvent(QEvent *event)
 {
     Q_UNUSED(event);
+    QFontMetrics fontMetrics(QToolTip::font());
+    QRect boundRect = fontMetrics.boundingRect(0, 0, 0, 0, Qt::TextSingleLine, m_tipText);
     QPoint globalPos = parentWidget()->mapToGlobal(geometry().topLeft());
 
-    globalPos.setX(globalPos.x() - (m_tipText->sizeHint().width() / 2));
-    globalPos.setY(globalPos.y() + height());
+    globalPos.setX(globalPos.x() - boundRect.width() / 2);
+    globalPos.setY(globalPos.y() + boundRect.height());
 
-    m_tipText->show(globalPos, -1);
+    QToolTip::showText(globalPos, m_tipText);
 }
 
 void WarnLabel::leaveEvent(QEvent *event)
 {
     Q_UNUSED(event);
-    m_tipText->hide();
+    QToolTip::hideText();
 }
 
 SyncConfigModel::SyncConfigModel(QObject *parent): QStandardItemModel(parent)

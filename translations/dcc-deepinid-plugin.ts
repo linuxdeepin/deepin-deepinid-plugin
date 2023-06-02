@@ -114,8 +114,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?
-Once the data is cleared, it cannot be recovered!</source>
+        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Once the data is cleared, it cannot be recovered!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -244,6 +247,10 @@ Are you sure you want to unlink it?</source>
     </message>
     <message>
         <source>Operation failed, please try later</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operation Successful</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

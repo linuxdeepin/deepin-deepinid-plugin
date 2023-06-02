@@ -112,9 +112,12 @@
         <translation>Felhőben tárolt adatok törlése</translation>
     </message>
     <message>
-        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?
-Once the data is cleared, it cannot be recovered!</source>
-        <translation>Biztos benne, hogy törölni szeretné a rendszerbeállításokat és a felhőben mentett személyes adatokat? Az adatok törlése után nem lehet visszaállítani!</translation>
+        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?</source>
+        <translation>Biztos benne, hogy törölni szeretné a rendszerbeállításokat és a felhőben mentett személyes adatokat?</translation>
+    </message>
+    <message>
+        <source>Once the data is cleared, it cannot be recovered!</source>
+        <translation>Az adatok törlése után nem lehet visszaállítani!</translation>
     </message>
     <message>
         <source>Clear</source>
@@ -126,7 +129,7 @@ Once the data is cleared, it cannot be recovered!</source>
     </message>
     <message>
         <source>Last sync: %1</source>
-        <translation type="unfinished"/>
+        <translation>Utolsó szinkronizálás: %1</translation>
     </message>
     <message>
         <source>Confirm</source>
@@ -220,12 +223,12 @@ Sign in to UOS ID to get personalized features and services of Browser, App Stor
         <translation>Biztonságosan és gyorsan jelentkezzen be UOS® Azonosítójába és helyi fiókjába a QR-kód beolvasásával a linkelt WeChat segítségével.</translation>
     </message>
     <message>
-        <source>If unlinked, you will not be able to 
-use WeChat to sign in to UOS ID.
-Are you sure you want to unlink it?</source>
-        <translation>Ha leválasztja, nem fog tudni
-a WeChat használatával bejelentkezni az UOS® Azonosítójába.
-Biztosan le szeretné választani?</translation>
+        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
+        <translation>Ha leválasztja, nem fog tudni a WeChat használatával bejelentkezni az UOS® Azonosítójába.</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to unlink it?</source>
+        <translation>Biztosan le szeretné választani?</translation>
     </message>
     <message>
         <source>Password</source>
@@ -248,8 +251,12 @@ Biztosan le szeretné választani?</translation>
         <translation>A művelet sikertelen, kérjük próbálja meg később</translation>
     </message>
     <message>
+        <source>Operation Successful</source>
+        <translation>A művelet sikeres</translation>
+    </message>
+    <message>
         <source>Reset password successfully</source>
-        <translation type="unfinished"/>
+        <translation>A jelszó sikeresen visszaállítva</translation>
     </message>
     <message>
         <source>Phone number</source>
@@ -333,7 +340,7 @@ Kérjük jelölje be, és válasszon egy műveletet alábbiak közül.</translat
     </message>
     <message>
         <source>Set a Password</source>
-        <translation type="unfinished"/>
+        <translation>Jelszó beállítása</translation>
     </message>
     <message>
         <source>Get Code</source>

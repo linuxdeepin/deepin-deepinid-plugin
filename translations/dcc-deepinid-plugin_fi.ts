@@ -1,96 +1,5 @@
 <?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="fi">
 <context>
-    <name>LoginInfoDetailPage</name>
-    <message>
-        <source>Link local account to UOS ID</source>
-        <translation>Linkitä paikallinen tili UOS ID:hen</translation>
-    </message>
-    <message>
-        <source>UOS Cloud sync</source>
-        <translation>UOS Cloud synkronointi</translation>
-    </message>
-    <message>
-        <source>Store system settings securely in the cloud and keep them in sync across devices</source>
-        <translation>Tallenna järjestelmän asetukset pilveen ja pidä ne synkronoituna eri laitteiden välillä</translation>
-    </message>
-    <message>
-        <source>Linked successfully! Switch it off to get them unlinked.</source>
-        <translation>Linkitys onnistui! Kytke pois päältä, yhteys katkeaa.</translation>
-    </message>
-    <message>
-        <source>UOS Cloud is currently unavailable in your region</source>
-        <translation>UOS Cloud ei ole tällä hetkellä saatavilla alueellasi</translation>
-    </message>
-    <message>
-        <source>Network Settings</source>
-        <translation>Verkon asetukset</translation>
-    </message>
-    <message>
-        <source>Sound Settings</source>
-        <translation>Ääni asetukset</translation>
-    </message>
-    <message>
-        <source>Mouse Settings</source>
-        <translation>Hiiri asetukset</translation>
-    </message>
-    <message>
-        <source>Update Settings</source>
-        <translation>Päivityksen asetukset</translation>
-    </message>
-    <message>
-        <source>Dock</source>
-        <translation>Telakka</translation>
-    </message>
-    <message>
-        <source>Launcher</source>
-        <translation>Käynnistin</translation>
-    </message>
-    <message>
-        <source>Wallpaper</source>
-        <translation>Taustakuva</translation>
-    </message>
-    <message>
-        <source>Theme</source>
-        <translation>Teema</translation>
-    </message>
-    <message>
-        <source>Power Settings</source>
-        <translation>Virta-asetukset</translation>
-    </message>
-    <message>
-        <source>If linked, you can reset passwords of local accounts by UOS ID</source>
-        <translation>Kun linkitetty, voit nollata paikallisten tilien salasanat UOS ID:llä</translation>
-    </message>
-    <message>
-        <source>Syncing...</source>
-        <translation>Synkronoidaan...</translation>
-    </message>
-    <message>
-        <source>Last Sync: %1</source>
-        <translation>Viimeisin synkronointi: %1</translation>
-    </message>
-    <message>
-        <source>yyyy-MM-dd hh:mm</source>
-        <translation>dd-MM-yyyy hh:mm</translation>
-    </message>
-    <message>
-        <source>System error</source>
-        <translation>Järjestelmävirhe</translation>
-    </message>
-    <message>
-        <source>Network error</source>
-        <translation>Verkkovirhe</translation>
-    </message>
-    <message>
-        <source>Login expired, please sign in to the UOS ID again</source>
-        <translation>Kirjautuminen vanhentunut, kirjaudu Union ID -tunnuksella uudelleen</translation>
-    </message>
-    <message>
-        <source>The feature is not available at present, please activate your system first</source>
-        <translation>Ominaisuus ei ole tällä hetkellä käytettävissä, aktivoi järjestelmä ensin</translation>
-    </message>
-</context>
-<context>
     <name>LoginInfoPage</name>
     <message>
         <source>Edit account</source>
@@ -116,50 +25,6 @@
         <source>Other regions</source>
         <translation>Muut alueet</translation>
     </message>
-    <message>
-        <source>Invalid nickname, please enter a new one</source>
-        <translation>Virheellinen lempinimi, anna uusi</translation>
-    </message>
-    <message>
-        <source>The nickname cannot contain special characters (&apos;&lt;&gt;&amp;&quot;) and whitespaces</source>
-        <translation>Lempinimi ilman erikoismerkkejä (&apos;&lt;&gt;&amp;&quot;) ja välilyöntejä</translation>
-    </message>
-</context>
-<context>
-    <name>LoginPage</name>
-    <message>
-        <source>Sign In</source>
-        <translation>Kirjaudu sisään</translation>
-        <extra-contents_path>/cloudsync/Sign In</extra-contents_path>
-    </message>
-    <message>
-        <source>Manage your UOS ID and sync system settings between devices</source>
-        <translation>Hallinnoi UOS ID:tä ja synkronoi järjestelmän asetukset laitteiden välillä</translation>
-    </message>
-    <message>
-        <source>Deepin ID Sign In</source>
-        <translation>Kirjautuminen, Deepin ID</translation>
-    </message>
-    <message>
-        <source>UOS ID Sign In</source>
-        <translation>Kirjautuminen, Union ID</translation>
-    </message>
-    <message>
-        <source>UOS Cloud is only available in Mainland China currently</source>
-        <translation>UOS Cloud on tällä hetkellä saatavilla vain Kiinassa</translation>
-    </message>
-    <message>
-        <source>Learn about</source>
-        <translation>Lisätietoja</translation>
-    </message>
-    <message>
-        <source>UOS ID Service Agreement</source>
-        <translation>UOS ID palvelusopimus</translation>
-    </message>
-    <message>
-        <source>UOS ID Service Privacy Policy</source>
-        <translation>UOS ID tietosuojakäytäntö</translation>
-    </message>
 </context>
 <context>
     <name>SyncModule</name>
@@ -177,14 +42,365 @@
     </message>
 </context>
 <context>
-    <name>SyncWorker</name>
+    <name>TransString</name>
     <message>
-        <source>Calendar</source>
+        <source>UOS Cloud Sync</source>
+        <translation>UOS Cloud Sync</translation>
+    </message>
+    <message>
+        <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
+        <translation>Paikallisten lakien ja määräysten mukaisesti tämä ei ole tällä hetkellä saatavilla alueellasi.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Peruuta</translation>
+    </message>
+    <message>
+        <source>Securely store system settings and personal data in the cloud, and keep them in sync across devices.</source>
+        <translation>Tallenna järjestelmän asetukset ja omat tiedot turvallisesti pilveen ja pidä ne synkronoituna eri laitteiden välillä.</translation>
+    </message>
+    <message>
+        <source>System Settings</source>
+        <translation>Järjestelmän asetukset</translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation>Verkko</translation>
+    </message>
+    <message>
+        <source>Sound</source>
+        <translation>Ääni</translation>
+    </message>
+    <message>
+        <source>Mouse</source>
+        <translation>Hiiri</translation>
+    </message>
+    <message>
+        <source>Updates</source>
+        <translation>Päivitykset</translation>
+    </message>
+    <message>
+        <source>Dock</source>
+        <translation>Telakka</translation>
+    </message>
+    <message>
+        <source>Launcher</source>
+        <translation>Käynnistin</translation>
+    </message>
+    <message>
+        <source>Wallpaper</source>
+        <translation>Taustakuva</translation>
+    </message>
+    <message>
+        <source>Theme</source>
+        <translation>Teema</translation>
+    </message>
+    <message>
+        <source>Power</source>
+        <translation>Virta</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Valitse kaikki</translation>
+    </message>
+    <message>
+        <source>Unselect All</source>
+        <translation>Poista valinnat</translation>
+    </message>
+    <message>
+        <source>Clear cloud data</source>
+        <translation>Tyhjennä tiedot pilvestä</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?</source>
+        <translation>Haluatko varmasti tyhjentää järjestelmän asetukset ja pilveen tallennetut henkilökohtaiset tiedot?</translation>
+    </message>
+    <message>
+        <source>Once the data is cleared, it cannot be recovered!</source>
+        <translation>Kun tiedot on tyhjennetty, niitä ei voi palauttaa!</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Tyhjennä</translation>
+    </message>
+    <message>
+        <source>Syncing...</source>
+        <translation>Synkronoidaan...</translation>
+    </message>
+    <message>
+        <source>Last sync: %1</source>
+        <translation>Viimeisin synkronointi: %1</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Vahvista</translation>
+    </message>
+    <message>
+        <source>Link local accounts to UOS ID</source>
+        <translation>Linkitä paikallinen tili UOS ID:lle</translation>
+    </message>
+    <message>
+        <source>If linked, you can use UOS ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
+        <translation>Jos linkitetty, voit käyttää UOS ID:tä kirjautuaksesi sisään ja nollataksesi paikallisten tilien salasanat. Kytke tämä pois päältä, jotta linkitys poistetaan.</translation>
+    </message>
+    <message>
+        <source>Trusted devices</source>
+        <translation>Luotetut laitteet</translation>
+    </message>
+    <message>
+        <source>Manage trusted devices to keep your UOS ID secure.</source>
+        <translation>Hallitse luotettavia laitteita pitääksesi UOS-tunnuksesi turvassa.</translation>
+    </message>
+    <message>
+        <source>OS version: %1</source>
+        <translation>OS versio: %1</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Käytössä</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Poista</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to
+remove this device from trusted devices?</source>
+        <translation>Oletko varma, että haluat poistaa
+tämän laitteen luotetuista laitteista?</translation>
+    </message>
+    <message>
+        <source>Cloud Service of UOS ID</source>
+        <translation>Pilvipalvelu UOS ID</translation>
+    </message>
+    <message>
+        <source>Manage your UOS ID and sync your personal data across devices.
+Sign in to UOS ID to get personalized features and services of Browser, App Store, Support, and more.</source>
+        <translation>Hallinnoi UOS-tunnustasi ja synkronoi omat tietosi laitteiden välillä. Kirjaudu sisään UOS ID:llä ja saat mukautetun selaimen, App Storen, tuen ja muita palveluita.</translation>
+    </message>
+    <message>
+        <source>Sign In to UOS ID</source>
+        <translation>Kirjaudu sisään UOS ID</translation>
+    </message>
+    <message>
+        <source>UOS Cloud</source>
+        <translation>UOS Cloud</translation>
+    </message>
+    <message>
+        <source>Devices and Local Accounts</source>
+        <translation>Laitteet ja paikalliset tilit</translation>
+    </message>
+    <message>
+        <source>Password and Security</source>
+        <translation>Salasana ja tietoturva</translation>
+    </message>
+    <message>
+        <source>The feature is not available at present, please activate your system first</source>
+        <translation>Ominaisuus ei ole tällä hetkellä käytettävissä, aktivoi järjestelmä ensin</translation>
+    </message>
+    <message>
+        <source>Trusted phone numbers and email addresses</source>
+        <translation>Luotetut puhelinnumerot ja sähköpostiosoitteet</translation>
+    </message>
+    <message>
+        <source>Use the trusted mobile number or email address to sign in to UOS ID, and verify sensitive operations if they are performed on UOS ID.</source>
+        <translation>Käytä luotettua puhelinnumeroa tai sähköpostiosoitetta kirjautumiseen UOS ID:llä ja tarkista toiminnot, jotka suoritetaan UOS ID:llä.</translation>
+    </message>
+    <message>
+        <source>Link phone number to UOS ID</source>
+        <translation>Linkitä puhelinnumero UOS ID</translation>
+    </message>
+    <message>
+        <source>Link email address to UOS ID</source>
+        <translation>Linkitä sähköpostiosoite UOS ID</translation>
+    </message>
+    <message>
+        <source>Link third-party accounts</source>
+        <translation>Linkitä kolmannen osapuolen tilit</translation>
+    </message>
+    <message>
+        <source>Securely and quickly log in to your UOS ID and local account by scanning the QR code with the linked WeChat.</source>
+        <translation>Kirjaudu turvallisesti ja nopeasti sisään UOS ID:llä ja paikalliselle tilillesi skannaamalla QR-koodi linkitetyllä WeChatilla.</translation>
+    </message>
+    <message>
+        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Browser</source>
+        <source>Are you sure you want to unlink it?</source>
         <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Salasana</translation>
+    </message>
+    <message>
+        <source>Change your UOS ID password regularly to ensure its security.</source>
+        <translation>Vaihda UOS ID -salasanasi säännöllisesti sen turvallisuuden varmistamiseksi.</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Vaihda salasana</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Salasana vaihdettu</translation>
+    </message>
+    <message>
+        <source>Operation failed, please try later</source>
+        <translation>Toiminto epäonnistui, yritä myöhemmin</translation>
+    </message>
+    <message>
+        <source>Operation Successful</source>
+        <translation>Tehtävä onnistui</translation>
+    </message>
+    <message>
+        <source>Reset password successfully</source>
+        <translation>Salasanan nollaus onnistui</translation>
+    </message>
+    <message>
+        <source>Phone number</source>
+        <translation>Puhelinnumero</translation>
+    </message>
+    <message>
+        <source>Email address</source>
+        <translation>Sähköpostiosoite</translation>
+    </message>
+    <message>
+        <source>Enter a correct phone number</source>
+        <translation>Anna oikea puhelinnumero</translation>
+    </message>
+    <message>
+        <source>Enter a correct email address</source>
+        <translation>Anna oikea sähköpostiosoite</translation>
+    </message>
+    <message>
+        <source>Use another phone number</source>
+        <translation>Käytä toista puhelinnumeroa</translation>
+    </message>
+    <message>
+        <source>Use another email address</source>
+        <translation>Käytä toista sähköpostiosoitetta</translation>
+    </message>
+    <message>
+        <source>Link</source>
+        <translation>Linkki</translation>
+    </message>
+    <message>
+        <source>Unlink</source>
+        <translation>Poista linkitys</translation>
+    </message>
+    <message>
+        <source>Unlinked</source>
+        <translation>Linkitys poistettu</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Muuta</translation>
+    </message>
+    <message>
+        <source>Wrong password, %1 chances left</source>
+        <translation>Väärä salasana, %1 mahdollisuutta jäljellä</translation>
+    </message>
+    <message>
+        <source>The login error has reached the limit today. You can reset the password and try again.</source>
+        <translation>Kirjautumisvirhe on saavuttanut tämän päivän rajan. Voit nollata salasanan ja yrittää uudelleen.</translation>
+    </message>
+    <message>
+        <source>The phone number has been linked to UOS ID: %1.
+Please check and choose one action below.</source>
+        <translation>Puhelinnumero on linkitetty UOS-ID:lle %1.
+Tarkista ja valitse yksi toiminto alta.</translation>
+    </message>
+    <message>
+        <source>The email address has been linked to UOS ID: %1.
+Please check and choose one action below.</source>
+        <translation>Sähköpostiosoite on linkitetty UOS-ID:lle %1.
+Tarkista ja valitse yksi toiminto alta.</translation>
+    </message>
+    <message>
+        <source>Security Verification</source>
+        <translation>Tietoturvan vahvistus</translation>
+    </message>
+    <message>
+        <source>The action is sensitive, please enter the login password first</source>
+        <translation>Toiminto on arkaluonteinen, kirjoita ensin kirjautumissalasana</translation>
+    </message>
+    <message>
+        <source>Change UOS ID password</source>
+        <translation>Vaihda UOS ID salasana</translation>
+    </message>
+    <message>
+        <source>Forgot password?</source>
+        <translation>Unohtuiko salasana?</translation>
+    </message>
+    <message>
+        <source>Link to current UOS ID</source>
+        <translation>Linkki nykyiseen UOS ID</translation>
+    </message>
+    <message>
+        <source>Set a Password</source>
+        <translation>Aseta salasana</translation>
+    </message>
+    <message>
+        <source>Get Code</source>
+        <translation>Hanki koodi</translation>
+    </message>
+    <message>
+        <source>Verification code</source>
+        <translation>Vahvistuskoodi</translation>
+    </message>
+    <message>
+        <source>Resend (%1s)</source>
+        <translation>Lähetä uudelleen (%1s)</translation>
+    </message>
+    <message>
+        <source>Enter a correct verification code</source>
+        <translation>Anna oikea vahvistuskoodi</translation>
+    </message>
+    <message>
+        <source>Link WeChat to UOS ID</source>
+        <translation>Linkitä WeChat UOS ID:lle</translation>
+    </message>
+    <message>
+        <source>Scan QR code with WeChat</source>
+        <translation>Skannaa QR-koodi WeChatilla</translation>
+    </message>
+    <message>
+        <source>Password must contain numbers and letters</source>
+        <translation>Salasanan tulee sisältää numeroita ja kirjaimia</translation>
+    </message>
+    <message>
+        <source>Password must be between 8 and 64 characters</source>
+        <translation>Salasanan tulee olla 8–64 merkkiä pitkä</translation>
+    </message>
+    <message>
+        <source>8-64 characters</source>
+        <translation>8-64 merkkiä</translation>
+    </message>
+    <message>
+        <source>Passwords don&apos;t match</source>
+        <translation>Salasanat eivät täsmää</translation>
+    </message>
+    <message>
+        <source>Repeat the password</source>
+        <translation>Toista salasana</translation>
+    </message>
+    <message>
+        <source>8-64 characters, including uppercase or lowercase English letters and numbers</source>
+        <translation>8-64 merkkiä, mukaan lukien isot tai pienet englanninkieliset kirjaimet ja numerot</translation>
+    </message>
+    <message>
+        <source>Invalid nickname, please enter a new one</source>
+        <translation>Virheellinen lempinimi, anna uusi</translation>
+    </message>
+    <message>
+        <source>The nickname cannot contain special characters (&apos;&lt;&gt;&amp;&quot;) and whitespaces</source>
+        <translation>Lempinimi ilman erikoismerkkejä (&apos;&lt;&gt;&amp;&quot;) ja välilyöntejä</translation>
+    </message>
+    <message>
+        <source>The nickname can be modified only once a day</source>
+        <translation>Lempinimeä voi muuttaa vain kerran päivässä</translation>
     </message>
 </context>
 </TS>

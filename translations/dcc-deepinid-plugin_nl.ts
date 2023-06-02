@@ -112,10 +112,12 @@
         <translation>Cloudgegevens wissen</translation>
     </message>
     <message>
-        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?
-Once the data is cleared, it cannot be recovered!</source>
-        <translation>Weet je zeker dat je alle systeeminstellingen en persoonlijke gegevens in de cloud wilt wissen?
-Deze actie is onomkeerbaar.</translation>
+        <source>Are you sure you want to clear your system settings and personal data saved in the cloud?</source>
+        <translation>Weet je zeker dat je alle systeeminstellingen en persoonlijke gegevens in de cloud wilt wissen?</translation>
+    </message>
+    <message>
+        <source>Once the data is cleared, it cannot be recovered!</source>
+        <translation>Deze actie is onomkeerbaar!</translation>
     </message>
     <message>
         <source>Clear</source>
@@ -222,12 +224,13 @@ Log in op je UOS-id om toegang te krijgen tot persoonlijke functies en diensten 
         <translation>Log veilig en snel in op je UOS-id en lokale account door de QR-code te scannen met je gekoppelde WeChat-apparaat.</translation>
     </message>
     <message>
-        <source>If unlinked, you will not be able to 
-use WeChat to sign in to UOS ID.
-Are you sure you want to unlink it?</source>
+        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
         <translation>Als je je UOS-id loskoppelt, dan kun
-je WeChat niet gebruiken om in te loggen.
-Weet je zeker dat je wilt doorgaan?</translation>
+je WeChat niet gebruiken om in te loggen.</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to unlink it?</source>
+        <translation>Weet je zeker dat je wilt doorgaan?</translation>
     </message>
     <message>
         <source>Password</source>
@@ -248,6 +251,10 @@ Weet je zeker dat je wilt doorgaan?</translation>
     <message>
         <source>Operation failed, please try later</source>
         <translation>De actie is mislukt - probeer het later opnieuw</translation>
+    </message>
+    <message>
+        <source>Operation Successful</source>
+        <translation>Actie voltooid</translation>
     </message>
     <message>
         <source>Reset password successfully</source>
