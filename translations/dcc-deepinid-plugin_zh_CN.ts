@@ -29,23 +29,19 @@
 <context>
     <name>SyncModule</name>
     <message>
-        <source>Deepin ID</source>
-        <translation>Deepin ID</translation>
+        <source>deepin ID</source>
+        <translation>deepin ID</translation>
     </message>
     <message>
         <source>UOS ID</source>
         <translation>UOS ID</translation>
     </message>
-    <message>
-        <source>Sign In</source>
-        <translation>登 录</translation>
-    </message>
 </context>
 <context>
     <name>TransString</name>
     <message>
-        <source>UOS Cloud Sync</source>
-        <translation>UOS Cloud同步</translation>
+        <source>deepin Cloud Sync</source>
+        <translation>deepin Cloud同步</translation>
     </message>
     <message>
         <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
@@ -136,20 +132,20 @@
         <translation>确 定</translation>
     </message>
     <message>
-        <source>Link local accounts to UOS ID</source>
-        <translation>UOS ID绑定本地帐户</translation>
+        <source>Link local accounts to deepin ID</source>
+        <translation>deepin ID绑定本地帐户</translation>
     </message>
     <message>
-        <source>If linked, you can use UOS ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
-        <translation>绑定本地帐户，以使用UOS ID登录本地帐户和重置本地帐户密码。您可以通过关闭开关以解除绑定。</translation>
+        <source>If linked, you can use deepin ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
+        <translation>绑定本地帐户，以使用deepin ID登录本地帐户和重置本地帐户密码。您可以通过关闭开关以解除绑定。</translation>
     </message>
     <message>
         <source>Trusted devices</source>
         <translation>受信任设备</translation>
     </message>
     <message>
-        <source>Manage trusted devices to keep your UOS ID secure.</source>
-        <translation>管理受信任的设备，以确保您的UOS ID安全性。</translation>
+        <source>Manage trusted devices to keep your deepin ID secure.</source>
+        <translation>管理受信任的设备，以确保您的deepin ID安全性。</translation>
     </message>
     <message>
         <source>OS version: %1</source>
@@ -169,22 +165,22 @@ remove this device from trusted devices?</source>
         <translation>确定从信任设备中移除该设备？</translation>
     </message>
     <message>
-        <source>Cloud Service of UOS ID</source>
-        <translation>UOS ID云服务</translation>
+        <source>Cloud Service of deepin ID</source>
+        <translation>deepin ID云服务</translation>
     </message>
     <message>
-        <source>Manage your UOS ID and sync your personal data across devices.
-Sign in to UOS ID to get personalized features and services of Browser, App Store, Support, and more.</source>
-        <translation>管理您的UOS ID，将您的个人数据在不同设备之间同步。
-登录UOS ID以获取浏览器、应用商店、服务与支持等众多应用的个性功能和服务。</translation>
+        <source>Manage your deepin ID and sync your personal data across devices.
+Sign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.</source>
+        <translation>管理您的deepin ID，将您的个人数据在不同设备之间同步。
+登录deepin ID以获取浏览器、应用商店、服务与支持等众多应用的个性功能和服务。</translation>
     </message>
     <message>
-        <source>Sign In to UOS ID</source>
-        <translation>登录UOS ID</translation>
+        <source>Sign In to deepin ID</source>
+        <translation>登录deepin ID</translation>
     </message>
     <message>
-        <source>UOS Cloud</source>
-        <translation>UOS Cloud</translation>
+        <source>deepin Cloud</source>
+        <translation>deepin Cloud</translation>
     </message>
     <message>
         <source>Devices and Local Accounts</source>
@@ -203,27 +199,27 @@ Sign in to UOS ID to get personalized features and services of Browser, App Stor
         <translation>受信任的手机号和邮箱</translation>
     </message>
     <message>
-        <source>Use the trusted mobile number or email address to sign in to UOS ID, and verify sensitive operations if they are performed on UOS ID.</source>
-        <translation>通过受信任的手机和邮箱登录您的UOS ID，并在帐号进行敏感操作时做可信验证。</translation>
+        <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
+        <translation>通过受信任的手机和邮箱登录您的deepin ID，并在帐号进行敏感操作时做可信验证。</translation>
     </message>
     <message>
-        <source>Link phone number to UOS ID</source>
-        <translation>UOS ID手机号绑定</translation>
+        <source>Link phone number to deepin ID</source>
+        <translation>deepin ID手机号绑定</translation>
     </message>
     <message>
-        <source>Link email address to UOS ID</source>
-        <translation>UOS ID邮箱绑定</translation>
+        <source>Link email address to deepin ID</source>
+        <translation>deepin ID邮箱绑定</translation>
     </message>
     <message>
         <source>Link third-party accounts</source>
         <translation>第三方帐号绑定</translation>
     </message>
     <message>
-        <source>Securely and quickly log in to your UOS ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation>通过关联微信扫码，安全且快速的登录您的UOS ID和本地帐户。</translation>
+        <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
+        <translation>通过关联微信扫码，安全且快速的登录您的deepin ID和本地帐户。</translation>
     </message>
     <message>
-        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
+        <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
         <translation>解除与该微信的绑定关系，将不能使用微信扫码登录。</translation>
     </message>
     <message>
@@ -235,8 +231,8 @@ Sign in to UOS ID to get personalized features and services of Browser, App Stor
         <translation>密码管理</translation>
     </message>
     <message>
-        <source>Change your UOS ID password regularly to ensure its security.</source>
-        <translation>定期更新UOS ID密码，以确保帐户安全性。</translation>
+        <source>Change your deepin ID password regularly to ensure its security.</source>
+        <translation>定期更新deepin ID密码，以确保帐户安全性。</translation>
     </message>
     <message>
         <source>Change password</source>
@@ -307,12 +303,12 @@ Sign in to UOS ID to get personalized features and services of Browser, App Stor
         <translation>密码错误已达今日上限，可重置密码再试</translation>
     </message>
     <message>
-        <source>The phone number has been linked to UOS ID: %1.
+        <source>The phone number has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
         <translation>该手机号已绑定帐号%1，请确认后选择以下操作</translation>
     </message>
     <message>
-        <source>The email address has been linked to UOS ID: %1.
+        <source>The email address has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
         <translation>该邮箱已绑定帐号%1，请确认后选择以下操作</translation>
     </message>
@@ -325,15 +321,15 @@ Please check and choose one action below.</source>
         <translation>您正在进行敏感操作，请进行登录密码认证</translation>
     </message>
     <message>
-        <source>Change UOS ID password</source>
-        <translation>UOS ID密码修改</translation>
+        <source>Change deepin ID password</source>
+        <translation>deepin ID密码修改</translation>
     </message>
     <message>
         <source>Forgot password?</source>
         <translation>忘记密码？</translation>
     </message>
     <message>
-        <source>Link to current UOS ID</source>
+        <source>Link to current deepin ID</source>
         <translation>换绑本帐号</translation>
     </message>
     <message>
@@ -357,8 +353,8 @@ Please check and choose one action below.</source>
         <translation>请输入正确的验证码</translation>
     </message>
     <message>
-        <source>Link WeChat to UOS ID</source>
-        <translation>UOS ID微信绑定</translation>
+        <source>Link WeChat to deepin ID</source>
+        <translation>deepin ID微信绑定</translation>
     </message>
     <message>
         <source>Scan QR code with WeChat</source>

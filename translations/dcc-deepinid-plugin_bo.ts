@@ -29,23 +29,19 @@
 <context>
     <name>SyncModule</name>
     <message>
-        <source>Deepin ID</source>
+        <source>deepin ID</source>
         <translation>Deepin ID</translation>
     </message>
     <message>
         <source>UOS ID</source>
         <translation>UOS ID</translation>
     </message>
-    <message>
-        <source>Sign In</source>
-        <translation>ཐོ་འཇུག</translation>
-    </message>
 </context>
 <context>
     <name>TransString</name>
     <message>
-        <source>UOS Cloud Sync</source>
-        <translation>UOS Cloud Sync</translation>
+        <source>deepin Cloud Sync</source>
+        <translation>deepin Cloudམཉམ་འགྲོས།</translation>
     </message>
     <message>
         <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
@@ -136,20 +132,20 @@
         <translation>གཏན་ཁེལ། </translation>
     </message>
     <message>
-        <source>Link local accounts to UOS ID</source>
-        <translation>UOS IDཡིས་དེ་གའི་རྩིས་ཐོ་དང་སྦྲེལ་བ།</translation>
+        <source>Link local accounts to deepin ID</source>
+        <translation>UOS IDདང་དེ་གའི་རྩིས་ཐོ་སྦྲེལ་བ།</translation>
     </message>
     <message>
-        <source>If linked, you can use UOS ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
-        <translation>དེ་གའི་རྩིས་ཐོ་དང་སྦྲེལ་ན། UOS IDསྤྱད་ནས་དེ་གའི་རྩིས་ཐོ་ཐོ་འཇུག་དང་རྩིས་ཐོའི་གསང་ཨང་བསྐྱར་སྒྲིག་བྱེད་ཆོག ཁྱེད་ཀྱིས་ཁ་བརྒྱབ་ནས་སྦྲེལ་བ་བཅད་ན་ཆོག</translation>
+        <source>If linked, you can use deepin ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
+        <translation>དེ་གའི་རྩིས་ཐོ་དང་སྦྲེལ་ན། deepin IDསྤྱད་ནས་དེ་གའི་རྩིས་ཐོ་ཐོ་འཇུག་དང་རྩིས་ཐོའི་གསང་ཨང་བསྐྱར་སྒྲིག་བྱེད་ཆོག ཁྱེད་ཀྱིས་ཁ་བརྒྱབ་ནས་སྦྲེལ་བ་བཅད་ན་ཆོག</translation>
     </message>
     <message>
         <source>Trusted devices</source>
         <translation>ཡིད་ཆེས་པའི་སྒྲིག་ཆས།</translation>
     </message>
     <message>
-        <source>Manage trusted devices to keep your UOS ID secure.</source>
-        <translation>ཡིད་ཆེས་པའི་སྒྲིག་ཆས་དོ་དམ་བྱས་ཏེ། ཁྱེད་ཀྱི་UOS IDབདེ་འཇགས་ཡིན་པར་འགན་སྲུང་བྱེད།</translation>
+        <source>Manage trusted devices to keep your deepin ID secure.</source>
+        <translation>ཡིད་ཆེས་པའི་སྒྲིག་ཆས་དོ་དམ་བྱས་ཏེ། ཁྱེད་ཀྱི་deepin IDབདེ་འཇགས་ཡིན་པར་འགན་སྲུང་བྱེད།</translation>
     </message>
     <message>
         <source>OS version: %1</source>
@@ -169,22 +165,22 @@ remove this device from trusted devices?</source>
         <translation>ཡིད་ཆེས་པའི་སྒྲིག་ཆས་ཁྲོད་ནས་སྒྲིག་ཆས་འདི་སྤོ་འབུད་བྱེད་རྒྱུ་གཏན་ཁེལ་ལམ།</translation>
     </message>
     <message>
-        <source>Cloud Service of UOS ID</source>
-        <translation>UOS IDསྤྲིན་པའི་ཞབས་ཞུ།</translation>
+        <source>Cloud Service of deepin ID</source>
+        <translation>deepin IDསྤྲིན་པའི་ཞབས་ཞུ།</translation>
     </message>
     <message>
-        <source>Manage your UOS ID and sync your personal data across devices.
-Sign in to UOS ID to get personalized features and services of Browser, App Store, Support, and more.</source>
-        <translation>ཁྱེད་ཀྱི་UOS IDདོ་དམ་བྱས་ཏེ།  ཁྱེད་ཀྱི་སྒེར་གྱི་གཞི་གྲངས་འདི་སྒྲིག་ཆས་མི་འདྲ་བའི་དབར་མཉམ་འགྲོས་བྱེད་པ།
-UOS IDཐོ་འཇུག་བྱས་ཏེ། དྲ་ངོས་ལྟ་ཆས་དང་། ཉེར་སྤྱོད་ཚོང་ཁང་། ཞབས་ཞུ་དང་རྒྱབ་སྐྱོར་སོགས་ཉེར་སྤྱོད་མང་པོའི་སྨིག་བསལ་ནུས་པ་དང་ཞབས་ཞུ་ཐོབ་ཐུབ།</translation>
+        <source>Manage your deepin ID and sync your personal data across devices.
+Sign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.</source>
+        <translation>ཁྱེད་ཀྱི་deepin IDདོ་དམ་བྱས་ཏེ།  ཁྱེད་ཀྱི་སྒེར་གྱི་གཞི་གྲངས་འདི་སྒྲིག་ཆས་མི་འདྲ་བའི་དབར་མཉམ་འགྲོས་བྱེད་པ།
+deepin IDཐོ་འཇུག་བྱས་ཏེ། དྲ་ངོས་ལྟ་ཆས་དང་། ཉེར་སྤྱོད་ཚོང་ཁང་། ཞབས་ཞུ་དང་རྒྱབ་སྐྱོར་སོགས་ཉེར་སྤྱོད་མང་པོའི་སྨིག་བསལ་ནུས་པ་དང་ཞབས་ཞུ་ཐོབ་ཐུབ།</translation>
     </message>
     <message>
-        <source>Sign In to UOS ID</source>
-        <translation>UOS IDཐོ་འཇུག</translation>
+        <source>Sign In to deepin ID</source>
+        <translation>deepin IDཐོ་འཇུག</translation>
     </message>
     <message>
-        <source>UOS Cloud</source>
-        <translation>UOS Cloud</translation>
+        <source>deepin Cloud</source>
+        <translation>deepin Cloud</translation>
     </message>
     <message>
         <source>Devices and Local Accounts</source>
@@ -203,28 +199,28 @@ UOS IDཐོ་འཇུག་བྱས་ཏེ། དྲ་ངོས་ལྟ�
         <translation>ཡིད་ཆེས་པའི་ཁ་པར་ཨང་གྲངས་དང་ཡིག་སྒམ།</translation>
     </message>
     <message>
-        <source>Use the trusted mobile number or email address to sign in to UOS ID, and verify sensitive operations if they are performed on UOS ID.</source>
-        <translation>ཡིད་ཆེས་པའི་ཁ་པར་དང་ཡིག་སྒམ་བརྒྱུད་ནས་ཁྱེད་ཀྱི་UOS IDཐོ་འཇུག་བྱེད་པ་དང་སྦྲགས། རྩིས་ཐོར་ཉེན་ཆེའི་བཀོལ་སྤྱོད་བྱེད་སྐབས་ར་སྤྲོད་དབང་སྤྲོད་བྱས་ཆོག</translation>
+        <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
+        <translation>ཡིད་ཆེས་པའི་ཁ་པར་དང་ཡིག་སྒམ་བརྒྱུད་ནས་ཁྱེད་ཀྱི་deepin IDཐོ་འཇུག་བྱེད་པ་དང་སྦྲགས། རྩིས་ཐོར་ཉེན་ཆེའི་བཀོལ་སྤྱོད་བྱེད་སྐབས་ར་སྤྲོད་དབང་སྤྲོད་བྱས་ཆོག</translation>
     </message>
     <message>
-        <source>Link phone number to UOS ID</source>
-        <translation>UOS IDཁ་པར་ཨང་གྲངས་དང་སྦྲེལ་བ།</translation>
+        <source>Link phone number to deepin ID</source>
+        <translation>deepin IDཁ་པར་ཨང་གྲངས་དང་སྦྲེལ་བ།</translation>
     </message>
     <message>
-        <source>Link email address to UOS ID</source>
-        <translation>UOS IDཡིག་སྒམ་དང་སྦྲེལ་བ།</translation>
+        <source>Link email address to deepin ID</source>
+        <translation>deepin IDཡིག་སྒམ་དང་སྦྲེལ་བ།</translation>
     </message>
     <message>
         <source>Link third-party accounts</source>
         <translation>ཕུང་གསུམ་པའི་རྩིས་ཐོ་དང་སྦྲེལ་བ།</translation>
     </message>
     <message>
-        <source>Securely and quickly log in to your UOS ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation>སྐད་འཕྲིན་གྱིས་རྟགས་བཤེར་བྱས་ཏེ། བདེ་འཇགས་ཡིན་ལ་མགྱོགས་མྱུར་སྒོ་ནས་ཁྱེད་ཀྱི་UOS IDདང་རྩིས་ཐོ་ཐོ་འཇུག་བྱེད།</translation>
+        <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
+        <translation>སྐད་འཕྲིན་གྱིས་རྟགས་བཤེར་བྱས་ཏེ། བདེ་འཇགས་ཡིན་ལ་མགྱོགས་མྱུར་སྒོ་ནས་ཁྱེད་ཀྱི་deepin IDདང་རྩིས་ཐོ་ཐོ་འཇུག་བྱེད།</translation>
     </message>
     <message>
-        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
-        <translation>སྐད་འཕྲིན་དབར་གྱི་སྦྲེལ་བ་མེད་པ་བཟོས་ཚེ། སྐད་འཕྲིན་གྱིས་རྟགས་བཤེར་བྱས་ནས་ཐོ་འཇུག་བྱེད་མི་ཐུབ།</translation>
+        <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
+        <translation>སྐད་འཕྲིན་དབར་གྱི་སྦྲེལ་བ་མེད་པ་བཟོས་ཚེ། སྐད་འཕྲིན་གྱིས་རྟགས་བཤེར་བྱས་ནས་deepinཐོ་འཇུག་བྱེད་མི་ཐུབ།</translation>
     </message>
     <message>
         <source>Are you sure you want to unlink it?</source>
@@ -235,8 +231,8 @@ UOS IDཐོ་འཇུག་བྱས་ཏེ། དྲ་ངོས་ལྟ�
         <translation>གསང་ཨང་དོ་དམ།</translation>
     </message>
     <message>
-        <source>Change your UOS ID password regularly to ensure its security.</source>
-        <translation>དུས་བཀག་ལྟར་UOS IDགསང་ཨང་གསར་སྒྱུར་བྱས་ཏེ། རྩིས་ཐོའི་བདེ་འཇགས་འགན་སྲུང་བྱེད།</translation>
+        <source>Change your deepin ID password regularly to ensure its security.</source>
+        <translation>དུས་བཀག་ལྟར་deepin IDགསང་ཨང་གསར་སྒྱུར་བྱས་ཏེ། རྩིས་ཐོའི་བདེ་འཇགས་འགན་སྲུང་བྱེད།</translation>
     </message>
     <message>
         <source>Change password</source>
@@ -307,14 +303,14 @@ UOS IDཐོ་འཇུག་བྱས་ཏེ། དྲ་ངོས་ལྟ�
         <translation>གསང་ཨང་ནོར་བའི་ཐེངས་གྲངས་དེ་རིང་གི་ཚད་ལས་བརྒལ་འདུག གསང་ཨང་བསྐྱར་སྒྲིག་བྱས་ནས་ཚོད་ལྟ་གྱིས།</translation>
     </message>
     <message>
-        <source>The phone number has been linked to UOS ID: %1.
+        <source>The phone number has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>ཁ་པར་ཨང་གྲངས་འདིས་རྩིས་ཐོ་%1དང་སྦྲེལ་ཟིན་པས། གཤམ་གྱི་བཀོལ་སྤྱོད་འདེམས་དང་།</translation>
+        <translation>ཁ་པར་ཨང་གྲངས་འདིས་རྩིས་ཐོ་%1དང་སྦྲེལ་ཟིན་པས། གཏན་ཁེལ་རྗེས་གཤམ་གྱི་བཀོལ་སྤྱོད་འདེམས་དང་།</translation>
     </message>
     <message>
-        <source>The email address has been linked to UOS ID: %1.
+        <source>The email address has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>ཡིག་སྒམ་འདིས་རྩིས་ཐོ་%1དང་སྦྲེལ་ཟིན་པས། གཤམ་གྱི་བཀོལ་སྤྱོད་འདེམས་དང་།</translation>
+        <translation>ཡིག་སྒམ་འདིས་རྩིས་ཐོ་%1དང་སྦྲེལ་ཟིན་པས། གཏན་ཁེལ་རྗེས་གཤམ་གྱི་བཀོལ་སྤྱོད་འདེམས་དང་།</translation>
     </message>
     <message>
         <source>Security Verification</source>
@@ -325,16 +321,16 @@ Please check and choose one action below.</source>
         <translation>ཁྱེད་ཀྱིས་ཉེན་ཆེའི་བཀོལ་སྤྱོད་བྱེད་བཞིན་ཡོད་པས། ཐོ་འཇུག་བྱེད་སྐབས་གསང་ཨང་ར་སྤྲོད་བྱ་རྒྱུ།</translation>
     </message>
     <message>
-        <source>Change UOS ID password</source>
-        <translation>UOS IDགསང་ཨང་བཟོ་བཅོས།</translation>
+        <source>Change deepin ID password</source>
+        <translation>deepin IDགསང་ཨང་བཟོ་བཅོས།</translation>
     </message>
     <message>
         <source>Forgot password?</source>
         <translation>གསང་ཨང་བརྗེད་པ། </translation>
     </message>
     <message>
-        <source>Link to current UOS ID</source>
-        <translation>རྩིས་ཐོ་འདིར་སྦྲེལ་བ།</translation>
+        <source>Link to current deepin ID</source>
+        <translation>deepin IDའདིར་སྦྲེལ་བ།</translation>
     </message>
     <message>
         <source>Set a Password</source>
@@ -357,8 +353,8 @@ Please check and choose one action below.</source>
         <translation>ཡང་དག་པའི་ར་སྤྲོད་ཨང་རྟགས་འཇུག་པ།</translation>
     </message>
     <message>
-        <source>Link WeChat to UOS ID</source>
-        <translation>UOS IDསྐད་འཕྲིན་སྦྲེལ་བ།</translation>
+        <source>Link WeChat to deepin ID</source>
+        <translation>deepin IDསྐད་འཕྲིན་སྦྲེལ་བ།</translation>
     </message>
     <message>
         <source>Scan QR code with WeChat</source>

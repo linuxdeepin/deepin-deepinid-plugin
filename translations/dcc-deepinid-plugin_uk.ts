@@ -29,23 +29,19 @@
 <context>
     <name>SyncModule</name>
     <message>
-        <source>Deepin ID</source>
-        <translation>Ідентифікатор Deepin</translation>
+        <source>deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>UOS ID</source>
         <translation>UOS ID</translation>
     </message>
-    <message>
-        <source>Sign In</source>
-        <translation>Увійти</translation>
-    </message>
 </context>
 <context>
     <name>TransString</name>
     <message>
-        <source>UOS Cloud Sync</source>
-        <translation>Синхронізація з «хмарою» UOS</translation>
+        <source>deepin Cloud Sync</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
@@ -136,20 +132,20 @@
         <translation>Підтвердити</translation>
     </message>
     <message>
-        <source>Link local accounts to UOS ID</source>
-        <translation>Прив&apos;язка локального запису до ідентифікатора UOS</translation>
+        <source>Link local accounts to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>If linked, you can use UOS ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
-        <translation>Якщо з&apos;єднано, ви можете скористатися ідентифікатором UOS для входу до системи та скидання паролів локальних облікових записів. Вимкніть, щоб від&apos;єднати їх.</translation>
+        <source>If linked, you can use deepin ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Trusted devices</source>
         <translation>Довірені пристрої</translation>
     </message>
     <message>
-        <source>Manage trusted devices to keep your UOS ID secure.</source>
-        <translation>Керування довіреними пристроями для забезпечення безпеки вашого ідентифікатора UOS.</translation>
+        <source>Manage trusted devices to keep your deepin ID secure.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>OS version: %1</source>
@@ -169,22 +165,21 @@ remove this device from trusted devices?</source>
         <translation>Ви справді хочете вилучити цей пристрій зі списку довірених пристроїв?</translation>
     </message>
     <message>
-        <source>Cloud Service of UOS ID</source>
-        <translation>«Хмарна» служба ідентифікатора UOS</translation>
+        <source>Cloud Service of deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Manage your UOS ID and sync your personal data across devices.
-Sign in to UOS ID to get personalized features and services of Browser, App Store, Support, and more.</source>
-        <translation>Керуйте вашим ідентифікатором UOS і синхронізуйте ваші особисті дані між пристроями.
-Увійдіть до облікового запису UOS, щоб отримати персоналізовані можливості та служби переглядача інтернету, крамниці програм, підтримки та інші послуги.</translation>
+        <source>Manage your deepin ID and sync your personal data across devices.
+Sign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Sign In to UOS ID</source>
-        <translation>Увійти до облікового запису UOS</translation>
+        <source>Sign In to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>UOS Cloud</source>
-        <translation>«Хмара» UOS</translation>
+        <source>deepin Cloud</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Devices and Local Accounts</source>
@@ -203,27 +198,27 @@ Sign in to UOS ID to get personalized features and services of Browser, App Stor
         <translation>Довірені номери телефонів та адреси електронної пошти</translation>
     </message>
     <message>
-        <source>Use the trusted mobile number or email address to sign in to UOS ID, and verify sensitive operations if they are performed on UOS ID.</source>
-        <translation>Скористайтеся довіреним номером мобільного телефону або адресою електронної пошти для входу до облікового запису UOS і перевіряйте критичні дії, якщо вони виконуються від імені ідентифікатора UOS.</translation>
+        <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link phone number to UOS ID</source>
-        <translation>Пов&apos;язати номер телефону із ідентифікатором UOS</translation>
+        <source>Link phone number to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link email address to UOS ID</source>
-        <translation>Пов&apos;язати адресу електронної пошти із ідентифікатором UOS</translation>
+        <source>Link email address to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Link third-party accounts</source>
         <translation>Пов&apos;язати сторонні облікові записи</translation>
     </message>
     <message>
-        <source>Securely and quickly log in to your UOS ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation>Безпечно і швидко входьте до вашого облікового запису UOS і локального облікового запису скануванням QR-коду за допомогою пов&apos;язаного WeChat.</translation>
+        <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
+        <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -235,8 +230,8 @@ Sign in to UOS ID to get personalized features and services of Browser, App Stor
         <translation>Пароль</translation>
     </message>
     <message>
-        <source>Change your UOS ID password regularly to ensure its security.</source>
-        <translation>Регулярно змінюйте ваш пароль до ідентифікатора UOS, щоб забезпечити захист цього ідентифікатора.</translation>
+        <source>Change your deepin ID password regularly to ensure its security.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Change password</source>
@@ -307,16 +302,14 @@ Sign in to UOS ID to get personalized features and services of Browser, App Stor
         <translation>На сьогодні перевищено обмеження на невдалі спроби увійти. Ви можете скинути пароль і повторити спробу.</translation>
     </message>
     <message>
-        <source>The phone number has been linked to UOS ID: %1.
+        <source>The phone number has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>З ідентифікатором UOS з&apos;єднано номер телефону: %1.
-Будь ласка, перевірте і виберіть одну з наведених нижче дій.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>The email address has been linked to UOS ID: %1.
+        <source>The email address has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>З ідентифікатором UOS з&apos;єднано адресу електронної пошти: %1.
-Будь ласка, перевірте і виберіть одну з наведених нижче дій.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Security Verification</source>
@@ -327,16 +320,16 @@ Please check and choose one action below.</source>
         <translation>Дія є критичною, будь ласка, спочатку введіть пароль до облікового запису</translation>
     </message>
     <message>
-        <source>Change UOS ID password</source>
-        <translation>Змінити пароль до ідентифікатора UOS</translation>
+        <source>Change deepin ID password</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Forgot password?</source>
         <translation>Забули пароль?</translation>
     </message>
     <message>
-        <source>Link to current UOS ID</source>
-        <translation>З&apos;єднати з поточним ідентифікатором UOS</translation>
+        <source>Link to current deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Set a Password</source>
@@ -359,8 +352,8 @@ Please check and choose one action below.</source>
         <translation>Введіть правильний код перевірки</translation>
     </message>
     <message>
-        <source>Link WeChat to UOS ID</source>
-        <translation>З&apos;єднати WeChat з ідентифікатором UOS</translation>
+        <source>Link WeChat to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Scan QR code with WeChat</source>

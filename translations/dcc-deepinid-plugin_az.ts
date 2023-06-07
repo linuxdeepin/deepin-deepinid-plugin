@@ -29,23 +29,19 @@
 <context>
     <name>SyncModule</name>
     <message>
-        <source>Deepin ID</source>
-        <translation>Deepin İD</translation>
+        <source>deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>UOS ID</source>
         <translation>UOS ID</translation>
     </message>
-    <message>
-        <source>Sign In</source>
-        <translation>Hesaba giriş</translation>
-    </message>
 </context>
 <context>
     <name>TransString</name>
     <message>
-        <source>UOS Cloud Sync</source>
-        <translation>UOS bulud ilə eyniləşdirmək</translation>
+        <source>deepin Cloud Sync</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
@@ -136,20 +132,20 @@
         <translation>Təsdiqlə</translation>
     </message>
     <message>
-        <source>Link local accounts to UOS ID</source>
-        <translation>Yerli hesabı UOS İD ilə əlaqələndirin</translation>
+        <source>Link local accounts to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>If linked, you can use UOS ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
-        <translation>Əgər əlaqələndirsəniz sistemə daxil olmaq və yerli hesabların şifrələrini sıfırlamaq üçün UOS ID-dən istifadə edə bilərsiniz. Əlaqəni kəsmək üçün onu söndürün.</translation>
+        <source>If linked, you can use deepin ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Trusted devices</source>
         <translation>Etibar edilən cihazlar</translation>
     </message>
     <message>
-        <source>Manage trusted devices to keep your UOS ID secure.</source>
-        <translation>UOS ID-nin təhlükəsiz qalması üçün etibar edilən cihazlara nəzarət edin.</translation>
+        <source>Manage trusted devices to keep your deepin ID secure.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>OS version: %1</source>
@@ -170,22 +166,21 @@ remove this device from trusted devices?</source>
 etibar edilən cihazlar sırasından çıxartmaq istədiyinizə əminsiniz?</translation>
     </message>
     <message>
-        <source>Cloud Service of UOS ID</source>
-        <translation>UOS ID-nin Bulud xidməti</translation>
+        <source>Cloud Service of deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Manage your UOS ID and sync your personal data across devices.
-Sign in to UOS ID to get personalized features and services of Browser, App Store, Support, and more.</source>
-        <translation>UOS ID-nizi idarə edin və şəxsi məlumatlarınızı cihazlarınız arasında eyniləşdirin.
-Veb-bələdçi, Tətbiq Mağazası və s. funksiya və xidmətlərini fərdiləşdirmək üçün UOS ID-yə daxil olun.</translation>
+        <source>Manage your deepin ID and sync your personal data across devices.
+Sign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Sign In to UOS ID</source>
-        <translation>UOS ID-yə daxil olun</translation>
+        <source>Sign In to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>UOS Cloud</source>
-        <translation>UOS Bulud</translation>
+        <source>deepin Cloud</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Devices and Local Accounts</source>
@@ -204,28 +199,28 @@ Veb-bələdçi, Tətbiq Mağazası və s. funksiya və xidmətlərini fərdilə�
         <translation>Etibarlı telefon nömrələri və e-poçt ünvanları</translation>
     </message>
     <message>
-        <source>Use the trusted mobile number or email address to sign in to UOS ID, and verify sensitive operations if they are performed on UOS ID.</source>
-        <translation>UOS ID-yə daxil olmaq üçün etibarlı telefon nömrəsindən və e-poçt ünvanından istifadə edin və təhlükəsizlik baxımından həssas əməliyyatlat UOS ID-də yerinə yetirilərsə onları yoxlayın.</translation>
+        <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link phone number to UOS ID</source>
-        <translation>Telefon nömrəsini UOS ID ilə əlaqələndirin</translation>
+        <source>Link phone number to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link email address to UOS ID</source>
-        <translation>E-poçtu UOS ID ilə əlaqələndirin</translation>
+        <source>Link email address to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Link third-party accounts</source>
         <translation>Üçüncü tərəf hesablarını qoşun</translation>
     </message>
     <message>
-        <source>Securely and quickly log in to your UOS ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation>UOS ID-yə və yerli hesabınıza təhlükəsiz və tez daxil olmaq üçün WeChat ilə əlaqələndirilmiş QR kodu skan edin.</translation>
+        <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
-        <translation>Əgər əlaqələndirmə kəsilərsə siz UOS İD-yə daxil olmaq üçün WeChat istifadə edə bilməyəcəksiniz.</translation>
+        <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Are you sure you want to unlink it?</source>
@@ -236,8 +231,8 @@ Veb-bələdçi, Tətbiq Mağazası və s. funksiya və xidmətlərini fərdilə�
         <translation>Şifrə</translation>
     </message>
     <message>
-        <source>Change your UOS ID password regularly to ensure its security.</source>
-        <translation>UOS ID-nin təhlükəsizliyiniz qorumaq üçün şifrəni mütəmadi olaraq dəyişin.</translation>
+        <source>Change your deepin ID password regularly to ensure its security.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Change password</source>
@@ -308,16 +303,14 @@ Veb-bələdçi, Tətbiq Mağazası və s. funksiya və xidmətlərini fərdilə�
         <translation>Səhv e-poçt ünvanı daxil etmək həddinə çatdınız. Şifrəni dəyişə və yenidən cəhd edə bilərsiniz.</translation>
     </message>
     <message>
-        <source>The phone number has been linked to UOS ID: %1.
+        <source>The phone number has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>UOS ID ilə əlaqələndirilən telefon nömrəsi: %1
-Lütfən yoxlayın və aşağıda bir əməliyyatı seçin</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>The email address has been linked to UOS ID: %1.
+        <source>The email address has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>UOS ID ilə əlaqələndirilmiş e-poçt ünvanı: %1
-Lütfən yoxlayın və aşağıda bir əməliyyat seçin.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Security Verification</source>
@@ -328,16 +321,16 @@ Lütfən yoxlayın və aşağıda bir əməliyyat seçin.</translation>
         <translation>Bu əməliyyat təhlükəsizlik baxımından həssasdır, lütfən öncə şifrəni daxil edin</translation>
     </message>
     <message>
-        <source>Change UOS ID password</source>
-        <translation>UOS ID şifrəsini dəyişin</translation>
+        <source>Change deepin ID password</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Forgot password?</source>
         <translation>Şifrəni unutmusunuz?</translation>
     </message>
     <message>
-        <source>Link to current UOS ID</source>
-        <translation>Hazırkı UOS ID ilə əlaqələndir</translation>
+        <source>Link to current deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Set a Password</source>
@@ -360,8 +353,8 @@ Lütfən yoxlayın və aşağıda bir əməliyyat seçin.</translation>
         <translation>Düzgün doğrulama kodu daxil edin</translation>
     </message>
     <message>
-        <source>Link WeChat to UOS ID</source>
-        <translation>WeChat-ı UOS ID ilə əlaqələndirin</translation>
+        <source>Link WeChat to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Scan QR code with WeChat</source>

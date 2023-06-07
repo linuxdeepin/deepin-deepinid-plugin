@@ -29,23 +29,19 @@
 <context>
     <name>SyncModule</name>
     <message>
-        <source>Deepin ID</source>
-        <translation>Deepin ID</translation>
+        <source>deepin ID</source>
+        <translation>deepin ID</translation>
     </message>
     <message>
         <source>UOS ID</source>
         <translation>UOS ID</translation>
     </message>
-    <message>
-        <source>Sign In</source>
-        <translation>كىرىش</translation>
-    </message>
 </context>
 <context>
     <name>TransString</name>
     <message>
-        <source>UOS Cloud Sync</source>
-        <translation>UOS Cloud قا ماس قەدەملەش</translation>
+        <source>deepin Cloud Sync</source>
+        <translation>deepin Cloud قا ماس قەدەملەش</translation>
     </message>
     <message>
         <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
@@ -136,20 +132,20 @@
         <translation> جەزملەش</translation>
     </message>
     <message>
-        <source>Link local accounts to UOS ID</source>
-        <translation>UOS ID نى يەرلىك ھېساباتقا باغلاش</translation>
+        <source>Link local accounts to deepin ID</source>
+        <translation>deepin ID نى يەرلىك ھېساباتقا باغلاش</translation>
     </message>
     <message>
-        <source>If linked, you can use UOS ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
-        <translation>يەرلىك ھېساباتقا باغلىسىڭىز UOS ID ھېساباتى ئارقىلىق يەرلىك ھېساباتقا كىرەلەيسىز ۋە يەرلىك ھېسابات پارولىنى قايتا بېكىتەلەيسىز. ئىقتىدارنى ئېتىش ئارقىلىق باغلاشنى بىكار قىلسىڭىز بولىدۇ.</translation>
+        <source>If linked, you can use deepin ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
+        <translation>يەرلىك ھېساباتقا باغلىسىڭىز deepin ID ھېساباتى ئارقىلىق يەرلىك ھېساباتقا كىرەلەيسىز ۋە يەرلىك ھېسابات پارولىنى قايتا بېكىتەلەيسىز. ئىقتىدارنى ئېتىش ئارقىلىق باغلاشنى بىكار قىلسىڭىز بولىدۇ.</translation>
     </message>
     <message>
         <source>Trusted devices</source>
         <translation>ئىشىنىدىغان ئۈسكۈنە</translation>
     </message>
     <message>
-        <source>Manage trusted devices to keep your UOS ID secure.</source>
-        <translation>ئىشىنىدىغان ئۈسكۈنىلەرنى باشقۇرۇش ئارقىلىق UOS ID نىڭ بىخەتەرلىكىگە كاپالەتلىك قىلىدۇ.</translation>
+        <source>Manage trusted devices to keep your deepin ID secure.</source>
+        <translation>ئىشىنىدىغان ئۈسكۈنىلەرنى باشقۇرۇش ئارقىلىق deepin ID نىڭ بىخەتەرلىكىگە كاپالەتلىك قىلىدۇ.</translation>
     </message>
     <message>
         <source>OS version: %1</source>
@@ -169,22 +165,22 @@ remove this device from trusted devices?</source>
         <translation>راستلا ئىشىنىدىغان ئۈسكۈنە قاتارىدىن چىقىرىۋېتەمسىز؟</translation>
     </message>
     <message>
-        <source>Cloud Service of UOS ID</source>
-        <translation>UOS ID بۇلۇت مۇلازىمىتى</translation>
+        <source>Cloud Service of deepin ID</source>
+        <translation>deepin ID بۇلۇت مۇلازىمىتى</translation>
     </message>
     <message>
-        <source>Manage your UOS ID and sync your personal data across devices.
-Sign in to UOS ID to get personalized features and services of Browser, App Store, Support, and more.</source>
-        <translation>UOS ID رىڭىزنى باشقۇرۇش ئارقىلىق شەخسىي سانلىق مەلۇماتلىرىڭىزنى ئوخشاش بولمىغان ئۈسكۈنىلەر ئارا ماس قەدەملەيدۇ.
-UOS ID رىڭىزغا كىرىش ئارقىلىق تور كۆرگۈچ ، ئەپ بازىرى، مۇلازىمەت ۋە قوللاش قاتارلىق كۆپ خىل ئەمەلىي خاس ئىقتىدار ۋە مۇلازىمەتكە ئېرىشەلەيسىز.</translation>
+        <source>Manage your deepin ID and sync your personal data across devices.
+Sign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.</source>
+        <translation>deepin ID رىڭىزنى باشقۇرۇش ئارقىلىق شەخسىي سانلىق مەلۇماتلىرىڭىزنى ئوخشاش بولمىغان ئۈسكۈنىلەر ئارا ماس قەدەملەيدۇ.
+deepin ID رىڭىزغا كىرىش ئارقىلىق تور كۆرگۈچ ، ئەپ بازىرى، مۇلازىمەت ۋە قوللاش قاتارلىق كۆپ خىل ئەمەلىي خاس ئىقتىدار ۋە مۇلازىمەتكە ئېرىشەلەيسىز.</translation>
     </message>
     <message>
-        <source>Sign In to UOS ID</source>
-        <translation>UOS ID قا كىرىش</translation>
+        <source>Sign In to deepin ID</source>
+        <translation>deepin ID غا كىرىش</translation>
     </message>
     <message>
-        <source>UOS Cloud</source>
-        <translation>UOS Cloud</translation>
+        <source>deepin Cloud</source>
+        <translation>deepin Cloud</translation>
     </message>
     <message>
         <source>Devices and Local Accounts</source>
@@ -203,27 +199,27 @@ UOS ID رىڭىزغا كىرىش ئارقىلىق تور كۆرگۈچ ، ئەپ 
         <translation>ئىشىنىدىغان يانفون نومۇرى ۋە ئېلخەت ساندۇقى</translation>
     </message>
     <message>
-        <source>Use the trusted mobile number or email address to sign in to UOS ID, and verify sensitive operations if they are performed on UOS ID.</source>
-        <translation>ئىشىنىدىغان يانفون نومۇرى ۋە ئېلخەت ساندۇقى ئارقىلىق UOS ID رىڭىزغا كىرىڭ ھەمدە ھېسابات سەزگۈر مەشغۇلات قىلغاندا دەلىللەش ئېلىپ بېرىڭ</translation>
+        <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
+        <translation>ئىشىنىدىغان يانفون نومۇرى ۋە ئېلخەت ساندۇقى ئارقىلىق deepin ID رىڭىزغا كىرىڭ ھەمدە ھېسابات سەزگۈر مەشغۇلات قىلغاندا دەلىللەش ئېلىپ بېرىڭ</translation>
     </message>
     <message>
-        <source>Link phone number to UOS ID</source>
-        <translation>UOS ID نى يانفون نومۇرى بىلەن باغلاش</translation>
+        <source>Link phone number to deepin ID</source>
+        <translation>deepin ID نى يانفون نومۇرى بىلەن باغلاش</translation>
     </message>
     <message>
-        <source>Link email address to UOS ID</source>
-        <translation>UOS ID نى ئېلخەت ساندۇقى بىلەن باغلاش</translation>
+        <source>Link email address to deepin ID</source>
+        <translation>deepin ID نى ئېلخەت ساندۇقى بىلەن باغلاش</translation>
     </message>
     <message>
         <source>Link third-party accounts</source>
         <translation>3-تەرەپ ھېساباتى بىلەن باغلاش</translation>
     </message>
     <message>
-        <source>Securely and quickly log in to your UOS ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation>ئۈندىدار ئارقىلىق سايىلەپ باغلىسىڭىز UOS ID رىڭىز ۋە يەرلىك ھېساباتىڭىزغا بىخەتەر ۋە تېز كىرەلەيسىز.</translation>
+        <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
+        <translation>ئۈندىدار ئارقىلىق سايىلەپ باغلىسىڭىز deepin ID رىڭىز ۋە يەرلىك ھېساباتىڭىزغا بىخەتەر ۋە تېز كىرەلەيسىز.</translation>
     </message>
     <message>
-        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
+        <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
         <translation>بۇ ئۈندىدار بىلەن بولغان باغلاش مۇناسىۋىتىنى بىكار قىلسىڭىز، ئۈندىدار ئارقىلىق كودنى سىكاننېرلاپ كىرگىلى بولمايدۇ. </translation>
     </message>
     <message>
@@ -235,8 +231,8 @@ UOS ID رىڭىزغا كىرىش ئارقىلىق تور كۆرگۈچ ، ئەپ 
         <translation>پارول باشقۇرۇش</translation>
     </message>
     <message>
-        <source>Change your UOS ID password regularly to ensure its security.</source>
-        <translation>UOS ID نىڭ پارولىنى قەرەللىك يېڭىلىسىڭىز ھېساباتىڭىزنىڭ بىخەتەرلىكىگە كاپالەتلىك قىلغىلى بولىدۇ.</translation>
+        <source>Change your deepin ID password regularly to ensure its security.</source>
+        <translation>deepin ID نىڭ پارولىنى قەرەللىك يېڭىلىسىڭىز ھېساباتىڭىزنىڭ بىخەتەرلىكىگە كاپالەتلىك قىلغىلى بولىدۇ.</translation>
     </message>
     <message>
         <source>Change password</source>
@@ -307,12 +303,12 @@ UOS ID رىڭىزغا كىرىش ئارقىلىق تور كۆرگۈچ ، ئەپ 
         <translation>بۈگۈنكى سىناش چېكىڭىز توشتى، پارولنى قايتا بېكىتىپ ئاندىن سىناڭ</translation>
     </message>
     <message>
-        <source>The phone number has been linked to UOS ID: %1.
+        <source>The phone number has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
         <translation>بۇ يانفون نومۇرى %1 ھېسابات بىلەن باغلانغان، جەزملەشتۈرگەندىن كېيىن تۆۋەندىكى مەشغۇلاتنى تاللاڭ</translation>
     </message>
     <message>
-        <source>The email address has been linked to UOS ID: %1.
+        <source>The email address has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
         <translation>بۇ ئېلخەت ساندۇقى %1 ھېسابات بىلەن باغلانغان، جەزملەشتۈرگەندىن كېيىن تۆۋەندىكى مەشغۇلاتنى تاللاڭ</translation>
     </message>
@@ -325,15 +321,15 @@ Please check and choose one action below.</source>
         <translation>سەزگۈر مەشغۇلات قىلىۋاتىسىز، پارول ئارقىلىق كىرىپ دەلىللەڭ</translation>
     </message>
     <message>
-        <source>Change UOS ID password</source>
-        <translation>UOS ID پارولىنى ئۆزگەرتىش</translation>
+        <source>Change deepin ID password</source>
+        <translation>deepin ID پارولىنى ئۆزگەرتىش</translation>
     </message>
     <message>
         <source>Forgot password?</source>
         <translation>پارولنى ئۇنتۇپسىزمۇ؟</translation>
     </message>
     <message>
-        <source>Link to current UOS ID</source>
+        <source>Link to current deepin ID</source>
         <translation>بۇ ھېساباتنى باشقىدىن باغلاش</translation>
     </message>
     <message>
@@ -357,8 +353,8 @@ Please check and choose one action below.</source>
         <translation>توغرا دەلىللەش كودىنى كىرگۈزۈڭ</translation>
     </message>
     <message>
-        <source>Link WeChat to UOS ID</source>
-        <translation>UOS ID بىلەن ئۈندىدارنى باغلاش</translation>
+        <source>Link WeChat to deepin ID</source>
+        <translation>deepin ID بىلەن ئۈندىدارنى باغلاش</translation>
     </message>
     <message>
         <source>Scan QR code with WeChat</source>

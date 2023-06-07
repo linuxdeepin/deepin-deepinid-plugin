@@ -29,23 +29,19 @@
 <context>
     <name>SyncModule</name>
     <message>
-        <source>Deepin ID</source>
-        <translation>ID Deepin</translation>
+        <source>deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>UOS ID</source>
         <translation>UOS ID</translation>
     </message>
-    <message>
-        <source>Sign In</source>
-        <translation>Hyni</translation>
-    </message>
 </context>
 <context>
     <name>TransString</name>
     <message>
-        <source>UOS Cloud Sync</source>
-        <translation>Njëkohësim Reje UOS</translation>
+        <source>deepin Cloud Sync</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
@@ -136,20 +132,20 @@
         <translation>Ripohojeni</translation>
     </message>
     <message>
-        <source>Link local accounts to UOS ID</source>
-        <translation>Lidhni llogari vendore me UOS ID</translation>
+        <source>Link local accounts to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>If linked, you can use UOS ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
-        <translation>Në u lidhshin, mund të përdorni ID-në UOS për të bërë hyrje dhe për të ricaktuar fjalëkalime llogarish vendore. Çaktivizojeni, që t’u hiqet lidhja.</translation>
+        <source>If linked, you can use deepin ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Trusted devices</source>
         <translation>Pajisje të besuara</translation>
     </message>
     <message>
-        <source>Manage trusted devices to keep your UOS ID secure.</source>
-        <translation>Administroni pajisje të besuara, për ta mbajtur të siguruar ID-në tuaj UOS.</translation>
+        <source>Manage trusted devices to keep your deepin ID secure.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>OS version: %1</source>
@@ -170,22 +166,21 @@ remove this device from trusted devices?</source>
 kjo pajisje nga pajisjet e besuara?</translation>
     </message>
     <message>
-        <source>Cloud Service of UOS ID</source>
-        <translation>Shërbim Re i UOS ID</translation>
+        <source>Cloud Service of deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Manage your UOS ID and sync your personal data across devices.
-Sign in to UOS ID to get personalized features and services of Browser, App Store, Support, and more.</source>
-        <translation>Administroni ID-në tuaj UOS dhe njëkohësoni të dhënat tuaja personale nëpër pajisje.
-Bëni hyrjen në ID UOS që të merrni veçori dhe shërbime të personalizuar Shfletuesi, Shitoreje Aplikacionesh, Asistence, etj.</translation>
+        <source>Manage your deepin ID and sync your personal data across devices.
+Sign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Sign In to UOS ID</source>
-        <translation>Hyni në ID UOS</translation>
+        <source>Sign In to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>UOS Cloud</source>
-        <translation>Re UOS</translation>
+        <source>deepin Cloud</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Devices and Local Accounts</source>
@@ -204,28 +199,28 @@ Bëni hyrjen në ID UOS që të merrni veçori dhe shërbime të personalizuar S
         <translation>Numra telefonash dhe adresa email të besuara</translation>
     </message>
     <message>
-        <source>Use the trusted mobile number or email address to sign in to UOS ID, and verify sensitive operations if they are performed on UOS ID.</source>
-        <translation>Përdorni numrin e telefonit ose adresën email të besuar për të hyrë në ID UOS dhe verifikoni veprime me spec, nëse janë kryer që nga ID UOS.</translation>
+        <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link phone number to UOS ID</source>
-        <translation>Lidhni numër telefoni me ID UOS</translation>
+        <source>Link phone number to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link email address to UOS ID</source>
-        <translation>Lidhni adresë email me ID UOS</translation>
+        <source>Link email address to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Link third-party accounts</source>
         <translation>Lidhni llogari prej palësh të treta</translation>
     </message>
     <message>
-        <source>Securely and quickly log in to your UOS ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation>Hyni në llogarinë tuaj ID UOS dhe llogarinë tuaj vendore në mënyrë të siguruar dhe shpejt, duke skanuar kodin QR me WeChat-in e lidhur.</translation>
+        <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
-        <translation>Po u hoq lidhja, s’do të jeni në gjendje të përdorni WeChat për të bërë hyrjen në ID UOS.</translation>
+        <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Are you sure you want to unlink it?</source>
@@ -236,8 +231,8 @@ Bëni hyrjen në ID UOS që të merrni veçori dhe shërbime të personalizuar S
         <translation>Fjalëkalim</translation>
     </message>
     <message>
-        <source>Change your UOS ID password regularly to ensure its security.</source>
-        <translation>Ndryshoni rregullisht fjalëkalimin tuaj për ID-në tuaj UOS, që të garantoni sigurinë e saj.</translation>
+        <source>Change your deepin ID password regularly to ensure its security.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Change password</source>
@@ -308,16 +303,14 @@ Bëni hyrjen në ID UOS që të merrni veçori dhe shërbime të personalizuar S
         <translation>U mbërrit në kufij gabimesh hyrjeje për sot. Mund të ricaktoni fjalëkalimin dhe të riprovoni.</translation>
     </message>
     <message>
-        <source>The phone number has been linked to UOS ID: %1.
+        <source>The phone number has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>Numri i telefonit u lidh me ID-në UOS: %1.
-Ju lutemi, kontrollojeni dhe zgjidhni më poshtë një veprim.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>The email address has been linked to UOS ID: %1.
+        <source>The email address has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>Adresa email u lidh me ID-në UOS: %1.
-Ju lutemi, kontrollojeni dhe zgjidhni më poshtë një veprim.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Security Verification</source>
@@ -328,16 +321,16 @@ Ju lutemi, kontrollojeni dhe zgjidhni më poshtë një veprim.</translation>
         <translation>Veprimi është me spec, ju lutemi, së pari jepni fjalëkalimin për hyrje</translation>
     </message>
     <message>
-        <source>Change UOS ID password</source>
-        <translation>Ndryshoni fjalëkalim ID-je UOS</translation>
+        <source>Change deepin ID password</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Forgot password?</source>
         <translation>Harruat fjalëkalimin?</translation>
     </message>
     <message>
-        <source>Link to current UOS ID</source>
-        <translation>Lidhe me ID-në e tanishme UOS</translation>
+        <source>Link to current deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Set a Password</source>
@@ -360,8 +353,8 @@ Ju lutemi, kontrollojeni dhe zgjidhni më poshtë një veprim.</translation>
         <translation>Jepni një kod të saktë verifikimi</translation>
     </message>
     <message>
-        <source>Link WeChat to UOS ID</source>
-        <translation>Lidhini WeChat-in me ID-në UOS</translation>
+        <source>Link WeChat to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Scan QR code with WeChat</source>

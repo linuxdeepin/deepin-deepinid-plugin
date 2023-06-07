@@ -29,23 +29,19 @@
 <context>
     <name>SyncModule</name>
     <message>
-        <source>Deepin ID</source>
-        <translation>ID Deepiin</translation>
+        <source>deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>UOS ID</source>
         <translation>ID UOS</translation>
     </message>
-    <message>
-        <source>Sign In</source>
-        <translation>Masuk</translation>
-    </message>
 </context>
 <context>
     <name>TransString</name>
     <message>
-        <source>UOS Cloud Sync</source>
-        <translation>Sinkronisasi Cloud OUS</translation>
+        <source>deepin Cloud Sync</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
@@ -136,20 +132,20 @@
         <translation>Konfirmasi</translation>
     </message>
     <message>
-        <source>Link local accounts to UOS ID</source>
-        <translation>Tautkan Akun Lokal dengan ID UOS</translation>
+        <source>Link local accounts to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>If linked, you can use UOS ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
-        <translation>Jika ditautkan, Anda dapat menggunakan ID UOS untuk masuk dan mengatur ulang kata sandi akun lokal. Nonaktifkan untuk membatalkan tautannya.</translation>
+        <source>If linked, you can use deepin ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Trusted devices</source>
         <translation>Perangkat Terpercaya</translation>
     </message>
     <message>
-        <source>Manage trusted devices to keep your UOS ID secure.</source>
-        <translation>Kelola Perangkat Terpercaya untuk tetap menjaga ID UOS Anda aman</translation>
+        <source>Manage trusted devices to keep your deepin ID secure.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>OS version: %1</source>
@@ -169,22 +165,21 @@ remove this device from trusted devices?</source>
         <translation>Anda yakin menghilangkan Perangkat ini dari Daftar Perangkat Terpercaya?</translation>
     </message>
     <message>
-        <source>Cloud Service of UOS ID</source>
-        <translation>Layanan Cloud dari ID OUS</translation>
+        <source>Cloud Service of deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Manage your UOS ID and sync your personal data across devices.
-Sign in to UOS ID to get personalized features and services of Browser, App Store, Support, and more.</source>
-        <translation>Kelola ID UOS Anda dan sinkronkan data pribadi Anda di seluruh perangkat.
-Masuk ke ID UOS untuk mendapatkan fitur dan layanan yang dipersonalisasi dari Browser, App Store, Dukungan, dan lainnya.</translation>
+        <source>Manage your deepin ID and sync your personal data across devices.
+Sign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Sign In to UOS ID</source>
-        <translation>Masuk ke ID UOS</translation>
+        <source>Sign In to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>UOS Cloud</source>
-        <translation>Cloud UOS</translation>
+        <source>deepin Cloud</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Devices and Local Accounts</source>
@@ -203,27 +198,27 @@ Masuk ke ID UOS untuk mendapatkan fitur dan layanan yang dipersonalisasi dari Br
         <translation>Nomor telepon dan alamat email terpercaya</translation>
     </message>
     <message>
-        <source>Use the trusted mobile number or email address to sign in to UOS ID, and verify sensitive operations if they are performed on UOS ID.</source>
+        <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link phone number to UOS ID</source>
-        <translation>Tautkan nomor telepon ke ID UOS</translation>
+        <source>Link phone number to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link email address to UOS ID</source>
-        <translation>Tautkan alamat email ke IO UOS</translation>
+        <source>Link email address to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Link third-party accounts</source>
         <translation>Tautkan Akun pihak ketiga</translation>
     </message>
     <message>
-        <source>Securely and quickly log in to your UOS ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation>Masuk dengan aman dan cepat ke ID UOS dan akun lokal Anda dengan memindai kode QR dengan WeChat yang tertaut.</translation>
+        <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
+        <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -235,8 +230,8 @@ Masuk ke ID UOS untuk mendapatkan fitur dan layanan yang dipersonalisasi dari Br
         <translation>Kata sandi</translation>
     </message>
     <message>
-        <source>Change your UOS ID password regularly to ensure its security.</source>
-        <translation>Ubah Kata sandi ID UOS Anda secara berkala untuk menjaga keamanan.</translation>
+        <source>Change your deepin ID password regularly to ensure its security.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Change password</source>
@@ -307,16 +302,14 @@ Masuk ke ID UOS untuk mendapatkan fitur dan layanan yang dipersonalisasi dari Br
         <translation>Kesalahan masuk telah mencapai batas hari ini. Anda dapat mengatur ulang kata sandi dan mencoba lagi.</translation>
     </message>
     <message>
-        <source>The phone number has been linked to UOS ID: %1.
+        <source>The phone number has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>Nomor telepon telah ditautkan ke ID UOS: %1.
-Periksa dan pilih salah satu tindakan di bawah ini.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>The email address has been linked to UOS ID: %1.
+        <source>The email address has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>Alamat email telah ditautkan ke ID UOS: %1.
-Periksa dan pilih salah satu tindakan di bawah ini.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Security Verification</source>
@@ -327,15 +320,15 @@ Periksa dan pilih salah satu tindakan di bawah ini.</translation>
         <translation>Tindakan ini sensitif, harap masukkan kata sandi login terlebih dahulu</translation>
     </message>
     <message>
-        <source>Change UOS ID password</source>
-        <translation>Ubah kata sandi ID UOS</translation>
+        <source>Change deepin ID password</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Forgot password?</source>
         <translation>Lupa kata sandi?</translation>
     </message>
     <message>
-        <source>Link to current UOS ID</source>
+        <source>Link to current deepin ID</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -359,7 +352,7 @@ Periksa dan pilih salah satu tindakan di bawah ini.</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link WeChat to UOS ID</source>
+        <source>Link WeChat to deepin ID</source>
         <translation type="unfinished"/>
     </message>
     <message>

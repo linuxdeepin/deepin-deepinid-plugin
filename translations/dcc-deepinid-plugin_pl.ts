@@ -29,23 +29,19 @@
 <context>
     <name>SyncModule</name>
     <message>
-        <source>Deepin ID</source>
-        <translation>Deepin ID</translation>
+        <source>deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>UOS ID</source>
         <translation>UOS ID</translation>
     </message>
-    <message>
-        <source>Sign In</source>
-        <translation>Zaloguj się</translation>
-    </message>
 </context>
 <context>
     <name>TransString</name>
     <message>
-        <source>UOS Cloud Sync</source>
-        <translation>Synchronizacja UOS Cloud</translation>
+        <source>deepin Cloud Sync</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
@@ -136,20 +132,20 @@
         <translation>Potwierdź</translation>
     </message>
     <message>
-        <source>Link local accounts to UOS ID</source>
-        <translation>Połącz konta lokalne z UOS ID</translation>
+        <source>Link local accounts to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>If linked, you can use UOS ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
-        <translation>Po połączeniu, będziesz mógł użyć UOS ID do logowania i resetowania hasła kont lokalnych. Wyłącz tę opcję, aby je rozłączyć.</translation>
+        <source>If linked, you can use deepin ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Trusted devices</source>
         <translation>Zaufane urządzenia</translation>
     </message>
     <message>
-        <source>Manage trusted devices to keep your UOS ID secure.</source>
-        <translation>Zarządzaj zaufanymi urządzeniami, aby zachować bezpieczeństwo UOS ID</translation>
+        <source>Manage trusted devices to keep your deepin ID secure.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>OS version: %1</source>
@@ -170,22 +166,21 @@ remove this device from trusted devices?</source>
 urządzenie z zaufanych?</translation>
     </message>
     <message>
-        <source>Cloud Service of UOS ID</source>
-        <translation>Usługi w chmurze UOS ID</translation>
+        <source>Cloud Service of deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Manage your UOS ID and sync your personal data across devices.
-Sign in to UOS ID to get personalized features and services of Browser, App Store, Support, and more.</source>
-        <translation>Zarządzaj swoim UOS ID i synchronizuj dane użytkownika pomiędzy urządzeniami.
-Zaloguj się do UOS ID, aby uzyskać spersonalizowane funkcje i usługi dodatkowe Przeglądarki WWW, App Store, Wsparcia technicznego itd.</translation>
+        <source>Manage your deepin ID and sync your personal data across devices.
+Sign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Sign In to UOS ID</source>
-        <translation>Zaloguj się do UOS ID</translation>
+        <source>Sign In to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>UOS Cloud</source>
-        <translation>Chmura UOS</translation>
+        <source>deepin Cloud</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Devices and Local Accounts</source>
@@ -204,28 +199,28 @@ Zaloguj się do UOS ID, aby uzyskać spersonalizowane funkcje i usługi dodatkow
         <translation>Zaufane numery telefonu i adresy e-mail</translation>
     </message>
     <message>
-        <source>Use the trusted mobile number or email address to sign in to UOS ID, and verify sensitive operations if they are performed on UOS ID.</source>
-        <translation>Korzystaj wyłącznie z zaufanego numeru telefonu lub adresu e-mail do logowania się do UOS ID, aby móc przeprowadzać wrażliwe operacje w przyszłości.</translation>
+        <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link phone number to UOS ID</source>
-        <translation>Połącz numer telefonu z UOS ID</translation>
+        <source>Link phone number to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link email address to UOS ID</source>
-        <translation>Połącz adres e-mail z UOS ID</translation>
+        <source>Link email address to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Link third-party accounts</source>
         <translation>Połącz konta zewnętrzne</translation>
     </message>
     <message>
-        <source>Securely and quickly log in to your UOS ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation>Bezpiecznie i szybko zaloguj się do swojego UOS ID i konta lokalnego, skanując kod QR z połączoną aplikacją WeChat.</translation>
+        <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
-        <translation>Po rozłączeniu nie będziesz mógł logować się do UOS ID za pomocą WeChat.</translation>
+        <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Are you sure you want to unlink it?</source>
@@ -236,8 +231,8 @@ Zaloguj się do UOS ID, aby uzyskać spersonalizowane funkcje i usługi dodatkow
         <translation>Hasło</translation>
     </message>
     <message>
-        <source>Change your UOS ID password regularly to ensure its security.</source>
-        <translation>Regularnie zmieniaj swoje hasło UOS ID, aby utrzymać wysoki poziom bezpieczeństwa.</translation>
+        <source>Change your deepin ID password regularly to ensure its security.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Change password</source>
@@ -308,16 +303,14 @@ Zaloguj się do UOS ID, aby uzyskać spersonalizowane funkcje i usługi dodatkow
         <translation>Osiągnięto maksymalny limit dzienny zalogowań. Zresetuj hasło i spróbuj ponownie później.</translation>
     </message>
     <message>
-        <source>The phone number has been linked to UOS ID: %1.
+        <source>The phone number has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>Numer telefonu został powiązany z UOS ID: %1.
-Wybierz działanie poniżej.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>The email address has been linked to UOS ID: %1.
+        <source>The email address has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>Adres e-mail został powiązany z UOS ID: %1.
-Wybierz działanie poniżej.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Security Verification</source>
@@ -328,16 +321,16 @@ Wybierz działanie poniżej.</translation>
         <translation>Wybrane działanie wymaga potwierdzenia loginu i hasła</translation>
     </message>
     <message>
-        <source>Change UOS ID password</source>
-        <translation>Zmień hasło UOS ID</translation>
+        <source>Change deepin ID password</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Forgot password?</source>
         <translation>Zapomniałeś hasła?</translation>
     </message>
     <message>
-        <source>Link to current UOS ID</source>
-        <translation>Powiąż z aktualnym UOS ID</translation>
+        <source>Link to current deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Set a Password</source>
@@ -360,8 +353,8 @@ Wybierz działanie poniżej.</translation>
         <translation>Wprowadź prawidłowy kod weryfikacyjny</translation>
     </message>
     <message>
-        <source>Link WeChat to UOS ID</source>
-        <translation>Powiąż WeChat z UOS ID</translation>
+        <source>Link WeChat to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Scan QR code with WeChat</source>

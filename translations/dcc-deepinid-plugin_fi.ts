@@ -29,23 +29,19 @@
 <context>
     <name>SyncModule</name>
     <message>
-        <source>Deepin ID</source>
-        <translation>Deepin ID</translation>
+        <source>deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>UOS ID</source>
         <translation>UOS ID</translation>
     </message>
-    <message>
-        <source>Sign In</source>
-        <translation>Kirjaudu sisään</translation>
-    </message>
 </context>
 <context>
     <name>TransString</name>
     <message>
-        <source>UOS Cloud Sync</source>
-        <translation>UOS Cloud Sync</translation>
+        <source>deepin Cloud Sync</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
@@ -136,20 +132,20 @@
         <translation>Vahvista</translation>
     </message>
     <message>
-        <source>Link local accounts to UOS ID</source>
-        <translation>Linkitä paikallinen tili UOS ID:lle</translation>
+        <source>Link local accounts to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>If linked, you can use UOS ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
-        <translation>Jos linkitetty, voit käyttää UOS ID:tä kirjautuaksesi sisään ja nollataksesi paikallisten tilien salasanat. Kytke tämä pois päältä, jotta linkitys poistetaan.</translation>
+        <source>If linked, you can use deepin ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Trusted devices</source>
         <translation>Luotetut laitteet</translation>
     </message>
     <message>
-        <source>Manage trusted devices to keep your UOS ID secure.</source>
-        <translation>Hallitse luotettavia laitteita pitääksesi UOS-tunnuksesi turvassa.</translation>
+        <source>Manage trusted devices to keep your deepin ID secure.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>OS version: %1</source>
@@ -170,21 +166,21 @@ remove this device from trusted devices?</source>
 tämän laitteen luotetuista laitteista?</translation>
     </message>
     <message>
-        <source>Cloud Service of UOS ID</source>
-        <translation>Pilvipalvelu UOS ID</translation>
+        <source>Cloud Service of deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Manage your UOS ID and sync your personal data across devices.
-Sign in to UOS ID to get personalized features and services of Browser, App Store, Support, and more.</source>
-        <translation>Hallinnoi UOS-tunnustasi ja synkronoi omat tietosi laitteiden välillä. Kirjaudu sisään UOS ID:llä ja saat mukautetun selaimen, App Storen, tuen ja muita palveluita.</translation>
+        <source>Manage your deepin ID and sync your personal data across devices.
+Sign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Sign In to UOS ID</source>
-        <translation>Kirjaudu sisään UOS ID</translation>
+        <source>Sign In to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>UOS Cloud</source>
-        <translation>UOS Cloud</translation>
+        <source>deepin Cloud</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Devices and Local Accounts</source>
@@ -203,40 +199,40 @@ Sign in to UOS ID to get personalized features and services of Browser, App Stor
         <translation>Luotetut puhelinnumerot ja sähköpostiosoitteet</translation>
     </message>
     <message>
-        <source>Use the trusted mobile number or email address to sign in to UOS ID, and verify sensitive operations if they are performed on UOS ID.</source>
-        <translation>Käytä luotettua puhelinnumeroa tai sähköpostiosoitetta kirjautumiseen UOS ID:llä ja tarkista toiminnot, jotka suoritetaan UOS ID:llä.</translation>
+        <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link phone number to UOS ID</source>
-        <translation>Linkitä puhelinnumero UOS ID</translation>
+        <source>Link phone number to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link email address to UOS ID</source>
-        <translation>Linkitä sähköpostiosoite UOS ID</translation>
+        <source>Link email address to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Link third-party accounts</source>
         <translation>Linkitä kolmannen osapuolen tilit</translation>
     </message>
     <message>
-        <source>Securely and quickly log in to your UOS ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation>Kirjaudu turvallisesti ja nopeasti sisään UOS ID:llä ja paikalliselle tilillesi skannaamalla QR-koodi linkitetyllä WeChatilla.</translation>
+        <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
+        <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <source>Are you sure you want to unlink it?</source>
-        <translation type="unfinished"/>
+        <translation>Haluatko varmasti poistaa linkityksen?</translation>
     </message>
     <message>
         <source>Password</source>
         <translation>Salasana</translation>
     </message>
     <message>
-        <source>Change your UOS ID password regularly to ensure its security.</source>
-        <translation>Vaihda UOS ID -salasanasi säännöllisesti sen turvallisuuden varmistamiseksi.</translation>
+        <source>Change your deepin ID password regularly to ensure its security.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Change password</source>
@@ -307,16 +303,14 @@ Sign in to UOS ID to get personalized features and services of Browser, App Stor
         <translation>Kirjautumisvirhe on saavuttanut tämän päivän rajan. Voit nollata salasanan ja yrittää uudelleen.</translation>
     </message>
     <message>
-        <source>The phone number has been linked to UOS ID: %1.
+        <source>The phone number has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>Puhelinnumero on linkitetty UOS-ID:lle %1.
-Tarkista ja valitse yksi toiminto alta.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>The email address has been linked to UOS ID: %1.
+        <source>The email address has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>Sähköpostiosoite on linkitetty UOS-ID:lle %1.
-Tarkista ja valitse yksi toiminto alta.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Security Verification</source>
@@ -327,16 +321,16 @@ Tarkista ja valitse yksi toiminto alta.</translation>
         <translation>Toiminto on arkaluonteinen, kirjoita ensin kirjautumissalasana</translation>
     </message>
     <message>
-        <source>Change UOS ID password</source>
-        <translation>Vaihda UOS ID salasana</translation>
+        <source>Change deepin ID password</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Forgot password?</source>
         <translation>Unohtuiko salasana?</translation>
     </message>
     <message>
-        <source>Link to current UOS ID</source>
-        <translation>Linkki nykyiseen UOS ID</translation>
+        <source>Link to current deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Set a Password</source>
@@ -359,8 +353,8 @@ Tarkista ja valitse yksi toiminto alta.</translation>
         <translation>Anna oikea vahvistuskoodi</translation>
     </message>
     <message>
-        <source>Link WeChat to UOS ID</source>
-        <translation>Linkitä WeChat UOS ID:lle</translation>
+        <source>Link WeChat to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Scan QR code with WeChat</source>

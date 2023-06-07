@@ -29,23 +29,19 @@
 <context>
     <name>SyncModule</name>
     <message>
-        <source>Deepin ID</source>
-        <translation>ID del Deepin</translation>
+        <source>deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>UOS ID</source>
         <translation>ID d&apos;UOS</translation>
     </message>
-    <message>
-        <source>Sign In</source>
-        <translation>Inicia la sessió</translation>
-    </message>
 </context>
 <context>
     <name>TransString</name>
     <message>
-        <source>UOS Cloud Sync</source>
-        <translation>Sincronització amb el núvol d&apos;UOS</translation>
+        <source>deepin Cloud Sync</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
@@ -136,20 +132,20 @@
         <translation>Confirmeu-ho</translation>
     </message>
     <message>
-        <source>Link local accounts to UOS ID</source>
-        <translation> Enllaça els comptes locals amb l&apos;ID d&apos;UOS</translation>
+        <source>Link local accounts to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>If linked, you can use UOS ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
-        <translation>Si està enllaçat, podeu usar l&apos;ID UOS per iniciar sessió i restablir les contrasenyes dels comptes locals. Desactiveu-ho per desenllaçar-los.</translation>
+        <source>If linked, you can use deepin ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Trusted devices</source>
         <translation>Dispositius de confiança</translation>
     </message>
     <message>
-        <source>Manage trusted devices to keep your UOS ID secure.</source>
-        <translation>Gestioneu els dispositius de confiança per mantenir el vostre ID d&apos;UOS segur.</translation>
+        <source>Manage trusted devices to keep your deepin ID secure.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>OS version: %1</source>
@@ -170,22 +166,21 @@ remove this device from trusted devices?</source>
 eliminar aquest dispositiu dels dispositius de confiança?</translation>
     </message>
     <message>
-        <source>Cloud Service of UOS ID</source>
-        <translation>Servei al núvol d&apos;UOS ID</translation>
+        <source>Cloud Service of deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Manage your UOS ID and sync your personal data across devices.
-Sign in to UOS ID to get personalized features and services of Browser, App Store, Support, and more.</source>
-        <translation>Gestioneu el vostre ID d&apos;UOS i sincronitzeu les dades personals entre dispositius.
-Inicieu la sessió a UOS ID per obtenir funcions i serveis personalitzats del navegador, botiga d&apos;aplicacions, assistència i molt més.</translation>
+        <source>Manage your deepin ID and sync your personal data across devices.
+Sign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Sign In to UOS ID</source>
-        <translation>Inicieu la sessió a UOS ID</translation>
+        <source>Sign In to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>UOS Cloud</source>
-        <translation>Núvol d&apos;UOS</translation>
+        <source>deepin Cloud</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Devices and Local Accounts</source>
@@ -204,40 +199,40 @@ Inicieu la sessió a UOS ID per obtenir funcions i serveis personalitzats del na
         <translation>Números de telèfon i adreces de correu electrònic de confiança</translation>
     </message>
     <message>
-        <source>Use the trusted mobile number or email address to sign in to UOS ID, and verify sensitive operations if they are performed on UOS ID.</source>
-        <translation>Useu el número de telèfon mòbil o l&apos;adreça electrònica de confiança per iniciar la sessió a UOS ID i verificar les operacions sensibles si es fan amb UOS ID.</translation>
+        <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link phone number to UOS ID</source>
-        <translation>Enllaceu el número de telèfon a l&apos;identificador d&apos;UOS</translation>
+        <source>Link phone number to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link email address to UOS ID</source>
-        <translation>Enllaça l&apos;adreça de correu electrònic amb l&apos;identificador d&apos;UOS</translation>
+        <source>Link email address to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Link third-party accounts</source>
         <translation>Enllaça comptes de tercers</translation>
     </message>
     <message>
-        <source>Securely and quickly log in to your UOS ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation>Inicieu sessió de manera segura i ràpida a l&apos;ID UOS i al compte local escanejant el codi QR amb el WeChat enllaçat.</translation>
+        <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
+        <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <source>Are you sure you want to unlink it?</source>
-        <translation type="unfinished"/>
+        <translation>Segur que voleu desenllaçar-lo?</translation>
     </message>
     <message>
         <source>Password</source>
         <translation>Contrasenya</translation>
     </message>
     <message>
-        <source>Change your UOS ID password regularly to ensure its security.</source>
-        <translation>Canvieu la contrasenya d&apos;identificació d&apos;UOS periòdicament per garantir-ne la seguretat.</translation>
+        <source>Change your deepin ID password regularly to ensure its security.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Change password</source>
@@ -308,16 +303,14 @@ Inicieu la sessió a UOS ID per obtenir funcions i serveis personalitzats del na
         <translation>El nombre d&apos;errors d&apos;inici de sessió ha arribat al límit avui. Podeu restablir la contrasenya i tornar-ho a provar.</translation>
     </message>
     <message>
-        <source>The phone number has been linked to UOS ID: %1.
+        <source>The phone number has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>El número de telèfon s&apos;ha enllaçat amb l&apos;identificador d&apos;UOS: %1.
-Si us plau, comproveu-ho i trieu una acció a continuació.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>The email address has been linked to UOS ID: %1.
+        <source>The email address has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>L&apos;adreça de correu electrònic s&apos;ha enllaçat a l&apos;identificador d&apos;UOS: %1.
-Si us plau, comproveu-ho i trieu una acció a continuació.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Security Verification</source>
@@ -328,16 +321,16 @@ Si us plau, comproveu-ho i trieu una acció a continuació.</translation>
         <translation>L&apos;acció és sensible. Primer introduïu la contrasenya d&apos;inici de sessió.</translation>
     </message>
     <message>
-        <source>Change UOS ID password</source>
-        <translation>Canvia la contrasenya de l&apos;ID d&apos;UOS</translation>
+        <source>Change deepin ID password</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Forgot password?</source>
         <translation>Heu oblidat la contrasenya?</translation>
     </message>
     <message>
-        <source>Link to current UOS ID</source>
-        <translation>Enllaça amb l&apos;identificador d&apos;UOS actual</translation>
+        <source>Link to current deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Set a Password</source>
@@ -360,8 +353,8 @@ Si us plau, comproveu-ho i trieu una acció a continuació.</translation>
         <translation>Introduïu un codi de verificació correcte</translation>
     </message>
     <message>
-        <source>Link WeChat to UOS ID</source>
-        <translation>Enllaça el WeChat amb l&apos;identificador d&apos;UOS</translation>
+        <source>Link WeChat to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Scan QR code with WeChat</source>

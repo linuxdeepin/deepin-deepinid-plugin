@@ -29,23 +29,19 @@
 <context>
     <name>SyncModule</name>
     <message>
-        <source>Deepin ID</source>
-        <translation>Deepin® Azonosító</translation>
+        <source>deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>UOS ID</source>
         <translation>UOS® azonosító</translation>
     </message>
-    <message>
-        <source>Sign In</source>
-        <translation>Bejelentkezés</translation>
-    </message>
 </context>
 <context>
     <name>TransString</name>
     <message>
-        <source>UOS Cloud Sync</source>
-        <translation>UOS® Felhő alapú szinkronizálás</translation>
+        <source>deepin Cloud Sync</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
@@ -136,20 +132,20 @@
         <translation>Megerősítés</translation>
     </message>
     <message>
-        <source>Link local accounts to UOS ID</source>
-        <translation>Kapcsolja össze a helyi fiókot az UOS® azonosítóval </translation>
+        <source>Link local accounts to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>If linked, you can use UOS ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
-        <translation>Ha össze van kapcsolva, az UOS® azonosító használatával bejelentkezhet és visszaállíthatja a helyi fiókok jelszavát. Kapcsolja ki a kapcsolat leválasztásához.</translation>
+        <source>If linked, you can use deepin ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Trusted devices</source>
         <translation>Megbízható eszközök</translation>
     </message>
     <message>
-        <source>Manage trusted devices to keep your UOS ID secure.</source>
-        <translation>A megbízható eszközök kezelése UOS-azonosítója biztonságban tartása érdekében.</translation>
+        <source>Manage trusted devices to keep your deepin ID secure.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>OS version: %1</source>
@@ -170,21 +166,21 @@ remove this device from trusted devices?</source>
 ezt az eszközt a megbízható eszközök közül?</translation>
     </message>
     <message>
-        <source>Cloud Service of UOS ID</source>
-        <translation>Felhőszolgáltatás az UOS® Azonosítóhoz</translation>
+        <source>Cloud Service of deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Manage your UOS ID and sync your personal data across devices.
-Sign in to UOS ID to get personalized features and services of Browser, App Store, Support, and more.</source>
-        <translation>Kezelje UOS®-azonosítóját, és szinkronizálja személyes adatait az eszközök között. Jelentkezzen be az UOS® Azonosítójába, hogy személyre szabott funkciókat és szolgáltatásokat kapjon a böngésző, az Áruház, a támogatás és egyéb alkalmazások szolgáltatásaiból.</translation>
+        <source>Manage your deepin ID and sync your personal data across devices.
+Sign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Sign In to UOS ID</source>
-        <translation>Bejelentkezés az UOS® Azonosítóba</translation>
+        <source>Sign In to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>UOS Cloud</source>
-        <translation>UOS® Felhő alapú szolgáltatás</translation>
+        <source>deepin Cloud</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Devices and Local Accounts</source>
@@ -203,28 +199,28 @@ Sign in to UOS ID to get personalized features and services of Browser, App Stor
         <translation>Megbízható telefonszámok és e-mail címek</translation>
     </message>
     <message>
-        <source>Use the trusted mobile number or email address to sign in to UOS ID, and verify sensitive operations if they are performed on UOS ID.</source>
-        <translation>Használja a megbízható mobilszámot vagy e-mail címet az UOS® Azonosítóba való bejelentkezéshez, és ellenőrizze az érzékeny műveleteket, ha azokat az UOS® Azonosítón hajtják végre.</translation>
+        <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link phone number to UOS ID</source>
-        <translation>Telefonszám csatolása az UOS® Azonosítóhoz</translation>
+        <source>Link phone number to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Link email address to UOS ID</source>
-        <translation>E-mail cím csatolása az UOS® Azonosítóhoz</translation>
+        <source>Link email address to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Link third-party accounts</source>
         <translation>Harmadik féltől származó felhasználói fiók csatolása</translation>
     </message>
     <message>
-        <source>Securely and quickly log in to your UOS ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation>Biztonságosan és gyorsan jelentkezzen be UOS® Azonosítójába és helyi fiókjába a QR-kód beolvasásával a linkelt WeChat segítségével.</translation>
+        <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>If unlinked, you will not be able to use WeChat to sign in to UOS ID.</source>
-        <translation>Ha leválasztja, nem fog tudni a WeChat használatával bejelentkezni az UOS® Azonosítójába.</translation>
+        <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Are you sure you want to unlink it?</source>
@@ -235,8 +231,8 @@ Sign in to UOS ID to get personalized features and services of Browser, App Stor
         <translation>Jelszó</translation>
     </message>
     <message>
-        <source>Change your UOS ID password regularly to ensure its security.</source>
-        <translation>Rendszeresen változtassa UOS® Azonosító jelszavát a biztonsága érdekében.</translation>
+        <source>Change your deepin ID password regularly to ensure its security.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Change password</source>
@@ -307,16 +303,14 @@ Sign in to UOS ID to get personalized features and services of Browser, App Stor
         <translation>A bejelentkezési hiba elérte a határt. Visszaállíthatja a jelszót, és megpróbálhatja újra.</translation>
     </message>
     <message>
-        <source>The phone number has been linked to UOS ID: %1.
+        <source>The phone number has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>A telefonszám hozzá van rendelve a következő UOS® Azonosítóhoz: %1.
-Kérjük jelölje be, és válasszon egy műveletet alábbiak közül.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>The email address has been linked to UOS ID: %1.
+        <source>The email address has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>Az e-mail cím hozzá van rendelve a következő UOS® Azonosítóhoz: %1.
-Kérjük jelölje be, és válasszon egy műveletet alábbiak közül.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Security Verification</source>
@@ -327,16 +321,16 @@ Kérjük jelölje be, és válasszon egy műveletet alábbiak közül.</translat
         <translation>A művelet érzékeny, kérjük először adja meg a bejelentkezési jelszót</translation>
     </message>
     <message>
-        <source>Change UOS ID password</source>
-        <translation>UOS® Azonosító jelszavának megváltoztatása</translation>
+        <source>Change deepin ID password</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Forgot password?</source>
         <translation>Elfelejtette a jelszavát?</translation>
     </message>
     <message>
-        <source>Link to current UOS ID</source>
-        <translation>Csatolás az aktuális UOS® Azonosítóhoz</translation>
+        <source>Link to current deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Set a Password</source>
@@ -359,8 +353,8 @@ Kérjük jelölje be, és válasszon egy műveletet alábbiak közül.</translat
         <translation>Adja meg a helyes ellenőrző kódot</translation>
     </message>
     <message>
-        <source>Link WeChat to UOS ID</source>
-        <translation>WeChat csatolása az UOS® Azonosítóhoz</translation>
+        <source>Link WeChat to deepin ID</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Scan QR code with WeChat</source>
