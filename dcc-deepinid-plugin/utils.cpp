@@ -238,7 +238,7 @@ bool isContainDigitAndChar(const QString &strdata)
 
 void sendSysNotify(const QString &strReason)
 {
-    QDBusPendingReply<unsigned int> reply = Dtk::Core::DUtil::DNotifySender("UOS ID")
+    QDBusPendingReply<unsigned int> reply = Dtk::Core::DUtil::DNotifySender("deepin ID")
                                             .appName("dde-control-center")
                                             .appIcon("uos-id")
                                             .appBody(strReason)

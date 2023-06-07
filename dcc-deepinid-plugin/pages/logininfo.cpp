@@ -472,7 +472,7 @@ QString LoginInfoPage::loadCodeURL()
         return token;
     };
 
-    QString oauthURI = "https://login.uniontech.com";
+    QString oauthURI = "https://login.deepin.org";
 
     if (!qEnvironmentVariableIsEmpty("DEEPINID_OAUTH_URI")) {
         oauthURI = qgetenv("DEEPINID_OAUTH_URI");
