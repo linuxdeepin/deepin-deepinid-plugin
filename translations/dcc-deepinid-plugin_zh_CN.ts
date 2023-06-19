@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="zh_CN">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="zh_CN">
 <context>
     <name>LoginInfoPage</name>
     <message>
@@ -35,6 +37,14 @@
     <message>
         <source>UOS ID</source>
         <translation>UOS ID</translation>
+    </message>
+    <message>
+        <source>cloud sync</source>
+        <translation>云同步</translation>
+    </message>
+    <message>
+        <source>app store</source>
+        <translation>应用商店</translation>
     </message>
 </context>
 <context>

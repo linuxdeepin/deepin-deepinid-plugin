@@ -8,4 +8,4 @@ lupdate ../ -ts -no-ui-lines -locations none -no-obsolete dcc-deepinid-plugin.ts
 sed -e 's/DCC_NAMESPACE/dccV20/g' dcc-deepinid-plugin.ts >tmp.ts
 mv tmp.ts dcc-deepinid-plugin.ts
 cd ../
-tx push -s -b m20
+tx push -s --branch m20

@@ -38,6 +38,14 @@
         <source>UOS ID</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>cloud sync</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>app store</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TransString</name>
