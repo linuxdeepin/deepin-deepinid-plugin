@@ -135,7 +135,7 @@ void CloudSyncPage::onModuleStateChanged(std::pair<SyncType, bool> state)
         {
             break;
         }
-    };
+    }
 
     if(index != m_sysConfig.size() && m_sysConfig[index][3].toBool() != state.second)
     {
@@ -426,7 +426,7 @@ void CloudSyncPage::initConnection()
 
     connect(m_autoSyncSwitch, &SwitchWidget::checkedChanged, this, &CloudSyncPage::onAutoSyncChanged);
     connect(m_autoSyncSwitch, &SwitchWidget::checkedChanged, this, &CloudSyncPage::requestSetAutoSync);
-    connect(m_autoSyncSwitch, &SwitchWidget::checkedChanged, this, &CloudSyncPage::enableSyncConfig);
+    //connect(m_autoSyncSwitch, &SwitchWidget::checkedChanged, this, &CloudSyncPage::enableSyncConfig);
     connect(m_clearDlg, &QDialog::accepted, this, &CloudSyncPage::checkPassword);
     connect(this, &CloudSyncPage::onUserLogout, m_clearDlg, &QDialog::reject);
     connect(m_syncItem, &SyncItemWidget::configClicked, [=](const QModelIndex &index) {
