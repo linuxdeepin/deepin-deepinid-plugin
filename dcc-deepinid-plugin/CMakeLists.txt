@@ -15,6 +15,13 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Install settings
+if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+    set(CMAKE_INSTALL_PREFIX /usr)
+endif ()
+
+include(GNUInstallDirs)
+
 # 指定所有源码文件
 file(GLOB_RECURSE SRCS
     "*.h"
@@ -91,11 +98,10 @@ target_link_libraries(${PLUGIN_NAME} PRIVATE
 )
 
 # 设置安装路径的前缀(默认为"/usr/local")
-set(CMAKE_INSTALL_PREFIX "/usr")
 
 set(UOSID_LOGO ${PROJECT_SOURCE_DIR}/icons/icons/uos-id.svg)
 # 指定安装位置
-install(TARGETS ${PLUGIN_NAME} LIBRARY DESTINATION lib/dde-control-center/modules)
+install(TARGETS ${PLUGIN_NAME} LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/dde-control-center/modules)
 # 安装图标文件
 #if(EXISTS "/usr/share/icons/hicolor/scalable/apps/uos-id.svg")
 #    message(STATUS "app logo exists")
@@ -106,4 +112,4 @@ install(TARGETS ${PLUGIN_NAME} LIBRARY DESTINATION lib/dde-control-center/module
 #endif()
 
 # 安装 .qm 文件
-install(FILES ${QM_FILES} DESTINATION share/${PLUGIN_NAME}/translations)
+install(FILES ${QM_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/dde-control-center/translations)

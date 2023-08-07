@@ -6,11 +6,6 @@
 
 SyncPlugin::SyncPlugin(QObject *parent):PluginInterface(parent)
 {
-    // 插件加载翻译
-    QTranslator *translator = new QTranslator(this);
-    translator->load(QString("/usr/share/dcc-deepinid-plugin/translations/dcc-deepinid-plugin_%1.qm").arg(QLocale::system().name()));
-
-    QCoreApplication::installTranslator(translator);
 }
 
 ModuleObject *SyncPlugin::module()
@@ -20,10 +15,10 @@ ModuleObject *SyncPlugin::module()
 
 QString SyncPlugin::name() const
 {
-    return QStringLiteral("cloudsync");
+    return QStringLiteral("dcc-deepinid-plugin");
 }
 
 QString SyncPlugin::location() const
 {
-    return QStringLiteral("1");
+    return QStringLiteral("0");
 }
