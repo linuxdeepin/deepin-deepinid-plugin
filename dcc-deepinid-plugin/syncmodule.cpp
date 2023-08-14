@@ -17,7 +17,7 @@ SyncModule::SyncModule(QObject *parent)
     setName("cloudsync");
     setDisplayName(DSysInfo::isCommunityEdition() ? tr("deepin ID") : tr("UOS ID"));
     setDescription(QString("%1 %2 %3").arg("deepin ID").arg(tr("cloud sync")).arg(tr("app store")));
-    setIcon(QIcon::fromTheme("uos-id"));
+    setIcon(QIcon::fromTheme("deepin-id"));
     m_model = new SyncModel(this);
     m_worker = new SyncWorker(m_model, this);
 }
