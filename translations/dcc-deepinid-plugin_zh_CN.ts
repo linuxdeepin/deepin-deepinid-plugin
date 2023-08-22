@@ -5,7 +5,7 @@
     <name>LoginInfoPage</name>
     <message>
         <source>Edit account</source>
-        <translation>编辑帐号信息</translation>
+        <translation>编辑账号信息</translation>
     </message>
     <message>
         <source>Sign out</source>
@@ -143,11 +143,11 @@
     </message>
     <message>
         <source>Link local accounts to deepin ID</source>
-        <translation>deepin ID绑定本地帐户</translation>
+        <translation>deepin ID绑定本地账户</translation>
     </message>
     <message>
         <source>If linked, you can use deepin ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
-        <translation>绑定本地帐户，以使用deepin ID登录本地帐户和重置本地帐户密码。您可以通过关闭开关以解除绑定。</translation>
+        <translation>绑定本地账户，以使用deepin ID登录本地账户和重置本地账户密码。您可以通过关闭开关以解除绑定。</translation>
     </message>
     <message>
         <source>Trusted devices</source>
@@ -194,7 +194,7 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Devices and Local Accounts</source>
-        <translation>设备与本地帐户</translation>
+        <translation>设备与本地账户</translation>
     </message>
     <message>
         <source>Password and Security</source>
@@ -210,7 +210,7 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
-        <translation>通过受信任的手机和邮箱登录您的deepin ID，并在帐号进行敏感操作时做可信验证。</translation>
+        <translation>通过受信任的手机和邮箱登录您的deepin ID，并在账号进行敏感操作时做可信验证。</translation>
     </message>
     <message>
         <source>Link phone number to deepin ID</source>
@@ -222,11 +222,11 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Link third-party accounts</source>
-        <translation>第三方帐号绑定</translation>
+        <translation>第三方账号绑定</translation>
     </message>
     <message>
         <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation>通过关联微信扫码，安全且快速的登录您的deepin ID和本地帐户。</translation>
+        <translation>通过关联微信扫码，安全且快速的登录您的deepin ID和本地账户。</translation>
     </message>
     <message>
         <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
@@ -242,7 +242,7 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Change your deepin ID password regularly to ensure its security.</source>
-        <translation>定期更新deepin ID密码，以确保帐户安全性。</translation>
+        <translation>定期更新deepin ID密码，以确保账户安全性。</translation>
     </message>
     <message>
         <source>Change password</source>
@@ -315,12 +315,12 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     <message>
         <source>The phone number has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>该手机号已绑定帐号%1，请确认后选择以下操作</translation>
+        <translation>该手机号已绑定账号%1，请确认后选择以下操作</translation>
     </message>
     <message>
         <source>The email address has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation>该邮箱已绑定帐号%1，请确认后选择以下操作</translation>
+        <translation>该邮箱已绑定账号%1，请确认后选择以下操作</translation>
     </message>
     <message>
         <source>Security Verification</source>
@@ -340,7 +340,7 @@ Please check and choose one action below.</source>
     </message>
     <message>
         <source>Link to current deepin ID</source>
-        <translation>换绑本帐号</translation>
+        <translation>换绑本账号</translation>
     </message>
     <message>
         <source>Set a Password</source>
