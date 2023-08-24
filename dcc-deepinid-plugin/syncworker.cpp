@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 #include "syncworker.h"
-#include "widgets/utils.h"
 
 #include <QProcess>
 #include <QDBusConnection>
@@ -11,7 +10,6 @@
 #include <QtConcurrent>
 #include <DSysInfo>
 #include <unistd.h>
-#include <org_freedesktop_hostname1.h>
 #include <ddbussender.h>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -25,34 +23,29 @@ static const QString DeepinClientSv = QStringLiteral("com.deepin.deepinid.Client
 static const QString DeepinClientPath = QStringLiteral("/com/deepin/deepinid/Client");
 static const QString DeepinClientIf = QStringLiteral("com.deepin.deepinid.Client");
 
-const QString& SyncInterface = QStringLiteral("com.deepin.sync.Daemon");
-const QString& SyncPath = QStringLiteral("/com/deepin/sync/Daemon");
+static const QString SyncInterface = QStringLiteral("com.deepin.sync.Daemon");
+static const QString SyncPath = QStringLiteral("/com/deepin/sync/Daemon");
 
-const QString& DeepinIDInterface = QStringLiteral("com.deepin.deepinid");
-const QString& DeepinIDPath = QStringLiteral("/com/deepin/deepinid");
+static const QString DeepinIDInterface = QStringLiteral("com.deepin.deepinid");
+static const QString DeepinIDPath = QStringLiteral("/com/deepin/deepinid");
 
-const QString& UtcloudPath = QStringLiteral("/com/deepin/utcloud/Daemon");
-const QString& UtcloudInterface = QStringLiteral("com.deepin.utcloud.Daemon");
-
-const QString& PropertiesInterface = QStringLiteral("org.freedesktop.DBus.Properties");
-const QString& PropertiesChanged = QStringLiteral("PropertiesChanged");
+static const QString UtcloudPath = QStringLiteral("/com/deepin/utcloud/Daemon");
+static const QString UtcloudInterface = QStringLiteral("com.deepin.utcloud.Daemon");
 
 // 根据deepin-deepinid-daemon决定deepinid是否显示
-const QString& DeepinidDaemonPath = QStringLiteral("/usr/lib/deepin-deepinid-daemon/deepin-deepinid-daemon");
-const QString& DaemonFildPath = QStringLiteral("/usr/lib/deepin-deepinid-daemon");
+static const QString DeepinidDaemonPath = QStringLiteral("/usr/lib/deepin-deepinid-daemon/deepin-deepinid-daemon");
+static const QString DaemonFildPath = QStringLiteral("/usr/lib/deepin-deepinid-daemon");
 
 
 SyncWorker::SyncWorker(SyncModel *model, QObject *parent)
     : QObject(parent)
     , m_model(model)
-    , m_syncInter(new SyncInter(SyncInterface, SyncPath, QDBusConnection::sessionBus(), this))
-    , m_deepinId_inter(new DeepinId(DeepinIDInterface, DeepinIDPath, QDBusConnection::sessionBus(), this))
+    , m_syncInter(new SyncDaemon(this))
+    , m_deepinId_inter(new DeepinIdProxy(this))
     , m_syncHelperInter(new QDBusInterface("com.deepin.sync.Helper", "/com/deepin/sync/Helper", "com.deepin.sync.Helper", QDBusConnection::systemBus(), this))
     , m_utcloudInter(new QDBusInterface(SyncInterface, UtcloudPath, UtcloudInterface, QDBusConnection::sessionBus(), this))
     , m_watcher(new QFileSystemWatcher(this))
 {
-    m_syncInter->setSync(false, false);
-    m_deepinId_inter->setSync(false, false);
 
     registerIntStringMetaType();
 
@@ -60,10 +53,10 @@ SyncWorker::SyncWorker(SyncModel *model, QObject *parent)
                                          "com.deepin.license.Info", "LicenseStateChange",
                                          this, SLOT(licenseStateChangeSlot()));
 
-    connect(m_syncInter, &SyncInter::StateChanged, this, &SyncWorker::onStateChanged, Qt::QueuedConnection);
-    connect(m_syncInter, &SyncInter::LastSyncTimeChanged, this, &SyncWorker::onLastSyncTimeChanged, Qt::QueuedConnection);
-    connect(m_syncInter, &SyncInter::SwitcherChange, this, &SyncWorker::onSyncModuleStateChanged, Qt::QueuedConnection);
-    connect(m_deepinId_inter, &DeepinId::UserInfoChanged, [this](const QVariantMap &userinfo){
+    connect(m_syncInter, &SyncDaemon::StateChanged, this, &SyncWorker::onStateChanged, Qt::QueuedConnection);
+    connect(m_syncInter, &SyncDaemon::LastSyncTimeChanged, this, &SyncWorker::onLastSyncTimeChanged, Qt::QueuedConnection);
+    connect(m_syncInter, &SyncDaemon::SwitcherChange, this, &SyncWorker::onSyncModuleStateChanged, Qt::QueuedConnection);
+    connect(m_deepinId_inter, &DeepinIdProxy::UserInfoChanged, [this](const QVariantMap &userinfo){
         m_model->setUserinfo(userinfo);
 
         QTimer::singleShot(500, this, [this] {
@@ -101,8 +94,8 @@ void SyncWorker::initData()
 
 void SyncWorker::activate()
 {
-    m_syncInter->blockSignals(false);
-    m_deepinId_inter->blockSignals(false);
+    m_syncInter->setDBusBlockSignals(false);
+    m_deepinId_inter->setDBusBlockSignals(false);
 
     onStateChanged(m_syncInter->state());
     onLastSyncTimeChanged(m_syncInter->lastSyncTime());
@@ -110,8 +103,8 @@ void SyncWorker::activate()
 
 void SyncWorker::deactivate()
 {
-    m_syncInter->blockSignals(true);
-    m_deepinId_inter->blockSignals(true);
+    m_syncInter->setDBusBlockSignals(true);
+    m_deepinId_inter->setDBusBlockSignals(true);
 }
 
 void SyncWorker::refreshSwitcherDump()
@@ -227,8 +220,8 @@ void SyncWorker::getUOSID()
 
 void SyncWorker::getUUID()
 {
-    QDBusInterface accountsInter("com.deepin.daemon.Accounts",
-                                 QString("/com/deepin/daemon/Accounts/User%1").arg(getuid()),
+    QDBusInterface accountsInter("org.deepin.dde.Accounts1",
+                                 QString("/org/deepin/dde/Accounts1/User%1").arg(getuid()),
                                  "org.freedesktop.DBus.Properties",
                                  QDBusConnection::systemBus());
     if (!accountsInter.isValid()) {
@@ -236,7 +229,7 @@ void SyncWorker::getUUID()
         return;
     }
 
-    QDBusPendingCall call = accountsInter.asyncCall("Get", "com.deepin.daemon.Accounts.User" ,"UUID");
+    QDBusPendingCall call = accountsInter.asyncCall("Get", "org.deepin.dde.Accounts.User" ,"UUID");
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(call, this);
     connect(watcher, &QDBusPendingCallWatcher::finished, [this, call, watcher] {
         if (!call.isError()) {
@@ -259,10 +252,11 @@ void SyncWorker::getHostName()
     });
 
     QFuture<void> future = QtConcurrent::run([=]{
-        org::freedesktop::hostname1 hostnameInter("org.freedesktop.hostname1",
-                                                  "/org/freedesktop/hostname1",
-                                                  QDBusConnection::systemBus());
-        m_model->setHostName(hostnameInter.staticHostname());
+        QDBusInterface hostnameInter("org.freedesktop.hostname1",
+                                     "/org/freedesktop/hostname1",
+                                     "org.freedesktop.hostname1",
+                                     QDBusConnection::systemBus());
+        m_model->setHostName(hostnameInter.property("StaticHostname").toString());
     });
     watcher->setFuture(future);
 }
@@ -605,6 +599,7 @@ void SyncWorker::asyncUnbindAccount(const QString &ubid)
     watcher->setFuture(future);
 }
 
+// NOTE: unexist interface
 void SyncWorker::asyncSetFullname(const QString &fullname)
 {
     QDBusInterface utInterface("com.deepin.sync.Daemon",
@@ -762,7 +757,7 @@ BindCheckResult SyncWorker::logout(const QString &ubid)
 BindCheckResult SyncWorker::checkLocalBind(const QString &uuid)
 {
     BindCheckResult result;
-    QDBusReply<QString> retLocalBindCheck= m_deepinId_inter->call(QDBus::BlockWithGui, "LocalBindCheck", uuid);
+    QDBusReply<QString> retLocalBindCheck= m_deepinId_inter->get_deepinid().call(QDBus::BlockWithGui, "LocalBindCheck", uuid);
     if (!m_syncHelperInter->isValid()) {
         qWarning() << "syncHelper interface invalid: (localBindCheck)" << m_syncHelperInter->lastError().message();
         return result;

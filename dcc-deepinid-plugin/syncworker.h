@@ -7,12 +7,9 @@
 
 #include "syncmodel.h"
 
+#include "operation/deepiniddbusproxy.h"
+#include "operation/syncdbusproxy.h"
 #include <QObject>
-#include <com_deepin_sync_daemon.h>
-#include <com_deepin_deepinid.h>
-
-using SyncInter = com::deepin::sync::Daemon;
-using DeepinId = com::deepin::deepinid;
 
 struct BindCheckResult {
     QString ubid = "";
@@ -104,8 +101,8 @@ private:
 
 private:
     SyncModel *m_model;
-    SyncInter *m_syncInter;
-    DeepinId *m_deepinId_inter;
+    SyncDaemon *m_syncInter;
+    DeepinIdProxy *m_deepinId_inter;
     QDBusInterface *m_syncHelperInter;
     QDBusInterface *m_utcloudInter;
     QFileSystemWatcher *m_watcher;

@@ -8,7 +8,6 @@
 
 Cryptor::Cryptor()
 {
-    ;
 }
 
 bool Cryptor::RSAPublicEncryptData(const std::string &rsakey, const QString &strin, QByteArray &strout)

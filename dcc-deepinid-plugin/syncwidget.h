@@ -5,7 +5,6 @@
 
 #pragma once
 
-#include "interface/namespace.h"
 #include "pages/login.h"
 #include "pages/logininfo.h"
 #include "pages/logininfodetail.h"

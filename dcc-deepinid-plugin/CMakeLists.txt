@@ -1,8 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
-
 set(PLUGIN_NAME "dcc-deepinid-plugin")
-
-project(${PLUGIN_NAME})
 
 # 启用 qt moc 的支持
 set(CMAKE_AUTOMOC ON)
@@ -10,7 +6,6 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 # 启用当前源目录和构建目录添加到包含路径
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -z noexecstack")
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -35,20 +30,13 @@ file(GLOB_RECURSE SRCS
 set(QRCS icons/deepinid.qrc)
 
 # 指定用到库
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Concurrent Network Widgets DBus Svg LinguistTools)
+#find_package(QT NAMES Qt5 REQUIRED COMPONENTS Core)
+find_package(Qt5 REQUIRED COMPONENTS Core Concurrent Network Widgets DBus Svg LinguistTools WebChannel WebEngine WebEngineCore WebEngineWidgets)
 find_package(DdeControlCenter REQUIRED)
 find_package(PkgConfig REQUIRED)
-find_package(DtkWidget REQUIRED)
+find_package(Dtk REQUIRED COMPONENTS Widget)
 find_package(PolkitQt5-1)
 find_package(OpenSSL REQUIRED)
-find_package(Qt5WebChannel REQUIRED)
-find_package(Qt5WebEngine REQUIRED)
-find_package(Qt5WebEngineCore REQUIRED)
-find_package(Qt5WebEngineWidgets REQUIRED)
-
-pkg_check_modules(DFrameworkDBus REQUIRED dframeworkdbus)
-pkg_check_modules(QGSettings REQUIRED gsettings-qt)
 
 # 新增一个编译目标
 file(GLOB TS_FILES "../translations/*.ts")
@@ -65,34 +53,22 @@ add_library(${PLUGIN_NAME} SHARED ${SRCS} ${QRCS})
 # 变量 ${DtkWidget_INCLUDE_DIRS} 是在前面执行 find_package 命令时引入的
 # 当出现编译失败提示找不到某些库的头文件时应该检查此处是否将所有需要的头文件都包含了
 target_include_directories(${PLUGIN_NAME} PUBLIC
-    ${Qt5Widgets_INCLUDE_DIRS}
-    ${DtkWidget_INCLUDE_DIRS}
     ${DdeControlCenter_INCLUDE_DIR}
-    ${DFrameworkDBus_INCLUDE_DIRS}
-    ${QGSettings_INCLUDE_DIRS}
-    ${Qt5DBus_INCLUDE_DIRS}
-    ${Qt5Svg_INCLUDE_DIRS}
-    ${Qt5Network_INCLUDE_DIRS}
-    ${Qt5Concurrent_INCLUDE_DIRS}
-    ${Qt5WebChannel_INCLUDE_DIRS}
-    ${Qt5WebEngineWidgets_INCLUDE_DIRS}
 )
 
 # 设置目标要使用的链接库
 # 变量 ${DtkWidget_LIBRARIES} 和 ${Qt5Widgets_LIBRARIES} 是在前面执行 find_package 命令时引入的
 # 当出现运行时错误提示某些符号没有定义时应该检查此处是否将所有用的库都写在了这里
 target_link_libraries(${PLUGIN_NAME} PRIVATE
-    ${Qt5Widgets_LIBRARIES}
-    ${DtkWidget_LIBRARIES}
+    Qt5::Widgets
+    Qt5::DBus
+    Qt5::Svg
+    Qt5::Network
+    Qt5::Concurrent
+    Qt5::WebChannel
+    Qt5::WebEngineWidgets
+    Dtk::Widget
     ${DdeControlCenter_LIBRARIES}
-    ${DFrameworkDBus_LIBRARIES}
-    ${QGSettings_LIBRARIES}
-    ${Qt5DBus_LIBRARIES}
-    ${Qt5Svg_LIBRARIES}
-    ${Qt5Network_LIBRARIES}
-    ${Qt5Concurrent_LIBRARIES}
-    ${Qt5WebChannel_LIBRARIES}
-    ${Qt5WebEngineWidgets_LIBRARIES}
     PolkitQt5-1::Agent
     libcrypto.so
 )
