@@ -9,6 +9,7 @@
 
 #include "operation/deepiniddbusproxy.h"
 #include "operation/syncdbusproxy.h"
+
 #include <QObject>
 
 struct BindCheckResult {

@@ -3,17 +3,19 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 #include "syncworker.h"
+#include "cryptor.h"
+
+#include <DSysInfo>
+#include <DDBusSender>
+#include <QJsonDocument>
+#include <QJsonObject>
 
 #include <QProcess>
 #include <QDBusConnection>
 #include <QFutureWatcher>
 #include <QtConcurrent>
-#include <DSysInfo>
+
 #include <unistd.h>
-#include <ddbussender.h>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include "cryptor.h"
 
 DCORE_USE_NAMESPACE
 
