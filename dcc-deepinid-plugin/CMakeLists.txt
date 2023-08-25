@@ -30,8 +30,8 @@ file(GLOB_RECURSE SRCS
 set(QRCS icons/deepinid.qrc)
 
 # 指定用到库
-#find_package(QT NAMES Qt5 REQUIRED COMPONENTS Core)
-find_package(Qt5 REQUIRED COMPONENTS Core Concurrent Network Widgets DBus Svg LinguistTools WebChannel WebEngine WebEngineCore WebEngineWidgets)
+find_package(QT NAMES Qt5 REQUIRED COMPONENTS Core)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Concurrent Network Widgets DBus Svg LinguistTools WebChannel WebEngine WebEngineCore WebEngineWidgets)
 find_package(DdeControlCenter REQUIRED)
 find_package(PkgConfig REQUIRED)
 find_package(Dtk REQUIRED COMPONENTS Widget)
@@ -60,13 +60,13 @@ target_include_directories(${PLUGIN_NAME} PUBLIC
 # 变量 ${DtkWidget_LIBRARIES} 和 ${Qt5Widgets_LIBRARIES} 是在前面执行 find_package 命令时引入的
 # 当出现运行时错误提示某些符号没有定义时应该检查此处是否将所有用的库都写在了这里
 target_link_libraries(${PLUGIN_NAME} PRIVATE
-    Qt5::Widgets
-    Qt5::DBus
-    Qt5::Svg
-    Qt5::Network
-    Qt5::Concurrent
-    Qt5::WebChannel
-    Qt5::WebEngineWidgets
+    Qt::Widgets
+    Qt::DBus
+    Qt::Svg
+    Qt::Network
+    Qt::Concurrent
+    Qt::WebChannel
+    Qt::WebEngineWidgets
     Dtk::Widget
     ${DdeControlCenter_LIBRARIES}
     PolkitQt5-1::Agent
