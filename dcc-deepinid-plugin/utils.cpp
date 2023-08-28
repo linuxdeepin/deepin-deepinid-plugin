@@ -3,20 +3,24 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 #include "utils.h"
+
+#include "operation/hardwareinfo.h"
+#include "trans_string.h"
+
+#include <DUtil>
+#include <DNotifySender>
+#include <dsysinfo.h>
+#include <DGuiApplicationHelper>
+
 #include <QLocale>
 #include <QDBusInterface>
 #include <QDebug>
 #include <QRegExp>
 #include <QProcess>
-#include <dsysinfo.h>
 #include <QDBusReply>
 #include <QRegularExpression>
-#include <DGuiApplicationHelper>
 #include <QRegularExpressionMatch>
-#include <com_deepin_deepinid.h>
-#include <DUtil>
-#include <DNotifySender>
-#include "trans_string.h"
+#include <QJsonObject>
 
 DCORE_USE_NAMESPACE
 
@@ -124,9 +128,9 @@ QString getThemeName()
 QString getActiveColor()
 {
     QDBusInterface appearance_ifc_(
-                "com.deepin.daemon.Appearance",
-                "/com/deepin/daemon/Appearance",
-                "com.deepin.daemon.Appearance",
+                "org.deepin.dde.Appearance1",
+                "/org/deepin/dde/Appearance1",
+                "org.deepin.dde.Appearance1",
                 QDBusConnection::sessionBus()
                 );
     qDebug() << "connect" << "com.deepin.daemon.Appearance" << appearance_ifc_.isValid();
@@ -135,9 +139,9 @@ QString getActiveColor()
 
 QString getStandardFont(){
     QDBusInterface appearance_ifc_(
-                "com.deepin.daemon.Appearance",
-                "/com/deepin/daemon/Appearance",
-                "com.deepin.daemon.Appearance",
+                "org.deepin.dde.Appearance1",
+                "/org/deepin/dde/Appearance1",
+                "org.deepin.dde.Appearance1",
                 QDBusConnection::sessionBus()
                 );
     qDebug() << "connect" << "com.deepin.daemon.Appearance" << appearance_ifc_.isValid();
@@ -176,7 +180,7 @@ QString getDeviceType()
 QString getDeviceKernel()
 {
     QProcess process;
-    process.start("uname -r");
+    process.start("uname", {"-r"});
     process.waitForFinished();
     QByteArray output = process.readAllStandardOutput();
     int idx = output.indexOf('\n');

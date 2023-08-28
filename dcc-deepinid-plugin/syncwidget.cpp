@@ -5,7 +5,6 @@
 #include "syncwidget.h"
 #include "syncmodel.h"
 #include "pages/login.h"
-#include "pages/avatarwidget.h"
 
 #include <QVBoxLayout>
 #include <QStackedLayout>

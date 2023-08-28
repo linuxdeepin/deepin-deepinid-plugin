@@ -23,7 +23,7 @@
         <file>icons/dcc_laptop_32px.svg</file>
         <file>icons/dcc_pad_32px.svg</file>
         <file>icons/dcc_pc_32px.svg</file>
-        <file>light/actions/dcc_cloud_ net_12px.svg</file>
+        <file>light/actions/dcc_cloud_net_12px.svg</file>
         <file>light/actions/dcc_cloud_luncher_12px.svg</file>
         <file>light/actions/dcc_cloud_mouse_12px.svg</file>
         <file>light/actions/dcc_cloud_power_12px.svg</file>
@@ -32,7 +32,7 @@
         <file>light/actions/dcc_cloud_update_12px.svg</file>
         <file>light/actions/dcc_cloud_voice_12px.svg</file>
         <file>light/actions/dcc_cloud_wallpaper_12px.svg</file>
-        <file>dark/actions/dcc_cloud_ net_12px.svg</file>
+        <file>dark/actions/dcc_cloud_net_12px.svg</file>
         <file>dark/actions/dcc_cloud_luncher_12px.svg</file>
         <file>dark/actions/dcc_cloud_mouse_12px.svg</file>
         <file>dark/actions/dcc_cloud_power_12px.svg</file>

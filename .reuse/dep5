@@ -35,7 +35,7 @@ Copyright: None
 License: CC0-1.0
 
 # Project file
-Files: CMakeLists.txt .tx/config .tx/deepin.conf dcc-deepinid-plugin/CMakeLists.txt .gitignore
+Files: CMakeLists.txt .tx/config .tx/deepin.conf dcc-deepinid-plugin/CMakeLists.txt .gitignore .clang-format
 Copyright: None
 License: CC0-1.0
 
