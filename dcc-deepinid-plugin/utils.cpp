@@ -7,34 +7,33 @@
 #include "operation/hardwareinfo.h"
 #include "trans_string.h"
 
-#include <DUtil>
-#include <DNotifySender>
 #include <dsysinfo.h>
-#include <DGuiApplicationHelper>
 
-#include <QLocale>
+#include <DGuiApplicationHelper>
+#include <DNotifySender>
+#include <DUtil>
+
 #include <QDBusInterface>
-#include <QDebug>
-#include <QRegExp>
-#include <QProcess>
 #include <QDBusReply>
+#include <QDebug>
+#include <QJsonObject>
+#include <QLocale>
+#include <QProcess>
+#include <QRegExp>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
-#include <QJsonObject>
 
 DCORE_USE_NAMESPACE
 
-namespace utils
-{
+namespace utils {
 
 QString forgetPwdURL()
 {
     static QString forgetUrl;
-    if(forgetUrl.isEmpty()) {
-        if(qEnvironmentVariableIsEmpty("DEEPIN_PRE")) {
+    if (forgetUrl.isEmpty()) {
+        if (qEnvironmentVariableIsEmpty("DEEPIN_PRE")) {
             forgetUrl = QStringLiteral("https://login.deepin.org/view/client/forgot-password");
-        }
-        else {
+        } else {
             forgetUrl = QStringLiteral("https://login-pre.deepin.org/view/client/forgot-password");
         }
     }
@@ -56,19 +55,19 @@ QString forgetPwdURL()
 
     QStringList deviceInfo = getDeviceInfo();
 
-    auto url = QString(templateURL).
-        arg(forgetUrl).
-        arg(QLocale().name()).
-        arg(getThemeName()).
-        arg(getActiveColor()).
-        arg(getStandardFont()).
-        arg(qApp->applicationVersion()).
-        arg(getDeviceKernel()).
-        arg(deviceInfo.at(2)).
-        arg(getOsVersion()).
-        arg(getDeviceCode()).
-        arg(deviceInfo.at(0)).
-        arg(deviceInfo.at(1));
+    auto url = QString(templateURL)
+                       .arg(forgetUrl)
+                       .arg(QLocale().name())
+                       .arg(getThemeName())
+                       .arg(getActiveColor())
+                       .arg(getStandardFont())
+                       .arg(qApp->applicationVersion())
+                       .arg(getDeviceKernel())
+                       .arg(deviceInfo.at(2))
+                       .arg(getOsVersion())
+                       .arg(getDeviceCode())
+                       .arg(deviceInfo.at(0))
+                       .arg(deviceInfo.at(1));
 
     return url.remove(QRegExp("#"));
 }
@@ -76,12 +75,12 @@ QString forgetPwdURL()
 QString wechatURL()
 {
     static QString wechatUrl;
-    if(wechatUrl.isEmpty()) {
-        if(qEnvironmentVariableIsEmpty("DEEPIN_PRE")) {
+    if (wechatUrl.isEmpty()) {
+        if (qEnvironmentVariableIsEmpty("DEEPIN_PRE")) {
             wechatUrl = QStringLiteral("https://login.deepin.org/view/client/bind-third/wechat");
-        }
-        else {
-            wechatUrl = QStringLiteral("https://login-pre.deepin.org/view/client/bind-third/wechat");
+        } else {
+            wechatUrl =
+                    QStringLiteral("https://login-pre.deepin.org/view/client/bind-third/wechat");
         }
     }
 
@@ -102,19 +101,19 @@ QString wechatURL()
 
     QStringList deviceInfo = getDeviceInfo();
 
-    auto url = QString(templateURL).
-        arg(wechatUrl).
-        arg(QLocale().name()).
-        arg(getThemeName()).
-        arg(getActiveColor()).
-        arg(getStandardFont()).
-        arg(qApp->applicationVersion()).
-        arg(getDeviceKernel()).
-        arg(deviceInfo.at(2)).
-        arg(getOsVersion()).
-        arg(getDeviceCode()).
-        arg(deviceInfo.at(0)).
-        arg(deviceInfo.at(1));
+    auto url = QString(templateURL)
+                       .arg(wechatUrl)
+                       .arg(QLocale().name())
+                       .arg(getThemeName())
+                       .arg(getActiveColor())
+                       .arg(getStandardFont())
+                       .arg(qApp->applicationVersion())
+                       .arg(getDeviceKernel())
+                       .arg(deviceInfo.at(2))
+                       .arg(getOsVersion())
+                       .arg(getDeviceCode())
+                       .arg(deviceInfo.at(0))
+                       .arg(deviceInfo.at(1));
 
     return url.remove(QRegExp("#"));
 }
@@ -127,24 +126,23 @@ QString getThemeName()
 
 QString getActiveColor()
 {
-    QDBusInterface appearance_ifc_(
-                "org.deepin.dde.Appearance1",
-                "/org/deepin/dde/Appearance1",
-                "org.deepin.dde.Appearance1",
-                QDBusConnection::sessionBus()
-                );
-    qDebug() << "connect" << "com.deepin.daemon.Appearance" << appearance_ifc_.isValid();
+    QDBusInterface appearance_ifc_("org.deepin.dde.Appearance1",
+                                   "/org/deepin/dde/Appearance1",
+                                   "org.deepin.dde.Appearance1",
+                                   QDBusConnection::sessionBus());
+    qDebug() << "connect"
+             << "com.deepin.daemon.Appearance" << appearance_ifc_.isValid();
     return appearance_ifc_.property("QtActiveColor").toString();
 }
 
-QString getStandardFont(){
-    QDBusInterface appearance_ifc_(
-                "org.deepin.dde.Appearance1",
-                "/org/deepin/dde/Appearance1",
-                "org.deepin.dde.Appearance1",
-                QDBusConnection::sessionBus()
-                );
-    qDebug() << "connect" << "org.deepin.dde.Appearance1" << appearance_ifc_.isValid();
+QString getStandardFont()
+{
+    QDBusInterface appearance_ifc_("org.deepin.dde.Appearance1",
+                                   "/org/deepin/dde/Appearance1",
+                                   "org.deepin.dde.Appearance1",
+                                   QDBusConnection::sessionBus());
+    qDebug() << "connect"
+             << "org.deepin.dde.Appearance1" << appearance_ifc_.isValid();
     return appearance_ifc_.property("StandardFont").toString();
 }
 
@@ -163,28 +161,29 @@ QString getLang(const QString &region)
     return "en_US";
 }
 
-bool isTablet(){
-    //DGuiApplicationHelper::instance()->isTabletEnvironment();
+bool isTablet()
+{
+    // DGuiApplicationHelper::instance()->isTabletEnvironment();
     return false;
 }
 
 QString getDeviceType()
 {
-    if(isTablet()){
-        return "display=tablet";    //识别为平板模式
-    }else {
-        return "display=sync";      //识别为PC模式
+    if (isTablet()) {
+        return "display=tablet"; // 识别为平板模式
+    } else {
+        return "display=sync"; // 识别为PC模式
     }
 }
 
 QString getDeviceKernel()
 {
     QProcess process;
-    process.start("uname", {"-r"});
+    process.start("uname", { "-r" });
     process.waitForFinished();
     QByteArray output = process.readAllStandardOutput();
     int idx = output.indexOf('\n');
-    if ( -1 != idx) {
+    if (-1 != idx) {
         output.remove(idx, 1);
     }
     return output.data();
@@ -192,8 +191,8 @@ QString getDeviceKernel()
 
 QString getOsVersion()
 {
-    QString version = QString("%1 (%2)").arg(DSysInfo::uosEditionName())
-                                      .arg(DSysInfo::minorVersion());
+    QString version =
+            QString("%1 (%2)").arg(DSysInfo::uosEditionName()).arg(DSysInfo::minorVersion());
     return version;
 }
 
@@ -247,13 +246,13 @@ bool isContainDigitAndChar(const QString &strdata)
 void sendSysNotify(const QString &strReason)
 {
     QDBusPendingReply<unsigned int> reply = Dtk::Core::DUtil::DNotifySender("deepin ID")
-                                            .appName("dde-control-center")
-                                            .appIcon("deepin-id")
-                                            .appBody(strReason)
-                                            .replaceId(0)
-                                            .timeOut(3000)
-                                            .actions(QStringList() << "default")
-                                            .call();
+                                                    .appName("dde-control-center")
+                                                    .appIcon("deepin-id")
+                                                    .appBody(strReason)
+                                                    .replaceId(0)
+                                                    .timeOut(3000)
+                                                    .actions(QStringList() << "default")
+                                                    .call();
     reply.waitForFinished();
 }
 
@@ -261,10 +260,9 @@ QString getRemainPasswdMsg(int remain)
 {
     if (remain > 0) {
         return TransString::getTransString(STRING_PWDCHECKERROR).arg(remain);
-    }
-    else {
+    } else {
         return TransString::getTransString(STRING_LOGINLIMIT);
     }
 }
 
-};
+}; // namespace utils
