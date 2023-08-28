@@ -144,7 +144,7 @@ QString getStandardFont(){
                 "org.deepin.dde.Appearance1",
                 QDBusConnection::sessionBus()
                 );
-    qDebug() << "connect" << "com.deepin.daemon.Appearance" << appearance_ifc_.isValid();
+    qDebug() << "connect" << "org.deepin.dde.Appearance1" << appearance_ifc_.isValid();
     return appearance_ifc_.property("StandardFont").toString();
 }
 
