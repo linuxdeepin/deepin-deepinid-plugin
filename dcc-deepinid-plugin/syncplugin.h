@@ -8,7 +8,7 @@
 
 using namespace DCC_NAMESPACE;
 
-class SyncPlugin: public PluginInterface
+class SyncPlugin : public PluginInterface
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "com.deepin.dde.ControlCenter.DeepinId" FILE "deepinid.json")

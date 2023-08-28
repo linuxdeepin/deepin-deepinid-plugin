@@ -6,18 +6,19 @@
 #pragma once
 
 #include <DSysInfo>
-#include <QMetaType>
+
 #include <QMargins>
+#include <QMetaType>
 
 DCORE_USE_NAMESPACE
 
 const DSysInfo::UosType UosType = DSysInfo::uosType();
 const DSysInfo::UosEdition UosEdition = DSysInfo::uosEditionType();
-const bool IsServerSystem = (DSysInfo::UosServer == UosType);//是否是服务器版
-const bool IsCommunitySystem = (DSysInfo::UosCommunity == UosEdition);//是否是社区版
-const bool IsProfessionalSystem = (DSysInfo::UosProfessional == UosEdition);//是否是专业版
-const bool IsHomeSystem = (DSysInfo::UosHome == UosEdition);//是否是个人版
-const bool IsDeepinDesktop = (DSysInfo::DeepinDesktop == DSysInfo::deepinType());//是否是Deepin桌面
+const bool IsServerSystem = (DSysInfo::UosServer == UosType);          // 是否是服务器版
+const bool IsCommunitySystem = (DSysInfo::UosCommunity == UosEdition); // 是否是社区版
+const bool IsProfessionalSystem = (DSysInfo::UosProfessional == UosEdition); // 是否是专业版
+const bool IsHomeSystem = (DSysInfo::UosHome == UosEdition);                 // 是否是个人版
+const bool IsDeepinDesktop = (DSysInfo::DeepinDesktop == DSysInfo::deepinType()); // 是否是Deepin桌面
 
 enum SyncType : int {
     Network,
@@ -37,12 +38,11 @@ enum SyncState : int {
     Failed,
 };
 
-enum DaemonError: int {
+enum DaemonError : int {
     ErrorBind = 7519,
 };
 
-namespace utils
-{
+namespace utils {
 
 QString forgetPwdURL();
 
@@ -74,4 +74,4 @@ QString getDeviceType();
 
 QStringList getDeviceInfo();
 
-}
+} // namespace utils
