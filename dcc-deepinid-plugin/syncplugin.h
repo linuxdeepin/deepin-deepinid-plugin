@@ -7,12 +7,11 @@
 #include "interface/plugininterface.h"
 
 using namespace DCC_NAMESPACE;
-#define PLUGIN_IID "org.deepin.dde.ControlCenter.Plugin/1.4"
 
-class SyncPlugin:public PluginInterface
+class SyncPlugin: public PluginInterface
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID PLUGIN_IID FILE "deepinid.json")
+    Q_PLUGIN_METADATA(IID "com.deepin.dde.ControlCenter.DeepinId" FILE "deepinid.json")
     Q_INTERFACES(DCC_NAMESPACE::PluginInterface)
 public:
     explicit SyncPlugin(QObject *parent = nullptr);
