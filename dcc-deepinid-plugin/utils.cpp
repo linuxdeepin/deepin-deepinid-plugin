@@ -7,10 +7,9 @@
 #include "operation/hardwareinfo.h"
 #include "trans_string.h"
 
-#include <dsysinfo.h>
-
 #include <DGuiApplicationHelper>
 #include <DNotifySender>
+#include <DSysInfo>
 #include <DUtil>
 
 #include <QDBusInterface>
@@ -19,7 +18,6 @@
 #include <QJsonObject>
 #include <QLocale>
 #include <QProcess>
-#include <QRegExp>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 
@@ -69,7 +67,7 @@ QString forgetPwdURL()
                        .arg(deviceInfo.at(0))
                        .arg(deviceInfo.at(1));
 
-    return url.remove(QRegExp("#"));
+    return url.remove(QRegularExpression("#"));
 }
 
 QString wechatURL()
@@ -115,7 +113,7 @@ QString wechatURL()
                        .arg(deviceInfo.at(0))
                        .arg(deviceInfo.at(1));
 
-    return url.remove(QRegExp("#"));
+    return url.remove(QRegularExpression("#"));
 }
 
 QString getThemeName()

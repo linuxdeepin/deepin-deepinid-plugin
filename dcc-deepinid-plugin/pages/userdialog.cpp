@@ -2,26 +2,27 @@
 //
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
+#include "utils.h"
 #include "userdialog.h"
+#include "trans_string.h"
+
+#include <DCommandLinkButton>
 #include <DPasswordEdit>
 #include <DSuggestButton>
 #include <DFontSizeManager>
 #include <DLabel>
-#include <QDebug>
-#include <QTimer>
 #include <DFrame>
-#include <QtWebChannel>
 #include <DGuiApplicationHelper>
+
+#include <QDebug>
+#include <QtWebChannel>
+#include <QTimer>
 #include <QRegExpValidator>
-#include <QRegExp>
 #include <QNetworkConfigurationManager>
 #include <QWebEngineProfile>
 #include <QWebEngineScript>
 #include <QWebEngineScriptCollection>
 #include <QRegularExpression>
-#include <DCommandLinkButton>
-#include "utils.h"
-#include "trans_string.h"
 
 static const QString STRING_ICONUOSID = QStringLiteral("dcc_union_id");
 static const QString STRING_PWDREG = QStringLiteral("^(\\w|\\+|\\[|\\]|-|[~`!@#$%^&()*={}:\"<>,.?|/])+$");
