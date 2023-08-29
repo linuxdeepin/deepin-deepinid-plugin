@@ -36,6 +36,8 @@ public:
 
     void SwitcherSet(const QString &arg_0, bool state);
 
+    bool SwitcherGet(const QString &arg_0);
+
     QDBusPendingCall SwitcherDump();
 
     void setDBusBlockSignals(bool status);
