@@ -50,7 +50,7 @@ CloudSyncPage::CloudSyncPage(QWidget *parent):QWidget (parent)
         {SyncType::Sound, TransString::getTransString(STRING_SOUND), "dcc_cloud_voice", true},
         {SyncType::Theme, TransString::getTransString(STRING_THEME), "dcc_cloud_them", true},
         {SyncType::Power, TransString::getTransString(STRING_POWER), "dcc_cloud_power", true},
-        {SyncType::Network, TransString::getTransString(STRING_NETWORK), "dcc_cloud_ net", true},
+        {SyncType::Network, TransString::getTransString(STRING_NETWORK), "dcc_cloud_net", true},
         {SyncType::Mouse, TransString::getTransString(STRING_MOUSE), "dcc_cloud_mouse", true},
         {SyncType::Update, TransString::getTransString(STRING_UPDATE), "dcc_cloud_update", true},
         {SyncType::Dock, TransString::getTransString(STRING_DOCK), "dcc_cloud_taskbar", true},
