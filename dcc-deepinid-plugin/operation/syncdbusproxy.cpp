@@ -4,9 +4,9 @@
 
 #include "syncdbusproxy.h"
 
-const static QString DEEPIN_ID_SERVICE = QStringLiteral("com.deepin.deepinid");
-const static QString DEEPIN_ID_INTERFACE = QStringLiteral("com.deepin.deepinid");
-const static QString DEEPIN_ID_PATH = QStringLiteral("/com/deepin/deepinid");
+const static QString SYNC_SERVICE = QStringLiteral("com.deepin.sync.Daemon");
+const static QString SYNC_INTERFACE = QStringLiteral("com.deepin.sync.Daemon");
+const static QString SYNC_PATH = QStringLiteral("/com/deepin/sync/Daemon");
 
 bool IntString::operator!=(const IntString &intString)
 {
@@ -37,18 +37,25 @@ void registerIntStringMetaType()
 
 SyncDaemon::SyncDaemon(QObject *parent)
     : QObject(parent)
-    , m_syncInner(new DDBusInterface(DEEPIN_ID_SERVICE,
-                                     DEEPIN_ID_PATH,
-                                     DEEPIN_ID_INTERFACE,
-                                     QDBusConnection::sessionBus(),
-                                     this))
+    , m_syncInner(new DDBusInterface(
+              SYNC_SERVICE, SYNC_PATH, SYNC_INTERFACE, QDBusConnection::sessionBus(), this))
 {
     registerIntStringMetaType();
 }
 
 void SyncDaemon::SwitcherSet(const QString &arg_0, bool state)
 {
-    m_syncInner->asyncCallWithArgumentList("SwitcherSet", { state });
+    m_syncInner->asyncCallWithArgumentList("SwitcherSet", { arg_0, state });
+}
+
+bool SyncDaemon::SwitcherGet(const QString &arg_0)
+{
+    QDBusPendingReply<bool> reply = m_syncInner->asyncCallWithArgumentList("SwitcherGet", { arg_0 });
+    reply.waitForFinished();
+    if (!reply.isValid()) {
+        return false;
+    }
+    return reply.value();
 }
 
 QDBusPendingCall SyncDaemon::SwitcherDump()
