@@ -3,11 +3,12 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 #include "singleitem.h"
+
 #include <DCommandLinkButton>
-#include <QHBoxLayout>
 #include <DFontSizeManager>
 #include <DGuiApplicationHelper>
 
+#include <QHBoxLayout>
 DWIDGET_USE_NAMESPACE
 
 SingleItem::SingleItem(QWidget *parent):QWidget (parent)

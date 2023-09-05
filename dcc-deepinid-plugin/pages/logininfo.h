@@ -7,7 +7,7 @@
 
 #include "interface/namespace.h"
 #include "utils.h"
-#include "syncmodel.h"
+#include "operation/syncmodel.h"
 #include "avatarwidget.h"
 #include "downloadurl.h"
 #include <dtkwidget_global.h>

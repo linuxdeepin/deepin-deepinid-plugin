@@ -5,7 +5,6 @@
 
 #include "logininfodetail.h"
 #include "utils.h"
-#include "syncmodel.h"
 #include <widgets/switchwidget.h>
 
 #include <DTipLabel>

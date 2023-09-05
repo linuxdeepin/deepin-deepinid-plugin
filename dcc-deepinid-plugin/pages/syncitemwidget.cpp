@@ -3,7 +3,9 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 #include "syncitemwidget.h"
+
 #include <DListView>
+
 #include <QVBoxLayout>
 
 SyncItemWidget::SyncItemWidget(QWidget *parent) : QWidget(parent),

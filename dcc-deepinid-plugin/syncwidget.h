@@ -8,8 +8,8 @@
 #include "pages/login.h"
 #include "pages/logininfo.h"
 #include "pages/logininfodetail.h"
-#include "syncmodel.h"
-#include "syncworker.h"
+#include "operation/syncmodel.h"
+#include "operation/syncworker.h"
 
 QT_BEGIN_NAMESPACE
 class QWidget;

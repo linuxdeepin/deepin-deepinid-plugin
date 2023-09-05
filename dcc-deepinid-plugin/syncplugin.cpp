@@ -3,9 +3,7 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 #include "syncplugin.h"
-#include <QTranslator>
-#include <QCoreApplication>
-#include <QLocale>
+
 #include "syncmodule.h"
 
 SyncPlugin::SyncPlugin(QObject *parent):PluginInterface(parent)

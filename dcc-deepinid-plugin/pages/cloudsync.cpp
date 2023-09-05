@@ -3,9 +3,15 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 #include "cloudsync.h"
+
+#include "utils.h"
+#include "trans_string.h"
+#include "userdialog.h"
+
+#include <widgets/switchwidget.h>
+
 #include <DLabel>
 #include <DTipLabel>
-#include <widgets/switchwidget.h>
 #include <DFontSizeManager>
 #include <DFrame>
 #include <DPalette>
@@ -15,6 +21,7 @@
 #include <DHorizontalLine>
 #include <DDialog>
 #include <DToolTip>
+
 #include <QEvent>
 #include <QMouseEvent>
 #include <QToolTip>
@@ -24,9 +31,7 @@
 #include <DCommandLinkButton>
 #include <DSwitchButton>
 #include <QScrollArea>
-#include "utils.h"
-#include "trans_string.h"
-#include "userdialog.h"
+
 
 DWIDGET_USE_NAMESPACE
 using namespace DCC_NAMESPACE;

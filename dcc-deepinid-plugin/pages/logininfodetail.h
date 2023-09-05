@@ -7,8 +7,8 @@
 
 #include "interface/namespace.h"
 
-#include "syncmodel.h"
-#include "syncworker.h"
+#include "operation/syncmodel.h"
+#include "operation/syncworker.h"
 #include "utils.h"
 #include "syncstateicon.h"
 

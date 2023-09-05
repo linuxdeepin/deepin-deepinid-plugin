@@ -3,13 +3,11 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 #include "syncmodule.h"
-#include "syncworker.h"
-#include "syncmodel.h"
-#include "pages/logininfodetail.h"
 #include "utils.h"
 #include "syncwidget.h"
 
 #include <DSysInfo>
+
 #include <QIcon>
 
 SyncModule::SyncModule(QObject *parent)

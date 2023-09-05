@@ -6,8 +6,10 @@
 #include "downloadurl.h"
 #include "avatarwidget.h"
 #include "logininfo.h"
-#include <ddbussender.h>
+#include "trans_string.h"
+#include "utils.h"
 
+#include <DDBusSender>
 #include <DFloatingButton>
 #include <DFontSizeManager>
 #include <DLabel>
@@ -16,6 +18,7 @@
 #include <DApplicationHelper>
 #include <DDesktopServices>
 #include <DListView>
+
 #include <QEvent>
 #include <QTimer>
 #include <QBoxLayout>
@@ -29,8 +32,7 @@
 #include <QDBusPendingReply>
 #include <QMargins>
 #include <QToolTip>
-#include "trans_string.h"
-#include "utils.h"
+
 
 DWIDGET_USE_NAMESPACE
 Q_DECLARE_METATYPE(QMargins)

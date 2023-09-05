@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 #include "syncwidget.h"
-#include "syncmodel.h"
 #include "pages/login.h"
 
 #include <QVBoxLayout>
