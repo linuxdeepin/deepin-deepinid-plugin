@@ -100,7 +100,6 @@ void SyncWorker::activate()
 {
     m_syncInter->setDBusBlockSignals(false);
     m_deepinId_inter->setDBusBlockSignals(false);
-    m_model->setEnableSync(m_syncInter->SwitcherGet("enabled"));
 
     onStateChanged(m_syncInter->state());
 
