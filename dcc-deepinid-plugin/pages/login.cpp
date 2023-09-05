@@ -5,13 +5,14 @@
 
 #include "login.h"
 #include "utils.h"
-#include "widgets/utils.h"
+#include "trans_string.h"
 
 #include <DSuggestButton>
 #include <DPushButton>
 #include <DFontSizeManager>
 #include <DTipLabel>
 #include <DSysInfo>
+#include <DCommandLinkButton>
 
 #include <QProcess>
 #include <QVBoxLayout>
@@ -19,9 +20,7 @@
 #include <QDebug>
 #include <QDesktopServices>
 #include <QUrl>
-#include <DCommandLinkButton>
 #include <QApplication>
-#include "trans_string.h"
 
 DWIDGET_USE_NAMESPACE
 DCORE_USE_NAMESPACE

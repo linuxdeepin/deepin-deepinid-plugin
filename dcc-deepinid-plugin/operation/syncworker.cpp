@@ -763,7 +763,7 @@ BindCheckResult SyncWorker::logout(const QString &ubid)
 BindCheckResult SyncWorker::checkLocalBind(const QString &uuid)
 {
     BindCheckResult result;
-    QDBusReply<QString> retLocalBindCheck= m_deepinId_inter->get_deepinid().call(QDBus::BlockWithGui, "LocalBindCheck", uuid);
+    QDBusReply<QString> retLocalBindCheck= m_deepinId_inter->LocalBindCheck(uuid);
     if (!m_syncHelperInter->isValid()) {
         qWarning() << "syncHelper interface invalid: (localBindCheck)" << m_syncHelperInter->lastError().message();
         return result;

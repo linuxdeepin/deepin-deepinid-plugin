@@ -5,8 +5,6 @@
 
 #pragma once
 
-#include "interface/namespace.h"
-
 #include <QLabel>
 
 class AvatarWidget : public QLabel

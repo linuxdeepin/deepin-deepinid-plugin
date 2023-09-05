@@ -3,18 +3,22 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 #include "devicesync.h"
+#include "utils.h"
+#include "trans_string.h"
+
+#include <widgets/switchwidget.h>
+
 #include <DLabel>
 #include <DTipLabel>
-#include <widgets/switchwidget.h>
 #include <DFontSizeManager>
 #include <DListView>
 #include <DDialog>
-#include <QMouseEvent>
 #include <DGuiApplicationHelper>
 #include <DToolButton>
+
+#include <QMouseEvent>
 #include <QEnterEvent>
-#include "utils.h"
-#include "trans_string.h"
+
 
 DWIDGET_USE_NAMESPACE
 using namespace DCC_NAMESPACE;

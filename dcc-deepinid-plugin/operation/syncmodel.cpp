@@ -9,7 +9,6 @@
 #include <QJsonObject>
 #include <QDBusInterface>
 #include <QJsonArray>
-#include "cryptor.h"
 
 SyncModel::SyncModel(QObject *parent)
     : QObject(parent)

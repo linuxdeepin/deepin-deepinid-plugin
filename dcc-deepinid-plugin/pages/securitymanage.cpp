@@ -3,21 +3,24 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 #include "securitymanage.h"
+#include "utils.h"
+#include "trans_string.h"
+#include "singleitem.h"
+
 #include <DLabel>
 #include <DTipLabel>
-#include <QVBoxLayout>
+
 #include <DListView>
 #include <DDialog>
 #include <DPasswordEdit>
 #include <DSuggestButton>
 #include <DFontSizeManager>
 #include <DFrame>
-#include <QTimer>
 #include <DGuiApplicationHelper>
 #include <DBackgroundGroup>
-#include "utils.h"
-#include "trans_string.h"
-#include "singleitem.h"
+
+#include <QVBoxLayout>
+#include <QTimer>
 
 DWIDGET_USE_NAMESPACE
 Q_DECLARE_METATYPE(QMargins)

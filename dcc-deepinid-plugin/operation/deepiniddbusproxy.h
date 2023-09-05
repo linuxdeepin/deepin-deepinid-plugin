@@ -6,6 +6,7 @@
 
 #include <DDBusInterface>
 #include <QObject>
+#include <QDBusReply>
 
 using Dtk::Core::DDBusInterface;
 
@@ -25,9 +26,7 @@ public:
 
     void Login();
 
-    DDBusInterface& get_deepinid() const {
-        return *this->m_deepinId;
-    }
+    QDBusReply<QString> LocalBindCheck(const QString &uuid);
 
 signals:
     void UserInfoChanged(const QVariantMap& value) const;

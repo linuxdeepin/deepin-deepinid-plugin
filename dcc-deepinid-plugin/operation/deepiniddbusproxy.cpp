@@ -28,6 +28,11 @@ void DeepinIdProxy::setDBusBlockSignals(bool status)
     m_deepinId->blockSignals(status);
 }
 
+QDBusReply<QString> DeepinIdProxy::LocalBindCheck(const QString &uuid)
+{
+    return m_deepinId->call(QDBus::BlockWithGui, "LocalBindCheck", uuid);
+}
+
 void DeepinIdProxy::Logout()
 {
     m_deepinId->asyncCall("Logout");

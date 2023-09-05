@@ -9,8 +9,8 @@
 #include <QWidget>
 #include <dtkwidget_global.h>
 #include <QStandardItemModel>
-#include <syncmodel.h>
-#include "syncworker.h"
+#include "operation/syncmodel.h"
+#include "operation/syncworker.h"
 #include "wechatobject.h"
 #include "userdialog.h"
 

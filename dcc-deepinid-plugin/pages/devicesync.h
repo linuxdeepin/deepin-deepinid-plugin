@@ -13,7 +13,7 @@
 #include <QListView>
 #include <DListView>
 #include <polkit-qt5-1/PolkitQt1/Authority>
-#include "syncmodel.h"
+#include "operation/syncmodel.h"
 #include "cloudsync.h"
 #include "widgets/switchwidget.h"
 

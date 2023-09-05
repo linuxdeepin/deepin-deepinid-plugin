@@ -13,8 +13,8 @@
 #include <QVBoxLayout>
 #include <DLabel>
 #include <widgets/switchwidget.h>
-#include "syncmodel.h"
-#include "syncworker.h"
+#include "operation/syncmodel.h"
+#include "operation/syncworker.h"
 #include "userdialog.h"
 #include "syncitemwidget.h"
 

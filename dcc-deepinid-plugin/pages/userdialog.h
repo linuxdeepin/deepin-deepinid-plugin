@@ -4,9 +4,11 @@
 
 #ifndef USERDIALOG_H
 #define USERDIALOG_H
+
+#include "wechatobject.h"
+
 #include <DDialog>
 #include <QWebEngineView>
-#include "wechatobject.h"
 
 DWIDGET_BEGIN_NAMESPACE
 class DLabel;
