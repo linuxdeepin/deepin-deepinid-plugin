@@ -214,7 +214,7 @@ void LoginInfoPage::initConnection()
         }
     });
 
-    connect(m_inputLineEdit, &DLineEdit::editingFinished, this, [ = ] {
+    connect(m_inputLineEdit, &DLineEdit::returnPressed, this, [ = ] {
         QString userFullName = m_inputLineEdit->lineEdit()->text();
         onEditingFinished(userFullName);
     });
