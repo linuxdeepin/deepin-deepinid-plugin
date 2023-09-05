@@ -604,7 +604,6 @@ void SyncWorker::asyncUnbindAccount(const QString &ubid)
     watcher->setFuture(future);
 }
 
-// NOTE: unexist interface
 void SyncWorker::asyncSetFullname(const QString &fullname)
 {
     QDBusInterface utInterface("com.deepin.sync.Daemon",
