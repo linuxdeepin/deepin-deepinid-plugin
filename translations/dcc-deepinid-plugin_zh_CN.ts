@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="zh_CN">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="zh_CN">
 <context>
     <name>LoginInfoPage</name>
     <message>
@@ -25,7 +23,7 @@
     </message>
     <message>
         <source>Other regions</source>
-        <translation>其他地区</translation>
+        <translation>港澳台及其他地区</translation>
     </message>
 </context>
 <context>
@@ -39,12 +37,8 @@
         <translation>UOS ID</translation>
     </message>
     <message>
-        <source>cloud sync</source>
-        <translation>云同步</translation>
-    </message>
-    <message>
-        <source>app store</source>
-        <translation>应用商店</translation>
+        <source>Cloud sync, app store and etc</source>
+        <translation>云同步、应用商店等</translation>
     </message>
 </context>
 <context>

@@ -30,18 +30,22 @@
     <name>SyncModule</name>
     <message>
         <source>deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Ідентифікатор deepin</translation>
     </message>
     <message>
         <source>UOS ID</source>
         <translation>UOS ID</translation>
+    </message>
+    <message>
+        <source>Cloud sync, app store and etc</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>TransString</name>
     <message>
         <source>deepin Cloud Sync</source>
-        <translation type="unfinished"/>
+        <translation>Синхронізація з хмарою deepin</translation>
     </message>
     <message>
         <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
@@ -133,11 +137,11 @@
     </message>
     <message>
         <source>Link local accounts to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Прив&apos;язка локального запису до ідентифікатора deepin</translation>
     </message>
     <message>
         <source>If linked, you can use deepin ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
-        <translation type="unfinished"/>
+        <translation>Якщо з&apos;єднано, ви можете скористатися ідентифікатором deepin для входу до системи та скидання паролів локальних облікових записів. Вимкніть, щоб від&apos;єднати їх.</translation>
     </message>
     <message>
         <source>Trusted devices</source>
@@ -145,7 +149,7 @@
     </message>
     <message>
         <source>Manage trusted devices to keep your deepin ID secure.</source>
-        <translation type="unfinished"/>
+        <translation>Керування довіреними пристроями для забезпечення безпеки вашого ідентифікатора deepin.</translation>
     </message>
     <message>
         <source>OS version: %1</source>
@@ -166,20 +170,21 @@ remove this device from trusted devices?</source>
     </message>
     <message>
         <source>Cloud Service of deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>«Хмарна» служба ідентифікатора deepin</translation>
     </message>
     <message>
         <source>Manage your deepin ID and sync your personal data across devices.
 Sign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.</source>
-        <translation type="unfinished"/>
+        <translation>Керуйте вашим ідентифікатором deepin і синхронізуйте ваші особисті дані між пристроями.
+Увійдіть до облікового запису deepin, щоб отримати персоналізовані можливості та служби переглядача інтернету, крамниці програм, підтримки та інші послуги.</translation>
     </message>
     <message>
         <source>Sign In to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Увійти до облікового запису deepin</translation>
     </message>
     <message>
         <source>deepin Cloud</source>
-        <translation type="unfinished"/>
+        <translation>Хмара deepin</translation>
     </message>
     <message>
         <source>Devices and Local Accounts</source>
@@ -199,15 +204,15 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
-        <translation type="unfinished"/>
+        <translation>Скористайтеся довіреним номером мобільного телефону або адресою електронної пошти для входу до облікового запису deepin і перевіряйте критичні дії, якщо вони виконуються від імені ідентифікатора deepin.</translation>
     </message>
     <message>
         <source>Link phone number to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Пов&apos;язати номер телефону із ідентифікатором deepin</translation>
     </message>
     <message>
         <source>Link email address to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Пов&apos;язати адресу електронної пошти із ідентифікатором deepin</translation>
     </message>
     <message>
         <source>Link third-party accounts</source>
@@ -215,15 +220,15 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation type="unfinished"/>
+        <translation>Безпечно і швидко входьте до вашого облікового запису deepin і локального облікового запису скануванням QR-коду за допомогою пов&apos;язаного WeChat.</translation>
     </message>
     <message>
         <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
-        <translation type="unfinished"/>
+        <translation>Якщо запис не з&apos;єднано, ви не зможете скористатися WeChat для входу до ідентифікатора deepin.</translation>
     </message>
     <message>
         <source>Are you sure you want to unlink it?</source>
-        <translation type="unfinished"/>
+        <translation>Ви справді хочете вилучити зв&apos;язок?</translation>
     </message>
     <message>
         <source>Password</source>
@@ -231,7 +236,7 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Change your deepin ID password regularly to ensure its security.</source>
-        <translation type="unfinished"/>
+        <translation>Регулярно змінюйте ваш пароль до ідентифікатора deepin, щоб забезпечити захист цього ідентифікатора.</translation>
     </message>
     <message>
         <source>Change password</source>
@@ -304,12 +309,14 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     <message>
         <source>The phone number has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation type="unfinished"/>
+        <translation>З ідентифікатором deepin з&apos;єднано номер телефону: %1.
+Будь ласка, перевірте і виберіть одну з наведених нижче дій.</translation>
     </message>
     <message>
         <source>The email address has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation type="unfinished"/>
+        <translation>З ідентифікатором deepin з&apos;єднано адресу електронної пошти: %1.
+Будь ласка, перевірте і виберіть одну з наведених нижче дій.</translation>
     </message>
     <message>
         <source>Security Verification</source>
@@ -321,7 +328,7 @@ Please check and choose one action below.</source>
     </message>
     <message>
         <source>Change deepin ID password</source>
-        <translation type="unfinished"/>
+        <translation>Змінити пароль до ідентифікатора deepin</translation>
     </message>
     <message>
         <source>Forgot password?</source>
@@ -329,7 +336,7 @@ Please check and choose one action below.</source>
     </message>
     <message>
         <source>Link to current deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>З&apos;єднати з поточним ідентифікатором deepin</translation>
     </message>
     <message>
         <source>Set a Password</source>
@@ -353,7 +360,7 @@ Please check and choose one action below.</source>
     </message>
     <message>
         <source>Link WeChat to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>З&apos;єднати WeChat з ідентифікатором deepin</translation>
     </message>
     <message>
         <source>Scan QR code with WeChat</source>

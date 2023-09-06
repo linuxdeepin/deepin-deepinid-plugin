@@ -3,7 +3,7 @@
     <name>LoginInfoPage</name>
     <message>
         <source>Edit account</source>
-        <translation>Редактировать аккаунт</translation>
+        <translation>Редактировать учетную запись</translation>
     </message>
     <message>
         <source>Sign out</source>
@@ -35,6 +35,10 @@
     <message>
         <source>UOS ID</source>
         <translation>UOS ID</translation>
+    </message>
+    <message>
+        <source>Cloud sync, app store and etc</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -141,7 +145,7 @@
     </message>
     <message>
         <source>Trusted devices</source>
-        <translation>Проверенные устройства</translation>
+        <translation>Доверенные устройства</translation>
     </message>
     <message>
         <source>Manage trusted devices to keep your deepin ID secure.</source>
@@ -195,7 +199,7 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Trusted phone numbers and email addresses</source>
-        <translation>Надежные номера телефонов и адреса электронной почты</translation>
+        <translation>Доверенные номера телефонов и адреса электронной почты</translation>
     </message>
     <message>
         <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
@@ -279,7 +283,7 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Link</source>
-        <translation>Ссылка</translation>
+        <translation>Соединить</translation>
     </message>
     <message>
         <source>Unlink</source>
@@ -295,7 +299,7 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Wrong password, %1 chances left</source>
-        <translation>Неверный пароль, осталось шансов: %1</translation>
+        <translation>Неверный пароль, осталось попыток: %1</translation>
     </message>
     <message>
         <source>The login error has reached the limit today. You can reset the password and try again.</source>
