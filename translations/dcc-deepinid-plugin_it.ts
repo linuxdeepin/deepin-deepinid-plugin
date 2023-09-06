@@ -36,6 +36,10 @@
         <source>UOS ID</source>
         <translation>UOS ID</translation>
     </message>
+    <message>
+        <source>Cloud sync, app store and etc</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>TransString</name>

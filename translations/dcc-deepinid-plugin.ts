@@ -39,11 +39,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>cloud sync</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>app store</source>
+        <source>Cloud sync, app store and etc</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

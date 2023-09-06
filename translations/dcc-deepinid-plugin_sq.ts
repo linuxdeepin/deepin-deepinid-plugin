@@ -30,22 +30,26 @@
     <name>SyncModule</name>
     <message>
         <source>deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>ID deepin</translation>
     </message>
     <message>
         <source>UOS ID</source>
         <translation>UOS ID</translation>
+    </message>
+    <message>
+        <source>Cloud sync, app store and etc</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>TransString</name>
     <message>
         <source>deepin Cloud Sync</source>
-        <translation type="unfinished"/>
+        <translation>Njëkohësim Në Re deepin</translation>
     </message>
     <message>
         <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
-        <translation>Subjekt i ligjeve dhe rregullave tuaja vendore, aktualisht jo për rajonin tuaj.</translation>
+        <translation>Subjekt i ligjeve dhe rregullave tuaja vendore, aktualisht s’mund të kihet në rajonin tuaj.</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -53,7 +57,7 @@
     </message>
     <message>
         <source>Securely store system settings and personal data in the cloud, and keep them in sync across devices.</source>
-        <translation>Depozitojini në re, në mënyrë të sigurt, rregullimet e sistemit dhe të dhënat personale dhe mbajini të njëkohësuara nëpër pajisje</translation>
+        <translation>Depozitojini në mënyrë të sigurt rregullimet e sistemit dhe të dhënat personale në re dhe mbajini të njëkohësuara nëpër pajisje</translation>
     </message>
     <message>
         <source>System Settings</source>
@@ -77,7 +81,7 @@
     </message>
     <message>
         <source>Dock</source>
-        <translation>Panle</translation>
+        <translation>Panel</translation>
     </message>
     <message>
         <source>Launcher</source>
@@ -105,7 +109,7 @@
     </message>
     <message>
         <source>Clear cloud data</source>
-        <translation>Spastro të dhënë në re</translation>
+        <translation>Spastro të dhëna në re</translation>
     </message>
     <message>
         <source>Are you sure you want to clear your system settings and personal data saved in the cloud?</source>
@@ -133,11 +137,11 @@
     </message>
     <message>
         <source>Link local accounts to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Lidhni llogari vendore me një ID deepin</translation>
     </message>
     <message>
         <source>If linked, you can use deepin ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
-        <translation type="unfinished"/>
+        <translation>Në u lidhshin, mund të përdorni ID deepin për të bërë hyrjen dhe ricaktuar fjalëkalime llogarish vendore. Që të hiqet lidhja, çaktivizojeni.</translation>
     </message>
     <message>
         <source>Trusted devices</source>
@@ -145,7 +149,7 @@
     </message>
     <message>
         <source>Manage trusted devices to keep your deepin ID secure.</source>
-        <translation type="unfinished"/>
+        <translation>Administroni pajisje të besuara, për ta mbajtur të siguruar ID-në tuaj deepin.</translation>
     </message>
     <message>
         <source>OS version: %1</source>
@@ -162,25 +166,26 @@
     <message>
         <source>Are you sure you want to
 remove this device from trusted devices?</source>
-        <translation>Jeni i sigurt se doni të hiqen
+        <translation>Jeni i sigurt se doni të hiqet
 kjo pajisje nga pajisjet e besuara?</translation>
     </message>
     <message>
         <source>Cloud Service of deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Shërbim Re i ID-ve deepin</translation>
     </message>
     <message>
         <source>Manage your deepin ID and sync your personal data across devices.
 Sign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.</source>
-        <translation type="unfinished"/>
+        <translation>Administroni ID-në tuaj deepin dhe njëkohësoni të dhënat tuaja personale nëpër pajisje.
+Që të merrni veçori dhe shërbime Shfletuesi, Shitoreje Aplikacionesh, Asistencë, etj, të përshtatura për ju, bëni hyrjen në ID deepin.</translation>
     </message>
     <message>
         <source>Sign In to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Bëni hyrjen në ID deepin</translation>
     </message>
     <message>
         <source>deepin Cloud</source>
-        <translation type="unfinished"/>
+        <translation>Re deepin</translation>
     </message>
     <message>
         <source>Devices and Local Accounts</source>
@@ -192,7 +197,7 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>The feature is not available at present, please activate your system first</source>
-        <translation>Veçori s’është e passhme tani, ju lutemi, së pari aktivizoni sistemin tuaj</translation>
+        <translation>Veçoria s’është e passhme tani, ju lutemi, së pari aktivizoni sistemin tuaj</translation>
     </message>
     <message>
         <source>Trusted phone numbers and email addresses</source>
@@ -200,15 +205,15 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
-        <translation type="unfinished"/>
+        <translation>Përdorni për të bërë hyrjen në ID deepin numrin e telefonit ose adresën email të besuar dhe verifikoni veprime rezervat, nëse kryhen në ID deepin.</translation>
     </message>
     <message>
         <source>Link phone number to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Lidhni numër telefoni me ID deepin</translation>
     </message>
     <message>
         <source>Link email address to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Lidhni adresë email me ID deepin</translation>
     </message>
     <message>
         <source>Link third-party accounts</source>
@@ -216,11 +221,11 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation type="unfinished"/>
+        <translation>Hyni pa rrezik dhe shpejt në ID-në tuaj deepin dhe llogarinë vendore duke skanuar kodin QR që dhamë në WeChat.</translation>
     </message>
     <message>
         <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
-        <translation type="unfinished"/>
+        <translation>Po qe i palidhur, s’do të jeni në gjendje të përdorni WeChat-in për të bërë hyrjen në ID deepin.</translation>
     </message>
     <message>
         <source>Are you sure you want to unlink it?</source>
@@ -232,7 +237,7 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Change your deepin ID password regularly to ensure its security.</source>
-        <translation type="unfinished"/>
+        <translation>Për të garantuar sigurinë e tij, ndryshojeni rregullisht fjalëkalimin e ID-së tuaj deepin.</translation>
     </message>
     <message>
         <source>Change password</source>
@@ -268,7 +273,7 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Enter a correct email address</source>
-        <translation>Jepni një adresë email të saktë</translation>
+        <translation>Jepni një adresë të saktë email</translation>
     </message>
     <message>
         <source>Use another phone number</source>
@@ -305,12 +310,14 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     <message>
         <source>The phone number has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation type="unfinished"/>
+        <translation>Numri i telefonit u lidh me ID deepin: %1.
+Ju lutemi, shiheni dhe zgjidhni një nga veprimet më poshtë.</translation>
     </message>
     <message>
         <source>The email address has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation type="unfinished"/>
+        <translation>Adresa email u lidh me ID-në deepin: %1.
+Ju lutemi, kontrollojeni dhe zgjidhni më poshtë një veprim.</translation>
     </message>
     <message>
         <source>Security Verification</source>
@@ -322,7 +329,7 @@ Please check and choose one action below.</source>
     </message>
     <message>
         <source>Change deepin ID password</source>
-        <translation type="unfinished"/>
+        <translation>Ndryshoni fjalëkalim ID-je deepin</translation>
     </message>
     <message>
         <source>Forgot password?</source>
@@ -330,7 +337,7 @@ Please check and choose one action below.</source>
     </message>
     <message>
         <source>Link to current deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Lidhe me ID-në e tanishme deepin</translation>
     </message>
     <message>
         <source>Set a Password</source>
@@ -354,7 +361,7 @@ Please check and choose one action below.</source>
     </message>
     <message>
         <source>Link WeChat to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Lidhini WeChat-in me ID-në deepin</translation>
     </message>
     <message>
         <source>Scan QR code with WeChat</source>

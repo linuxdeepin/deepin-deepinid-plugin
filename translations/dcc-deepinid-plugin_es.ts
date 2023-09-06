@@ -30,18 +30,22 @@
     <name>SyncModule</name>
     <message>
         <source>deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>deepin ID</translation>
     </message>
     <message>
         <source>UOS ID</source>
         <translation>UOS ID</translation>
+    </message>
+    <message>
+        <source>Cloud sync, app store and etc</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>TransString</name>
     <message>
         <source>deepin Cloud Sync</source>
-        <translation type="unfinished"/>
+        <translation>Sincronización en la nube deepin</translation>
     </message>
     <message>
         <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
@@ -109,11 +113,11 @@
     </message>
     <message>
         <source>Are you sure you want to clear your system settings and personal data saved in the cloud?</source>
-        <translation type="unfinished"/>
+        <translation>¿Está seguro de que desea borrar la configuración del sistema y los datos personales guardados en la nube?</translation>
     </message>
     <message>
         <source>Once the data is cleared, it cannot be recovered!</source>
-        <translation type="unfinished"/>
+        <translation>Una vez que se borran los datos, ¡no se pueden recuperar!</translation>
     </message>
     <message>
         <source>Clear</source>
@@ -133,11 +137,11 @@
     </message>
     <message>
         <source>Link local accounts to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Vincular cuentas locales a deepin ID</translation>
     </message>
     <message>
         <source>If linked, you can use deepin ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
-        <translation type="unfinished"/>
+        <translation>Si está vinculado, puede usar la ID de deepin para iniciar sesión y restablecer las contraseñas de las cuentas locales. Cancele para desvincular.</translation>
     </message>
     <message>
         <source>Trusted devices</source>
@@ -145,7 +149,7 @@
     </message>
     <message>
         <source>Manage trusted devices to keep your deepin ID secure.</source>
-        <translation type="unfinished"/>
+        <translation>Administre dispositivos confiables para mantener segura su deepin ID.</translation>
     </message>
     <message>
         <source>OS version: %1</source>
@@ -167,20 +171,21 @@ remove this device from trusted devices?</source>
     </message>
     <message>
         <source>Cloud Service of deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Servicio en la nube de deepin ID</translation>
     </message>
     <message>
         <source>Manage your deepin ID and sync your personal data across devices.
 Sign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.</source>
-        <translation type="unfinished"/>
+        <translation>Administre su deepin ID y sincronice sus datos personales entre dispositivos.
+Inicie sesión en deepin ID para obtener funciones y servicios personalizados del navegador, tienda de aplicaciones, soporte y más.</translation>
     </message>
     <message>
         <source>Sign In to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Iniciar sesión en deepin ID</translation>
     </message>
     <message>
         <source>deepin Cloud</source>
-        <translation type="unfinished"/>
+        <translation>Nube de deepin</translation>
     </message>
     <message>
         <source>Devices and Local Accounts</source>
@@ -200,15 +205,15 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
-        <translation type="unfinished"/>
+        <translation>Use un número de teléfono móvil o dirección de correo electrónico de confianza para iniciar sesión en deepin ID y verifique que las operaciones confidenciales se realizan en deepin ID.</translation>
     </message>
     <message>
         <source>Link phone number to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Vincular número de telefónico a la ID de deepin</translation>
     </message>
     <message>
         <source>Link email address to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Vincular dirección de correo electrónico a la ID de deepin</translation>
     </message>
     <message>
         <source>Link third-party accounts</source>
@@ -216,15 +221,15 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation type="unfinished"/>
+        <translation>Inicie sesión de forma segura y rápida en su deepin ID y cuenta local escaneando el código QR desde su WeChat vinculado.</translation>
     </message>
     <message>
         <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
-        <translation type="unfinished"/>
+        <translation>Si está desvinculado, no podrá usar WeChat para iniciar sesión en deepin ID.</translation>
     </message>
     <message>
         <source>Are you sure you want to unlink it?</source>
-        <translation type="unfinished"/>
+        <translation>¿Está seguro de que quiere desvincularlo?</translation>
     </message>
     <message>
         <source>Password</source>
@@ -232,7 +237,7 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Change your deepin ID password regularly to ensure its security.</source>
-        <translation type="unfinished"/>
+        <translation>Cambie su contraseña de deepin ID regularmente para garantizar su seguridad.</translation>
     </message>
     <message>
         <source>Change password</source>
@@ -248,7 +253,7 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Operation Successful</source>
-        <translation type="unfinished"/>
+        <translation>Operación exitosa</translation>
     </message>
     <message>
         <source>Reset password successfully</source>
@@ -305,12 +310,14 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     <message>
         <source>The phone number has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation type="unfinished"/>
+        <translation>El número de teléfono se vinculó al ID de deepin: %1.
+A continuación marque y elija una acción.</translation>
     </message>
     <message>
         <source>The email address has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation type="unfinished"/>
+        <translation>La dirección de correo electrónico se vinculó al ID de deepin: %1.
+A continuación marque y elija una acción.</translation>
     </message>
     <message>
         <source>Security Verification</source>
@@ -322,7 +329,7 @@ Please check and choose one action below.</source>
     </message>
     <message>
         <source>Change deepin ID password</source>
-        <translation type="unfinished"/>
+        <translation>Cambiar contraseña ID de deepin</translation>
     </message>
     <message>
         <source>Forgot password?</source>
@@ -330,7 +337,7 @@ Please check and choose one action below.</source>
     </message>
     <message>
         <source>Link to current deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Enlace actual a la ID de deepin</translation>
     </message>
     <message>
         <source>Set a Password</source>
@@ -354,7 +361,7 @@ Please check and choose one action below.</source>
     </message>
     <message>
         <source>Link WeChat to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Vincular WeChat a la ID de deepin</translation>
     </message>
     <message>
         <source>Scan QR code with WeChat</source>

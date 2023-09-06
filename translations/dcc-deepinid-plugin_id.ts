@@ -36,6 +36,10 @@
         <source>UOS ID</source>
         <translation>ID UOS</translation>
     </message>
+    <message>
+        <source>Cloud sync, app store and etc</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>TransString</name>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>System Settings</source>
-        <translation>pengaturan Sistem</translation>
+        <translation>Pengaturan Sistem</translation>
     </message>
     <message>
         <source>Network</source>
@@ -117,7 +121,7 @@
     </message>
     <message>
         <source>Clear</source>
-        <translation>Menyinkronkan...</translation>
+        <translation>Bersihkan</translation>
     </message>
     <message>
         <source>Syncing...</source>

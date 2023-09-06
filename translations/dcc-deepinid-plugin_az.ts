@@ -30,18 +30,22 @@
     <name>SyncModule</name>
     <message>
         <source>deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>deepin ID</translation>
     </message>
     <message>
         <source>UOS ID</source>
         <translation>UOS ID</translation>
+    </message>
+    <message>
+        <source>Cloud sync, app store and etc</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>TransString</name>
     <message>
         <source>deepin Cloud Sync</source>
-        <translation type="unfinished"/>
+        <translation>Deepin bulud eyniləşməsi</translation>
     </message>
     <message>
         <source>Subject to your local laws and regulations, it is currently unavailable in your region.</source>
@@ -133,11 +137,11 @@
     </message>
     <message>
         <source>Link local accounts to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Yerli hesabları deepin İD ilə əlaqələndirin</translation>
     </message>
     <message>
         <source>If linked, you can use deepin ID to log in and reset passwords of local accounts. Switch it off to get them unlinked.</source>
-        <translation type="unfinished"/>
+        <translation>Əgər əlaqələndirmisinizsə daxil olarkən və yerli hesabların şifrələrini sıfırlamaq üçün deepin İD istifadə edə bilərsiniz. Əlaqəni ləğv etmək üçün onu söndürün.</translation>
     </message>
     <message>
         <source>Trusted devices</source>
@@ -145,7 +149,7 @@
     </message>
     <message>
         <source>Manage trusted devices to keep your deepin ID secure.</source>
-        <translation type="unfinished"/>
+        <translation>deepin İD təhlükəsizliyini qorumaq üçün etibarlı cihazlardan istifadə edin.</translation>
     </message>
     <message>
         <source>OS version: %1</source>
@@ -167,20 +171,21 @@ etibar edilən cihazlar sırasından çıxartmaq istədiyinizə əminsiniz?</tra
     </message>
     <message>
         <source>Cloud Service of deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>deepin İD bulud xidməti</translation>
     </message>
     <message>
         <source>Manage your deepin ID and sync your personal data across devices.
 Sign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.</source>
-        <translation type="unfinished"/>
+        <translation>deepin İD-ni idarə edin fərdi məlumatlarınızı cihazlarınız arasında eyniləşdirin.
+Veb-bələdçi, Tətbiq mağazası, Dəstək və s. aid fərdiləşdirilmiş funksiyaları əldə etmək üçün deepin İD-yə daxil olun.</translation>
     </message>
     <message>
         <source>Sign In to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>deepin İD-yə daxil olun</translation>
     </message>
     <message>
         <source>deepin Cloud</source>
-        <translation type="unfinished"/>
+        <translation>deepin Bulud xidməti</translation>
     </message>
     <message>
         <source>Devices and Local Accounts</source>
@@ -200,15 +205,15 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Use the trusted mobile number or email address to sign in to deepin ID, and verify sensitive operations if they are performed on deepin ID.</source>
-        <translation type="unfinished"/>
+        <translation>deepinİD-yə daxil olmaq və deepin İD-də həyata keçirilən həssas əməliyyatları doğrulamaq üçün aktual mobil nömrədən və ya e-poçt ünvanından istifadə edin.</translation>
     </message>
     <message>
         <source>Link phone number to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Telefon nömrəsini deepin İD ilə əlaqələndirin</translation>
     </message>
     <message>
         <source>Link email address to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>E-poçt ünvanını deepin İD ilə əlaqələndirin</translation>
     </message>
     <message>
         <source>Link third-party accounts</source>
@@ -216,11 +221,11 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation type="unfinished"/>
+        <translation>deepin İD-nizə və yerli hesabınıza WeChat ilə əlaqələndirilmiş QR kodu oxutmaqla  təhlükəsiz və tez daxil olun.</translation>
     </message>
     <message>
         <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
-        <translation type="unfinished"/>
+        <translation>Əlaqə ləğv edildiyi halda deepin İD-yə WeChat ilə daxil ola bilməyəcəksiniz.</translation>
     </message>
     <message>
         <source>Are you sure you want to unlink it?</source>
@@ -232,7 +237,7 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Change your deepin ID password regularly to ensure its security.</source>
-        <translation type="unfinished"/>
+        <translation>Təhlükəsizliyinə əmin olmaq üçün vaxtaşırı deepin İD şifrəsini dəyişin.</translation>
     </message>
     <message>
         <source>Change password</source>
@@ -305,12 +310,14 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     <message>
         <source>The phone number has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation type="unfinished"/>
+        <translation>deepin İD ilə əlaqələndirilmiş telefon nömrəsi:%1.
+Lütfən, yoxlayın və aşağıdakı fəaliyyətdən birini seçin.</translation>
     </message>
     <message>
         <source>The email address has been linked to deepin ID: %1.
 Please check and choose one action below.</source>
-        <translation type="unfinished"/>
+        <translation>deepin İD ilə əlaqələndirilmiş e-poçt ünvanı: %1.
+Lütfən yoxlayın və aşağıdakı fəaliyyətlərdən birini seçin.</translation>
     </message>
     <message>
         <source>Security Verification</source>
@@ -322,7 +329,7 @@ Please check and choose one action below.</source>
     </message>
     <message>
         <source>Change deepin ID password</source>
-        <translation type="unfinished"/>
+        <translation>deepin İD şifrəsini dəyişin</translation>
     </message>
     <message>
         <source>Forgot password?</source>
@@ -330,7 +337,7 @@ Please check and choose one action below.</source>
     </message>
     <message>
         <source>Link to current deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>Cari deepin İD-yə qoşun</translation>
     </message>
     <message>
         <source>Set a Password</source>
@@ -354,7 +361,7 @@ Please check and choose one action below.</source>
     </message>
     <message>
         <source>Link WeChat to deepin ID</source>
-        <translation type="unfinished"/>
+        <translation>WeChat-ı deppin İD ilə əlaqələndirin</translation>
     </message>
     <message>
         <source>Scan QR code with WeChat</source>
