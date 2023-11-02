@@ -216,7 +216,14 @@ void LoginInfoPage::initConnection()
 
     connect(m_inputLineEdit, &DLineEdit::returnPressed, this, [ = ] {
         QString userFullName = m_inputLineEdit->lineEdit()->text();
-        onEditingFinished(userFullName);
+        onNewFullNameConfirmed(userFullName);
+    });
+
+    connect(m_inputLineEdit, &DLineEdit::editingFinished, this, [ = ] {
+        m_inputLineEdit->lineEdit()->clearFocus();
+        m_inputLineEdit->setVisible(false);
+        m_username->setVisible(true);
+        m_editNameBtn->setVisible(true);
     });
 
     //点击用户全名编辑按钮
@@ -309,13 +316,10 @@ bool LoginInfoPage::eventFilter(QObject *obj, QEvent *event)
 }
 
 // 处理编辑输入完成后的逻辑
-void LoginInfoPage::onEditingFinished(const QString &userFullName)
+void LoginInfoPage::onNewFullNameConfirmed(const QString &userFullName)
 {
     QString fullName = userFullName.trimmed();
-    m_inputLineEdit->lineEdit()->clearFocus();
-    m_inputLineEdit->setVisible(false);
-    m_username->setVisible(true);
-    m_editNameBtn->setVisible(true);
+
     if (fullName.isEmpty() || fullName.size() > 32) {
         m_inputLineEdit->setAlert(false);
         m_inputLineEdit->hideAlertMessage();

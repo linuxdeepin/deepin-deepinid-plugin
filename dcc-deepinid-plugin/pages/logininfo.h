@@ -47,7 +47,7 @@ protected:
     void initConnection();
     void onUserInfoChanged(const QVariantMap &infos);
     bool eventFilter(QObject *obj, QEvent *event) override;
-    void onEditingFinished(const QString& userFullName);
+    void onNewFullNameConfirmed(const QString& userFullName);
     void onAvatarChanged(const QString &avaPath);
     void onUserInfoListChanged(const QList<QPair<QString, QString>> &moduleTs);
     void setAvatarPath(const QString &avatarPath);
