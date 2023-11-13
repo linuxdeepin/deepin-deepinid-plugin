@@ -192,7 +192,7 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Password and Security</source>
+        <source>Account Info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

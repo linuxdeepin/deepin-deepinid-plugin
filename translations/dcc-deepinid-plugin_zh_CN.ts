@@ -191,8 +191,8 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
         <translation>设备与本地账户</translation>
     </message>
     <message>
-        <source>Password and Security</source>
-        <translation>密码与安全性</translation>
+        <source>Account Info</source>
+        <translation>账户信息</translation>
     </message>
     <message>
         <source>The feature is not available at present, please activate your system first</source>
