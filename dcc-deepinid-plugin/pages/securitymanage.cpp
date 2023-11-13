@@ -178,27 +178,9 @@ void SecurityPage::initUI()
 
 void SecurityPage::initConnection()
 {
-    connect(m_unbindWeChatDlg, &QDialog::accepted, this, [this]{
-        this->verifyPasswd(UnbindAccountType);
-    });
     connect(this, &SecurityPage::onUserLogout, m_unbindWeChatDlg, &QDialog::reject);
-    connect(m_itemPhone, &SingleItem::clicked, [=]{
-        this->verifyPasswd(PhoneType);
-    });
-    connect(m_itemMail, &SingleItem::clicked, [=]{
-        this->verifyPasswd(MailType);
-    });
-    connect(m_itemAccount, &SingleItem::clicked, [=]{
-        auto &infos = m_syncModel->userinfo();
-        QString wechatNick = infos["WechatNickname"].toString();
-        if(wechatNick.isEmpty()) {
-            this->verifyPasswd(BindAccountType);
-        } else {
-            m_unbindWeChatDlg->exec();
-        }
-    });
     connect(m_itemPasswd, &SingleItem::clicked, [=]{
-        this->verifyPasswd(PasswdType);
+        emit this->onChangeInfo();
     });
 }
 
@@ -369,15 +351,13 @@ void SecurityPage::onUserInfoChanged(const QVariantMap &infos)
 {
     QString phone = infos["Phone"].toString();
     QString mail = infos["Email"].toString();
+    // TODO 这里有个遗留BUG，通过小程序注册的账户没有微信昵称，会显示为未绑定
     QString wechat = infos["WechatNickname"].toString();
     m_itemPhone->SetText(phone.trimmed().isEmpty() ? TransString::getTransString(STRING_UNLINKED) : phone.trimmed());
-    m_itemPhone->SetLinkText(phone.isEmpty() ? TransString::getTransString(STRING_BINDTIP) : TransString::getTransString(STRING_MODIFY));
 
     m_itemMail->SetText(mail.trimmed().isEmpty() ? TransString::getTransString(STRING_UNLINKED) : mail.trimmed());
-    m_itemMail->SetLinkText(mail.isEmpty() ? TransString::getTransString(STRING_BINDTIP): TransString::getTransString(STRING_MODIFY));
 
     m_itemAccount->SetText(wechat.trimmed().isEmpty() ? TransString::getTransString(STRING_UNLINKED) : wechat.trimmed());
-    m_itemAccount->SetLinkText(wechat.isEmpty() ? TransString::getTransString(STRING_BINDTIP) : TransString::getTransString(STRING_UNBINDTIP));
 }
 
 bool SecurityPage::verifyPasswd(VerifyType type)

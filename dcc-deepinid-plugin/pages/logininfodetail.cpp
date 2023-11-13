@@ -124,6 +124,8 @@ void LoginInfoDetailPage::initConnection()
     connect(this, &LoginInfoDetailPage::onUserLogout, m_cloudPage, &CloudSyncPage::onUserLogout);
     connect(this, &LoginInfoDetailPage::onUserLogout, m_devPage, &DeviceSyncPage::onUserLogout);
     connect(this, &LoginInfoDetailPage::onUserLogout, m_securityPage, &SecurityPage::onUserLogout);
+    // 为避免存在安全漏洞，账户安全信息跳转到web端更改
+    connect(m_securityPage, &SecurityPage::onChangeInfo, this, &LoginInfoDetailPage::requestOpenWeb);
 }
 
 void LoginInfoDetailPage::onLogin()

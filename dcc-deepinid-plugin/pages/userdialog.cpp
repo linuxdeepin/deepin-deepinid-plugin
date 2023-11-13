@@ -269,7 +269,7 @@ WeChatDlg::WeChatDlg(QWidget *parent):DDialog (parent)
 
     m_wechatView->page()->setWebChannel(channel);
     frameLayout->addWidget(m_wechatView, 0, Qt::AlignCenter);
-    m_wechatView->page()->setBackgroundColor(DGuiApplicationHelper::instance()->applicationPalette().background().color());
+    m_wechatView->page()->setBackgroundColor(DGuiApplicationHelper::instance()->applicationPalette().window().color());
     weFrame->setLayout(frameLayout);
     QWebEngineScript script;
     script.setSourceCode(apiScript);
