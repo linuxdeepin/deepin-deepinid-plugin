@@ -409,11 +409,11 @@ void LoginInfoPage::initGroupInfo()
 
     DStandardItem *itemSecurity = new DStandardItem();
     itemSecurity->setBackgroundRole(DPalette::Base);
-    itemSecurity->setText(TransString::getTransString(STRING_SECURITYITEM));
+    itemSecurity->setText(TransString::getTransString(STRING_ACCOUNTINFO));
     itemSecurity->setIcon(QIcon::fromTheme(m_listIcon[2]).pixmap(QSize(32, 32)));
     itemSecurity->setSizeHint(QSize(178, 48));
     itemSecurity->setData(QVariant::fromValue(itemMargin), Dtk::MarginsRole);
-    itemSecurity->setToolTip(TransString::getTransString(STRING_SECURITYITEM));
+    itemSecurity->setToolTip(TransString::getTransString(STRING_ACCOUNTINFO));
     m_listModel->appendRow(itemSecurity);
 }
 

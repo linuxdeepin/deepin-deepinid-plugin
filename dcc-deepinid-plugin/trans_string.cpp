@@ -51,7 +51,7 @@ QString TransString::getTransString(TransStrType type)
 
         {STRING_CLOUDITEM , QT_TR_NOOP("deepin Cloud")},
         {STRING_DEVITEM , QT_TR_NOOP("Devices and Local Accounts")},
-        {STRING_SECURITYITEM , QT_TR_NOOP("Password and Security")},
+        {STRING_ACCOUNTINFO , QT_TR_NOOP("Account Info")},
         {STRING_INACTIVE , QT_TR_NOOP("The feature is not available at present, please activate your system first")},
 
         {STRING_TITLEPHONE , QT_TR_NOOP("Trusted phone numbers and email addresses")},
