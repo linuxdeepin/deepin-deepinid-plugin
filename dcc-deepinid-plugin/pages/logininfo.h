@@ -36,6 +36,8 @@ public:
 
     void setModel(SyncModel *model);
     void onLogin();
+    // 使用浏览器打开web端账户中心
+    void openWeb();
 Q_SIGNALS:
     void requestLogoutUser() const;
     void requestSetFullname(const QString &fullname);

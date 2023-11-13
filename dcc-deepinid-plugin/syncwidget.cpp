@@ -99,6 +99,7 @@ void SyncWidget::initConnect()
     connect(m_loginInfoPage, &LoginInfoPage::selectIndex, m_loginInfoDetailPage, &LoginInfoDetailPage::selectIndex);
     connect(m_loginInfoDetailPage, &LoginInfoDetailPage::removeDevice, this, &SyncWidget::removeDevice);
     connect(m_loginInfoDetailPage, &LoginInfoDetailPage::clearCloudData, this, &SyncWidget::clearCloudData);
+    connect(m_loginInfoDetailPage, &LoginInfoDetailPage::requestOpenWeb, m_loginInfoPage, &LoginInfoPage::openWeb);
 }
 
 void SyncWidget::onUserInfoChanged(const QVariantMap &userInfo)

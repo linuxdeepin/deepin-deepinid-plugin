@@ -48,6 +48,7 @@ public:
     void onLogin();
 Q_SIGNALS:
     void onUserLogout();
+    void onChangeInfo();
 private Q_SLOTS:
     void onUserInfoChanged(const QVariantMap &infos);
 private:

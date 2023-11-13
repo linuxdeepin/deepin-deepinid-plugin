@@ -112,6 +112,8 @@ void LoginInfoPage::initUI()
 
     m_editNameBtn->setIcon(QIcon::fromTheme("dcc_edit"));
     m_editNameBtn->setIconSize(QSize(12, 12));
+    // 关闭在控制中心编辑账户昵称的功能
+    m_editNameBtn->setVisible(false);
 
     m_inputLineEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     m_inputLineEdit->setVisible(false);
@@ -234,11 +236,7 @@ void LoginInfoPage::initConnection()
         m_avatar->clearAvatar();
         Q_EMIT requestLogoutUser();
     });
-    connect(m_editInfoBtn, &DFloatingButton::clicked, [this](){
-        QString url = loadCodeURL();
-        QUrl::toPercentEncoding(url);
-        QDesktopServices::openUrl(QUrl(url));
-    });
+    connect(m_editInfoBtn, &DFloatingButton::clicked, this, &LoginInfoPage::openWeb);
 
     connect(m_listView, QOverload<const QModelIndex&>::of(&DListView::currentChanged), [this](const QModelIndex &preindex) {
         QModelIndex index = this->m_listView->currentIndex();
@@ -466,4 +464,12 @@ QString LoginInfoPage::loadCodeURL()
 
     QString url = oauthURI += QString("/oauth2/authorize/registerlogin?autoLoginKey=%1").arg(func_getToken());
     return url;
+}
+
+void LoginInfoPage::openWeb()
+{
+    qDebug() << "open web";
+    QString url = loadCodeURL();
+    QUrl::toPercentEncoding(url);
+    QDesktopServices::openUrl(QUrl(url));
 }

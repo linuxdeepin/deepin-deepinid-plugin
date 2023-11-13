@@ -103,6 +103,8 @@ Q_SIGNALS:
 
     void requestSetUtcloudModuleState(const QString &utcloudType, bool state);
 
+    // 请求在浏览器打开账户中心
+    void requestOpenWeb();
     // DELETE
     void requestUOSID(QString &uosid);
     void requestUUID(QString &uuid);
