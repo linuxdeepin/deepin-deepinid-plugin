@@ -1,3 +1,10 @@
+deepin-deepinid-plugin (2.0.3) unstable; urgency=medium
+
+  * feat: disable edit user info
+  * chore: update translations
+
+ -- wurongjie <wurongjie@deepin.org>  Mon, 13 Nov 2023 13:48:19 +0800
+
 deepin-deepinid-plugin (2.0.2) unstable; urgency=medium
 
   * update description
