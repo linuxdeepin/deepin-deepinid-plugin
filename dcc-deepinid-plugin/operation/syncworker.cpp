@@ -278,7 +278,6 @@ void SyncWorker::getRSAPubKey()
         }
         else {
             m_RSApubkey = reply.value().toStdString();
-            qDebug() << "Get RSA Key:" << QString::fromStdString(m_RSApubkey);
         }
         self->deleteLater();
     });
