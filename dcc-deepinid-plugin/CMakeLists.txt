@@ -73,19 +73,7 @@ target_link_libraries(${PLUGIN_NAME} PRIVATE
     libcrypto.so
 )
 
-# 设置安装路径的前缀(默认为"/usr/local")
-
-set(UOSID_LOGO ${PROJECT_SOURCE_DIR}/icons/icons/uos-id.svg)
-# 指定安装位置
 install(TARGETS ${PLUGIN_NAME} LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/dde-control-center/modules)
-# 安装图标文件
-#if(EXISTS "/usr/share/icons/hicolor/scalable/apps/uos-id.svg")
-#    message(STATUS "app logo exists")
-#else()
-#    message(STATUS "app logo not exists")
-#    # 安装图标文件
-#    install(FILES ${UOSID_LOGO} DESTINATION share/icons/hicolor/scalable/apps)
-#endif()
 
 # 安装 .qm 文件
 install(FILES ${QM_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/dde-control-center/translations)

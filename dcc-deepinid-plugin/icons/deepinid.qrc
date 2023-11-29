@@ -60,6 +60,7 @@
         <file>icons/dcc_utcloud_select_32px.svg</file>
         <file>icons/dcc_password_32px.svg</file>
         <file>icons/dcc_password_select_32px.svg</file>
+        <file>icons/deepin-id_32px.svg</file>
         <file>dark/actions/dcc_del_account_12px.svg</file>
         <file>light/actions/dcc_del_account_12px.svg</file>
     </qresource>
