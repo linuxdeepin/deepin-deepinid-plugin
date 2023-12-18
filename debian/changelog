@@ -1,3 +1,9 @@
+deepin-deepinid-plugin (2.0.4) unstable; urgency=medium
+
+  * chore: use buildin icon to display icon
+
+ -- chenhongtao <chenhongtao@deepin.org>  Mon, 18 Dec 2023 10:55:27 +0800
+
 deepin-deepinid-plugin (2.0.3) unstable; urgency=medium
 
   * feat: disable edit user info
