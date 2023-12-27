@@ -5,27 +5,35 @@
 
 #include "downloadurl.h"
 
-#include <QNetworkAccessManager>
-#include <QNetworkRequest>
-#include <QNetworkReply>
-#include <QFile>
-#include <QTimer>
-#include <QPixmap>
 #include <QDebug>
+#include <QDir>
+#include <QFile>
+#include <QMutexLocker>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QNetworkRequest>
+#include <QPixmap>
+#include <QStandardPaths>
+#include <QTemporaryFile>
+#include <QTimer>
 
 DownloadUrl::DownloadUrl(QObject *parent)
     : QObject(parent)
+    , m_finalPath("")
     , m_manager(nullptr)
     , m_file(nullptr)
     , m_isReady(true)
 {
-
 }
 
 DownloadUrl::~DownloadUrl()
 {
-    if (m_manager != nullptr)
+    if (m_manager != nullptr) {
         m_manager->deleteLater();
+    }
+    if (m_file != nullptr) {
+        m_file->deleteLater();
+    }
 }
 
 void DownloadUrl::downloadFileFromURL(const QString &url, const QString &filePath, bool fullname)
@@ -33,11 +41,13 @@ void DownloadUrl::downloadFileFromURL(const QString &url, const QString &filePat
     if (url.isEmpty())
         return;
 
+    QMutexLocker lock(&m_downloadlock);
     QString fileName;
     fileName = fullname ? filePath : filePath + url.right(url.size() - url.lastIndexOf("/"));
     if (fileName.contains("default.png", Qt::CaseInsensitive)) {
         fileName = fileName.remove("png").append("svg");
     }
+    m_finalPath = fileName;
     qDebug() << " download " << url << " to " << fileName << " ready = " << m_isReady;
 
     if (!m_isReady)
@@ -46,9 +56,9 @@ void DownloadUrl::downloadFileFromURL(const QString &url, const QString &filePat
 
     m_retryMap.insert(fileName, url);
 
-    m_file = new QFile();
-    m_file->setFileName(fileName);
-    m_file->open(QIODevice::WriteOnly);
+    m_file = new QTemporaryFile();
+    m_file->open();
+
     if (!m_file->isOpen()) {
         m_isReady = true;
         return;
@@ -58,14 +68,18 @@ void DownloadUrl::downloadFileFromURL(const QString &url, const QString &filePat
         m_manager = new QNetworkAccessManager;
 
     QNetworkRequest request;
+
     request.setUrl(QUrl(url));
-    request.setAttribute(QNetworkRequest::FollowRedirectsAttribute, true);
+    request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, true);
 
     QSslConfiguration config = QSslConfiguration::defaultConfiguration();
     config.setPeerVerifyMode(QSslSocket::VerifyNone);
     request.setSslConfiguration(config);
 
-    connect(m_manager, &QNetworkAccessManager::finished, this, &DownloadUrl::onDownloadFileComplete);
+    connect(m_manager,
+            &QNetworkAccessManager::finished,
+            this,
+            &DownloadUrl::onDownloadFileComplete);
 
     m_manager->get(request);
 
@@ -79,7 +93,7 @@ void DownloadUrl::downloadFileFromURL(const QString &url, const QString &filePat
 
 void DownloadUrl::onDownloadFileComplete(QNetworkReply *reply)
 {
-    //return receiving redundant finished signal
+    // return receiving redundant finished signal
     if (m_file == nullptr)
         return;
 
@@ -87,8 +101,8 @@ void DownloadUrl::onDownloadFileComplete(QNetworkReply *reply)
         qDebug() << "network error = " << reply->error();
         QString url = reply->url().toString();
 
-        if (m_retryMap.value(m_file->fileName()) != url)
-            qDebug() << " mfile url " << m_retryMap.value(m_file->fileName()) << " != " << url;
+        if (m_retryMap.value(m_finalPath) != url)
+            qDebug() << " mfile url " << m_retryMap.value(m_finalPath) << " != " << url;
 
         m_file->remove();
         delete m_file;
@@ -104,10 +118,11 @@ void DownloadUrl::onDownloadFileComplete(QNetworkReply *reply)
         m_file->remove();
     } else {
         m_file->close();
-        if (m_retryMap.contains(m_file->fileName()))
-            m_retryMap.remove(m_file->fileName());
+        m_file->copy(m_finalPath);
+        if (m_retryMap.contains(m_finalPath))
+            m_retryMap.remove(m_finalPath);
         qDebug() << " m_file fileName = " << m_file->fileName();
-        Q_EMIT fileDownloaded(m_file->fileName());
+        Q_EMIT fileDownloaded(m_finalPath);
     }
 
     delete m_file;
