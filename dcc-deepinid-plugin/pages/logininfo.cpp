@@ -32,6 +32,7 @@
 #include <QDBusPendingReply>
 #include <QMargins>
 #include <QToolTip>
+#include <QStandardPaths>
 
 
 DWIDGET_USE_NAMESPACE
@@ -49,7 +50,8 @@ LoginInfoPage::LoginInfoPage(QWidget *parent)
     , m_mainLayout(new QVBoxLayout)
     , m_model(nullptr)
     , m_downloader(nullptr)
-    , m_avatarPath(QString("%1/.cache/deepin/dde-control-center/sync").arg(getenv("HOME")))
+    , m_avatarPath(QStandardPaths::writableLocation(QStandardPaths::CacheLocation)
+                   + QDir::separator() + "sync")
     , m_avatar(new AvatarWidget(this))
     , m_fristLogin(true)
     , m_username(new DLabel(this))
@@ -327,7 +329,7 @@ void LoginInfoPage::onEditingFinished(const QString &userFullName)
 void LoginInfoPage::onAvatarChanged(const QString &avaPath)
 {
     QString profile_image = avaPath;
-    QString avatarPath = QString("%1%2").arg(m_avatarPath).arg(m_model->userDisplayName());
+    QString avatarPath = m_avatarPath + QDir::separator() + m_model->userDisplayName();
     QDir dir;
     dir.mkpath(avatarPath);
     qDebug() << " ProfileImage = " << profile_image << ", avatarPath " << avatarPath;
@@ -338,8 +340,7 @@ void LoginInfoPage::onAvatarChanged(const QString &avaPath)
     QString localDefault = avatarPath + "default.svg";
     if(QFile::exists(localAvatar)) {
         setAvatarPath(localAvatar);
-    }
-    else if(QFile::exists(localDefault)) {
+    } else if (QFile::exists(localDefault)) {
         setAvatarPath(localDefault);
     }
 

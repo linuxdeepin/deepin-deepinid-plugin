@@ -7,11 +7,12 @@
 
 #include <QObject>
 #include <QMap>
+#include <QMutex>
 
 QT_BEGIN_NAMESPACE
 class QNetworkAccessManager;
 class QNetworkReply;
-class QFile;
+class QTemporaryFile;
 QT_END_NAMESPACE
 
 class DownloadUrl : public QObject
@@ -30,8 +31,10 @@ public Q_SLOTS:
     void onDownloadFileError(const QString &url, const QString &fileName);
 
 private:
+    QString m_finalPath;
     QNetworkAccessManager *m_manager;
-    QFile *m_file;
+    QTemporaryFile *m_file;
     bool m_isReady;
     QMap<QString, QString> m_retryMap;
+    QMutex m_downloadlock;
 };
