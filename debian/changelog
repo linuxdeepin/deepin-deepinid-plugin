@@ -1,3 +1,9 @@
+deepin-deepinid-plugin (2.0.5) unstable; urgency=medium
+
+  * fix: cache file placed in wrong place
+
+ -- chenhongtao <chenhongtao@deepin.org>  Mon, 02 Jan 2024 11:32:00 +0800
+
 deepin-deepinid-plugin (2.0.4) unstable; urgency=medium
 
   * chore: use buildin icon to display icon
