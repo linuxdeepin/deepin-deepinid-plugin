@@ -15,13 +15,9 @@
 #include <DGuiApplicationHelper>
 
 #include <QDebug>
-#include <QtWebChannel>
 #include <QTimer>
 #include <QRegExpValidator>
 #include <QNetworkConfigurationManager>
-#include <QWebEngineProfile>
-#include <QWebEngineScript>
-#include <QWebEngineScriptCollection>
 #include <QRegularExpression>
 
 static const QString STRING_ICONUOSID = QStringLiteral("dcc_union_id");
@@ -237,67 +233,6 @@ void PhoneMailDlg::bindToLocal()
     QString strnum = m_numEdit->text();
     QString verify = m_codeEdit->text();
     Q_EMIT rebindPhoneMail(strnum, verify, m_rebindKey);
-}
-
-WeChatDlg::WeChatDlg(QWidget *parent):DDialog (parent)
-{
-    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
-    QCoreApplication::setAttribute(Qt::AA_UseOpenGLES);
-    QFile scriptFile(":/qtwebchannel/qwebchannel.js");
-    scriptFile.open(QIODevice::ReadOnly);
-    QString apiScript = QString::fromLatin1(scriptFile.readAll());
-    scriptFile.close();
-    //QWebEngineProfile::defaultProfile()->scripts()->insert(script);
-    m_wechatObj = new WeChatObject(this);
-    setTitle(TransString::getTransString(STRING_WECHATBIND));
-    setMessage(TransString::getTransString(STRING_WECHATSCAN));
-    setIcon(QIcon::fromTheme(STRING_ICONUOSID));
-    setFixedWidth(400);
-    setSpacing(0);
-
-    DFrame *weFrame = new DFrame;
-    weFrame->setFixedSize(148, 148);
-    QHBoxLayout *frameLayout = new QHBoxLayout;
-    frameLayout->setSpacing(0);
-    frameLayout->setContentsMargins(3, 3, 3, 3);
-
-    m_wechatView = new QWebEngineView(this);
-    m_wechatView->setFixedSize(140, 140);
-    m_wechatView->setContextMenuPolicy(Qt::NoContextMenu);
-    QWebChannel *channel = new QWebChannel(this);
-    channel->registerObject("client", m_wechatObj);
-
-    m_wechatView->page()->setWebChannel(channel);
-    frameLayout->addWidget(m_wechatView, 0, Qt::AlignCenter);
-    m_wechatView->page()->setBackgroundColor(DGuiApplicationHelper::instance()->applicationPalette().window().color());
-    weFrame->setLayout(frameLayout);
-    QWebEngineScript script;
-    script.setSourceCode(apiScript);
-    script.setName("qwebchannel.js");
-    script.setWorldId(QWebEngineScript::MainWorld);
-    script.setInjectionPoint(QWebEngineScript::DocumentReady);
-    script.setRunsOnSubFrames(false);
-    m_wechatView->page()->profile()->scripts()->insert(script);
-
-    addSpacing(10);
-    addContent(weFrame, Qt::AlignHCenter);
-    addSpacing(20);
-    connect(m_wechatObj, &WeChatObject::finish, this, [this]{
-        this->accept();
-        Q_EMIT this->bindSuccess();
-    });
-    connect(m_wechatView->page(), &QWebEnginePage::loadFinished, this, [this](bool bOk){
-        if(!bOk)
-        {
-            qWarning() << "load page failed";
-            this->m_wechatView->load(QUrl("qrc:/web/error.html"));
-        }
-    });
-}
-
-void WeChatDlg::setPageUrl(const QString &pageurl)
-{
-    m_wechatView->load(pageurl);
 }
 
 ResetPwdDlg::ResetPwdDlg(QWidget *parent):DDialog (parent)

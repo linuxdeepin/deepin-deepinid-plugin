@@ -31,7 +31,7 @@ set(QRCS icons/deepinid.qrc)
 
 # 指定用到库
 find_package(QT NAMES Qt5 REQUIRED COMPONENTS Core)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Concurrent Network Widgets DBus Svg LinguistTools WebChannel WebEngine WebEngineCore WebEngineWidgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Concurrent Network Widgets DBus Svg LinguistTools)
 find_package(DdeControlCenter REQUIRED)
 find_package(PkgConfig REQUIRED)
 find_package(Dtk REQUIRED COMPONENTS Widget)
@@ -65,8 +65,6 @@ target_link_libraries(${PLUGIN_NAME} PRIVATE
     Qt::Svg
     Qt::Network
     Qt::Concurrent
-    Qt::WebChannel
-    Qt::WebEngineWidgets
     Dtk::Widget
     ${DdeControlCenter_LIBRARIES}
     PolkitQt5-1::Agent
