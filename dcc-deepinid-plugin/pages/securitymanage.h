@@ -11,7 +11,6 @@
 #include <QStandardItemModel>
 #include "operation/syncmodel.h"
 #include "operation/syncworker.h"
-#include "wechatobject.h"
 #include "userdialog.h"
 
 DWIDGET_BEGIN_NAMESPACE
@@ -50,6 +49,7 @@ Q_SIGNALS:
     void onUserLogout();
     void onChangeInfo();
 private Q_SLOTS:
+    void onBindSuccess();
     void onUserInfoChanged(const QVariantMap &infos);
 private:
     void initUI();
@@ -70,8 +70,6 @@ private:
 
     void initPhoneMailConnection(PhoneMailDlg *dlg);
 
-    void initWeChatDialog(WeChatDlg *dlg);
-
     void initResetPwdDialog(ResetPwdDlg *dlg);
 
     bool verifyPasswd(VerifyType type);
@@ -91,6 +89,7 @@ private:
     SingleItem *m_itemMail;
     SingleItem *m_itemAccount;
     SingleItem *m_itemPasswd;
+    QDBusInterface *m_clientService;
 };
 
 #endif // SECURITYMANAGE_H

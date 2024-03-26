@@ -5,10 +5,7 @@
 #ifndef USERDIALOG_H
 #define USERDIALOG_H
 
-#include "wechatobject.h"
-
 #include <DDialog>
-#include <QWebEngineView>
 
 DWIDGET_BEGIN_NAMESPACE
 class DLabel;
@@ -99,21 +96,7 @@ private:
     QString m_rebindKey;
     int m_coolDown;
 };
-//
-class WeChatDlg:public DDialog
-{
-    Q_OBJECT
-public:
-    explicit WeChatDlg(QWidget *parent = nullptr);
 
-    void setPageUrl(const QString &pageurl);
-Q_SIGNALS:
-    void bindSuccess();
-private:
-    WeChatObject *m_wechatObj;
-    QWebEngineView *m_wechatView;
-};
-//
 class ResetPwdDlg:public DDialog
 {
     Q_OBJECT

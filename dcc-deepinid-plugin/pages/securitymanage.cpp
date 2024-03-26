@@ -26,6 +26,8 @@ DWIDGET_USE_NAMESPACE
 Q_DECLARE_METATYPE(QMargins)
 
 static const QString STRING_ICONUOSID = QStringLiteral("dcc_union_id");
+static const QString CLIENT_SERVICE = QStringLiteral("com.deepin.deepinid.Client");
+static const QString CLIENT_PATH = QStringLiteral("/com/deepin/deepinid/Client");
 
 SecurityPage::SecurityPage(QWidget *parent) : QWidget(parent)
   , m_unbindWeChatDlg(new DDialog("", "", this))
@@ -36,6 +38,7 @@ SecurityPage::SecurityPage(QWidget *parent) : QWidget(parent)
   , m_itemMail(new SingleItem)
   , m_itemAccount(new SingleItem)
   , m_itemPasswd(new SingleItem)
+  , m_clientService(nullptr)
 {
     m_forgetUrl = utils::forgetPwdURL();
     //qDebug() << "forget url:" << m_forgetUrl;
@@ -309,30 +312,6 @@ void SecurityPage::initPhoneMailConnection(PhoneMailDlg *dlg)
     connect(this, &SecurityPage::onUserLogout, dlg, &QDialog::reject);
 }
 
-void SecurityPage::initWeChatDialog(WeChatDlg *dlg)
-{
-    connect(dlg, &WeChatDlg::bindSuccess, [this]{
-        utils::sendSysNotify(TransString::getTransString(STRING_SUCCESSTIP));
-        this->m_syncWorker->refreshUserInfo();
-    });
-    connect(this, &SecurityPage::onUserLogout, dlg, &QDialog::reject);
-
-    QString bindurl;
-    QString strsession = m_syncWorker->getSessionID();
-    if(strsession.isEmpty()) {
-        bindurl = "qrc:/web/error.html";
-    }
-    else {
-        bindurl = m_wechatUrl;
-        bindurl += "&sessionid=";
-        bindurl += strsession;
-        bindurl += QString("&time=%1").arg(QDateTime::currentMSecsSinceEpoch());
-    }
-
-    qDebug() << "set bind url:" << bindurl;
-    dlg->setPageUrl(bindurl);
-}
-
 void SecurityPage::initResetPwdDialog(ResetPwdDlg *dlg)
 {
     connect(dlg, &ResetPwdDlg::resetPasswd, this, [=](const QString &newpwd){
@@ -345,6 +324,13 @@ void SecurityPage::initResetPwdDialog(ResetPwdDlg *dlg)
         }
     });
     connect(this, &SecurityPage::onUserLogout, dlg, &QDialog::reject);
+}
+
+void SecurityPage::onBindSuccess()
+{
+    qInfo() << "on bind success";
+    utils::sendSysNotify(TransString::getTransString(STRING_SUCCESSTIP));
+    m_syncWorker->refreshUserInfo();
 }
 
 void SecurityPage::onUserInfoChanged(const QVariantMap &infos)
@@ -469,9 +455,28 @@ void SecurityPage::openUserDialog(SecurityPage::VerifyType type)
         break;
     case BindAccountType:
     {
-        WeChatDlg wechatDlg;
-        initWeChatDialog(&wechatDlg);
-        wechatDlg.exec();
+        QString bindurl;
+        QString strsession = m_syncWorker->getSessionID();
+        if(strsession.isEmpty()) {
+            bindurl = "";
+        }
+        else {
+            bindurl = m_wechatUrl;
+            bindurl += "&sessionid=";
+            bindurl += strsession;
+            bindurl += QString("&time=%1").arg(QDateTime::currentMSecsSinceEpoch());
+        }
+
+        qDebug() << "Init wechat dialog, set bind url: " << bindurl;
+        if(m_clientService == nullptr) {
+            m_clientService = new QDBusInterface(CLIENT_SERVICE, CLIENT_PATH, CLIENT_SERVICE, QDBusConnection::sessionBus());
+        } else if (!m_clientService->isValid()) {
+            delete  m_clientService;
+            m_clientService = new QDBusInterface(CLIENT_SERVICE, CLIENT_PATH, CLIENT_SERVICE, QDBusConnection::sessionBus());
+        }
+
+        connect(m_clientService, SIGNAL(bindSuccess()), this, SLOT(onBindSuccess()), Qt::UniqueConnection);
+        m_clientService->asyncCall("BindAccount", bindurl);
     }
         break;
     case UnbindAccountType:
