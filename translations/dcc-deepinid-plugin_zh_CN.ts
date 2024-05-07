@@ -220,7 +220,7 @@ Sign in to deepin ID to get personalized features and services of Browser, App S
     </message>
     <message>
         <source>Securely and quickly log in to your deepin ID and local account by scanning the QR code with the linked WeChat.</source>
-        <translation>通过关联微信扫码，安全且快速的登录您的deepin ID和本地账户。</translation>
+        <translation>通过关联微信扫码，安全且快速地登录您的deepin ID和本地账户。</translation>
     </message>
     <message>
         <source>If unlinked, you will not be able to use WeChat to sign in to deepin ID.</source>
