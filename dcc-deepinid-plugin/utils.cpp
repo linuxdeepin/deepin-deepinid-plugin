@@ -244,7 +244,7 @@ bool isContainDigitAndChar(const QString &strdata)
 void sendSysNotify(const QString &strReason)
 {
     QDBusPendingReply<unsigned int> reply = Dtk::Core::DUtil::DNotifySender("deepin ID")
-                                                    .appName("dde-control-center")
+                                                    .appName("org.deepin.dde.control-center")
                                                     .appIcon("deepin-id")
                                                     .appBody(strReason)
                                                     .replaceId(0)
