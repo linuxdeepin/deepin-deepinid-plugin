@@ -730,7 +730,7 @@ void SyncWorker::getUserDeepinidInfo()
 
 void SyncWorker::getLicenseState()
 {
-    if (DSysInfo::DeepinDesktop == DSysInfo::deepinType()) {
+    if (DSysInfo::uosEditionType() == DSysInfo::UosCommunity) {
         m_model->setActivation(true);
         return;
     }
