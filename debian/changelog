@@ -1,3 +1,9 @@
+deepin-deepinid-plugin (2.0.7) unstable; urgency=medium
+
+  * feat: Add dde-control-center translations (#26)(Issue: 9873)
+
+ -- zyz <zhaoyingzhen@uniontech.com>  Wed, 24 Jul 2024 14:19:25 +0800
+
 deepin-deepinid-plugin (2.0.6) unstable; urgency=medium
 
   * chore: bump version
