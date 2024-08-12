@@ -142,14 +142,22 @@ PicLabel::PicLabel(QWidget *parent): QLabel (parent), m_svgrender(new QSvgRender
 void PicLabel::SetImage(const QString &imgurl)
 {
     m_svgrender->load(imgurl);
+    m_defSize = m_svgrender->defaultSize();
 }
 
 void PicLabel::resizeEvent(QResizeEvent *event)
 {
-    Q_UNUSED(event);
-    QPixmap pixmap(size() * qApp->devicePixelRatio());
+    QSize finalSize = m_defSize;
+    QSize newSize = size();
+    if(m_defSize.width() < newSize.width() ||
+        m_defSize.height() < newSize.height()) {
+        finalSize.scale(newSize, Qt::KeepAspectRatioByExpanding);
+    }
+
+    QPixmap pixmap(finalSize * qApp->devicePixelRatio());
     pixmap.fill(Qt::transparent);
     QPainter painter(&pixmap);
+    m_svgrender->setAspectRatioMode(Qt::IgnoreAspectRatio);
     m_svgrender->render(&painter);
     pixmap.setDevicePixelRatio(qApp->devicePixelRatio());
     setPixmap(pixmap);

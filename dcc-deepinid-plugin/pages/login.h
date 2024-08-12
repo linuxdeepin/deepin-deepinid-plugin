@@ -21,6 +21,7 @@ public:
 protected:
     void resizeEvent(QResizeEvent *event) override;
 private:
+    QSize        m_defSize;
     QSvgRenderer *m_svgrender;
 };
 
