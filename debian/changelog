@@ -1,3 +1,9 @@
+deepin-deepinid-plugin (2.0.8) unstable; urgency=medium
+
+  * 修复背景图不等比例缩放和tip样式不对
+
+ -- Yutao Meng <mengyutao@deepin.org>  Mon, 12 Aug 2024 17:02:54 +0800
+
 deepin-deepinid-plugin (2.0.7) unstable; urgency=medium
 
   * feat: Add dde-control-center translations (#26)(Issue: 9873)
