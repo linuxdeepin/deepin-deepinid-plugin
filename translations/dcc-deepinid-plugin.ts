@@ -44,6 +44,13 @@
     </message>
 </context>
 <context>
+    <name>SyncWorker</name>
+    <message>
+        <source>Calendar</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>TransString</name>
     <message>
         <source>deepin Cloud Sync</source>
