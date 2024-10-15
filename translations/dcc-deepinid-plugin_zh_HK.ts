@@ -174,9 +174,9 @@ remove this device from trusted devices?</source>
     </message>
     <message>
         <source>Manage your deepin ID and sync your personal data across devices.
-Sign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.</source>
+Sign in to deepin ID to get personalized features and services of Browser, App Store, and more.</source>
         <translation>管理您的deepin ID，將您的個人數據在不同設備之間同步。
-登錄deepin ID以獲取瀏覽器、應用商店、服務與支持等眾多應用的個性功能和服務。</translation>
+登錄deepin ID以獲取瀏覽器、應用商店等眾多應用的個性功能和服務。</translation>
     </message>
     <message>
         <source>Sign In to deepin ID</source>

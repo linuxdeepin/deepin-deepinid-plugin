@@ -46,7 +46,7 @@ QString TransString::getTransString(TransStrType type)
         {STRING_DELDLGTITLE , QT_TR_NOOP("Are you sure you want to\nremove this device from trusted devices?")},
 
         {STRING_CLOUDSV , QT_TR_NOOP("Cloud Service of deepin ID")},
-        {STRING_CLOUDTITLEMSG , QT_TR_NOOP("Manage your deepin ID and sync your personal data across devices.\nSign in to deepin ID to get personalized features and services of Browser, App Store, Support, and more.")},
+        {STRING_CLOUDTITLEMSG , QT_TR_NOOP("Manage your deepin ID and sync your personal data across devices.\nSign in to deepin ID to get personalized features and services of Browser, App Store, and more.")},
         {STRING_LOGIN , QT_TR_NOOP("Sign In to deepin ID")},
 
         {STRING_CLOUDITEM , QT_TR_NOOP("deepin Cloud")},
