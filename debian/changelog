@@ -1,3 +1,9 @@
+deepin-deepinid-plugin (2.0.9) unstable; urgency=medium
+
+  * fix: update prompt copywriter
+
+ -- xionglinlin <xionglinlin@uniontech.com>  Wed, 16 Oct 2024 17:18:55 +0800
+
 deepin-deepinid-plugin (2.0.8) unstable; urgency=medium
 
   * 修复背景图不等比例缩放和tip样式不对
