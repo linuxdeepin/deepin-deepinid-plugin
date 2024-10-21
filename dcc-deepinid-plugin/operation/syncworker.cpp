@@ -660,7 +660,10 @@ void SyncWorker::callWatcherResult(const QString &result)
         QJsonObject jAppsDate = apps[key].toObject();
 
         const QString name =  jAppsDate["name"].toString();
-        const QString displayName = jAppsDate["display_name"].toString();
+        QString displayName = jAppsDate["display_name"].toString();
+        if (displayName == "Calendar") {
+           displayName = tr("Calendar");
+        }
         bool enable = jAppsDate["enable"].toBool();
         const QString icon = jAppsDate["icon"].toString();
 
